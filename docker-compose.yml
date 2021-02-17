@@ -8,7 +8,7 @@ services:
       - ./apache2/conf/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
       - ./www:/var/www
     ports:
-      - 80:80 #http://localhost:80
+      - 81:80 #http://localhost:81
     env_file:
       - ./apache2/docker-apache2.env
     
@@ -17,7 +17,7 @@ services:
     volumes:
       - ./mysql/DB:/docker-entrypoint-initdb.d
     ports:
-      - "4306:3306"
+      - "4307:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_USER=test
@@ -31,7 +31,7 @@ services:
     links:
       - mysql
     ports:
-      - 4040:80 #http://localhost:4040
+      - 4041:80 #http://localhost:4041
     volumes:
       - ./phpmyadmin/sessions:/sessions
       
