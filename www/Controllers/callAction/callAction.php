@@ -2,9 +2,9 @@
 
 // routerからcontrollerへ繋ぐ
 
-use myapp\controllers\categoryController as Category;
-use myapp\controllers\articleController as Article;
-use myapp\controllers\BackyardController as Backyard;
+use myapp\controllers\SearchController;
+use myapp\controllers\OrganizationController;
+//use myapp\controllers\BackyardController as Backyard;
 
 
 /**
@@ -17,22 +17,23 @@ function callAction (string $handler, ?array $vars = NULL)
 {
     if ($handler == 'index') {
 
-        $controller = new Category;
+        $controller = new SearchController;
         $controller->index($vars);
         
     }
-    elseif ($handler == 'categoryList') {
+    elseif ($handler == 'searchShow') {
 
-        $controller = new Category;
-        $controller->list($vars);
-
-    }
-    elseif ($handler == 'article') {
-
-        $controller = new Article;
+        $controller = new SearchController;
         $controller->show($vars);
         
     }
+    elseif ($handler == 'orgDetail') {
+
+        $controller = new OrganizationController;
+        $controller->detail($vars);
+
+    }
+    /*
     elseif ($handler == 'backyardIndex') {
 
         $controller = new Backyard;
@@ -57,4 +58,5 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller->update($vars);
 
     }
+    */
 }

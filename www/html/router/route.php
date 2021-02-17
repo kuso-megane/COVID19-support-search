@@ -12,9 +12,9 @@ $base = '/';
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) use ($base) {
     $r->addRoute('GET', $base.'index[/{page:\d+}]', 'index'); //index
 
-    $r->addRoute('GET', '/category/{c_id:\d+}[/{subc_id:\d+}/[{page:\d+}]]', 'categoryList');
+    $r->addRoute('GET', '/search', 'searchShow');
     
-    $r->addRoute('GET', '/article/{artcl_id:\d+}', 'article');
+    $r->addRoute('GET', '/orgDetail/{org_id:\d+}', 'orgDetail');
 
     $r->addGroup('/backyard', function (FastRoute\RouteCollector $r) {
         $r->addRoute('GET', '[/]', 'backyardIndex');
