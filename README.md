@@ -1,13 +1,9 @@
-# blog
+# コロナ支援民間組織の検索、紹介サービス
 
 ## 環境
 - dockerコンテナを構築し、apache2 + php + mysqlで作成。鋭意進行中！
 
-## 現状
-- routingをfastRouteにて作成
-- controllerも基礎は設計完了
-
-## next
-- 各アクションごとに必要なデータを見極め、その要請に応じるmodelを作成
-
-
+## frontend
+- www/html/views配下にhtml(拡張子は基本php)を記述
+- cssは、www/html/asset/stylesheet/配下に(scssで書くことも検討中なんで保留)
+- 画像は、www/html/asset/img/配下に
