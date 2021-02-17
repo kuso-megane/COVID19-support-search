@@ -1,0 +1,16 @@
+#todoリスト
+/todo.md
+
+# vscode関連
+.DS_Store
+
+# composer周りのvendor
+/www/vendor/
+
+
+# scssのキャッシュ
+/www/html/asset/stylesheet/.sass-cache
+
+# コンパイル後のcss
+/www/html/asset/stylesheet/
+
