@@ -1,6 +1,6 @@
 <?php
 
-namespace myapp\components;
+namespace myapp\myFrameWork;
 
 
 class superGlobalVars
