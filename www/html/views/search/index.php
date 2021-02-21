@@ -7,14 +7,14 @@
     <head>
         <meta charset="utf-8">
         <title>支援総合検索サイト</title>
-    <link rel="index" href="index.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/stylesheet/index.css">
 
     </head>
     <body>
         <header>
             <div class="header">
-                <div class="header-logo">支援総合検索サイト
-                </div>
+                <h1 class="header-logo">支援総合検索サイト</h1>
+                
                 <div class="header-list">
                     <ul>
                         <li>主催者</li>
