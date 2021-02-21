@@ -2,20 +2,20 @@ version: '3'
 
 services:
   app:
-    build: ./apache2/
+    build: $PWD/apache2/
     volumes:
-      - ./apache2/php.ini:/usr/local/etc/php/php.ini
-      - ./apache2/conf/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
-      - ./www:/var/www
+      - $PWD/apache2/php.ini:/usr/local/etc/php/php.ini
+      - $PWD/apache2/conf/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - $PWD/www:/var/www
     ports:
       - 81:80 #http://localhost:81
     env_file:
-      - ./apache2/docker-apache2.env
+      - $PWD/apache2/docker-apache2.env
     
   mysql:
-    build: ./mysql/
+    build: $PWD/mysql/
     volumes:
-      - ./mysql/DB:/docker-entrypoint-initdb.d
+      - $PWD/mysql/DB:/docker-entrypoint-initdb.d
     ports:
       - "4307:3306"
     environment:
@@ -33,5 +33,5 @@ services:
     ports:
       - 4041:80 #http://localhost:4041
     volumes:
-      - ./phpmyadmin/sessions:/sessions
+      - $PWD/phpmyadmin/sessions:/sessions
       
