@@ -1,0 +1,27 @@
+html{
+    font-size:20px;
+
+}
+li{
+    list-style: none;
+    
+}
+
+header{
+    background-color: rgb(0, 255, 221);  
+    color:white;
+    height:6rem;
+}
+    
+.header-logo{
+    font-size:3rem;
+    float: left;
+    margin:1rem ;
+    
+}
+  
+.header-list li{
+    float:right;
+    margin:2.5rem;
+    font-size:1rem;
+}
