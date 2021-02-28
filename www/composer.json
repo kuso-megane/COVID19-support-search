@@ -12,6 +12,6 @@
         "php-di/php-di": "^6.3"
     },
     "require-dev": {
-        "kahlan/kahlan": "^5.0"
+        "phpunit/phpunit": "^9.5"
     }
 }
