@@ -20,13 +20,13 @@
                 <h3><a href="/index">←トップページに戻る</a></h3>
             </div>
                 <div class="wrapper">
+                    <!--こんな感じにしてほしい-->
                     <div class="container">
-                        <div class="thumbnain-container">
-                            <img class="thumbnail" src="/asset/img/test2.jpg">
-                        </div>
+                        <img class="thumbnail" src="/asset/img/test2.jpg">
                         <p>団体名1</p>
                         <p>概要</p>
                     </div>
+                    <!--ここから修正して-->
                     <div class="container">
                         <div class="name">
                         <img src="https://prog-8.com/images/html/advanced/html.png">
