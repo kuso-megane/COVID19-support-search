@@ -3,11 +3,11 @@
 
 .container{
     font-size:1rem;
-    margin:0.2rem;
-    width: 20%; 
-    flex: auto;
-    text-align: center;
+   margin:3rem;
+   
 }
+    
+
 
 *{
     box-sizing: border-box;
@@ -16,12 +16,15 @@
 
 /*適当、いい感じに調整してg*/
 .thumbnail{
-    height: 60%;
-    width: 50%;
+    height: 130px;
+    width: 200px;
 }
 
 .wrapper{
     display: flex;
+    align-content: space-around;
     flex-wrap: wrap;
+    
 }
+    
 

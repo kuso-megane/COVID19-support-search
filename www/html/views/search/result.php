@@ -67,12 +67,12 @@
                         <p>団体名1</p>
                         <p>概要</p>
                     </div>
-
-
-
-
-                        
+                    <div class="container">
+                        <img class="thumbnail" src="/asset/img/test2.jpg">
+                        <p>団体名1</p>
+                        <p>概要</p>
                     </div>
+                    
                 </div>
         </main>
         
