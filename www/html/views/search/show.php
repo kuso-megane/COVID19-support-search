@@ -12,8 +12,13 @@
     <body>
         <?php require $componentsPath . 'header.php'; ?>
 
+
+
         <main>
             <!-- todo: containerをたくさんならべる感じにしてほしい、container１つに対し団体一個, flex-containerは別途つくる-->
+            <div>
+                <h3><a href="">←トップページに戻る</a></h3>
+            </div>
             <div class="container">
                 <div class="name">
                 <img>
@@ -39,6 +44,50 @@
                 <div class="name">
                 <img>
                 <p>団体名4</p>
+                <p>概要</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="name">
+                <img>
+                <p>団体名5</p>
+                <p>概要</p>
+                </div>
+            </div><div class="container">
+                <div class="name">
+                <img>
+                <p>団体名6</p>
+                <p>概要</p>
+                </div>
+            </div><div class="container">
+                <div class="name">
+                <img>
+                <p>団体名7</p>
+                <p>概要</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="name">
+                <img>
+                <p>団体名8</p>
+                <p>概要</p>
+                </div>
+            </div><div class="container">
+                <div class="name">
+                <img>
+                <p>団体名9</p>
+                <p>概要</p>
+                </div>
+            </div><div class="container">
+                <div class="name">
+                <img>
+                <p>団体名10</p>
+                <p>概要</p>
+                </div>
+            </div><div class="container">
+                <div class="name">
+                <img>
+                <p>団体名11</p>
                 <p>概要</p>
                 </div>
             </div>
