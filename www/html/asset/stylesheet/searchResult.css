@@ -3,8 +3,8 @@
 
 .container{
     font-size:1rem;
-    margin:1rem;
-
+    margin:0.2rem;
+    width: 25%;
 }
 
 *{
@@ -13,7 +13,7 @@
 }
 
 .name{
-    width: 25%;
+    
     flex: auto;
     padding:0rem 1rem;
     text-align: center;
