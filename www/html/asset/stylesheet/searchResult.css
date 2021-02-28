@@ -4,7 +4,7 @@
 .container{
     font-size:1rem;
     margin:0.2rem;
-    width: 25%; 
+    width: 20%; 
     flex: auto;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .wrapper{
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
 }
 
