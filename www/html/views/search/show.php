@@ -11,28 +11,33 @@
 　　</head>
     <body>
         <?php require $componentsPath . 'header.php'; ?>
-        <div class="container">
-            <div class="name">
-            <img>
-            <p>団体名1</p>
-            <p>概要</p>
+
+        <main>
+            <!-- todo: containerをたくさんならべる感じにしてほしい、container１つに対し団体一個, flex-containerは別途つくる-->
+            <div class="container">
+                <div class="name">
+                <img>
+                <p>団体名1</p>
+                <p>概要</p>
+                </div>
+                <div class="name">
+                <img>
+                <p>団体名2</p>
+                <p>概要</p>
+                </div>
+                <div class="name">
+                <img>
+                <p>団体名3</p>
+                <p>概要</p>
+                </div>
+                <div class="name">
+                <img>
+                <p>団体名4</p>
+                <p>概要</p>
+                </div>
             </div>
-            <div class="name">
-            <img>
-            <p>団体名2</p>
-            <p>概要</p>
-            </div>
-            <div class="name">
-            <img>
-            <p>団体名3</p>
-            <p>概要</p>
-            </div>
-            <div class="name">
-            <img>
-            <p>団体名4</p>
-            <p>概要</p>
-            </div>
-        </div>
+        </main>
+        
     </body>
         
     <footer>
