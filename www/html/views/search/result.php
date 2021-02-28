@@ -17,7 +17,7 @@
         <main>
             <!-- todo: containerをたくさんならべる感じにしてほしい、container１つに対し団体一個, flex-containerは別途つくる-->
             <div>
-                <h3><a href="">←トップページに戻る</a></h3>
+                <h3><a href="/index">←トップページに戻る</a></h3>
             </div>
                 <div class="wrapper">
                     <div class="container">
