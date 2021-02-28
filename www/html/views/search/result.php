@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <title>支援総合検索サイト</title>
-        <link rel="stylesheet" type="text/css" href="../../asset/stylesheet/show.css">
+        <link rel="stylesheet" type="text/css" href="../../asset/stylesheet/searchResult.css">
 　　</head>
     <body>
         <?php require $componentsPath . 'header.php'; ?>
