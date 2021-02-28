@@ -14,8 +14,13 @@
 
 .name{
     width: 25%;
-    float: left;
+    flex: auto;
     padding:0rem 1rem;
     text-align: center;
+}
+
+.wrapper{
+    display:flex;
+    flex-wrap: wrap;
 }
 
