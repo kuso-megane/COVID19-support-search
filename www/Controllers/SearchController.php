@@ -12,8 +12,8 @@ class SearchController
 
 
 
-    public function show(?array $vars)
+    public function result(?array $vars)
     {
-        require '/var/www/html/views/search/show.php';
+        require '/var/www/html/views/search/result.php';
     }
 }

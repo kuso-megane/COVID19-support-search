@@ -21,10 +21,10 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller->index($vars);
         
     }
-    elseif ($handler == 'searchShow') {
+    elseif ($handler == 'searchResult') {
 
         $controller = new SearchController;
-        $controller->show($vars);
+        $controller->result($vars);
         
     }
     elseif ($handler == 'orgDetail') {

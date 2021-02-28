@@ -12,7 +12,7 @@ $base = '/';
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) use ($base) {
     $r->addRoute('GET', $base.'index[/{page:\d+}]', 'index'); //index
 
-    $r->addRoute('GET', '/search', 'searchShow');
+    $r->addRoute('GET', '/search', 'searchResult');
     
     $r->addRoute('GET', '/orgDetail/{org_id:\d+}', 'orgDetail');
 
