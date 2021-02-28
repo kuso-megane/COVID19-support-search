@@ -1,32 +1,5 @@
-html{
-    font-size:15px;
 
-}
-
-
-header{
-    background-color: rgb(0, 255, 221);  
-    color:white;
-    height:6rem;
-  }
-    
-  .header-logo{
-      font-size:3rem;
-      float: left;
-      margin:1rem ;
-      
-  }
-  
-  li{
-      list-style: none;
-     
-  }
-  
-  .header-list li{
-       float:right;
-       margin:2.5rem;
-        font-size:1rem;
-  }
+@import url(/asset/stylesheet/components/common.css);
 
 .container{
     font-size:1rem;
@@ -45,6 +18,4 @@ header{
     padding:0rem 1rem;
     text-align: center;
 }
-
-
 

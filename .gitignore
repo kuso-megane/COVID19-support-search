@@ -7,10 +7,8 @@
 # composer周りのvendor
 /www/vendor/
 
+# mysqlコンテナのデータ永続化
+/mysql/data
 
-# scssのキャッシュ
-/www/html/asset/stylesheet/.sass-cache
 
-# コンパイル後のcss
-# /www/html/asset/stylesheet/
 

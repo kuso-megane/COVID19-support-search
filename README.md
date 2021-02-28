@@ -5,5 +5,7 @@
 
 ## frontend
 - www/html/views配下にhtml(拡張子は基本php)を記述
-- cssは、www/html/asset/stylesheet/配下に(scssで書くことも検討中なんで保留)
+- cssは、www/html/asset/stylesheet/配下に
+- (scssで書くことも検討中)
 - 画像は、www/html/asset/img/配下に
+- 余裕があったらjavascript導入してみたい
