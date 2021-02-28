@@ -30,12 +30,20 @@ header{
 
 .container{
     font-size:1rem;
+    margin:1rem;
+
+}
+
+*{
+    box-sizing: border-box;
 
 }
 
 .name{
-    width:25%;
-    
+    width: 25%;
+    float: left;
+    padding:0rem 1rem;
+    text-align: center;
 }
 
 
