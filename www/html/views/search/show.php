@@ -1,5 +1,5 @@
 <?php 
-    // 検索結果表示ページ
+    $componentsPath = '/var/www/html/views/components/';
 ?>
 
 <!DOCTYPE html>
@@ -9,20 +9,8 @@
         <title>支援総合検索サイト</title>
         <link rel="stylesheet" type="text/css" href="../../asset/stylesheet/show.css">
 　　</head>
-    <header>
-            <div class="header">
-                <h1 class="header-logo">支援総合検索サイト</h1>
-                
-                <div class="header-list">
-                    <ul>
-                        <li>主催者</li>
-                        <li>なぜこのサイトを始めたか</li>
-                        <li>お問い合わせ</li>
-                    </ul>    
-                </div>
-
-            </div>
-    </header>
+    <body>
+        <?php require $componentsPath . 'header.php'; ?>
         <div class="container">
             <div class="name">
             <img>
@@ -45,6 +33,8 @@
             <p>概要</p>
             </div>
         </div>
+    </body>
+        
     <footer>
     
     </footer>

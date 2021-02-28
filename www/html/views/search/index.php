@@ -1,5 +1,5 @@
 <?php 
-    //topページ
+    $componentsPath = '/var/www/html/views/components/';
 ?>
 
 <!DOCTYPE html>
@@ -11,20 +11,7 @@
 
     </head>
     <body>
-        <header>
-            <div class="header">
-                <h1 class="header-logo">支援総合検索サイト</h1>
-                
-                <div class="header-list">
-                    <ul>
-                        <li>主催者</li>
-                        <li>なぜこのサイトを始めたか</li>
-                        <li>お問い合わせ</li>
-                    </ul>    
-                </div>
-
-            </div>
-        </header>
+        <?php require $componentsPath . 'header.php'; ?>
         <main>
             <div class="introduce">
                 <h1>自分に必要な支援・相談先を探せる！検索システム</h1>
