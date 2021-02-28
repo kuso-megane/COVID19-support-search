@@ -22,72 +22,75 @@
                 <div class="wrapper">
                     <div class="container">
                         <div class="name">
-                        <img>
+                        <img src="https://prog-8.com/images/html/advanced/html.png">
                         <p>団体名1</p>
                         <p>概要</p>
                         </div>
                     </div>
                     <div class="container">
                         <div class="name">
-                        <img>
+                        <img src="https://prog-8.com/images/html/advanced/html.png">
                         <p>団体名2</p>
                         <p>概要</p>
                         </div>
                     </div>
                     <div class="container">        
                         <div class="name">
-                        <img>
+                        <img src="https://prog-8.com/images/html/advanced/html.png">
                         <p>団体名3</p>
                         <p>概要</p>
                         </div>
                     </div>
                     <div class="container">
-                        <div class="name">
-                        <img>
+                        <div>
+                        <img src="https://prog-8.com/images/html/advanced/html.png">
                         <p>団体名4</p>
                         <p>概要</p>
                         </div>
                     </div>
                     <div class="container">
-                        <div class="name">
-                        <img>
+                        <div>
+                        <img src="https://prog-8.com/images/html/advanced/html.png">
                         <p>団体名5</p>
                         <p>概要</p>
                         </div>
                     </div><div class="container">
-                        <div class="name">
-                        <img>
+                        <div>
+                        <img src="https://prog-8.com/images/html/advanced/html.png">
                         <p>団体名6</p>
                         <p>概要</p>
                         </div>
                     </div><div class="container">
-                        <div class="name">
-                        <img>
+                        <div>
+                        <img src="https://prog-8.com/images/html/advanced/html.png">
                         <p>団体名7</p>
                         <p>概要</p>
                         </div>
                     </div>
                     <div class="container">
-                        <div class="name">
-                        <img>
+                        <div>
+                        <img src="https://prog-8.com/images/html/advanced/html.png">
                         <p>団体名8</p>
                         <p>概要</p>
                         </div>
-                    </div><div class="container">
-                        <div class="name">
-                        <img>
+                    </div>
+                    <div class="container">
+                        <div>
+                        <img src="https://prog-8.com/images/html/advanced/html.png">
                         <p>団体名9</p>
                         <p>概要</p>
                         </div>
-                    </div><div class="container">
-                        <div class="name">
-                        <img>
+                    </div>
+                    <div class="container">
+                        <div>
+                        <img src="https://prog-8.com/images/html/advanced/html.png">
                         <p>団体名10</p>
                         <p>概要</p>
                         </div>
-                    </div><div class="container">
-                        <div class="name">
-                        <img>
+                    </div>
+                    <div class="container">
+                        <div>
+                        <img src="https://prog-8.com/images/html/advanced/html.png">
                         <p>団体名11</p>
                         <p>概要</p>
                         </div>
