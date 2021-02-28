@@ -21,11 +21,11 @@
             </div>
                 <div class="wrapper">
                     <div class="container">
-                        <div class="name">
-                        <img src="https://prog-8.com/images/html/advanced/html.png">
+                        <div class="thumbnain-container">
+                            <img class="thumbnail" src="/asset/img/test2.jpg">
+                        </div>
                         <p>団体名1</p>
                         <p>概要</p>
-                        </div>
                     </div>
                     <div class="container">
                         <div class="name">

@@ -14,6 +14,17 @@
 
 }
 
+/*適当、いい感じに調整してg*/
+.thumbnail-container
+{
+    height: 50%;
+    width: 90%;
+}
+
+.thumbnail{
+    height: 100%;
+    width: 100%;
+}
 
 .wrapper{
     display: flex;
