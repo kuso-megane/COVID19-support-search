@@ -3,8 +3,9 @@
 
 .container{
     font-size:1rem;
-   margin:3rem;
-   
+    margin:3rem;
+    height: 300px;
+    width: 200px;
 }
     
 
@@ -16,8 +17,8 @@
 
 /*適当、いい感じに調整してg*/
 .thumbnail{
-    height: 130px;
-    width: 200px;
+    width: 100%;
+    height: 50%;
 }
 
 .wrapper{
