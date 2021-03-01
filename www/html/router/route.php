@@ -16,6 +16,8 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) u
     
     $r->addRoute('GET', '/orgDetail/{org_id:\d+}', 'orgDetail');
 
+    $r->addRoute('GET', '/article/{artcl_id:\d+}', 'articleShow');
+
     $r->addGroup('/backyard', function (FastRoute\RouteCollector $r) {
         $r->addRoute('GET', '[/]', 'backyardIndex');
         $r->addRoute('GET', '/edit[/{artcl_id:\d+}]', 'backyardEdit');

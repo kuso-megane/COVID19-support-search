@@ -12,7 +12,7 @@ class SearchController
 
 
 
-    public function result(?array $vars)
+    public function result(array $vars)
     {
         require '/var/www/html/views/search/result.php';
     }
