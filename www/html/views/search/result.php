@@ -12,67 +12,21 @@
     <body>
         <?php require $componentsPath . 'header.php'; ?>
 
-
-
         <main>
-            <!-- todo: containerをたくさんならべる感じにしてほしい、container１つに対し団体一個, flex-containerは別途つくる-->
             <div>
                 <h3><a href="/index">←トップページに戻る</a></h3>
             </div>
                 <div class="wrapper">
-                    <!--こんな感じにしてほしい-->
+                    <!--暫定の繰り返し処理-->
+                    <?php for($i = 0; $i < 8; ++$i): ?>
+
                     <div class="container">
                         <img class="thumbnail" src="/asset/img/test2.jpg">
-                        <p>団体名1</p>
-                        <p>概要</p>
-                    </div>
-                    <!--ここから修正して-->
-                    <div class="container">
-                        <img class="thumbnail" src="/asset/img/test2.jpg">
-                        <p>団体名1</p>
-                        <p>概要</p>
-                    </div>
-                    <div class="container">
-                        <img class="thumbnail" src="/asset/img/test2.jpg">
-                        <p>団体名1</p>
-                        <p>概要</p>
-                    </div>
-                    <div class="container">
-                        <img class="thumbnail" src="/asset/img/test2.jpg">
-                        <p>団体名1</p>
-                        <p>概要</p>
-                    </div>
-                    <div class="container">
-                        <img class="thumbnail" src="/asset/img/test2.jpg">
-                        <p>団体名1</p>
-                        <p>概要</p>
-                    </div>
-                    <div class="container">
-                        <img class="thumbnail" src="/asset/img/test2.jpg">
-                        <p>団体名1</p>
-                        <p>概要</p>
-                    </div>
-                    <div class="container">
-                        <img class="thumbnail" src="/asset/img/test2.jpg">
-                        <p>団体名1</p>
-                        <p>概要</p>
-                    </div>
-                    <div class="container">
-                        <img class="thumbnail" src="/asset/img/test2.jpg">
-                        <p>団体名1</p>
-                        <p>概要</p>
-                    </div>
-                    <div class="container">
-                        <img class="thumbnail" src="/asset/img/test2.jpg">
-                        <p>団体名1</p>
-                        <p>概要</p>
-                    </div>
-                    <div class="container">
-                        <img class="thumbnail" src="/asset/img/test2.jpg">
-                        <p>団体名1</p>
-                        <p>概要</p>
+                        <h4>団体名<?php echo $i + 1; ?></h4>
+                        <p>概要aaaaaaaaaaaaa</p>
                     </div>
                     
+                    <?php endfor; ?>
                 </div>
         </main>
         
@@ -81,11 +35,5 @@
     <footer>
     
     </footer>
-
-        <footer>
-    
-        </footer>
-    </body>
-
 
 </html>
