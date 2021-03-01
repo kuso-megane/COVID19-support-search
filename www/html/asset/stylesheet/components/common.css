@@ -1,7 +1,40 @@
+@media(max-width: 1000px){
+    html{
+    font-size:10px;
+
+    }
+    .header-list{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+}
+
+@media(max-width: 670px){
+    html{
+        font-size:5px;
+    }
+
+    .header-list{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+}
+
 html{
     font-size:15px;
 
 }
+
+
+
 li{
     list-style: none;
     
