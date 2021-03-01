@@ -2,6 +2,7 @@
 
 // routerからcontrollerへ繋ぐ
 
+use myapp\Controllers\ArticleController;
 use myapp\controllers\SearchController;
 use myapp\controllers\OrganizationController;
 //use myapp\controllers\BackyardController as Backyard;
@@ -32,6 +33,10 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller = new OrganizationController;
         $controller->detail($vars);
 
+    }
+    elseif ($handler == 'articleShow') {
+        $controller = new ArticleController;
+        $controller->show($vars);
     }
     /*
     elseif ($handler == 'backyardIndex') {
