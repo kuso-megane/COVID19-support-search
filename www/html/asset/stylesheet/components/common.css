@@ -1,0 +1,57 @@
+@media(max-width: 1024px){
+    html{
+    font-size:12px;
+
+    }
+    
+}
+
+@media(max-width: 600px){
+    html{
+        font-size:10px;
+    }
+
+    
+    }
+
+}
+
+@media(min-width: 1025px){
+    html{
+        font-size:15px;
+    
+    }
+
+}
+
+
+li{
+    list-style: none;
+    
+}
+
+header{
+    background-color: rgb(0, 89, 255);  
+    color:white;
+    height:6rem;
+}
+    
+.header-logo{
+    font-size:3rem;
+    float: left;
+    margin:1rem ;
+    
+}
+
+footer{
+    background-color: rgb(0, 89, 255);  
+    color:white;
+    height:6rem;
+
+}
+
+.footer-list li{
+    margin:2.5rem;
+    font-size:1rem;
+    float:left;
+}
