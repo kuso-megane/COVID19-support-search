@@ -22,10 +22,15 @@
                 <p>★民間支援に<span>要件は基本的にありません</span>　諦める前に一度だけ検索してください　その声が我々の、そして支援者の支えにもなります</p>
             </div>
         </main>
-        <footer>
 
-        </footer>
-
-
+    <footer>
+        <div class="footer-list">
+            <ul>
+                <li>サイト運営者</li>
+                <li>支援・制度利用時のお役立ち情報</li>
+            </ul>    
+        </div>    
+    </footer>
+   
     </body>
 </html>
