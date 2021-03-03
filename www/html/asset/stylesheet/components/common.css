@@ -1,4 +1,4 @@
-@media(max-width: 1000px){
+@media(max-width: 1024px){
     html{
     font-size:10px;
 
@@ -6,7 +6,7 @@
     
 }
 
-@media(max-width: 670px){
+@media(max-width: 600px){
     html{
         font-size:5px;
     }
@@ -16,7 +16,7 @@
 
 }
 
-@media(min-width: 1001px){
+@media(min-width: 1025px){
     html{
         font-size:15px;
     

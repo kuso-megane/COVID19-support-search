@@ -7,7 +7,8 @@
     <head>
         <meta charset="utf-8">
         <title>支援総合検索サイト</title>
-        <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
+
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../asset/stylesheet/index.css">
 
     </head>
