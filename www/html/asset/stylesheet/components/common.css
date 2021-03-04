@@ -37,7 +37,7 @@ header{
 }
     
 .header-logo{
-    font-size:3rem;
+    font-size:3.5rem;
     float: left;
     margin:1rem ;
     
@@ -51,7 +51,13 @@ footer{
 }
 
 .footer-list li{
-    margin:2.5rem;
-    font-size:1rem;
+    margin:2rem;
+    font-size:1.3rem;
     float:left;
 }
+
+.introduce{
+    font-size:1.5rem
+}
+
+

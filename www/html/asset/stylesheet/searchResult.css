@@ -2,10 +2,18 @@
 @import url(/asset/stylesheet/components/common.css);
 
 .container{
-    font-size:1rem;
-    margin:3rem;
+    
+    margin:1.75rem;
     height: 300px;
     width: 200px;
+}
+
+.container h4{
+    font-size:1.65rem;
+}
+
+.container p{
+    font-size: 1.5rem;
 }
     
 
