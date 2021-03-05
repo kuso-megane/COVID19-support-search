@@ -15,7 +15,7 @@
 
         <main>
             <div>
-                <h3><a href="/index">←トップページに戻る</a></h3>
+                <h3 class=link><a href="/index">←トップページに戻る</a></h3>
             </div>
                 <div class="wrapper">
                     <!--暫定の繰り返し処理-->

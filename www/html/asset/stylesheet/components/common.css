@@ -1,6 +1,6 @@
 @media(max-width: 1024px){
     html{
-    font-size:12px;
+    font-size:36px;
 
     }
     
@@ -8,7 +8,7 @@
 
 @media(max-width: 600px){
     html{
-        font-size:10px;
+        font-size:30px;
     }
 
     
@@ -18,7 +18,7 @@
 
 @media(min-width: 1025px){
     html{
-        font-size:15px;
+        font-size:45px;
     
     }
 
@@ -33,31 +33,31 @@ li{
 header{
     background-color: rgb(0, 89, 255);  
     color:white;
-    height:6rem;
+    height:2rem;
 }
     
 .header-logo{
-    font-size:3.5rem;
+    font-size:1.16rem;
     float: left;
-    margin:1rem ;
+    margin:0.333rem ;
     
 }
 
 footer{
     background-color: rgb(0, 89, 255);  
     color:white;
-    height:6rem;
+    height:2rem;
 
 }
 
 .footer-list li{
-    margin:2rem;
-    font-size:1.3rem;
+    margin:0.666rem;
+    font-size:0.4333rem;
     float:left;
 }
 
 .introduce{
-    font-size:1.5rem
+    font-size:0.5rem
 }
 
 
