@@ -1,5 +1,6 @@
 <?php
     //コラム一覧ページ
+    $componentsPath = '/var/www/html/views/components/';
 ?>
 
 <!DOCTYPE html>
