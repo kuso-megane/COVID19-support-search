@@ -17,14 +17,9 @@
 }
 
 .link{
-    font-size: 0.5rem;
+    font-size: 1rem;
 }
 
-
-*{
-    box-sizing: border-box;
-
-}
 
 /*適当、いい感じに調整してg*/
 .thumbnail{
