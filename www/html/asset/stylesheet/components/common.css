@@ -1,27 +1,23 @@
-@media(max-width: 1024px){
+/*スマホ*/
+@media screen and (min-width: 480px) and (max-width: 600px){
     html{
-    font-size:36px;
-
+        font-size: 16px;
     }
-    
 }
 
-@media(max-width: 600px){
+/*タブレット*/
+@media screen and (min-width: 601px) and (max-width: 1024px){
     html{
-        font-size:30px;
-    }
-
-    
-    }
-
+        font-size: 20px;
+    }  
 }
 
-@media(min-width: 1025px){
-    html{
-        font-size:45px;
-    
-    }
 
+/*pc*/
+@media screen and (min-width: 1025px){
+    html{
+        font-size: 22px;
+    }
 }
 
 
@@ -33,31 +29,28 @@ li{
 header{
     background-color: rgb(0, 89, 255);  
     color:white;
-    height:2rem;
+    height: 4.5rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
 }
     
-.header-logo{
-    font-size:1.16rem;
-    float: left;
-    margin:0.333rem ;
-    
+#header-logo{
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
-footer{
+#footer-container{
     background-color: rgb(0, 89, 255);  
     color:white;
-    height:2rem;
-
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.footer-list li{
-    margin:0.666rem;
-    font-size:0.4333rem;
-    float:left;
+.footer-items {
+    margin:1rem;
+    font-size: 0.9rem;
 }
 
-.introduce{
-    font-size:0.5rem
-}
+
 
 
