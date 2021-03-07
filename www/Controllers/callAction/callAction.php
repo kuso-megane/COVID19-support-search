@@ -28,10 +28,10 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller->result($vars);
         
     }
-    elseif ($handler == 'orgDetail') {
+    elseif ($handler == 'articleList') {
 
-        $controller = new OrganizationController;
-        $controller->detail($vars);
+        $controller = new ArticleController;
+        $controller->list();
 
     }
     elseif ($handler == 'articleShow') {
