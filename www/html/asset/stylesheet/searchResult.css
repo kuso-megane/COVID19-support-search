@@ -33,5 +33,18 @@
     flex-wrap: wrap;
     
 }
+
+table{
+    width:100%;
+    
+}
+
+table th{
+    background: aquamarine;
+}
+
+#area{
+    width:6%;
+}
     
 
