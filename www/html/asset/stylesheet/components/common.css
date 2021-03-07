@@ -33,9 +33,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    background-color: darkblue;
-}
+
 
 
 /*header*/
@@ -63,6 +61,10 @@ a:hover {
     color:white;
 }
 
+
+.header-menu-items a:hover {
+    background-color: darkblue;
+}
 
 
 
