@@ -2,18 +2,24 @@
 @import url(/asset/stylesheet/components/common.css);
 
 .container{
-    font-size:1rem;
-    margin:3rem;
+    
+    margin:0.583rem;
     height: 300px;
     width: 200px;
 }
-    
 
-
-*{
-    box-sizing: border-box;
-
+.container h4{
+    font-size:0.55rem;
 }
+
+.container p{
+    font-size: 0.5rem;
+}
+
+.link{
+    font-size: 1rem;
+}
+
 
 /*適当、いい感じに調整してg*/
 .thumbnail{
