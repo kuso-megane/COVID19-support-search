@@ -16,13 +16,13 @@
         <?php require $componentsPath . 'header.php'; ?>
         <main>
             <div>
-                <h3 class="link"><a href="/index">←トップページに戻る</a></h3>
+                <h3><a href="/index">←トップページに戻る</a></h3>
             </div>
-           
-           
-
-
-
+            <div class="column">
+                <h2>題名</h2>
+                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            
+            </div>      
         </main>
    
     </body>
