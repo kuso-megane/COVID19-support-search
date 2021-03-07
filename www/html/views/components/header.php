@@ -1,5 +1,10 @@
 
 <header>
-    <h1 id="header-logo">支援総合検索サイト</h1>    
+    <div id="title-container">
+        <h2 id="title">支援総合検索サイト</h1>
+    </div> 
+    <div id="header-menu-container">
+        <p class="header-menu-items"><a href="/article/list">支援・制度利用時のお役立ち情報</a></p> 
+        <p class="header-menu-items"><a href="">サイト運営者</a></p>   
+    </div>    
 </header>
-

@@ -12,7 +12,6 @@
 　　</head>
     <body>
         <?php require $componentsPath . 'header.php'; ?>
-
         <main>
             <div>
                 <h3 class="link"><a href="/index">←トップページに戻る</a></h3>
@@ -21,8 +20,6 @@
                 <!--検索に該当する、民間組織のリスト-->
             </div>
         </main>
-       
-        <?php require $componentsPath. 'footer.php'; ?>
 
 
     </body>

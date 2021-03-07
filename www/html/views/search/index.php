@@ -24,7 +24,6 @@
             </div>
         </main>
 
-        <?php require $componentsPath. 'footer.php'; ?>
    
     </body>
 </html>
