@@ -19,6 +19,47 @@
             </div>
             <div>
                 <!--検索に該当する、民間組織のリスト-->
+                <table border="1">
+                    <tr>
+                        <th id="area">地域</th>
+                        <th>団体名</th>
+                        <th>支援内容</th>
+                        <th>URL/SNS</th>
+                    </tr>
+                    <tr>
+                        <td>全国</td>
+                        <td>堀</td>
+                        <td>堀</td>
+                        <td>堀</td>
+                    </tr>
+                    <tr>
+                        <td>全国</td>
+                        <td>堀</td>
+                        <td>堀</td>
+                        <td>堀</td>
+                    </tr>
+                    <tr>
+                        <td>全国</td>
+                        <td>堀</td>
+                        <td>堀</td>
+                        <td>堀</td>
+                    </tr>
+                    <tr>
+                        <td>全国</td>
+                        <td>堀</td>
+                        <td>堀</td>
+                        <td>堀</td>
+                    </tr>
+                    <tr>
+                        <td>全国</td>
+                        <td>堀</td>
+                        <td>堀</td>
+                        <td>堀</td>
+                    </tr>
+                        
+                
+                
+                </table>
             </div>
         </main>
        
