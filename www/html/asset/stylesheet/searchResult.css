@@ -36,12 +36,21 @@
 
 table{
     width:100%;
-    
+        
 }
 
+
 table th{
+    
+    border:1px solid #333;
     background: aquamarine;
 }
+
+table td{
+    
+    border:1px solid #333;
+}
+
 
 #area{
     width:8vw;
