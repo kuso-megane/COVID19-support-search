@@ -10,4 +10,21 @@ span{
 
 #introduce{
     font-size: 0.8rem;
+    overflow-wrap: break-word;
+}
+
+
+.box{
+    font-size: 0.8rem;
+    margin:0.8rem;
+}
+
+.searching{
+    display: flex;
+    flex-wrap: wrap;
+  　
+}
+
+#submit{
+    text-align: center;
 }
