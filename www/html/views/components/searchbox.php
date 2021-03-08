@@ -42,4 +42,5 @@
             <div id="submit">   
                  <input type="submit" value="検索する🔍">
             </div>
-        </form>
+        
+</form>
