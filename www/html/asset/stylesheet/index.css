@@ -28,3 +28,6 @@ span{
 #submit{
     text-align: center;
 }
+
+@import url(/asset/stylesheet/components/searchbox.css);
+

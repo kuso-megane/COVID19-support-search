@@ -7,8 +7,9 @@
 .searching{
     display: flex;
     flex-wrap: wrap;
+  　
 }
 
-#submit{
+.search{
     text-align: center;
 }
