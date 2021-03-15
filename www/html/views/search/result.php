@@ -16,9 +16,12 @@
             <div>
                 <h3 class="link"><a href="/index">←トップページに戻る</a></h3>
             </div>
+
+            <?php require $componentsPath. 'searchbox.php'; ?>
+
             <div>
                 <!--検索に該当する、民間組織のリスト-->
-                <table border="1">
+                <table>
                     <tr>
                         <th id="area">地域</th>
                         <th>団体名</th>
