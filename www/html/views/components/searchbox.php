@@ -1,11 +1,11 @@
 
-<form method="post" action="">
+<form action="/search">
     <div id="search-box-container">
         <div id="search-box">
             <p class="block-start0">&lt;検索はこちら&gt;</p>
             <div class="search-items">
                 <p><span class="bold">困っていること:</span></p>
-                <select name="support1" id="support1">
+                <select name="trouble" id="trouble">
                     <option value="consulting">生活一般について相談</option>
                     <option value="house">住居入居支援</option>
                     <option value="foodbank">食料の無料提供</option>
