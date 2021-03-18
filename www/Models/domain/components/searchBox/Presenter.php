@@ -10,21 +10,24 @@ class Presenter
 {
     /**
      * @param array $input
-     * @param TroubleName[] $troubleList
+     * @param TroubleName[] $troubleNameList
      * @param Area[] $areaList
      * 
      * @return array [
-     * 
-     * 
+     *      'searched_trouble_id' => int,
+     *      'searched_area_id' => int,
+     *      'searched_is_foreign_ok' => bool,
+     *      'troubleList' => [ ['id' => int, 'name' => string], [] ],
+     *      'areaList' => [ ['id' => int, 'name' => string], [] ]
      * ]
      */
-    public function present(array $input, array $troubleList, array $areaList):array
+    public function present(array $input, array $troubleNameList, array $areaList):array
     {
         return [
-            'searched_trouble_id' => $input['trouble_id'],
-            'searched_area_id' => $input['area_id'],
+            'searched_trouble_id' => $input['searched_trouble_id'],
+            'searched_area_id' => $input['searched_area_id'],
             'searched_is_foreign_ok' => $input['searched_is_foreign_ok'],
-            'troubleList' => $this->format($troubleList),
+            'troubleList' => $this->format($troubleNameList),
             'areaList' => $this->format($areaList)
         ];
     }

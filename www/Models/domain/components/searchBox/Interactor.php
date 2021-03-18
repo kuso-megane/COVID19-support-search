@@ -24,26 +24,26 @@ class Interactor
     }
 
     /**
+     * @param array|NULL $vars
      * 
      * @return int AppConfig::POST_SUCCESS or AppConfig::INVALID_PARAMS
      * 
      * if validation fails, this returns AppConfig::INVALID_PARAMS
      * if post succeeds, this returns AppConfig::POST_SUCCESS
      */
-    public function interact()
+    public function interact(?array $vars)
     {
-        $cookie = (new SuperGlobalVars)->getCookie();
         try {
-            $input = (new Validator)->validate($cookie)->toArray();
+            $input = (new Validator)->validate($vars)->toArray();
         }
         catch (ValidationFailException $e) {
-            
+            return (new Presenter)->reportValidationFailure($e->getMessage());
         }
 
         $troubleNameList = $this->troubleNameListRepository->getTroubleNameList();
         $areaList = $this->areaListRepository->getAreaList();
 
-        
+        return (new Presenter)->present($input, $troubleNameList, $areaList);
 
     }
 }
