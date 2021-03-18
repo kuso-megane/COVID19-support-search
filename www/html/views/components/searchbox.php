@@ -13,17 +13,29 @@
                 </select>
             </div>
             <div class="search-items">
-                <p><span class="bold">地域:</span></p>        
-                <select name="area">
-                    <option value="">全国</option>
-                    <option value="">東京</option>
-                    <option value="">大阪</option>
-                    <option value="">名古屋</option>
-                </select>
+                <p><span class="bold">地域:</span></p>  
+                <div>
+                    関東:      
+                    <select name="area">
+                        <option value="">全国</option>
+                        <option value="">東京</option>
+                        <option value="">大阪</option>
+                        <option value="">名古屋</option>
+                    </select>
+                </div>
+                <div>
+                    東北,北海道:
+                    <select name="area">
+                        <option value="">北海道</option>
+                        <option value="">青森</option>
+                        <option value="">岩手</option>
+                    </select>
+                </div>
+                
             </div>
             <p class="search-items">
                 <span class="bold">
-                    <input id="is_foreign_ok" type="checkbox" name="is_foreign_ok"><label for="foreign">国籍不問</label>
+                    <input id="is_foreign_ok" type="checkbox" name="is_foreign_ok" value="on"><label for="foreign">国籍不問</label>
                 </span>  
             </p>
             <p>
