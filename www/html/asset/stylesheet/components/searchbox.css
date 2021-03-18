@@ -1,15 +1,41 @@
 
-.box{
-    font-size: 0.8rem;
-    margin:0.8rem;
-}
-
-.searching{
-    display: flex;
-    flex-wrap: wrap;
-  　
-}
-
-.search{
+#search-box-container{
     text-align: center;
 }
+
+#search-box{
+    text-align: left;
+    display: inline-block;
+    flex-wrap: wrap;
+    border: 2px solid #009900;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 75vw;
+}
+
+/*pc*/
+@media screen and (min-width: 1025px){
+    
+    #search-box {
+        display: inline-flex;
+    }    
+}
+
+.search-items {
+    font-size: 0.7rem;
+}
+
+.search-items select,input{
+    font-size: 0.7rem;
+}
+
+.search-items select {
+    width: 200px;
+}
+
+#submit{
+    text-align: center;
+}
+
+
+

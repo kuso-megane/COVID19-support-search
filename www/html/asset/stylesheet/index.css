@@ -1,11 +1,6 @@
 
 @import url(/asset/stylesheet/components/common.css);
-
-
-span{
-    color:red;
-   
-}
+@import url(/asset/stylesheet/components/searchbox.css);
 
 
 #introduce{
@@ -13,21 +8,7 @@ span{
     overflow-wrap: break-word;
 }
 
-
-.box{
-    font-size: 0.8rem;
-    margin:0.8rem;
+#introduce ul li{
+    list-style-type: disc;
 }
-
-.searching{
-    display: flex;
-    flex-wrap: wrap;
-  　
-}
-
-#submit{
-    text-align: center;
-}
-
-@import url(/asset/stylesheet/components/searchbox.css);
 
