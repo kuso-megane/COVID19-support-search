@@ -2,9 +2,8 @@
     "autoload": {
         "psr-4": {
             "myapp\\": "./",
-            "domain\\": "./Models/domain",
-            "infra\\": "./Models/infra/src",
-            "dbTest\\": "./Models/infra/tests"
+            "domain\\": "./Models/domain/",
+            "infra\\": "./Models/infra/"
         }
     },
     "require": {
