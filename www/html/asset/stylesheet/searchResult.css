@@ -1,5 +1,6 @@
 
 @import url(/asset/stylesheet/components/common.css);
+@import url(/asset/stylesheet/components/searchbox.css);
 
 .container{
     
@@ -48,24 +49,4 @@ table td{
     border:1px solid #333;
 }
 
-
-#area{
-    width:8vw;
-}
     
-
-
-.box{
-    font-size: 0.8rem;
-    margin:0.8rem;
-}
-
-.searching{
-    display: flex;
-    flex-wrap: wrap;
-  　
-}
-
-.search{
-    text-align: center;
-}

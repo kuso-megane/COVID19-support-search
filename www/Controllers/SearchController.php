@@ -2,7 +2,9 @@
 
 namespace myapp\Controllers;
 
-class SearchController
+use myapp\myFrameWork\Bases\BaseController;
+
+class SearchController extends BaseController
 {
 
     public function index(?array $vars)

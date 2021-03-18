@@ -2,8 +2,9 @@
 
 namespace myapp\Controllers;
 
+use myapp\myFrameWork\Bases\BaseController;
 
-class ArticleController
+class ArticleController extends BaseController
 {
     public function list()
     {

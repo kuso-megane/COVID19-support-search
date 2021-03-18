@@ -3,11 +3,12 @@
 namespace myapp\myFrameWork;
 
 
-class superGlobalVars
+class SuperGlobalVars
 {
     private $get;
     private $post;
     private $server;
+    private $cookie;
 
 
     public function __construct()
@@ -15,6 +16,7 @@ class superGlobalVars
         $this->get = $_GET;
         $this->post = $_POST;
         $this->server = $_SERVER;
+        $this->cookie = $_COOKIE;
     }
 
 
@@ -30,8 +32,14 @@ class superGlobalVars
     }
 
 
-    public function getServer():array{
+    public function getServer():array
+    {
 
         return $this->server;
+    }
+
+    public function getCookie():array
+    {
+        return $this->cookie;
     }
 }

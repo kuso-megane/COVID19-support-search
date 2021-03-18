@@ -8,4 +8,3 @@
 - cssは、www/html/asset/stylesheet/配下に
 - (scssで書くことも検討中)
 - 画像は、www/html/asset/img/配下に
-- 余裕があったらjavascript導入してみたい

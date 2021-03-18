@@ -2,7 +2,9 @@
 
 namespace myapp\Controllers;
 
-class OrganizationController
+use myapp\myFrameWork\Bases\BaseController;
+
+class OrganizationController extends BaseController
 {
 
     public function detail(array $vars)
