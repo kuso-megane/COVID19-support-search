@@ -2,16 +2,12 @@
 
 namespace myapp\myFrameWork\DB;
 
+use myapp\config\DBConfig;
 use PDO;
 use PDOException;
 
 class Connection
 {
-    const DB_HOST = 'db';
-    const MAIN_DB = 'app';
-    const TEST_DB = 'test_db';
-    const DB_PASS = ['root' => 'root'];
-
     private $username;
     private $dbname;
 
@@ -23,11 +19,11 @@ class Connection
      */
     public function __construct(bool $is_test=FALSE, string $username='root')
     {
-        if ($is_test == TRUE) {
-            $this->dbname = $this::TEST_DB;
+        if ($is_test === TRUE) {
+            $this->dbname = DBConfig::TEST_DB;
         }
         else {
-            $this->dbname = $this::MAIN_DB;
+            $this->dbname = DBConfig::MAIN_DB;
         }
         $this->username = $username;
     }
@@ -38,8 +34,8 @@ class Connection
      */
     public function connect():MyDbh
     {
-        $dsn = "mysql:dbname={$this->dbname};" . 'host=' . $this::DB_HOST;
-        $pw = $this::DB_PASS[$this->username];
+        $dsn = "mysql:dbname={$this->dbname};" . 'host=' . DBConfig::DB_HOST;
+        $pw = DBConfig::DB_PASS[$this->username];
 
         try {
             $dbh = new MyDbh($dsn, $this->username, $pw);
