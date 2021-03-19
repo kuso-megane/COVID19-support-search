@@ -135,7 +135,7 @@ class MyDbh extends PDO
      * @param string $condition 'id = :id AND num > :num' or 'id = 3, num > 3'
      * @param array $options
      * [
-     *      'orderby' => ':orderby'|column,
+     *      'orderby' => ':orderby'|column name like 'id',
      *      'sort' => 'ASC'|'DESC',
      *      'limitStart' => ':limitStart'|int,
      *      'limitNum' => ':limitNum'|int
