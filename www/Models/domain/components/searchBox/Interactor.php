@@ -41,9 +41,8 @@ class Interactor
         }
 
         $troubleNameList = $this->troubleNameListRepository->getTroubleNameList();
-        $areaList = $this->areaListRepository->getAreaList();
 
-        return (new Presenter)->present($input, $troubleNameList, $areaList);
+        return (new Presenter)->present($input, $troubleNameList);
 
     }
 }
