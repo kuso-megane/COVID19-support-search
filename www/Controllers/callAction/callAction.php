@@ -19,7 +19,7 @@ function callAction (string $handler, ?array $vars = NULL)
     if ($handler == 'index') {
 
         $controller = new SearchController;
-        $controller->index($vars);
+        $controller->index();
         
     }
     elseif ($handler == 'searchResult') {

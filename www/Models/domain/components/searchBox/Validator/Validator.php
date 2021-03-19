@@ -17,17 +17,17 @@ class Validator
     public function validate(?array $vars = NULL):InputData
     {   
         $searched_trouble_id = ($vars['trouble_id'] != NULL) ? (int) $vars['trouble_id'] : NULL;
-        if ($searched_trouble_id <= 0) {
+        if (!($searched_trouble_id === NULL || $searched_trouble_id > 0)) {
             throw new ValidationFailException('想定外の「困っていること」が選択されています。');
         }
 
         $searched_area_id = ($vars['area_id'] != NULL) ? (int) $vars['area_id'] : NULL;
-        if (!($searched_area_id > 0 || $searched_area_id <= 48)) {
+        if (!($searched_area_id === NULL ||  $searched_area_id > 0 || $searched_area_id <= 48)) {
             throw new ValidationFailException('想定外の「地域」が指定されています。');
         }
 
         $searched_is_foreign_ok = ($vars['is_foreign_ok'] != NULL) ? (bool) $vars['is_foreign_ok'] : NULL;
-        if (is_bool($searched_is_foreign_ok) === FALSE) {
+        if (!($searched_is_foreign_ok === NULL || is_bool($searched_is_foreign_ok) === TRUE)) {
             throw new ValidationFailException('想定外の「国籍不問チェックボックス」の値が指定されています。');
         }
 

@@ -2,6 +2,7 @@
 
 namespace infra\Repository;
 
+use domain\components\searchBox\Data\TroubleName;
 use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
 use infra\database\src\TroubleListTable;
 
@@ -21,8 +22,12 @@ implements TroubleNameListRepositoryPort
      */
     public function getTroubleNameList(): array
     {
-        $records = $this->table->findAll(FALSE);
+        $troubles = $this->table->findAll(FALSE);
 
-        return $records;
+        foreach($troubles as &$trouble) {
+            $trouble = new TroubleName($trouble['id'], $trouble['name']);
+        }
+
+        return $troubles;
     }
 }

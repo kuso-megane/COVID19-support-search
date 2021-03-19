@@ -6,10 +6,16 @@
             <div class="search-items">
                 <p><span class="bold">困っていること:</span></p>
                 <select name="trouble" id="trouble">
-                    <option value="consulting">生活一般について相談</option>
-                    <option value="house">住居入居支援</option>
-                    <option value="foodbank">食料の無料提供</option>
-                    <option value="eating">炊き出し</option>
+
+                    <?php foreach($troubleNameList as $troubleName): ?>
+
+                    <option value="<?php echo $troubleName['id']; ?>"
+                        <?php echo ($searched_trouble_id === $troubleName['id']) ? 'selected' : ''; ?> >
+                        <?php echo $troubleName['name']; ?>
+                    </option>
+
+                    <?php endforeach; ?>
+
                 </select>
             </div>
             <div class="search-items">
@@ -35,11 +41,16 @@
             </div>
             <p class="search-items">
                 <span class="bold">
-                    <input id="is_foreign_ok" type="checkbox" name="is_foreign_ok" value="on"><label for="foreign">国籍不問</label>
+                    <input id="is_foreign_ok" type="checkbox" name="is_foreign_ok" value="on"
+                        <?php echo ($searched_is_foreign_ok === TRUE) ? 'checked': ''; ?> >
+
+                    <label for="foreign">
+                        国籍不問
+                    </label>
                 </span>  
             </p>
             <p>
-                <input id="submit" type="submit" value="検索する🔍">
+                <input id="submit" type="submit" value="検索する">
             </p>  
         </div> 
     </div>
