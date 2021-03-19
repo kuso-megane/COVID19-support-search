@@ -14,7 +14,7 @@ class Validator
      * 
      * @return InputData
      */
-    public function validate(?array $vars):InputData
+    public function validate(?array $vars = NULL):InputData
     {   
         $searched_trouble_id = ($vars['trouble_id'] != NULL) ? (int) $vars['trouble_id'] : NULL;
         if ($searched_trouble_id <= 0) {

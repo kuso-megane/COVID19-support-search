@@ -30,18 +30,6 @@ class Presenter
     }
 
 
-    /**
-     * @param string $message
-     * 
-     * @return int AppConfig::INVALID_PARAMS
-     */
-    public function reportValidationFailure(string $message = 'Invalid url was given')
-    {
-        http_response_code(400);
-        echo $message;
-        return AppConfig::INVALID_PARAMS;
-    }
-
 
     /**
      * @param TroubleName[] $data

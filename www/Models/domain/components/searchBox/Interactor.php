@@ -20,18 +20,18 @@ class Interactor
     /**
      * @param array|NULL $vars
      * 
-     * @return int AppConfig::POST_SUCCESS or AppConfig::INVALID_PARAMS
+     * @return array|ValidationFailException Presenter->present() | Presenter->reportValidationFailure()
      * 
-     * if validation fails, this returns AppConfig::INVALID_PARAMS
-     * if post succeeds, this returns AppConfig::POST_SUCCESS
+     * if validation fails, this returns ValidationFailException
      */
-    public function interact(?array $vars)
+    public function interact(?array $vars = NULL)
     {
         try {
             $input = (new Validator)->validate($vars)->toArray();
         }
         catch (ValidationFailException $e) {
-            return (new Presenter)->reportValidationFailure($e->getMessage());
+            throw $e;
+            return [];
         }
 
         $troubleNameList = $this->troubleNameListRepository->getTroubleNameList();
