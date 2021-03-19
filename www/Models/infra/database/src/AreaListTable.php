@@ -10,9 +10,9 @@ class AreaListTable
 
     private $dbh;
 
-    public function __construct(bool $is_test = FALSE)
+    public function __construct(bool $is_test = FALSE, string $username = 'root')
     {
-        $this->dbh = (new Connection($is_test))->connect();
+        $this->dbh = (new Connection($is_test, $username))->connect();
     }
 
 
