@@ -16,7 +16,7 @@ class Presenter
      *      'searched_trouble_id' => int,
      *      'searched_area_id' => int,
      *      'searched_is_foreign_ok' => bool,
-     *      'troubleList' => [ ['id' => int, 'name' => string], [] ]
+     *      'troubleNameList' => [ ['id' => int, 'name' => string], [] ]
      * ]
      */
     public function present(array $input, array $troubleNameList):array
@@ -25,7 +25,7 @@ class Presenter
             'searched_trouble_id' => $input['searched_trouble_id'],
             'searched_area_id' => $input['searched_area_id'],
             'searched_is_foreign_ok' => $input['searched_is_foreign_ok'],
-            'troubleList' => $this->format($troubleNameList)
+            'troubleNameList' => $this->format($troubleNameList)
         ];
     }
 

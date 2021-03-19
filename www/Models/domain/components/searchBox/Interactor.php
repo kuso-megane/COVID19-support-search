@@ -4,23 +4,17 @@ namespace domain\components\searchBox;
 
 use domain\components\searchBox\Validator\Validator;
 use domain\Exception\ValidationFailException;
-use myapp\config\AppConfig;
-use myapp\myFrameWork\SuperGlobalVars;
 use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
-use domain\components\searchBox\RepositoryPort\AreaListRepositoryPort;
 
 class Interactor
 {
     private $troubleNameListRepository;
-    private $areaListRepository;
 
     public function __construct(
-        TroubleNameListRepositoryPort $troubleNameListRepository,
-        AreaListRepositoryPort $areaListRepository
+        TroubleNameListRepositoryPort $troubleNameListRepository
     )
     {
         $this->troubleNameListRepository = $troubleNameListRepository;
-        $this->areaListRepository = $areaListRepository;
     }
 
     /**
