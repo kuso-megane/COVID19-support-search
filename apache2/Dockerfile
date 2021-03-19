@@ -18,5 +18,6 @@ RUN docker-php-ext-install pdo_mysql
 
 CMD ["apachectl", "-D", "FOREGROUND"]
 
+WORKDIR /var/www/
 
 EXPOSE 80
