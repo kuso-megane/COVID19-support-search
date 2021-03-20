@@ -18,16 +18,16 @@ class Interactor
     }
 
     /**
-     * @param array|NULL $vars
+     * Note that this doesn't execute searching but make search box
      * 
      * @return array|ValidationFailException Presenter->present() | Presenter->reportValidationFailure()
      * 
      * if validation fails, this throws ValidationFailException
      */
-    public function interact(?array $vars = NULL)
+    public function interact()
     {
         try {
-            $input = (new Validator)->validate($vars)->toArray();
+            $input = (new Validator)->validate()->toArray();
         }
         catch (ValidationFailException $e) {
             throw $e;
