@@ -1,16 +1,22 @@
 
+<script>
+    // for initAreaSelect() in asset/js/initAreaSelect.js
+    const searchedAreaId = "<?php echo $searched_area_id;  ?>";
+</script>
+
 <form action="/search">
     <div id="search-box-container">
         <div id="search-box">
             <p class="block-start0">&lt;検索はこちら&gt;</p>
+
             <div class="search-items">
                 <p><span class="bold">困っていること:</span></p>
-                <select name="trouble" id="trouble">
+                <select name="trouble_id" id="trouble">
 
                     <?php foreach($troubleNameList as $troubleName): ?>
 
                     <option value="<?php echo $troubleName['id']; ?>"
-                        <?php echo ($searched_trouble_id === $troubleName['id']) ? 'selected' : ''; ?> >
+                        <?php if ($searched_trouble_id === $troubleName['id']) {echo 'selected';} ?> >
                         <?php echo $troubleName['name']; ?>
                     </option>
 
@@ -18,31 +24,33 @@
 
                 </select>
             </div>
+
             <div class="search-items">
                 <p><span class="bold">地域:</span></p>  
-                <div>
-                    関東:      
-                    <select name="area">
-                        <option value="">全国</option>
-                        <option value="">東京</option>
-                        <option value="">大阪</option>
-                        <option value="">名古屋</option>
+                <div>     
+                    <select id="regionSelect" name="region_id" onchange="initAreaSelect()">
+                        <option value="1" <?php if ($searched_region_id === 1) {echo 'selected';} ?>>北海道・東北</option>
+                        <option value="2" <?php if ($searched_region_id === 2) {echo 'selected';} ?>>関東</option>
+                        <option value="3" <?php if ($searched_region_id === 3) {echo 'selected';} ?> >中部</option>
+                        <option value="4" <?php if ($searched_region_id === 4) {echo 'selected';} ?>>近畿</option>
+                        <option value="5" <?php if ($searched_region_id === 5) {echo 'selected';} ?>>中国・四国</option>
+                        <option value="6" <?php if ($searched_region_id === 6) {echo 'selected';} ?>>九州・沖縄</option>
                     </select>
-                </div>
-                <div>
-                    東北,北海道:
-                    <select name="area">
-                        <option value="">北海道</option>
-                        <option value="">青森</option>
-                        <option value="">岩手</option>
-                    </select>
-                </div>
-                
+                </div>  
             </div>
+
+            <div class="search-items">
+                <p><span class="bold">都道府県:</span></p>  
+                <div>     
+                    <select id="areaSelect" name="area_id">
+                    </select>
+                </div>
+            </div>
+
             <p class="search-items">
                 <span class="bold">
                     <input id="is_foreign_ok" type="checkbox" name="is_foreign_ok" value="on"
-                        <?php echo ($searched_is_foreign_ok === TRUE) ? 'checked': ''; ?> >
+                        <?php if ($searched_is_foreign_ok === TRUE) {echo 'checked';} ?> >
 
                     <label for="foreign">
                         国籍不問
@@ -53,7 +61,7 @@
                 <input id="submit" type="submit" value="検索する">
             </p>  
         </div> 
-    </div>
-    
-           
+    </div>   
 </form>
+
+<script src="/asset/js/initAreaSelect.js"></script>
