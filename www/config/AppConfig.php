@@ -8,8 +8,7 @@ class AppConfig
     const POST_SUCCESS = 100;
     const POST_FAILURE = -100;
 
-    const ARTCL_NUM = 9; //1ページあたりの記事数
-    const BY_ARTCL_NUM = 20; //BYページの1ページあたりの記事数
+    const SUPPORTS_NUM = 9; //1ページあたりの支援表示数
 
     const DEFAULT_IMG = 'default.jpg';
 }
