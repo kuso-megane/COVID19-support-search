@@ -52,7 +52,7 @@ class Presenter
     ): array
     {
 
-        return [
+        $vm =  [
             'publicCurrentPage' => $publicCurrentPage,
             'privateCurrentPage' => $privateCurrentPage,
             'publicSupportsTotal' => $publicSupportsTotal,
@@ -62,8 +62,9 @@ class Presenter
             'publicSupports' => $this->format($publicSupports),
             'privateSupports' => $this->format($privateSupports),
             'is_public_page' => $is_public_page,
-            'searchedBoxData' => $searchBoxData
         ];
+
+        return $vm += $searchBoxData;
     }
 
 
