@@ -6,9 +6,9 @@
 
 <form action="/search">
     <div id="search-box-container">
+        <p id="search-box--title" class="block-end0">&lt;検索はこちら&gt;</p>
         <div id="search-box">
-            <p class="block-start0">&lt;検索はこちら&gt;</p>
-
+            
             <div class="search-items">
                 <p><span class="bold">困っていること:</span></p>
                 <select name="trouble_id" id="trouble">
@@ -46,21 +46,21 @@
                     </select>
                 </div>
             </div>
-
-            <p class="search-items">
-                <span class="bold">
-                    <input id="is_only_foreign_ok" type="checkbox" name="is_only_foreign_ok" value="on"
-                        <?php if ($searched_is_foreign_ok === TRUE) {echo 'checked';} ?> >
-
-                    <label for="foreign">
-                        国籍不問
-                    </label>
-                </span>  
-            </p>
-            <p>
-                <input id="submit" type="submit" value="検索する">
-            </p>  
         </div> 
+        <p id="is_only_foreign_ok-container">
+            <span class="bold">
+                <input id="is_only_foreign_ok" type="checkbox" name="is_only_foreign_ok" value="on"
+                    <?php if ($searched_is_foreign_ok === TRUE) {echo 'checked';} ?> >
+
+                <label for="is_only_foreign_ok" id="is_only_foreign_ok--label">
+                    国籍を問わない団体のみ表示
+                </label>
+            </span>
+        </p>
+        <p id="search-button">
+            <input id="submit" type="submit" value="この条件で検索する" class="center">
+         
+        </p> 
     </div>   
 </form>
 

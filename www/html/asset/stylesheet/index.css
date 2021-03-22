@@ -3,12 +3,21 @@
 @import url(/asset/stylesheet/components/searchbox.css);
 
 
-#introduce{
-    font-size: 0.8rem;
-    overflow-wrap: break-word;
+#introduce-container {
+    text-align: center;
+    margin-top: 1rem;
 }
 
-#introduce ul li{
-    list-style-type: disc;
+#introduce{
+    border: solid 2px #009900;
+    border-radius: 1rem;
+    display: inline-block;
+    width: 85vw;
+    font-size: 0.75rem;
+    overflow-wrap: break-word;
+    background-color: white;
+    padding: 0.5rem;
 }
+
+
 

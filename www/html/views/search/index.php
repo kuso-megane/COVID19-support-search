@@ -15,23 +15,21 @@
     <body>
         <?php require $componentsPath . 'header.php'; ?>
 
-    
         <main>
-        
-            <div id="introduce">
-                <h2>困っていることにあった支援・相談先を探せる！検索システム</h2>
-                <ul>
-                    <li>仕事を失った」「お金がない」、一人ではどうしようもない時でも相談先がない。</li>
-                    <li>どんな支援があるか、受給資格があるかわからない、、、、。</li>
-                </ul>
-                <p class="break-word"><span class="red">そんな時に、支援・相談先を簡単に探せるように、お手伝いさせていただきます！</span></p>
-                &#9733;民間支援に<span class="red">要件は基本的にありません</span>　諦める前に一度だけ検索してください</p>
+            <div id="introduce-container">
+                <div id="introduce" class="center">
+                    <h2>困っていることにあった支援・相談先を探せる検索システム!</h2>
+                    <div class="inline-block left">
+                        <p>&bull;仕事を失った、生活費が足りない、一人ではどうしようもない時でも相談先がない、、、。</p>
+                        <p>&bull;どんな支援があるか、受給資格があるかわからない、、、、。</p>
+                        <p class="break-word"><span class="red">そんな時に、支援・相談先を簡単に探せるように、お手伝いさせていただきます！</span></p>
+                        &#9733;特に民間支援には<span class="red">要件が基本的にありません。</span> 諦める前に一度だけでも検索してみてください</p>
+                    </div>
+                </div>
             </div>
-
-            <?php require $componentsPath. 'searchbox.php'; ?>
-        
         </main>
 
-   
+        <?php require $componentsPath. 'searchbox.php'; ?>
+
     </body>
 </html>
