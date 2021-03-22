@@ -5,12 +5,12 @@ namespace infra\Repository;
 use domain\components\searchBox\Data\TroubleName;
 use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
 use domain\search\result\Data\MetaTrouble;
-use domain\search\result\RepositoryPort\MetaTroubleReporitoryPort;
+use domain\search\result\RepositoryPort\MetaTroubleRepositoryPort;
 use infra\database\src\TroubleListTable;
 
 class TroubleListRepository
 implements TroubleNameListRepositoryPort,
-MetaTroubleReporitoryPort
+MetaTroubleRepositoryPort
 {
     private $table;
 

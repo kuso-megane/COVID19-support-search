@@ -4,7 +4,7 @@ namespace domain\search\result\RepositoryPort;
 
 use domain\search\result\Data\MetaTrouble;
 
-interface MetaTroubleReporitoryPort
+interface MetaTroubleRepositoryPort
 {
     /**
      * @param int $trouble_id
