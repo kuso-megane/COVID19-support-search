@@ -8,6 +8,8 @@ use domain\search\result\Data\MetaTrouble;
 interface SearchedSupportsRepositoryPort
 {
     /**
+     * search the supports which meets given condition and count the num of those.
+     * 
      * @param int &$total total num of coming up supports
      * @param MetaTrouble $trouble_id
      * @param int $region_id
