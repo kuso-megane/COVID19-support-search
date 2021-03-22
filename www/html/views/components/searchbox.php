@@ -49,7 +49,7 @@
 
             <p class="search-items">
                 <span class="bold">
-                    <input id="is_foreign_ok" type="checkbox" name="is_foreign_ok" value="on"
+                    <input id="is_only_foreign_ok" type="checkbox" name="is_only_foreign_ok" value="on"
                         <?php if ($searched_is_foreign_ok === TRUE) {echo 'checked';} ?> >
 
                     <label for="foreign">

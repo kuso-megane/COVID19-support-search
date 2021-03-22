@@ -221,7 +221,7 @@ class MyDbh extends PDO
      * if you wanna bind these manually, this can be empty
      * @param int $executeFlag
      * 
-     * if you wanna execute this manually, this must be self::ONLY_PREPARE
+     * if you wanna execute this manually, this must be MyDbh::ONLY_PREPARE
      * 
      * @return PDOStatement|void
      * 
@@ -276,7 +276,7 @@ class MyDbh extends PDO
      * @param array $boundValues (e.g.) [':id' => int, ':num' => int]
      * @param int $executeFlag
      * 
-     * if you wanna execute this manually, this must be self::ONLY_PREPARE
+     * if you wanna execute this manually, this must be MyDbh::ONLY_PREPARE
      * 
      * @return PDOStatement|void
      * 

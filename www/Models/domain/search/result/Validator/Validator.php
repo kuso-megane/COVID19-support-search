@@ -28,12 +28,12 @@ class Validator
             throw new ValidationFailException('想定外の「地域」が指定されています。');
         }
 
-        $is_foreign_ok = $get['is_foreign_ok'];
-        if ($is_foreign_ok === NULL) {
-            $is_foreign_ok = FALSE;
+        $is_only_foreign_ok = $get['is_only_foreign_ok'];
+        if ($is_only_foreign_ok === NULL) {
+            $is_only_foreign_ok = FALSE;
         }
-        elseif ($is_foreign_ok == 'on') {
-            $is_foreign_ok = TRUE;
+        elseif ($is_only_foreign_ok == 'on') {
+            $is_only_foreign_ok = TRUE;
         }
         else {
             throw new ValidationFailException('想定外の「国籍不問チェックボックス」の値が指定されています。');
@@ -61,7 +61,7 @@ class Validator
         }
 
         try {
-            return new InputData($trouble_id, $region_id, $area_id, $is_foreign_ok, $is_public, $pub_p, $pri_p);
+            return new InputData($trouble_id, $region_id, $area_id, $is_only_foreign_ok, $is_public, $pub_p, $pri_p);
         }
         catch (TypeError $e){
             throw new ValidationFailException('不正なurlです。');
