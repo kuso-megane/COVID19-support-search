@@ -9,7 +9,7 @@ interface MetaTroubleReporitoryPort
     /**
      * @param int $trouble_id
      * 
-     * @return MetaTrouble
+     * @return MetaTrouble|NULL
      */
-    public function getMetaTrouble(int $trouble_id):MetaTrouble;
+    public function getMetaTrouble(int $trouble_id):?MetaTrouble;
 }

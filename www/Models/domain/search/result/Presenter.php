@@ -72,11 +72,22 @@ class Presenter
      * 
      * @return int AppConfig::INVALID_PARAMS
      */
-    public function reportValidationFailure(string $message = 'Invalid url was given')
+    public function reportValidationFailure(string $message = 'Invalid url was given'): int
     {
         http_response_code(400);
         echo $message;
         return AppConfig::INVALID_PARAMS;
+    }
+
+
+    /**
+     * @param string $message
+     * 
+     * @return int AppConfig::NOT_FOUND
+     */
+    public function reportUnexpectedSearch(string $message = 'Unexpected Search was executed'): int
+    {
+        $this->reportValidationFailure($message);
     }
 
 

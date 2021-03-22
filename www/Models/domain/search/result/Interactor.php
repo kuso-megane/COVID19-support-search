@@ -47,6 +47,10 @@ class Interactor
 
         $metaTrouble = $this->metaTroubleRepository->getMetaTrouble($trouble_id);
 
+        if ($metaTrouble === NULL) {
+            return (new Presenter)->reportUnexpectedSearch('想定外の「困っていること」が指定されています。');
+        }
+
         $publicSupportsTotal = 0;
         $privateSupportsTotal = 0;
         $publicSupports = $this->searchedSupportOrgsRepository->searchSupports(

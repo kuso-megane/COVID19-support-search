@@ -38,10 +38,15 @@ MetaTroubleReporitoryPort
     /**
      * @inheritDoc
      */
-    public function getMetaTrouble(int $trouble_id): MetaTrouble
+    public function getMetaTrouble(int $trouble_id): ?MetaTrouble
     {
         $data = $this->table->findById($trouble_id);
 
-        return new MetaTrouble($data['meta_word']);
+        if ($data === NULL) {
+            return NULL;
+        }
+        else {
+            return new MetaTrouble($data['meta_word']);
+        }   
     }
 }
