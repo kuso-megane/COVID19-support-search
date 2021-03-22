@@ -3,7 +3,7 @@
 namespace domain\search\result;
 
 use domain\Exception\ValidationFailException;
-use domain\search\result\RepositoryPort\MetaTroubleReporitoryPort;
+use domain\search\result\RepositoryPort\MetaTroubleRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use domain\search\result\Validator\Validator;
 use domain\components\searchBox\Interactor as SearchBoxInteractor;
@@ -16,7 +16,7 @@ class Interactor
 
     public function __construct(
         SearchedSupportsRepositoryPort $searchedSupportOrgsRepository,
-        MetaTroubleReporitoryPort $metaTroubleReporitory
+        MetaTroubleRepositoryPort $metaTroubleReporitory
     )
     {
         $this->searchedSupportOrgsRepository = $searchedSupportOrgsRepository;
