@@ -3,11 +3,12 @@
 namespace domain\search\result\RepositoryPort;
 
 use domain\search\result\Data\SearchedSupport;
+use domain\search\result\Data\MetaTrouble;
 
 interface SearchedSupportsRepositoryPort
 {
     /**
-     * @param int $trouble_id
+     * @param MetaTrouble $trouble_id
      * @param int $region_id
      * @param int $area_id
      * @param bool $is_foreign_ok
@@ -19,6 +20,6 @@ interface SearchedSupportsRepositoryPort
      * 
      * @return SearchedSupport[]
      */
-    public function searchSupports(int $trouble_id, int $region_id, int $area_id, bool $is_foreign_ok, bool $is_public, int $page):array;
+    public function searchSupports(MetaTrouble $metaTrouble, int $region_id, int $area_id, bool $is_foreign_ok, bool $is_public, int $page):array;
 
 }

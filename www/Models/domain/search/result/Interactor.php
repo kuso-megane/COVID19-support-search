@@ -3,16 +3,23 @@
 namespace domain\search\result;
 
 use domain\Exception\ValidationFailException;
+use domain\search\result\RepositoryPort\MetaTroubleReporitoryPort;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use domain\search\result\Validator\Validator;
+use domain\components\searchBox\Interactor as SearchBoxInteractor;
 
 class Interactor
 {
     private $searchedSupportOrgsRepository;
+    private $metaTroubleRepository;
 
-    public function __construct(SearchedSupportsRepositoryPort $searchedSupportOrgsRepository)
+    public function __construct(
+        SearchedSupportsRepositoryPort $searchedSupportOrgsRepository,
+        MetaTroubleReporitoryPort $metaTroubleReporitory
+    )
     {
         $this->searchedSupportOrgsRepository = $searchedSupportOrgsRepository;
+        $this->metaTroubleRepository = $metaTroubleReporitory;
     }
 
     /**
@@ -37,15 +44,30 @@ class Interactor
         $pub_p = $input['pub_p'];
         $pri_p = $input['pri_p'];
 
+        $metaTrouble = $this->metaTroubleRepository->getMetaTrouble($trouble_id);
+
         $publicSupports = $this->searchedSupportOrgsRepository->searchSupports(
-            $trouble_id, $region_id, $area_id, $is_foreign_ok, TRUE, $pub_p
+            $metaTrouble, $region_id, $area_id, $is_foreign_ok, TRUE, $pub_p
         );
 
         $privateSupports = $this->searchedSupportOrgsRepository->searchSupports(
-            $trouble_id, $region_id, $area_id, $is_foreign_ok, TRUE, $pri_p
+            $metaTrouble, $region_id, $area_id, $is_foreign_ok, TRUE, $pri_p
         );
 
-        
+
+        $builder = new \DI\ContainerBuilder();
+        $builder->addDefinitions('/var/www/Models/diconfig.php');
+        $container = $builder->build();
+
+        try {
+            $searchBoxData = $container->get(SearchBoxInteractor::class)->interact();
+        }
+        catch (ValidationFailException $e) {
+            return (new Presenter)->reportValidationFailure($e->getMessage());
+        }
+
+
+        return (new Presenter)->present($publicSupports, $privateSupports, $is_public_page, $searchBoxData);
 
     }
 }
