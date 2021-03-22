@@ -34,7 +34,7 @@ class SearchController extends BaseController
         $container = $builder->build();
 
         $interactor = $container->get(SearchResultInteractor::class);
-        $vm = $interactor->interact();
+        $vm = $interactor->interact($vars);
 
         if ($vm === AppConfig::INVALID_PARAMS) {
             return False;

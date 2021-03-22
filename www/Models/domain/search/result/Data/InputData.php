@@ -20,7 +20,7 @@ class InputData
         $this->region_id = $region_id;
         $this->area_id = $area_id;
         $this->is_only_foreign_ok = $is_only_foreign_ok;
-        $this->is_public = $is_public_page;
+        $this->is_public_page = $is_public_page;
         $this->pub_p = $pub_p;
         $this->pri_p = $pri_p;
    }
@@ -33,7 +33,7 @@ class InputData
             'region_id' => $this->region_id,
             'area_id' => $this->area_id,
             'is_only_foreign_ok' => $this->is_only_foreign_ok,
-            'is_public' => $this->is_public_page,
+            'is_public_page' => $this->is_public_page,
             'pub_p' => $this->pub_p,
             'pri_p' => $this->pri_p
         ];

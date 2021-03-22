@@ -49,19 +49,19 @@ class Validator
             throw new ValidationFailException('想定外の「ページ」が指定されています。');
         }
 
-        $is_public = (int) $vars['is_public'];
-        if ($is_public === 1) {
-            $is_public = TRUE;
+        $is_public_page = (int) $vars['is_public_page'];
+        if ($is_public_page === 1) {
+            $is_public_page = TRUE;
         }
-        elseif ($is_public === 0) {
-            $is_public = FALSE;
+        elseif ($is_public_page === 0) {
+            $is_public_page = FALSE;
         }
         else {
             throw new ValidationFailException('想定外の「is_public」が指定されています。');
         }
 
         try {
-            return new InputData($trouble_id, $region_id, $area_id, $is_only_foreign_ok, $is_public, $pub_p, $pri_p);
+            return new InputData($trouble_id, $region_id, $area_id, $is_only_foreign_ok, $is_public_page, $pub_p, $pri_p);
         }
         catch (TypeError $e){
             throw new ValidationFailException('不正なurlです。');
