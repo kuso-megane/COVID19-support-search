@@ -12,7 +12,7 @@ class MetaTrouble
     }
 
 
-    public function getMetaName(): string
+    public function getMetaWord(): string
     {
         return $this->meta_word;
     }

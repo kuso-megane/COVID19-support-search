@@ -30,7 +30,7 @@ class AreaListTableTest extends TestCase
     }
 
 
-    public function testGetFindAll()
+    public function testFindAll()
     {
         $expected = [
             ['id' => 1, 'name' => $this::samplePrefectures[0]],

@@ -4,10 +4,13 @@ namespace infra\Repository;
 
 use domain\components\searchBox\Data\TroubleName;
 use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
+use domain\search\result\Data\MetaTrouble;
+use domain\search\result\RepositoryPort\MetaTroubleReporitoryPort;
 use infra\database\src\TroubleListTable;
 
 class TroubleListRepository
-implements TroubleNameListRepositoryPort
+implements TroubleNameListRepositoryPort,
+MetaTroubleReporitoryPort
 {
     private $table;
 
@@ -29,5 +32,16 @@ implements TroubleNameListRepositoryPort
         }
 
         return $troubles;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getMetaTrouble(int $trouble_id): MetaTrouble
+    {
+        $data = $this->table->findById($trouble_id);
+
+        return new MetaTrouble($data['meta_word']);
     }
 }
