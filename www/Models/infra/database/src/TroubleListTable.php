@@ -37,4 +37,25 @@ class TroubleListTable
             return $this->dbh->select($columns, $this::TABLENAME, '', ['orderby' => 'id', 'sort' => 'ASC']);
         }
     }
+
+
+    /**
+     * @param int $trouble_id
+     * 
+     * @return NULL|array [
+     *      'id' => int,
+     *      'name' => string,
+     *      'meta_word' => string
+     * ]
+     * 
+     * If no record is found, return NULL
+     */
+    public function findById(int $trouble_id): ?array
+    {
+        return
+        $this->dbh->select(
+            '*', $this::TABLENAME, 'id = :id', ['orderby' => 'id', 'sort' => 'ASC'],
+            [':id' => $trouble_id]
+        )[0];
+    }
 }

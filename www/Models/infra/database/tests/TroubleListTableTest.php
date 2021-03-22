@@ -57,12 +57,49 @@ class TroubleListTableTest extends TestCase
     }
 
 
+    /**
+     * @dataProvider providerForFindByid()
+     */
+    public function testFindById(bool $found_flag)
+    {
+        $id = 1;
+        $fake_id = 100;
+
+        if ($found_flag === TRUE) {
+
+            $expected = [
+                'id' => $id,
+                'name' => $this::SAMPLE_DATAS[0]['name'],
+                'meta_word' => $this::SAMPLE_DATAS[0]['meta_word']
+            ];
+
+            $this->assertSame($expected, $this->table->findById($id));
+        }
+        elseif ($found_flag === FALSE) {
+
+            $expected = NULL;
+
+            $this->assertSame($expected, $this->table->findById($fake_id));
+        }
+ 
+    }
+
+
     public function providerForFindAll():array
     {
     
         return [
             'when meta_word is needed' => [TRUE],
             'when meta_word is not needed' => [FALSE]
+        ];
+    }
+
+
+    public function providerForFindById():array
+    {
+        return [
+            'when a record is found' => [TRUE],
+            'when no record is found' => [FALSE]
         ];
     }
 }
