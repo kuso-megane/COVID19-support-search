@@ -22,6 +22,8 @@ interface SearchedSupportsRepositoryPort
      * @param int $page
      * 
      * @return SearchedSupport[]
+     * 
+     * if no record is found, this returns empty array.
      */
     public function searchSupports(int &$total, MetaTrouble $metaTrouble, int $region_id, int $area_id, bool $is_only_foreign_ok, bool $is_public, int $page):array;
 

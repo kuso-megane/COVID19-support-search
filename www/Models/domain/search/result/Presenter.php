@@ -94,7 +94,9 @@ class Presenter
     private function format(array $searchedSupportOrgs): array
     {
         foreach ($searchedSupportOrgs as &$searchedSupportOrg) {
-            $searchedSupportOrg = $searchedSupportOrg->toArray();
+            if ($searchedSupportOrg != NULL) {
+                $searchedSupportOrg = $searchedSupportOrg->toArray();
+            }
         }
 
         return $searchedSupportOrgs;
