@@ -83,7 +83,7 @@ class Presenter
     /**
      * @param string $message
      * 
-     * @return int AppConfig::NOT_FOUND
+     * @return int AppConfig::INVALID_PARAMS
      */
     public function reportUnexpectedSearch(string $message = 'Unexpected Search was executed'): int
     {
