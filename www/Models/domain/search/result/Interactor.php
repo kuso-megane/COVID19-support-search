@@ -7,6 +7,7 @@ use domain\search\result\RepositoryPort\MetaTroubleReporitoryPort;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use domain\search\result\Validator\Validator;
 use domain\components\searchBox\Interactor as SearchBoxInteractor;
+use myapp\config\AppConfig;
 
 class Interactor
 {
@@ -46,12 +47,14 @@ class Interactor
 
         $metaTrouble = $this->metaTroubleRepository->getMetaTrouble($trouble_id);
 
+        $publicSupportsTotal = 0;
+        $privateSupportsTotal = 0;
         $publicSupports = $this->searchedSupportOrgsRepository->searchSupports(
-            $metaTrouble, $region_id, $area_id, $is_foreign_ok, TRUE, $pub_p
+            $publicSupportsTotal, $metaTrouble, $region_id, $area_id, $is_foreign_ok, TRUE, $pub_p
         );
 
         $privateSupports = $this->searchedSupportOrgsRepository->searchSupports(
-            $metaTrouble, $region_id, $area_id, $is_foreign_ok, TRUE, $pri_p
+            $privateSupportsTotal, $metaTrouble, $region_id, $area_id, $is_foreign_ok, TRUE, $pri_p
         );
 
 
@@ -66,8 +69,13 @@ class Interactor
             return (new Presenter)->reportValidationFailure($e->getMessage());
         }
 
+        $publicPageTotal = (int) ($publicSupportsTotal / AppConfig::SUPPORTS_NUM) + 1;
+        $privatePageTotal = (int) ($privateSupportsTotal / AppConfig::SUPPORTS_NUM) + 1;
 
-        return (new Presenter)->present($publicSupports, $privateSupports, $is_public_page, $searchBoxData);
+        return (new Presenter)->present(
+            $pub_p, $pri_p, $publicSupportsTotal, $privateSupportsTotal, $publicPageTotal,
+            $privatePageTotal, $publicSupports, $privateSupports, $is_public_page, $searchBoxData
+        );
 
     }
 }

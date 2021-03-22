@@ -2,19 +2,31 @@
 
 namespace domain\search\result;
 
-use domain\search\result\Data\SearchedSupportOrg;
+
 use myapp\config\AppConfig;
 
 class Presenter
 {
 
     /**
-     * @param SeachedSupportOrg[] $publicSupports
-     * @param SeachedSupportOrg[] $privateSupports
+     * @param int $publicCurrentPage
+     * @param int $privateCurrentPage
+     * @param int $publicSupportsTotal
+     * @param int $privateSupportsTotal
+     * @param int $publicPageTotal
+     * @param int $privatePageTotal
+     * @param SeachedSupports[] $publicSupports
+     * @param SeachedSupports[] $privateSupports
      * @param bool $is_public_page
      * @param array $searchBoxData
      * 
      * @return array [
+     *      'publicCurrentPage' => int,
+     *      'privateCurrentPage' => int,
+     *      'publicSupportsTotal' => int,
+     *      'privateSupportsTotal' => int,
+     *      'publicPageTotal' => int,
+     *      'privatePageTotal' => int,
      *      'publicSupports' => [
      *          [
      *              'support_content' => string,
@@ -33,9 +45,20 @@ class Presenter
      * 
      * Note that return['searchedSupportOrgs']['access'] is raw html
      */
-    public function present(array $publicSupports, array $privateSupports, bool $is_public_page, array $searchBoxData): array
+    public function present(
+        int $publicCurrentPage, int $privateCurrentPage, int $publicSupportsTotal, int $privateSupportsTotal,
+        int $publicPageTotal, int $privatePageTotal, array $publicSupports, array $privateSupports,
+        bool $is_public_page, array $searchBoxData
+    ): array
     {
+
         return [
+            'publicCurrentPage' => $publicCurrentPage,
+            'privateCurrentPage' => $privateCurrentPage,
+            'publicSupportsTotal' => $publicSupportsTotal,
+            'privateSupportsTotal' => $privateSupportsTotal,
+            'publicPageTotal' => $publicPageTotal,
+            'privatePageTotal' => $privatePageTotal,
             'publicSupports' => $this->format($publicSupports),
             'privateSupports' => $this->format($privateSupports),
             'is_public_page' => $is_public_page,

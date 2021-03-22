@@ -8,6 +8,7 @@ use domain\search\result\Data\MetaTrouble;
 interface SearchedSupportsRepositoryPort
 {
     /**
+     * @param int &$total total num of coming up supports
      * @param MetaTrouble $trouble_id
      * @param int $region_id
      * @param int $area_id
@@ -20,6 +21,6 @@ interface SearchedSupportsRepositoryPort
      * 
      * @return SearchedSupport[]
      */
-    public function searchSupports(MetaTrouble $metaTrouble, int $region_id, int $area_id, bool $is_foreign_ok, bool $is_public, int $page):array;
+    public function searchSupports(int &$total, MetaTrouble $metaTrouble, int $region_id, int $area_id, bool $is_foreign_ok, bool $is_public, int $page):array;
 
 }
