@@ -62,14 +62,20 @@ a {
 
 .header-menu-items a{
     margin:1rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color:white;
+    text-decoration: underline;
 }
 
 
 body {
-    background-color: #CBFFD3;
     margin: 0;
+}
+
+main {
+    background-color: #CBFFD3;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 
@@ -82,6 +88,10 @@ body {
 .red{
     color:red;
    
+}
+
+.green {
+    color: green;
 }
 
 .break-word {

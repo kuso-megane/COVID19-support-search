@@ -5,18 +5,21 @@
 
 #introduce-container {
     text-align: center;
-    margin-top: 1rem;
 }
 
 #introduce{
     border: solid 2px #009900;
     border-radius: 1rem;
     display: inline-block;
-    width: 85vw;
+    width: 75vw;
     font-size: 0.75rem;
     overflow-wrap: break-word;
     background-color: white;
     padding: 0.5rem;
+}
+
+#introduce--main {
+    margin-left: 1rem;
 }
 
 

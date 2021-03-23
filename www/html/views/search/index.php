@@ -19,8 +19,8 @@
             <div id="introduce-container">
                 <div id="introduce" class="center">
                     <h2>困っていることにあった支援・相談先を探せる検索システム!</h2>
-                    <div class="inline-block left">
-                        <p class="bold">このサイトは、官僚を夢見る学生と、プログラマーを夢見る学生が協力して、コロナ禍で困っている方々の力になるべく作り上げたサービスです!</p>
+                    <div id="introduce--main" class="inline-block left">
+                        <p class="bold">このサイトは、官僚を夢見る学生と、プログラマーを夢見る学生が協力して、コロナ禍などが原因で困っている方々の力になるべく作り上げたサービスです!</p>
                         <p>&bull;仕事を失った、生活費が足りない、一人ではどうしようもない時でも相談先がない、、、。</p>
                         <p>&bull;どんな支援があるか、受給資格があるかわからない、、、、。</p>
                         <p class="break-word">
@@ -38,7 +38,7 @@
             </div>
 
             <?php require $componentsPath. 'searchbox.php'; ?>
-            
+
         </main>
 
 
