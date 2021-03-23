@@ -2,25 +2,80 @@
 @import url(/asset/stylesheet/components/common.css);
 @import url(/asset/stylesheet/components/searchbox.css);
 
-
-#introduce-container {
-    text-align: center;
+/*sp*/
+@media screen and (min-width: 320px) and (max-width: 480px){
+    .main--lower{
+        width: 90vw;
+        margin-top: 1rem;
+    }
+    .main--upper {
+        width: 90vw;
+    }
 }
 
-#introduce{
+/*タブレット*/
+@media screen and (min-width: 481px) and (max-width: 1024px){
+    .main--lower {
+        width: 80vw;
+        margin-top: 1rem;
+    }
+    .main--upper {
+        width: 80vw;
+    }
+}
+
+/*pc*/
+@media screen and (min-width: 1025px){
+    .main--lower {
+        width: 70vw;
+        margin-top: 1rem;
+    }
+    .main--upper {
+        width: 70vw;
+    }
+}
+
+
+.main--upper{
+    display: inline-block;
     border: solid 2px #009900;
     border-radius: 1rem;
-    display: inline-block;
-    width: 75vw;
-    font-size: 0.75rem;
     overflow-wrap: break-word;
     background-color: white;
+    padding: 1rem;
+}
+
+.main--lower{
+    display: inline-flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.main--lower--right{
+    border: solid 2px #009900;
+    border-radius: 1rem;
+    background-color: white;
+    width: 60%;
     padding: 0.5rem;
 }
 
+
+
+
 #introduce--main {
-    margin-left: 1rem;
+    margin: auto;
+    font-size: 0.75rem;
 }
 
+#howto--main {
+    font-size: 0.75rem;
+}
+
+
+#howto--main li {
+    list-style-type: disc;
+    margin: 1rem;
+}
+    
 
 

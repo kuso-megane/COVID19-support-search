@@ -2,34 +2,13 @@
 @import url(/asset/stylesheet/components/common.css);
 @import url(/asset/stylesheet/components/searchbox.css);
 
-.container{
-    
-    margin:0.583rem;
-    height: 300px;
-    width: 200px;
-}
-
-.container h4{
-    font-size:0.55rem;
-}
-
-.container p{
-    font-size: 0.5rem;
-}
-
-.link{
-    font-size: 1rem;
-}
-
-
-/*適当、いい感じに調整してg*/
-
-
-.wrapper{
-    display: flex;
-    align-content: space-around;
-    flex-wrap: wrap;
-    
+#recommend-articles--box {
+    display: inline-block;
+    background-color: white;
+    border: solid 2px #009900;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    font-size: 0.7rem;
 }
 
 table{

@@ -1,31 +1,29 @@
 
-#search-box-container{
+#search-box{
+    display: block;
     border: 2px solid #009900;
     border-radius: 1rem;
-    width: 85vw;
-    margin: auto;
-    margin-top: 1rem;
     text-align: center;
     background-color: white;
+    width: 35%;
+    padding: 0.5rem;
 }
 
-#search-box{
+#search-box--main{
     display: inline-flex;
     text-align: left;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-content: space-between;
 }
 
 #search-box--title {
     text-align: left;
-    font-weight: bold;
-    margin-left: 1rem;
 }
 
 
 .search-items {
     font-size: 0.7rem;
-    margin: 0.5vw;
+    width: 100%;
 }
 
 .search-items select,input{
@@ -33,24 +31,25 @@
 }
 
 .search-items select {
-    width: 25vw;
+    width: 90%;
 }
 
 #is_only_foreign_ok-container {
     text-align: left;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 #is_only_foreign_ok--label{
     font-size: 0.7rem;
 }
 
-#search-button{
-    margin: 1rem;
+#submit-button--container {
+    width: 100%;
 }
 
-#submit {
-    font-size: 1rem;
+#submit-button {
+    width: 90%;
+    font-size: 0.9rem;
 }
 
 

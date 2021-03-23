@@ -1,5 +1,5 @@
 <?php 
-    $componentsPath = '/var/www/html/views/components/';
+    use myapp\config\ViewsConfig;
 ?>
 
 <!DOCTYPE html>
@@ -13,14 +13,14 @@
 
     </head>
     <body>
-        <?php require $componentsPath . 'header.php'; ?>
+        <?php require ViewsConfig::COMPONENTS_PATH . 'header.php'; ?>
 
         <main>
-            <div id="introduce-container">
-                <div id="introduce" class="center">
-                    <h2>困っていることにあった支援・相談先を探せる検索システム!</h2>
+            <div class="center">
+                <div id="introduce" class="main--upper">
+                    <h3 id="introduce--title">困っていることにあった支援・相談先を探せる<br>検索システム!</h3>
                     <div id="introduce--main" class="inline-block left">
-                        <p class="bold">このサイトは、官僚を夢見る学生と、プログラマーを夢見る学生が協力して、コロナ禍などが原因で困っている方々の力になるべく作り上げたサービスです!</p>
+                        <p class="bold">このサイトは、官僚を夢見る学生と、プログラマーを夢見る学生が協力して、コロナ禍などが原因で困っている方々の力になるべく作り上げた検索サービスです!</p>
                         <p>&bull;仕事を失った、生活費が足りない、一人ではどうしようもない時でも相談先がない、、、。</p>
                         <p>&bull;どんな支援があるか、受給資格があるかわからない、、、、。</p>
                         <p class="break-word">
@@ -34,11 +34,27 @@
                         </p>
 
                     </div>
+                </div> 
+            </div>
+            
+            <div class="center">
+                <div class="main--lower">
+
+                    <?php require ViewsConfig::COMPONENTS_PATH. 'searchbox.php'; ?>
+
+                    <div id="howto" class="main--lower--right">
+                        <p class="bold">使い方</p>
+                        <div id="howto--main">
+                            <li>まずは、左の検索ボックスから、困っていること、地域、都道府県をお選びください。</li>
+                            <li>日本国籍をお持ちでない方は、「国籍不問のみ」にチェックを入れることをおすすめします。</li>
+                            <li>「この条件で検索」を押していただくと、検索結果とおすすめコラム(お役立ち情報)が表示されます。</li>
+                            <li>表示結果ページでは、公的支援と民間支援をタブで切り替えることができます。</li>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <?php require $componentsPath. 'searchbox.php'; ?>
-
+            
         </main>
 
 
