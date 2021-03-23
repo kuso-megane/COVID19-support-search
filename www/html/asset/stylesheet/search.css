@@ -208,6 +208,9 @@ main {
   margin: auto;
   font-size: 0.75rem;
 }
+#introduce--main li {
+  list-style: disc;
+}
 
 #howto--main {
   font-size: 0.75rem;
