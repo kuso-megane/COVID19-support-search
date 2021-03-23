@@ -1,5 +1,8 @@
 
+@use './components/vars' as vars;
+
 @use './components/common';
+@use './components/header';
 @use './components/searchBox';
 
 
@@ -27,7 +30,7 @@
 
 .main--upper{
     display: inline-block;
-    border: solid 2px #009900;
+    border: solid 2px vars.$baseColor;
     border-radius: 1rem;
     overflow-wrap: break-word;
     background-color: white;
@@ -41,7 +44,7 @@
     margin-top: 1rem;
 
     &--right{
-        border: solid 2px #009900;
+        border: solid 2px vars.$baseColor;
         border-radius: 1rem;
         background-color: white;
         width: 60%;
@@ -50,10 +53,7 @@
 }
 
 
-
-
-
-
+// index
 #introduce--main {
     margin: auto;
     font-size: 0.75rem;
@@ -72,6 +72,8 @@
     }
 }
 
+
+// result
 #recommend-articles {
     font-size: 0.8rem;
 
@@ -87,4 +89,10 @@
     text-decoration: underline;
 }
 
+
+.tab-area {
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
 
