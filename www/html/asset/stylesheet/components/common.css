@@ -94,6 +94,10 @@ main {
     color: green;
 }
 
+.black {
+    color: black;
+}
+
 .break-word {
     overflow-wrap: break-word;
 }
