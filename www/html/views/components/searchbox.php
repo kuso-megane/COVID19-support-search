@@ -4,7 +4,7 @@
     const searchedAreaId = "<?php echo $searched_area_id;  ?>";
 </script>
 
-<form action="/search">
+<form action="/search/1/1/1">
     <div id="search-box-container">
         <p id="search-box--title" class="block-end0">&lt;検索はこちら&gt;</p>
         <div id="search-box">
@@ -29,6 +29,7 @@
                 <p><span class="bold">地域:</span></p>  
                 <div>     
                     <select id="regionSelect" name="region_id" onchange="initAreaSelect()">
+                        <option value="0" <?php if (!$searched_region_id) {echo 'selected';} ?>>全国</option>
                         <option value="1" <?php if ($searched_region_id === 1) {echo 'selected';} ?>>北海道・東北</option>
                         <option value="2" <?php if ($searched_region_id === 2) {echo 'selected';} ?>>関東</option>
                         <option value="3" <?php if ($searched_region_id === 3) {echo 'selected';} ?> >中部</option>
