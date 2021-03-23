@@ -9,7 +9,7 @@ class SearchedSupport
     private $access;
     private $appendix;
 
-    public function __construct(string $support_content, string $owner, string $access, string $appendix)
+    public function __construct(string $support_content, string $owner, string $access, ?string $appendix)
     {
         $this->support_content = $support_content;
         $this->owner = $owner;

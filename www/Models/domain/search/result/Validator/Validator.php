@@ -19,7 +19,7 @@ class Validator
         }
 
         $region_id = (int) $get['region_id'];
-        if (!($region_id >= 1 && $region_id <= 6)) {
+        if (!($region_id >= 0 && $region_id <= 6)) {
             throw new ValidationFailException('想定外の「地方」が指定されています。');
         }
 

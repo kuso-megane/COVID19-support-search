@@ -23,12 +23,12 @@ class Validator
         }
 
         $searched_region_id = ($get['region_id'] != NULL) ? (int) $get['region_id'] : NULL;
-        if (!($searched_region_id === NULL || ($searched_region_id > 0 && $searched_region_id <= 6))) {
+        if (!($searched_region_id === NULL || ($searched_region_id >= 0 && $searched_region_id <= 6))) {
             throw new ValidationFailException('想定外の「地方」が指定されています。');
         }
 
         $searched_area_id = ($get['area_id'] != NULL) ? (int) $get['area_id'] : NULL;
-        if (!($searched_area_id === NULL || ($searched_area_id > 0 && $searched_area_id <= 48))) {
+        if (!($searched_area_id === NULL || ($searched_area_id >= 1 && $searched_area_id <= 48))) {
             throw new ValidationFailException('想定外の「地域」が指定されています。');
         }
 

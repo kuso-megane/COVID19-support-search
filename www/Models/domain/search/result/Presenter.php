@@ -32,12 +32,11 @@ class Presenter
      *              'support_content' => string,
      *              'owner' => string,
      *              'access' => string,
-     *              'is_public' => $this->is_public,
-     *              'appendix' => $this->appendix
+     *              'is_public' => bool,
+     *              'appendix' => string|NULL
      *          ],
      *          []
-     *      ]
-     * 
+     *      ],
      *      'privateSupports' => [ the same as publicSupports ],
      *      'is_public_page' => bool
      * ]
