@@ -9,7 +9,7 @@
         <title>支援総合検索サイト</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../../asset/stylesheet/index.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'search.css'; ?>">
 
     </head>
     <body>
@@ -18,7 +18,7 @@
         <main>
             <div class="center">
                 <div id="introduce" class="main--upper">
-                    <h3 id="introduce--title">困っていることにあった支援・相談先を探せる<br>検索システム!</h3>
+                    <h3 id="introduce--title" class="block-start0">困っていることにあった支援・相談先を探せる<br>検索システム!</h3>
                     <div id="introduce--main" class="inline-block left">
                         <p class="bold">このサイトは、官僚を夢見る学生と、プログラマーを夢見る学生が協力して、コロナ禍などが原因で困っている方々の力になるべく作り上げた検索サービスです!</p>
                         <p>&bull;仕事を失った、生活費が足りない、一人ではどうしようもない時でも相談先がない、、、。</p>
@@ -43,7 +43,7 @@
                     <?php require ViewsConfig::COMPONENTS_PATH. 'searchbox.php'; ?>
 
                     <div id="howto" class="main--lower--right">
-                        <p class="bold">使い方</p>
+                        <p class="bold block-start0">使い方</p>
                         <div id="howto--main">
                             <li>まずは、左の検索ボックスから、困っていること、地域、都道府県をお選びください。</li>
                             <li>日本国籍をお持ちでない方は、「国籍不問のみ」にチェックを入れることをおすすめします。</li>

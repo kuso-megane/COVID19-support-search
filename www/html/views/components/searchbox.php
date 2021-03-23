@@ -5,7 +5,7 @@
 </script>
 
 <form id="search-box" action="/search/1/1/1">
-    <p id="search-box--title" class="block-end0 bold">&lt;検索はこちら&gt;</p>
+    <p id="search-box--title" class="block-start0 block-end0 bold">&lt;検索はこちら&gt;</p>
     <div id="search-box--main">
 
         <div class="search-items">

@@ -118,6 +118,10 @@ main {
     text-align: left;
 }
 
+.right {
+    text-align: right;
+}
+
 .inline-block{
     display: inline-block;
 }
