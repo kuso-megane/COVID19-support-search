@@ -1,0 +1,86 @@
+
+@use './components/common';
+@use './components/searchBox';
+
+
+/*sp*/
+@media screen and (min-width: 320px) and (max-width: 480px){
+    .main--upper, .main--lower{
+        width: 95vw;
+    }
+}
+
+/*タブレット*/
+@media screen and (min-width: 481px) and (max-width: 1024px){
+    .main--upper, .main--lower {
+        width: 80vw;
+    }
+}
+
+/*pc*/
+@media screen and (min-width: 1025px){
+    .main--upper, .main--lower {
+        width: 70vw;
+    }
+}
+
+
+.main--upper{
+    display: inline-block;
+    border: solid 2px #009900;
+    border-radius: 1rem;
+    overflow-wrap: break-word;
+    background-color: white;
+    padding: 1rem;
+}
+
+.main--lower{
+    display: inline-flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 1rem;
+
+    &--right{
+        border: solid 2px #009900;
+        border-radius: 1rem;
+        background-color: white;
+        width: 60%;
+        padding: 0.5rem;
+    }
+}
+
+
+
+
+
+
+#introduce--main {
+    margin: auto;
+    font-size: 0.75rem;
+}
+
+#howto--main {
+    font-size: 0.75rem;
+
+    li {
+        list-style-type: disc;
+        margin: 1rem;
+    }
+}
+
+#recommend-articles {
+    font-size: 0.8rem;
+
+    li {
+        list-style: disc;
+        text-decoration: underline;
+    }
+}
+
+
+#link-to-articleList {
+    font-size: 0.7rem;
+    text-decoration: underline;
+}
+
+

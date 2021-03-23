@@ -7,14 +7,15 @@
     background-color: white;
     width: 35%;
     padding: 0.5rem;
+
+    &--main{
+        display: inline-flex;
+        text-align: left;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
 }
 
-#search-box--main{
-    display: inline-flex;
-    text-align: left;
-    flex-wrap: wrap;
-    align-content: space-between;
-}
 
 #search-box--title {
     text-align: left;
@@ -24,15 +25,16 @@
 .search-items {
     font-size: 0.7rem;
     width: 100%;
+
+    select,input{
+        font-size: 0.6rem;
+    }
+
+    select {
+        width: 90%;
+    }
 }
 
-.search-items select,input{
-    font-size: 0.6rem;
-}
-
-.search-items select {
-    width: 90%;
-}
 
 #is_only_foreign_ok-container {
     text-align: left;
