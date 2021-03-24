@@ -196,6 +196,7 @@ main {
 .main--lower {
   display: inline-flex;
   justify-content: space-between;
+  align-items: flex-start;
   text-align: left;
   margin-top: 1rem;
 }
@@ -236,36 +237,6 @@ main {
   text-decoration: underline;
 }
 
-#result {
-  border: 2px solid #009900;
-}
-#result .tab-content {
-  display: none;
-}
-#result .tab-content .show {
-  display: block;
-  font-size: 0.6rem;
-  padding: 0.5rem;
-}
-#result .tab-content .show .supportBox {
-  border: 1px solid #cccccc;
-  padding: 2px;
-  background-color: white;
-}
-#result .tab-content .show .supportBox .owner {
-  border-bottom: 1px solid #cccccc;
-}
-#result .tab-content .show .supportBox table, #result .tab-content .show .supportBox td {
-  border: 1px solid #cccccc;
-  border-collapse: collapse;
-}
-#result .tab-content .show .supportBox table .td-column, #result .tab-content .show .supportBox td .td-column {
-  width: 20%;
-}
-#result .tab-content .show .supportBox table .td-content, #result .tab-content .show .supportBox td .td-content {
-  width: 80%;
-}
-
 #tab-area {
   display: flex;
   cursor: pointer;
@@ -282,6 +253,38 @@ main {
 #tab-area .tab.active {
   background-color: #009900;
   color: white;
+}
+
+#result {
+  border: 2px solid #009900;
+}
+#result .tab-content {
+  display: none;
+}
+#result .tab-content.show {
+  display: block;
+  font-size: 0.5rem;
+  padding: 0.5rem;
+  background-color: transparent;
+}
+#result .tab-content.show .supportBox {
+  border: 1px solid #cccccc;
+  margin-bottom: 0.5rem;
+  padding: 2px;
+  background-color: white;
+}
+#result .tab-content.show .supportBox .owner {
+  border-bottom: 1px solid #cccccc;
+}
+#result .tab-content.show .supportBox table, #result .tab-content.show .supportBox td {
+  border: 1px solid #cccccc;
+  border-collapse: collapse;
+}
+#result .tab-content.show .supportBox table .td-column, #result .tab-content.show .supportBox td .td-column {
+  width: 20%;
+}
+#result .tab-content.show .supportBox table .td-content, #result .tab-content.show .supportBox td .td-content {
+  width: 80%;
 }
 
 /*# sourceMappingURL=search.css.map */

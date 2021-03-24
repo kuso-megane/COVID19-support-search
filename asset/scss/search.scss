@@ -40,7 +40,7 @@
 .main--lower{
     display: inline-flex;
     justify-content: space-between;
-    //align-items: flex-start;
+    align-items: flex-start;
     text-align: left;
     margin-top: 1rem;
 
@@ -90,6 +90,29 @@
     text-decoration: underline;
 }
 
+
+#tab-area {
+    display: flex;
+    cursor: pointer;
+
+    .tab {
+        border: 1px solid vars.$baseColor;
+        border-radius: 10px 10px 0 0;
+        margin: 1px;
+        color: vars.$lightColor;
+        font-size: 0.85rem;
+        $padding: 0.5rem;
+        padding-left: $padding;
+        padding-right: $padding;
+    }
+
+    .tab.active {
+        background-color: vars.$baseColor;
+        color: white;
+    }
+}
+
+
 #result {
     border: 2px solid vars.$baseColor;
 
@@ -99,13 +122,14 @@
 
     .tab-content.show {
         display: block;
-        font-size: 0.6rem;
+        font-size: 0.5rem;
         padding: 0.5rem;
-        //background-color: #eeeeee;
+        background-color: transparent;
 
         .supportBox {
             $borderColor: #cccccc;
             border: 1px solid $borderColor;
+            margin-bottom: 0.5rem;
             padding: 2px;
             background-color: white;
 
@@ -130,27 +154,3 @@
 
 
 }
-
-
-
-#tab-area {
-    display: flex;
-    cursor: pointer;
-
-    .tab {
-        border: 1px solid vars.$baseColor;
-        border-radius: 10px 10px 0 0;
-        margin: 1px;
-        color: vars.$lightColor;
-        font-size: 0.85rem;
-        $padding: 0.5rem;
-        padding-left: $padding;
-        padding-right: $padding;
-    }
-
-    .tab.active {
-        background-color: vars.$baseColor;
-        color: white;
-    }
-}
-
