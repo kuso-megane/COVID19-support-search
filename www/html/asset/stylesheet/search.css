@@ -267,6 +267,9 @@ main {
   padding: 0.5rem;
   background-color: transparent;
 }
+#result .tab-content.show .total {
+  font-size: 0.8rem;
+}
 #result .tab-content.show .supportBox {
   border: 1px solid #cccccc;
   margin-bottom: 0.5rem;
@@ -279,6 +282,7 @@ main {
 #result .tab-content.show .supportBox table, #result .tab-content.show .supportBox td {
   border: 1px solid #cccccc;
   border-collapse: collapse;
+  font-size: 0.6rem;
 }
 #result .tab-content.show .supportBox table .td-column, #result .tab-content.show .supportBox td .td-column {
   width: 20%;

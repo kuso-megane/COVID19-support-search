@@ -126,6 +126,10 @@
         padding: 0.5rem;
         background-color: transparent;
 
+        .total {
+            font-size: 0.8rem;
+        }
+
         .supportBox {
             $borderColor: #cccccc;
             border: 1px solid $borderColor;
@@ -140,6 +144,7 @@
             table, td{
                 border: 1px solid $borderColor;
                 border-collapse: collapse;
+                font-size: 0.6rem;
 
                 .td-column {
                     width: 20%;
