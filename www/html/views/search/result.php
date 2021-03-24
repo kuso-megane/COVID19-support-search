@@ -1,7 +1,6 @@
 <?php
     use myapp\config\ViewsConfig;
 
-    var_dump($privateSupports);
 ?>
 <!DOCTYPE html>
 <html>
