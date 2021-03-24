@@ -47,7 +47,7 @@
         border: solid 2px vars.$baseColor;
         border-radius: 1rem;
         background-color: white;
-        width: 65%;
+        width: 68%;
         padding: 0.5rem;
     }
 }
@@ -96,7 +96,7 @@
         display: none;
     }
 
-    .tab-content.show {
+    .tab-content .show {
         display: block;
         font-size: 0.6rem;
         padding: 0.5rem;

@@ -203,7 +203,7 @@ main {
   border: solid 2px #009900;
   border-radius: 1rem;
   background-color: white;
-  width: 65%;
+  width: 68%;
   padding: 0.5rem;
 }
 
@@ -242,27 +242,27 @@ main {
 #result .tab-content {
   display: none;
 }
-#result .tab-content.show {
+#result .tab-content .show {
   display: block;
   font-size: 0.6rem;
   padding: 0.5rem;
 }
-#result .tab-content.show .supportBox {
+#result .tab-content .show .supportBox {
   border: 1px solid #cccccc;
   padding: 2px;
   background-color: white;
 }
-#result .tab-content.show .supportBox .owner {
+#result .tab-content .show .supportBox .owner {
   border-bottom: 1px solid #cccccc;
 }
-#result .tab-content.show .supportBox table, #result .tab-content.show .supportBox td {
+#result .tab-content .show .supportBox table, #result .tab-content .show .supportBox td {
   border: 1px solid #cccccc;
   border-collapse: collapse;
 }
-#result .tab-content.show .supportBox table .td-column, #result .tab-content.show .supportBox td .td-column {
+#result .tab-content .show .supportBox table .td-column, #result .tab-content .show .supportBox td .td-column {
   width: 20%;
 }
-#result .tab-content.show .supportBox table .td-content, #result .tab-content.show .supportBox td .td-content {
+#result .tab-content .show .supportBox table .td-content, #result .tab-content .show .supportBox td .td-content {
   width: 80%;
 }
 

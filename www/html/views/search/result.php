@@ -1,8 +1,7 @@
 <?php
     use myapp\config\ViewsConfig;
 
-use function PHPUnit\Framework\isEmpty;
-
+    var_dump($privateSupports);
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,51 +38,81 @@ use function PHPUnit\Framework\isEmpty;
                     <div class="main--lower--right">
                         <p class="bold block-start0">&lt;検索結果&gt;</p>
                         <div id="tab-area">
-                            <div class="tab active"><span class="lighter">公的支援</span></div>
-                            <div class="tab"><span class="lighter">民間支援</span></div>
+                            <div id="public-tab" class="tab <?php if($is_public_page === TRUE) {echo 'active';} ?>">公的支援</div>
+                            <div id="private-tab" class="tab <?php if($is_public_page === FALSE) {echo 'active';} ?>">民間支援</div>
                         </div>
                         <div id="result">
-                            <div id="publicSupports" class="tab-content <?php if($is_public_page === TRUE) {echo 'show';} ?>" >
+                            <!-- xxx-tabがactiveになったとき、xxx-tab-contentがshow状態になる、初期状態はサーバーサイドで決定-->
+                            <div id="public-tab-content" class="tab-content <?php if($is_public_page === TRUE) {echo 'show';} ?>" >
+                                <p class="total"><?php echo $publicSupportsTotal; ?>件見つかりました。</p>
                                 <?php if(empty($publicSupports) === TRUE): ?>
 
-                                    <p class="no-result">検索結果がありませんでした。民間組織をご覧になるか、検索条件を変えてみてください。</p>
+                                    <p class="no-result">検索結果がありませんでした。民間支援をご覧になるか、検索条件を変えてみてください。</p>
+
+                                <?php else: ?>
+
+                                    <?php foreach($publicSupports as $support): ?>
+                                    
+                                        <div class="supportBox">
+                                            <h3 class="owner"><?php echo  $support['owner']; ?></h3>
+                                            <table>
+                                                <tr>
+                                                    <td class="td-column">支援内容</td>
+                                                    <td class="td-content"><?php echo $support['support_content'] ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-column">アクセス</td>
+                                                    <td class="td-content"><?php echo $support['access']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-column">備考</td>
+                                                    <td class="td-content"><?php echo $support['appendix']; ?></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    <?php endforeach; ?>
 
                                 <?php endif; ?>
-
-                                <?php foreach($publicSupports as $support): ?>
-                                
-                                    <div class="supportBox">
-                                        <h3 class="owner"><?php echo  $support['owner']; ?></h3>
-                                        <table>
-                                            <tr>
-                                                <td class="td-column">支援内容</td>
-                                                <td class="td-content"><?php echo $support['support_content'] ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="td-column">アクセス</td>
-                                                <td class="td-content"><?php echo $support['access']; ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="td-column">備考</td>
-                                                <td class="td-content"><?php echo $support['appendix']; ?></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-
-                                <?php endforeach; ?>
                             </div>
-                            <div id="privateSupports" class="tab-content <?php if($is_public_page === FALSE) {echo 'show';} ?>">
+                            <div id="private-tab-content" class="tab-content <?php if($is_public_page === FALSE) {echo 'show';} ?>">
+                                <p class="total"><?php echo $privateSupportsTotal; ?>件見つかりました。</p>       
+                                <?php if(empty($privateSupports) === TRUE): ?>
 
+                                    <p class="no-result">検索結果がありませんでした。公的支援をご覧になるか、検索条件を変えてみてください。</p>
+
+                                <?php else: ?>
+
+                                    <?php foreach($privateSupports as $support): ?>
+                                    
+                                        <div class="supportBox">
+                                            <h3 class="owner"><?php echo  $support['owner']; ?></h3>
+                                            <table>
+                                                <tr>
+                                                    <td class="td-column">支援内容</td>
+                                                    <td class="td-content"><?php echo $support['support_content'] ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-column">アクセス</td>
+                                                    <td class="td-content"><?php echo $support['access']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td-column">備考</td>
+                                                    <td class="td-content"><?php echo $support['appendix']; ?></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    <?php endforeach; ?>
+                                
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            
-
-            
         </main>
+        <script src="<?php echo ViewsConfig::SCRIPT_URL. 'tabChange.js'; ?>"></script>
     </body>
            
 
