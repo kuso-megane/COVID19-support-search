@@ -1,7 +1,11 @@
 
 <script>
     // for initAreaSelect() in asset/js/initAreaSelect.js
-    const searchedAreaId = "<?php echo $searched_area_id;  ?>";
+    const searchedAreaId = "<?php
+
+use myapp\config\ViewsConfig;
+
+echo $searched_area_id;  ?>";
 </script>
 
 <form id="search-box" action="/search/1/1/1">
@@ -63,4 +67,4 @@
     </p>   
 </form>
 
-<script src="/asset/js/initAreaSelect.js"></script>
+<script src="<?php echo ViewsConfig::SCRIPT_URL. 'initAreaSelect.js'; ?>"></script>
