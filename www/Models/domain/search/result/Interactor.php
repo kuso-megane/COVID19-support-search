@@ -52,14 +52,28 @@ class Interactor
         }
 
         $publicSupportsTotal = 0;
-        $privateSupportsTotal = 0;
         $publicSupports = $this->searchedSupportOrgsRepository->searchSupports(
             $publicSupportsTotal, $metaTrouble, $region_id, $area_id, $is_only_foreign_ok, TRUE, $pub_p
         );
 
+        $privateSupportsTotal = 0;
         $privateSupports = $this->searchedSupportOrgsRepository->searchSupports(
             $privateSupportsTotal, $metaTrouble, $region_id, $area_id, $is_only_foreign_ok, FALSE, $pri_p
         );
+
+        //全国の団体を追加
+        $zenkoku_publicSupportsTotal = 0;
+        $publicSupports += $this->searchedSupportOrgsRepository->searchSupports(
+            $zenkoku_publicSupportsTotal, $metaTrouble, $region_id, AppConfig::ZENKOKU_ID, $is_only_foreign_ok, TRUE, $pub_p
+        );
+        $publicSupportsTotal += $zenkoku_publicSupportsTotal;
+
+        $zenkoku_privateSupportsTotal = 0;
+        $privateSupports += $this->searchedSupportOrgsRepository->searchSupports(
+            $zenkoku_privateSupportsTotal, $metaTrouble, $region_id, AppConfig::ZENKOKU_ID, $is_only_foreign_ok, FALSE, $pri_p
+        );
+        $privateSupportsTotal += $zenkoku_privateSupportsTotal;
+        
 
 
         $builder = new \DI\ContainerBuilder();

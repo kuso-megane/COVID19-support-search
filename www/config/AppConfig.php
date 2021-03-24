@@ -8,7 +8,9 @@ class AppConfig
     const POST_SUCCESS = 100;
     const POST_FAILURE = -100;
 
-    const SUPPORTS_NUM = 9; //1ページあたりの支援表示数
+    const SUPPORTS_NUM = 10; //1ページあたりの支援表示数
 
     const DEFAULT_IMG = 'default.jpg';
+
+    const ZENKOKU_ID = 1;
 }
