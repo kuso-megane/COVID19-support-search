@@ -47,7 +47,7 @@
         border: solid 2px vars.$baseColor;
         border-radius: 1rem;
         background-color: white;
-        width: 60%;
+        width: 65%;
         padding: 0.5rem;
     }
 }
@@ -89,10 +89,67 @@
     text-decoration: underline;
 }
 
+#result {
+    border: 2px solid vars.$baseColor;
 
-.tab-area {
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.show {
+        display: block;
+        font-size: 0.6rem;
+        padding: 0.5rem;
+        //background-color: #eeeeee;
+
+        .supportBox {
+            $borderColor: #cccccc;
+            border: 1px solid $borderColor;
+            padding: 2px;
+            background-color: white;
+
+            .owner {
+                border-bottom: 1px solid $borderColor;
+            }
+
+            table, td{
+                border: 1px solid $borderColor;
+                border-collapse: collapse;
+
+                .td-column {
+                    width: 20%;
+                }
+                .td-content {
+                    width: 80%;
+                }
+            }
+
+        }
+    }
+
+
+}
+
+
+
+#tab-area {
     display: flex;
-    justify-content: space-around;
     cursor: pointer;
+
+    .tab {
+        border: 1px solid vars.$baseColor;
+        border-radius: 10px 10px 0 0;
+        margin: 1px;
+        color: vars.$lightColor;
+        font-size: 0.85rem;
+        $padding: 0.5rem;
+        padding-left: $padding;
+        padding-right: $padding;
+    }
+
+    .tab.active {
+        background-color: vars.$baseColor;
+        color: white;
+    }
 }
 
