@@ -58,7 +58,7 @@ class Interactor
         );
 
         $privateSupports = $this->searchedSupportOrgsRepository->searchSupports(
-            $privateSupportsTotal, $metaTrouble, $region_id, $area_id, $is_only_foreign_ok, TRUE, $pri_p
+            $privateSupportsTotal, $metaTrouble, $region_id, $area_id, $is_only_foreign_ok, FALSE, $pri_p
         );
 
 
