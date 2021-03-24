@@ -56,44 +56,66 @@ class SupportOrgsTableTest extends TestCase
     /**
      * @dataProvider providerForFindSearchedOnes()
      */
-    public function testFindSearchedOnes(?bool $is_only_foreign_ok, ?bool $is_public)
+    public function testFindSearchedOnes(?bool $is_only_foreign_ok, ?bool $is_public, int $page)
     {
 
         if ($is_only_foreign_ok === NULL && $is_public === NULL) {
+
+            $maxNumPerPage_mock = count($this::SAMPLE_DATAS);
+
             $fake_meta_word = 'fake';
-            $this->assertSame([], $this->table->findSearchedOnes($fake_meta_word, $this::SAMPLE_AREA_ID, TRUE, TRUE));
+            $this->assertSame([], $this->table->findSearchedOnes($fake_meta_word, $this::SAMPLE_AREA_ID, TRUE, TRUE, $maxNumPerPage_mock, $page));
 
             $fake_area_id = 100;
-            $this->assertSame([], $this->table->findSearchedOnes($this::SAMPLE_META_WORD, $fake_area_id, TRUE, TRUE));
+            $this->assertSame([], $this->table->findSearchedOnes($this::SAMPLE_META_WORD, $fake_area_id, TRUE, TRUE, $maxNumPerPage_mock, $page));
         }
         else {
             if ($is_only_foreign_ok === FALSE && $is_public === FALSE) {
-                $expected = [
-                    ['id' => 1, 'support_content' => 'sample1', 'owner' => 'sample1', 'access' => 'sample1', 'appendix' => 'sample1'],
-                    ['id' => 3, 'support_content' => 'sample3', 'owner' => 'sample3', 'access' => 'sample3', 'appendix' => 'sample3']
-                ];
+
+                $maxNumPerPage_mock = 1; //ページ切替の検証のため小さく
+
+                if ($page === 1) {
+                    $expected = [
+                        ['id' => 1, 'support_content' => 'sample1', 'owner' => 'sample1', 'access' => 'sample1', 'appendix' => 'sample1']
+                    ];
+                }
+                elseif ($page === 2) {
+                    $expected = [
+                        ['id' => 3, 'support_content' => 'sample3', 'owner' => 'sample3', 'access' => 'sample3', 'appendix' => 'sample3']
+                    ];
+                }
+                
             }
             elseif($is_only_foreign_ok === FALSE && $is_public === TRUE) {
+
+                $maxNumPerPage_mock = count($this::SAMPLE_DATAS);
                 $expected = [
                     ['id' => 2, 'support_content' => 'sample2', 'owner' => 'sample2', 'access' => 'sample2', 'appendix' => 'sample2'],
                     ['id' => 4, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4']
                 ];
+
             }
             elseif($is_only_foreign_ok === TRUE && $is_public === FALSE) {
+
+                $maxNumPerPage_mock = count($this::SAMPLE_DATAS);
                 $expected = [
                     ['id' => 3, 'support_content' => 'sample3', 'owner' => 'sample3', 'access' => 'sample3', 'appendix' => 'sample3']
                 ];
+
             }
             elseif($is_only_foreign_ok === TRUE && $is_public === TRUE) {
+
+                $maxNumPerPage_mock = count($this::SAMPLE_DATAS);
                 $expected = [
                     ['id' => 4, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4']
                 ];
+
             }
 
             $this->assertSame(
                 $expected,
                 $this->table->findSearchedOnes(
-                    $this::SAMPLE_META_WORD, $this::SAMPLE_AREA_ID, $is_only_foreign_ok, $is_public
+                    $this::SAMPLE_META_WORD, $this::SAMPLE_AREA_ID, $is_only_foreign_ok, $is_public, $maxNumPerPage_mock, $page
                 )
             );
 
@@ -105,11 +127,12 @@ class SupportOrgsTableTest extends TestCase
     public function providerForFindSearchedOnes():array
     {
         return [
-            'when $is_only_foreign_ok == FALSE && $is_public == FALSE' => [FALSE, FALSE],
-            'when $is_only_foreign_ok == FALSE && $is_public == TRUE' => [FALSE, TRUE],
-            'when $is_only_foreign_ok == TRUE && $is_public == FALSE' => [TRUE, FALSE],
-            'when $is_only_foreign_ok == TRUE && $is_public == TRUE' => [TRUE, TRUE],
-            'when no record is found' => [NULL, NULL]
+            'when $is_only_foreign_ok == FALSE && $is_public == FALSE && $page == 1' => [FALSE, FALSE, 1],
+            'when $is_only_foreign_ok == FALSE && $is_public == FALSE %% $page == 2' => [FALSE, FALSE, 2],
+            'when $is_only_foreign_ok == FALSE && $is_public == TRUE' => [FALSE, TRUE, 1],
+            'when $is_only_foreign_ok == TRUE && $is_public == FALSE' => [TRUE, FALSE, 1],
+            'when $is_only_foreign_ok == TRUE && $is_public == TRUE' => [TRUE, TRUE, 1],
+            'when no record is found' => [NULL, NULL, 1]
         ];
     }
 }

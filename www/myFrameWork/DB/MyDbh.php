@@ -150,7 +150,7 @@ class MyDbh extends PDO
      * @return array|PDOStatement (e.g.)[ ['id' => int, 'name' => string], [] ] 
      * 
      * 
-     * limitStart is the start index of the records you want.
+     * limitStart is the start index minus 1 of the records you want. e.g. When you want from 1 to x, please set 0
      * 
      * limitNum is the num of the records you want.
      * 
