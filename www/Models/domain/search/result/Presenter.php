@@ -87,7 +87,7 @@ class Presenter
      */
     public function reportUnexpectedSearch(string $message = 'Unexpected Search was executed'): int
     {
-        $this->reportValidationFailure($message);
+        return $this->reportValidationFailure($message);
     }
 
 
