@@ -1,6 +1,6 @@
 <?php
     use myapp\config\ViewsConfig;
-
+    use myapp\myFrameWork\ComponentsRenderer;
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,11 +44,19 @@
                             <!-- xxx-tabがactiveになったとき、xxx-tab-contentがshow状態になる、初期状態はサーバーサイドで決定-->
                             <div id="public-tab-content" class="tab-content <?php if($is_public_page === TRUE) {echo 'show';} ?>" >
                                 <p class="total"><?php echo $publicSupportsTotal; ?>件見つかりました。</p>
+
                                 <?php if(empty($publicSupports) === TRUE): ?>
 
                                     <p class="no-result">検索結果がありませんでした。民間支援をご覧になるか、検索条件を変えてみてください。</p>
 
                                 <?php else: ?>
+                                    
+                                    <?php
+                                        (new ComponentsRenderer)->render('page_switch.php', [
+                                            'pageTotal' => $publicPageTotal,
+                                            'currentPage' => $publicCurrentPage
+                                        ]);
+                                    ?>
 
                                     <?php foreach($publicSupports as $support): ?>
                                     
@@ -72,6 +80,13 @@
 
                                     <?php endforeach; ?>
 
+                                    <?php
+                                        (new ComponentsRenderer)->render('page_switch.php', [
+                                            'pageTotal' => $publicPageTotal,
+                                            'currentPage' => $publicCurrentPage
+                                        ]);
+                                    ?>
+
                                 <?php endif; ?>
                             </div>
                             <div id="private-tab-content" class="tab-content <?php if($is_public_page === FALSE) {echo 'show';} ?>">
@@ -81,6 +96,13 @@
                                     <p class="no-result">検索結果がありませんでした。公的支援をご覧になるか、検索条件を変えてみてください。</p>
 
                                 <?php else: ?>
+
+                                    <?php
+                                        (new ComponentsRenderer)->render('page_switch.php', [
+                                            'pageTotal' => $privatePageTotal,
+                                            'currentPage' => $privateCurrentPage
+                                        ]);
+                                    ?>
 
                                     <?php foreach($privateSupports as $support): ?>
                                     
@@ -103,6 +125,13 @@
                                         </div>
 
                                     <?php endforeach; ?>
+
+                                    <?php
+                                        (new ComponentsRenderer)->render('page_switch.php', [
+                                            'pageTotal' => $privatePageTotal,
+                                            'currentPage' => $privateCurrentPage
+                                        ]);
+                                    ?>
                                 
                                 <?php endif; ?>
                             </div>

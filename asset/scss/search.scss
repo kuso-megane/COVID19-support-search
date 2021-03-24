@@ -2,9 +2,12 @@
 @use './components/vars' as vars;
 
 @use './components/common';
+
 @use './components/header';
+
 @use './components/searchBox';
 
+@use './components/page_switch';
 
 /*sp*/
 @media screen and (min-width: 320px) and (max-width: 480px){

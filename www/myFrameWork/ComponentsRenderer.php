@@ -8,7 +8,7 @@ class ComponentsRenderer
 {
     /**
      * render views/components/$componentName.php
-     * @param string $componentName
+     * @param string $componentName like 'page_switch.php'
      * @param array $vm [
      *      'xxx' => $var1,
      *      'yyy' => $var2,
@@ -26,6 +26,6 @@ class ComponentsRenderer
             $$key = $value;
         }
 
-        require ViewsConfig::COMPONENTS_PATH. $componentName . '.php';
+        require ViewsConfig::COMPONENTS_PATH. $componentName;
     }
 }
