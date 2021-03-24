@@ -145,13 +145,17 @@
                 border: 1px solid $borderColor;
                 border-collapse: collapse;
                 font-size: 0.6rem;
+            }
 
-                .td-column {
-                    width: 20%;
-                }
-                .td-content {
-                    width: 80%;
-                }
+            table, tr{
+                width: 100%;
+            }
+
+            .td-column {
+                width: 20%;
+            }
+            .td-content {
+                width: 80%;
             }
 
         }

@@ -284,10 +284,13 @@ main {
   border-collapse: collapse;
   font-size: 0.6rem;
 }
-#result .tab-content.show .supportBox table .td-column, #result .tab-content.show .supportBox td .td-column {
+#result .tab-content.show .supportBox table, #result .tab-content.show .supportBox tr {
+  width: 100%;
+}
+#result .tab-content.show .supportBox .td-column {
   width: 20%;
 }
-#result .tab-content.show .supportBox table .td-content, #result .tab-content.show .supportBox td .td-content {
+#result .tab-content.show .supportBox .td-content {
   width: 80%;
 }
 
