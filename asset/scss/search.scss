@@ -40,6 +40,7 @@
 .main--lower{
     display: inline-flex;
     justify-content: space-between;
+    //align-items: flex-start;
     text-align: left;
     margin-top: 1rem;
 
@@ -96,7 +97,7 @@
         display: none;
     }
 
-    .tab-content .show {
+    .tab-content.show {
         display: block;
         font-size: 0.6rem;
         padding: 0.5rem;
