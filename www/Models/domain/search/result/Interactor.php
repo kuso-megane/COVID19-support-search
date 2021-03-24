@@ -63,14 +63,18 @@ class Interactor
 
         //全国の団体を追加
         $zenkoku_publicSupportsTotal = 0;
-        $publicSupports += $this->searchedSupportOrgsRepository->searchSupports(
-            $zenkoku_publicSupportsTotal, $metaTrouble, $region_id, AppConfig::ZENKOKU_ID, $is_only_foreign_ok, TRUE, $pub_p
+        $publicSupports = array_merge($publicSupports,
+            $this->searchedSupportOrgsRepository->searchSupports(
+                $zenkoku_publicSupportsTotal, $metaTrouble, $region_id, AppConfig::ZENKOKU_ID, $is_only_foreign_ok, TRUE, $pub_p
+            )
         );
         $publicSupportsTotal += $zenkoku_publicSupportsTotal;
 
         $zenkoku_privateSupportsTotal = 0;
-        $privateSupports += $this->searchedSupportOrgsRepository->searchSupports(
-            $zenkoku_privateSupportsTotal, $metaTrouble, $region_id, AppConfig::ZENKOKU_ID, $is_only_foreign_ok, FALSE, $pri_p
+        $privateSupports = array_merge($privateSupports, 
+            $this->searchedSupportOrgsRepository->searchSupports(
+                $zenkoku_privateSupportsTotal, $metaTrouble, $region_id, AppConfig::ZENKOKU_ID, $is_only_foreign_ok, FALSE, $pri_p
+            )
         );
         $privateSupportsTotal += $zenkoku_privateSupportsTotal;
         
