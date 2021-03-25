@@ -1,6 +1,7 @@
 <?php
 
 use infra\database\src\SupportOrgsTable;
+use myapp\config\AppConfig;
 use myapp\myFrameWork\DB\Connection;
 use myapp\myFrameWork\DB\MyDbh;
 use PHPUnit\Framework\TestCase;
@@ -9,7 +10,7 @@ class SupportOrgsTableTest extends TestCase
 {
     const TABLENAME = 'SupportOrgs';
 
-    const SAMPLE_AREA_ID = 1;
+    const SAMPLE_AREA_ID = 2;
     const SAMPLE_META_WORD = 'meta';
 
     const SAMPLE_DATAS = [
@@ -20,7 +21,9 @@ class SupportOrgsTableTest extends TestCase
         ['area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample3', 'owner' => 'sample3', 'access' => 'sample3', 
         'is_foreign_ok' => 1, 'is_public' => 0, 'meta_word' => self::SAMPLE_META_WORD, 'appendix' => 'sample3'],
         ['area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 
-        'is_foreign_ok' => 1, 'is_public' => 1, 'meta_word' => self::SAMPLE_META_WORD, 'appendix' => 'sample4']
+        'is_foreign_ok' => 1, 'is_public' => 1, 'meta_word' => self::SAMPLE_META_WORD, 'appendix' => 'sample4'],
+        ['area_id' => AppConfig::ZENKOKU_ID, 'support_content' => 'sample5', 'owner' => 'sample5', 'access' => 'sample5', 
+        'is_foreign_ok' => 0, 'is_public' => 1, 'meta_word' => self::SAMPLE_META_WORD, 'appendix' => 'sample5']
     ];
 
     private $dbh;
@@ -49,14 +52,13 @@ class SupportOrgsTableTest extends TestCase
                 ':appendix' => $sampleData['appendix']
             ]);
         }
-
     }
 
 
     /**
      * @dataProvider providerForFindSearchedOnes()
      */
-    public function testFindSearchedOnes(?bool $is_only_foreign_ok, ?bool $is_public, int $page)
+    public function testFindSearchedOnes(?bool $is_only_foreign_ok, ?bool $is_public, int $page = 1, bool $is_necessary_zenkoku = FALSE)
     {
 
         if ($is_only_foreign_ok === NULL && $is_public === NULL) {
@@ -89,10 +91,21 @@ class SupportOrgsTableTest extends TestCase
             elseif($is_only_foreign_ok === FALSE && $is_public === TRUE) {
 
                 $maxNumPerPage_mock = count($this::SAMPLE_DATAS);
-                $expected = [
-                    ['id' => 2, 'support_content' => 'sample2', 'owner' => 'sample2', 'access' => 'sample2', 'appendix' => 'sample2'],
-                    ['id' => 4, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4']
-                ];
+                if ($is_necessary_zenkoku === FALSE) {
+                    $expected = [
+                        ['id' => 2, 'support_content' => 'sample2', 'owner' => 'sample2', 'access' => 'sample2', 'appendix' => 'sample2'],
+                        ['id' => 4, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4']
+                    ];
+                }
+                elseif ($is_necessary_zenkoku === TRUE) {
+
+                    $expected = [
+                        ['id' => 2, 'support_content' => 'sample2', 'owner' => 'sample2', 'access' => 'sample2', 'appendix' => 'sample2'],
+                        ['id' => 4, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4'],
+                        ['id' => 5, 'support_content' => 'sample5', 'owner' => 'sample5', 'access' => 'sample5', 'appendix' => 'sample5']
+                    ];
+                }
+                
 
             }
             elseif($is_only_foreign_ok === TRUE && $is_public === FALSE) {
@@ -115,7 +128,7 @@ class SupportOrgsTableTest extends TestCase
             $this->assertSame(
                 $expected,
                 $this->table->findSearchedOnes(
-                    $this::SAMPLE_META_WORD, $this::SAMPLE_AREA_ID, $is_only_foreign_ok, $is_public, $maxNumPerPage_mock, $page
+                    $this::SAMPLE_META_WORD, $this::SAMPLE_AREA_ID, $is_only_foreign_ok, $is_public, $maxNumPerPage_mock, $page, $is_necessary_zenkoku
                 )
             );
 
@@ -128,11 +141,12 @@ class SupportOrgsTableTest extends TestCase
     {
         return [
             'when $is_only_foreign_ok == FALSE && $is_public == FALSE && $page == 1' => [FALSE, FALSE, 1],
-            'when $is_only_foreign_ok == FALSE && $is_public == FALSE %% $page == 2' => [FALSE, FALSE, 2],
-            'when $is_only_foreign_ok == FALSE && $is_public == TRUE' => [FALSE, TRUE, 1],
-            'when $is_only_foreign_ok == TRUE && $is_public == FALSE' => [TRUE, FALSE, 1],
-            'when $is_only_foreign_ok == TRUE && $is_public == TRUE' => [TRUE, TRUE, 1],
-            'when no record is found' => [NULL, NULL, 1]
+            'when $is_only_foreign_ok == FALSE && $is_public == FALSE && $page == 2' => [FALSE, FALSE, 2],
+            'when $is_only_foreign_ok == FALSE && $is_public == TRUE && zenkoku not included' => [FALSE, TRUE, 1, FALSE],
+            'when $is_only_foreign_ok == FALSE && $is_public == TRUE && zenkoku included' => [FALSE, TRUE, 1, TRUE],
+            'when $is_only_foreign_ok == TRUE && $is_public == FALSE' => [TRUE, FALSE],
+            'when $is_only_foreign_ok == TRUE && $is_public == TRUE' => [TRUE, TRUE],
+            'when no record is found' => [NULL, NULL]
         ];
     }
 }

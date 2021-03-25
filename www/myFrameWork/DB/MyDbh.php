@@ -83,7 +83,7 @@ class MyDbh extends PDO
         }
 
         if ($orderby != NULL) {
-            $sort = ($sort == NULL) ? 'ASC' : $sort;
+            //$sort = ($sort == NULL) ? 'ASC' : $sort;
             $order = " ORDER BY {$orderby} {$sort} ";
         }
         else {
@@ -140,6 +140,8 @@ class MyDbh extends PDO
      *      'limitStart' => ':limitStart'|int,
      *      'limitNum' => ':limitNum'|int
      * ]
+     * 
+     * if you execute multiple sort, set 'orderby' like 'id ASC, name DESC' and don't set 'sort'
      * @param array $boundValues (e.g.) [':id' => int, ':num' => int, ':orderby' => string]
      * 
      * if you wanna bind these manually, this can be empty
