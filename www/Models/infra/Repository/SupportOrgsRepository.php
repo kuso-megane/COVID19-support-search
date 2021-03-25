@@ -27,9 +27,7 @@ implements
     public function searchSupports(int &$total, MetaTrouble $metaTrouble, int $region_id, int $area_id, bool $is_only_foreign_ok, bool $is_public, int $page): array
     {
         $metaWord = $metaTrouble->getMetaWord();
-        $datas = $this->table->findSearchedOnes($metaWord, $area_id, $is_only_foreign_ok, $is_public, AppConfig::MAXNUM_PER_PAGE, $page);
-
-        $total = count($datas);
+        $datas = $this->table->findSearchedOnes($total, $metaWord, $area_id, $is_only_foreign_ok, $is_public, AppConfig::MAXNUM_PER_PAGE, $page, TRUE);
 
         foreach ($datas as &$data) {
             $data = new SearchedSupport(

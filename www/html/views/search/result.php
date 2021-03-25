@@ -51,12 +51,19 @@
 
                                 <?php else: ?>
                                     
-                                    <?php
-                                        (new ComponentsRenderer)->render('page_switch.php', [
-                                            'pageTotal' => $publicPageTotal,
-                                            'currentPage' => $publicCurrentPage
-                                        ]);
-                                    ?>
+                                    <div class="center">
+                                        <div class="page-switch">
+                                            <?php for($i = 1; $i <= $publicPageTotal; ++$i): ?>
+
+                                                <p class="page-switch--nums <?php if ($publicCurrentPage === $i) {echo 'strong disabled';} ?>">
+                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}"; ?>" >
+                                                        <?php echo "{$i}"; ?>
+                                                    </a>
+                                                </p>
+
+                                            <?php endfor; ?>
+                                        </div>
+                                    </div>
 
                                     <?php foreach($publicSupports as $support): ?>
                                     
@@ -80,12 +87,19 @@
 
                                     <?php endforeach; ?>
 
-                                    <?php
-                                        (new ComponentsRenderer)->render('page_switch.php', [
-                                            'pageTotal' => $publicPageTotal,
-                                            'currentPage' => $publicCurrentPage
-                                        ]);
-                                    ?>
+                                    <div class="center">
+                                        <div class="page-switch">
+                                            <?php for($i = 1; $i <= $publicPageTotal; ++$i): ?>
+
+                                                <p class="page-switch--nums <?php if ($publicCurrentPage === $i) {echo 'strong disabled';} ?>">
+                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}"; ?>" >
+                                                        <?php echo "{$i}"; ?>
+                                                    </a>
+                                                </p>
+
+                                            <?php endfor; ?>
+                                        </div>
+                                    </div>
 
                                 <?php endif; ?>
                             </div>
@@ -97,12 +111,19 @@
 
                                 <?php else: ?>
 
-                                    <?php
-                                        (new ComponentsRenderer)->render('page_switch.php', [
-                                            'pageTotal' => $privatePageTotal,
-                                            'currentPage' => $privateCurrentPage
-                                        ]);
-                                    ?>
+                                    <div class="center">
+                                        <div class="page-switch">
+                                            <?php for($i = 1; $i <= $privatePageTotal; ++$i): ?>
+
+                                                <p class="page-switch--nums <?php if ($privateCurrentPage === $i) {echo 'strong disabled';} ?>">
+                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}"; ?>" >
+                                                        <?php echo "{$i}"; ?>
+                                                    </a>
+                                                </p>
+
+                                            <?php endfor; ?>
+                                        </div>
+                                    </div>
 
                                     <?php foreach($privateSupports as $support): ?>
                                     
@@ -126,12 +147,19 @@
 
                                     <?php endforeach; ?>
 
-                                    <?php
-                                        (new ComponentsRenderer)->render('page_switch.php', [
-                                            'pageTotal' => $privatePageTotal,
-                                            'currentPage' => $privateCurrentPage
-                                        ]);
-                                    ?>
+                                    <div class="center">
+                                        <div class="page-switch">
+                                            <?php for($i = 1; $i <= $privatePageTotal; ++$i): ?>
+
+                                                <p class="page-switch--nums <?php if ($privateCurrentPage === $i) {echo 'strong disabled';} ?>">
+                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}"; ?>" >
+                                                        <?php echo "{$i}"; ?>
+                                                    </a>
+                                                </p>
+
+                                            <?php endfor; ?>
+                                        </div>
+                                    </div>
                                 
                                 <?php endif; ?>
                             </div>

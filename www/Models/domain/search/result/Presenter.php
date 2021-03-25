@@ -38,7 +38,8 @@ class Presenter
      *          []
      *      ],
      *      'privateSupports' => [ the same as publicSupports ],
-     *      'is_public_page' => bool
+     *      'is_public_page' => bool,
+     *      'query' => string
      * ]
      *  +$searchedBox
      * 
@@ -47,7 +48,7 @@ class Presenter
     public function present(
         int $publicCurrentPage, int $privateCurrentPage, int $publicSupportsTotal, int $privateSupportsTotal,
         int $publicPageTotal, int $privatePageTotal, array $publicSupports, array $privateSupports,
-        bool $is_public_page, array $searchBoxData
+        bool $is_public_page, array $searchBoxData, string $query
     ): array
     {
 
@@ -61,6 +62,7 @@ class Presenter
             'publicSupports' => $this->format($publicSupports),
             'privateSupports' => $this->format($privateSupports),
             'is_public_page' => $is_public_page,
+            'query' => $query
         ];
 
         return $vm += $searchBoxData;

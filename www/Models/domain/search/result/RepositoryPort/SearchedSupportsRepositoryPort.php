@@ -8,7 +8,7 @@ use domain\search\result\Data\MetaTrouble;
 interface SearchedSupportsRepositoryPort
 {
     /**
-     * search the supports which meets given condition and count the num of those.
+     * search the supports which meets given condition including 'zenkoku' ones
      * 
      * @param int &$total total num of coming up supports
      * @param MetaTrouble $trouble_id

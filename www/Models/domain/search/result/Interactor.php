@@ -8,6 +8,7 @@ use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use domain\search\result\Validator\Validator;
 use domain\components\searchBox\Interactor as SearchBoxInteractor;
 use myapp\config\AppConfig;
+use myapp\myFrameWork\SuperGlobalVars;
 
 class Interactor
 {
@@ -45,6 +46,7 @@ class Interactor
         $pub_p = $input['pub_p'];
         $pri_p = $input['pri_p'];
 
+
         $metaTrouble = $this->metaTroubleRepository->getMetaTrouble($trouble_id);
 
         if ($metaTrouble === NULL) {
@@ -61,24 +63,6 @@ class Interactor
             $privateSupportsTotal, $metaTrouble, $region_id, $area_id, $is_only_foreign_ok, FALSE, $pri_p
         );
 
-        //全国の団体を追加
-        $zenkoku_publicSupportsTotal = 0;
-        $publicSupports = array_merge($publicSupports,
-            $this->searchedSupportOrgsRepository->searchSupports(
-                $zenkoku_publicSupportsTotal, $metaTrouble, $region_id, AppConfig::ZENKOKU_ID, $is_only_foreign_ok, TRUE, $pub_p
-            )
-        );
-        $publicSupportsTotal += $zenkoku_publicSupportsTotal;
-
-        $zenkoku_privateSupportsTotal = 0;
-        $privateSupports = array_merge($privateSupports, 
-            $this->searchedSupportOrgsRepository->searchSupports(
-                $zenkoku_privateSupportsTotal, $metaTrouble, $region_id, AppConfig::ZENKOKU_ID, $is_only_foreign_ok, FALSE, $pri_p
-            )
-        );
-        $privateSupportsTotal += $zenkoku_privateSupportsTotal;
-        
-
 
         $builder = new \DI\ContainerBuilder();
         $builder->addDefinitions('/var/www/Models/diconfig.php');
@@ -94,9 +78,14 @@ class Interactor
         $publicPageTotal = (int) ($publicSupportsTotal / AppConfig::MAXNUM_PER_PAGE) + 1;
         $privatePageTotal = (int) ($privateSupportsTotal / AppConfig::MAXNUM_PER_PAGE) + 1;
 
+        $uri = (new SuperGlobalVars)->getServer()['REQUEST_URI'];
+        if (false !== $pos = strpos($uri, '?')) {
+            $query = substr($uri, $pos);
+        }
+
         return (new Presenter)->present(
             $pub_p, $pri_p, $publicSupportsTotal, $privateSupportsTotal, $publicPageTotal,
-            $privatePageTotal, $publicSupports, $privateSupports, $is_public_page, $searchBoxData
+            $privatePageTotal, $publicSupports, $privateSupports, $is_public_page, $searchBoxData, $query
         );
 
     }
