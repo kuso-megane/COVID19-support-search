@@ -21,7 +21,7 @@ create table SupportOrgs(
     area_id TINYINT UNSIGNED,
     support_content varchar(400) NOT NULL,
     owner varchar(100) NOT NULL,
-    access varchar(400) NOT NULL,
+    access varchar(600) NOT NULL,
     is_foreign_ok BOOLEAN NOT NULL,
     is_public BOOLEAN NOT NULL,
     meta_words VARCHAR(100) NOT NULL,
