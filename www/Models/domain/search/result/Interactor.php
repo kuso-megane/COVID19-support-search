@@ -39,7 +39,6 @@ class Interactor
         }
 
         $trouble_id = $input['trouble_id'];
-        $region_id = $input['region_id'];
         $area_id = $input['area_id'];
         $is_only_foreign_ok = $input['is_only_foreign_ok'];
         $is_public_page = $input['is_public_page']; //　最初に表示するタブが公的か民間か
@@ -55,12 +54,12 @@ class Interactor
 
         $publicSupportsTotal = 0;
         $publicSupports = $this->searchedSupportOrgsRepository->searchSupports(
-            $publicSupportsTotal, $metaTrouble, $region_id, $area_id, $is_only_foreign_ok, TRUE, $pub_p
+            $publicSupportsTotal, $metaTrouble, $area_id, $is_only_foreign_ok, TRUE, $pub_p
         );
 
         $privateSupportsTotal = 0;
         $privateSupports = $this->searchedSupportOrgsRepository->searchSupports(
-            $privateSupportsTotal, $metaTrouble, $region_id, $area_id, $is_only_foreign_ok, FALSE, $pri_p
+            $privateSupportsTotal, $metaTrouble, $area_id, $is_only_foreign_ok, FALSE, $pri_p
         );
 
 

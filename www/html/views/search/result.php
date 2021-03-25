@@ -1,6 +1,5 @@
 <?php
     use myapp\config\ViewsConfig;
-    use myapp\myFrameWork\ComponentsRenderer;
 ?>
 <!DOCTYPE html>
 <html>

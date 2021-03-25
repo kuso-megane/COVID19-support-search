@@ -12,7 +12,6 @@ interface SearchedSupportsRepositoryPort
      * 
      * @param int &$total total num of coming up supports
      * @param MetaTrouble $trouble_id
-     * @param int $region_id
      * @param int $area_id
      * @param bool $is_only_foreign_ok
      * @param bool $is_public
@@ -25,6 +24,6 @@ interface SearchedSupportsRepositoryPort
      * 
      * if no record is found, this returns empty array.
      */
-    public function searchSupports(int &$total, MetaTrouble $metaTrouble, int $region_id, int $area_id, bool $is_only_foreign_ok, bool $is_public, int $page):array;
+    public function searchSupports(int &$total, MetaTrouble $metaTrouble, int $area_id, bool $is_only_foreign_ok, bool $is_public, int $page):array;
 
 }

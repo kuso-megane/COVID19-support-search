@@ -24,7 +24,7 @@ implements
     /**
      * @inheritDoc
      */
-    public function searchSupports(int &$total, MetaTrouble $metaTrouble, int $region_id, int $area_id, bool $is_only_foreign_ok, bool $is_public, int $page): array
+    public function searchSupports(int &$total, MetaTrouble $metaTrouble, int $area_id, bool $is_only_foreign_ok, bool $is_public, int $page): array
     {
         $metaWord = $metaTrouble->getMetaWord();
         $datas = $this->table->findSearchedOnes($total, $metaWord, $area_id, $is_only_foreign_ok, $is_public, AppConfig::MAXNUM_PER_PAGE, $page, TRUE);
