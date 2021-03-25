@@ -28,6 +28,7 @@
                 </div>
             </div>
 
+            <div id="page-switch-anchor"></div>
             <div class="center">
                 <div class="main--lower">
 
@@ -42,20 +43,22 @@
                         <div id="result">
                             <!-- xxx-tabがactiveになったとき、xxx-tab-contentがshow状態になる、初期状態はサーバーサイドで決定-->
                             <div id="public-tab-content" class="tab-content <?php if($is_public_page === TRUE) {echo 'show';} ?>" >
-                                <p class="total"><?php echo $publicSupportsTotal; ?>件見つかりました。</p>
 
                                 <?php if(empty($publicSupports) === TRUE): ?>
 
-                                    <p class="no-result">検索結果がありませんでした。民間支援をご覧になるか、検索条件を変えてみてください。</p>
+                                    <p class="no-result">検索結果がありませんでした。<br>民間支援をご覧になるか、検索条件を変えてみてください。</p>
 
                                 <?php else: ?>
                                     
+                                    <p class="total">
+                                        <?php echo $publicSupportsTotal; ?>件見つかりました。&emsp;<?php echo "{$publicCurrentPage}/{$publicPageTotal}ページ"; ?>
+                                    </p>
                                     <div class="center">
                                         <div class="page-switch">
                                             <?php for($i = 1; $i <= $publicPageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($publicCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}"; ?>" >
+                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}#page-switch-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
@@ -91,7 +94,7 @@
                                             <?php for($i = 1; $i <= $publicPageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($publicCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}"; ?>" >
+                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}#page-switch-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
@@ -102,20 +105,22 @@
 
                                 <?php endif; ?>
                             </div>
-                            <div id="private-tab-content" class="tab-content <?php if($is_public_page === FALSE) {echo 'show';} ?>">
-                                <p class="total"><?php echo $privateSupportsTotal; ?>件見つかりました。</p>       
+                            <div id="private-tab-content" class="tab-content <?php if($is_public_page === FALSE) {echo 'show';} ?>">       
                                 <?php if(empty($privateSupports) === TRUE): ?>
 
-                                    <p class="no-result">検索結果がありませんでした。公的支援をご覧になるか、検索条件を変えてみてください。</p>
+                                    <p class="no-result">検索結果がありませんでした。<br>公的支援をご覧になるか、検索条件を変えてみてください。</p>
 
                                 <?php else: ?>
-
+                                    
+                                    <p class="total">
+                                        <?php echo $privateSupportsTotal; ?>件見つかりました。&emsp;<?php echo "{$privateCurrentPage}/{$privatePageTotal}ページ"; ?>
+                                    </p>
                                     <div class="center">
                                         <div class="page-switch">
                                             <?php for($i = 1; $i <= $privatePageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($privateCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}"; ?>" >
+                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}#page-switch-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
@@ -151,7 +156,7 @@
                                             <?php for($i = 1; $i <= $privatePageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($privateCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}"; ?>" >
+                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}#page-switch-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
