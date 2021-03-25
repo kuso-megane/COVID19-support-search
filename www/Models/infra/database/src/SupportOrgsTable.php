@@ -18,7 +18,9 @@ class SupportOrgsTable
 
 
     /**
-     * return the records in SupportOrgs table meeting given condition sorted by area_id to put zenkoku datas behind
+     * return the records in SupportOrgs table and count the total, meeting given condition sorted by area_id to put zenkoku datas behind
+     * 
+     * @param int &$total
      * @param string $meta_word
      * @param int $area_id
      * @param bool $is_only_foreign_ok
@@ -38,7 +40,7 @@ class SupportOrgsTable
      * 
      * if no record is found, this returns empty array.
      */
-    public function findSearchedOnes(string $meta_word, int $area_id, bool $is_only_foreign_ok, bool $is_public, int $maxNumPerPage, int $page, bool $is_necessary_zenkoku = FALSE): ?array
+    public function findSearchedOnes(int &$total, string $meta_word, int $area_id, bool $is_only_foreign_ok, bool $is_public, int $maxNumPerPage, int $page, bool $is_necessary_zenkoku = FALSE): ?array
     {
         $columns = 'id, support_content, owner, access, appendix';
         $is_public = ($is_public === TRUE) ? 1 : 0;
@@ -62,14 +64,19 @@ class SupportOrgsTable
             $condition .= ' AND is_public = :is_public';
         }
 
-        $boundValues = [
-            ':meta_word' => "%{$meta_word}%", ':area_id' => $area_id, ':is_public' => $is_public,
-            ':limitStart' => $limitStart, ':limitNum' => $maxNumPerPage
+        $boundColumns = [
+            ':meta_word' => "%{$meta_word}%", ':area_id' => $area_id, ':is_public' => $is_public
         ];
+        $boundValues = array_merge($boundColumns, [
+            ':limitStart' => $limitStart, ':limitNum' => $maxNumPerPage
+        ]);
 
         $records = $this->dbh
         ->select($columns, $this::TABLENAME, $condition,
         ['orderby' => "area_id {$area_id_sort}, id ASC", 'limitStart' => ':limitStart', 'limitNum' => ':limitNum'], $boundValues);
+
+        $total = $this->dbh
+        ->count('*', $this::TABLENAME, $condition, $boundColumns);
 
         return $records;
     }

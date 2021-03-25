@@ -60,16 +60,17 @@ class SupportOrgsTableTest extends TestCase
      */
     public function testFindSearchedOnes(?bool $is_only_foreign_ok, ?bool $is_public, int $page = 1, bool $is_necessary_zenkoku = FALSE)
     {
-
+        $total = 0;
+        
         if ($is_only_foreign_ok === NULL && $is_public === NULL) {
 
             $maxNumPerPage_mock = count($this::SAMPLE_DATAS);
 
             $fake_meta_word = 'fake';
-            $this->assertSame([], $this->table->findSearchedOnes($fake_meta_word, $this::SAMPLE_AREA_ID, TRUE, TRUE, $maxNumPerPage_mock, $page));
+            $this->assertSame([], $this->table->findSearchedOnes($total, $fake_meta_word, $this::SAMPLE_AREA_ID, TRUE, TRUE, $maxNumPerPage_mock, $page));
 
             $fake_area_id = 100;
-            $this->assertSame([], $this->table->findSearchedOnes($this::SAMPLE_META_WORD, $fake_area_id, TRUE, TRUE, $maxNumPerPage_mock, $page));
+            $this->assertSame([], $this->table->findSearchedOnes($total, $this::SAMPLE_META_WORD, $fake_area_id, TRUE, TRUE, $maxNumPerPage_mock, $page));
         }
         else {
             if ($is_only_foreign_ok === FALSE && $is_public === FALSE) {
@@ -84,8 +85,10 @@ class SupportOrgsTableTest extends TestCase
                 elseif ($page === 2) {
                     $expected = [
                         ['id' => 3, 'support_content' => 'sample3', 'owner' => 'sample3', 'access' => 'sample3', 'appendix' => 'sample3']
-                    ];
+                    ];    
                 }
+
+                $expectedTotal = 2;
                 
             }
             elseif($is_only_foreign_ok === FALSE && $is_public === TRUE) {
@@ -96,6 +99,7 @@ class SupportOrgsTableTest extends TestCase
                         ['id' => 2, 'support_content' => 'sample2', 'owner' => 'sample2', 'access' => 'sample2', 'appendix' => 'sample2'],
                         ['id' => 4, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4']
                     ];
+                    $expectedTotal = 2;
                 }
                 elseif ($is_necessary_zenkoku === TRUE) {
 
@@ -104,6 +108,8 @@ class SupportOrgsTableTest extends TestCase
                         ['id' => 4, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4'],
                         ['id' => 5, 'support_content' => 'sample5', 'owner' => 'sample5', 'access' => 'sample5', 'appendix' => 'sample5']
                     ];
+                    $expectedTotal = 3;
+
                 }
                 
 
@@ -114,6 +120,7 @@ class SupportOrgsTableTest extends TestCase
                 $expected = [
                     ['id' => 3, 'support_content' => 'sample3', 'owner' => 'sample3', 'access' => 'sample3', 'appendix' => 'sample3']
                 ];
+                $expectedTotal = 1;
 
             }
             elseif($is_only_foreign_ok === TRUE && $is_public === TRUE) {
@@ -122,15 +129,18 @@ class SupportOrgsTableTest extends TestCase
                 $expected = [
                     ['id' => 4, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4']
                 ];
+                $expectedTotal = 1;
 
             }
 
             $this->assertSame(
                 $expected,
                 $this->table->findSearchedOnes(
-                    $this::SAMPLE_META_WORD, $this::SAMPLE_AREA_ID, $is_only_foreign_ok, $is_public, $maxNumPerPage_mock, $page, $is_necessary_zenkoku
+                    $total, $this::SAMPLE_META_WORD, $this::SAMPLE_AREA_ID, $is_only_foreign_ok, $is_public, $maxNumPerPage_mock, $page, $is_necessary_zenkoku
                 )
             );
+
+            $this->assertSame($expectedTotal, $total);
 
         }
 
