@@ -74,8 +74,14 @@ class Interactor
             return (new Presenter)->reportValidationFailure($e->getMessage());
         }
 
-        $publicPageTotal = (int) ($publicSupportsTotal / AppConfig::MAXNUM_PER_PAGE) + 1;
-        $privatePageTotal = (int) ($privateSupportsTotal / AppConfig::MAXNUM_PER_PAGE) + 1;
+        $publicPageTotal = (int) ($publicSupportsTotal / AppConfig::MAXNUM_PER_PAGE);
+        if ($publicSupportsTotal % AppConfig::MAXNUM_PER_PAGE != 0) {
+            $publicPageTotal += 1;
+        }
+        $privatePageTotal = (int) ($privateSupportsTotal / AppConfig::MAXNUM_PER_PAGE);
+        if ($privateSupportsTotal % AppConfig::MAXNUM_PER_PAGE != 0) {
+            $privatePageTotal += 1;
+        }
 
         $uri = (new SuperGlobalVars)->getServer()['REQUEST_URI'];
         if (false !== $pos = strpos($uri, '?')) {
