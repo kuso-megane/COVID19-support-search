@@ -39,6 +39,7 @@
                         <div id="tab-area">
                             <div id="public-tab" class="tab <?php if($is_public_page === TRUE) {echo 'active';} ?>">公的支援</div>
                             <div id="private-tab" class="tab <?php if($is_public_page === FALSE) {echo 'active';} ?>">民間支援</div>
+                            <div id="tab-area--explain" class="block-start0 block-end0">&ensp;←クリックでタブ切替</div>
                         </div>
                         <div id="result">
                             <!-- xxx-tabがactiveになったとき、xxx-tab-contentがshow状態になる、初期状態はサーバーサイドで決定-->
