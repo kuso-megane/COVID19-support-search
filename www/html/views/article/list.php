@@ -1,6 +1,5 @@
 <?php
-    //コラム一覧ページ
-    $componentsPath = '/var/www/html/views/components/';
+    use myapp\config\ViewsConfig;
 ?>
 
 <!DOCTYPE html>
@@ -10,48 +9,50 @@
         <title>支援総合検索サイト</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../asset/stylesheet/components/article.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'articleList.css'; ?>">
 
     </head>
     <body>
-        <?php require $componentsPath . 'header.php'; ?>
+        <?php require ViewsConfig::COMPONENTS_PATH . 'header.php'; ?>
         <main>
-        <div>
-                <h3 class="link"><a href="/index">←トップページに戻る</a></h3>
-        </div>
+            <div>
+                <p class="block-start0 bold"><a href="/index">←トップページに戻る</a></p>
+            </div>
 
+            <div class="center">
+                <div id="articles" class="main--center left">
+                    <div id="articles--title">
+                        <h3 class="center">支援・制度利用時のお役立ち情報</h3>
+                    </div>
 
-        <div class="article">
-            <div class="articles">
-              <img src="https://prog-8.com/images/html/advanced/html.png"　class="thumbnail">
-              <p>記事１</p>
-              <p>概要</p>
+                    <div class="articles--content">
+                        <p class="article--content--category">支援全般</p>
+                        <div class="article--content--list">
+                            <div class="article--content--list--item">
+                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'which.png'; ?>" alt="支援総合">
+                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">公的支援と民間支援、どちらがいいの? あなたにあった選び方を紹介！</a></p>
+                            </div>
+                            <div class="article--content--list--item">
+                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'supportProcess.png'; ?>" alt="支援総合">
+                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるまでの流れを紹介!</a></p>
+                            </div>
+                            <div class="article--content--list--item">
+                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'removeStigma.png'; ?>" alt="支援総合">
+                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるのが少し恥ずかしい？そんなことありません！</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="articles--content">
+                        <p class="article--content--category">居住支援について</p>
+                        <div class="article--content--list">
+                            <div class="article--content--list--item">
+                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'home.png'; ?>" alt="支援総合">
+                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">居住支援で提供される住宅ってどんな感じなの？正直ボロボロなんじゃ、、、、。</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="articles">
-              <img src="https://prog-8.com/images/html/advanced/html.png"　class="thumbnail">
-              <p>記事１</p>
-              <p>概要</p>
-            </div>
-            <div class="articles">
-              <img src="https://prog-8.com/images/html/advanced/html.png"　class="thumbnail">
-              <p>記事１</p>
-              <p>概要</p>
-            </div>
-            <div class="articles">
-              <img src="https://prog-8.com/images/html/advanced/html.png"　class="thumbnail">
-              <p>記事１</p>
-              <p>概要</p>
-            </div>
-            <div class="articles">
-              <img src="https://prog-8.com/images/html/advanced/html.png"　class="thumbnail">
-              <p>記事１</p>
-              <p>概要</p>
-            </div>
-   
-        
-        </div>
-
-
 
         </main>
    
