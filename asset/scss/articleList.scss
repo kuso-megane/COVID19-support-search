@@ -7,6 +7,10 @@
     .main--center{
         width: 95vw;
     }
+
+    .article--content--list--item {
+        width: 100%;
+    }
 }
 
 /*タブレット*/
@@ -14,12 +18,20 @@
     .main--center{
         width: 80vw;
     }
+
+    .article--content--list--item {
+        width: 50%;
+    }
 }
 
 /*pc*/
 @media screen and (min-width: 1025px){
     .main--center{
         width: 70vw;
+    }
+
+    .article--content--list--item {
+        width: 50%;
     }
 }
 
@@ -48,31 +60,41 @@ $articleBGColor: #EEEEEE;
 .article--content {
 
     &--category {
+        display: inline-block;
         color: $articleColor;
         background-color: $articleBGColor;
-        width: 6rem;
         font-size: 0.9rem;
+        text-align: center;
+        $padding: 0.5rem;
+        padding-left: $padding;
+        padding-right: $padding;
     }
 
     &--list {
         display: flex;
+        flex-wrap: wrap;
+        width: 100%;
 
         &--item {
             display: flex;
-            width: 300px;
-            height: 50px;
+            $itemHeight: 5rem;
+            height: $itemHeight;
+            $itemMarginVertical: 1rem;
+            margin-top: $itemMarginVertical;
+            margin-bottom: $itemMarginVertical;
     
             &--img {
-                width: 60px;
-                height: 50px;
+                width: $itemHeight;
+                height: $itemHeight;
+                padding: 2px;
             }
     
             &--title {
-                font-size: 1rem;
+                font-size: 0.9rem;
                 margin-left: 10px;
     
                 a{
-                    text-decoration: underline;
+                    color: $articleColor;
                 }
             }
         }

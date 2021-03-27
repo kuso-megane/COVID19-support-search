@@ -126,17 +126,29 @@ main {
   .main--center {
     width: 95vw;
   }
+
+  .article--content--list--item {
+    width: 100%;
+  }
 }
 /*タブレット*/
 @media screen and (min-width: 481px) and (max-width: 1024px) {
   .main--center {
     width: 80vw;
   }
+
+  .article--content--list--item {
+    width: 50%;
+  }
 }
 /*pc*/
 @media screen and (min-width: 1025px) {
   .main--center {
     width: 70vw;
+  }
+
+  .article--content--list--item {
+    width: 50%;
   }
 }
 .main--center {
@@ -154,29 +166,36 @@ main {
 }
 
 .article--content--category {
+  display: inline-block;
   color: #444444;
   background-color: #EEEEEE;
-  width: 6rem;
   font-size: 0.9rem;
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .article--content--list {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .article--content--list--item {
   display: flex;
-  width: 300px;
-  height: 50px;
+  height: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .article--content--list--item--img {
-  width: 60px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
+  padding: 2px;
 }
 .article--content--list--item--title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-left: 10px;
 }
 .article--content--list--item--title a {
-  text-decoration: underline;
+  color: #444444;
 }
 
 /*# sourceMappingURL=articleList.css.map */

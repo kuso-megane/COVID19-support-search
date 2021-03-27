@@ -26,11 +26,28 @@
                     </div>
 
                     <div class="articles--content">
-                        <p class="article--content--category center">支援全般</p>
+                        <p class="article--content--category">支援全般</p>
                         <div class="article--content--list">
                             <div class="article--content--list--item">
-                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'support.png'; ?>" alt="支援総合">
-                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">公的支援と民間支援、どちらがいいの?</a></p>
+                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'which.png'; ?>" alt="支援総合">
+                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">公的支援と民間支援、どちらがいいの? あなたにあった選び方を紹介！</a></p>
+                            </div>
+                            <div class="article--content--list--item">
+                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'supportProcess.png'; ?>" alt="支援総合">
+                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるまでの流れを紹介!</a></p>
+                            </div>
+                            <div class="article--content--list--item">
+                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'removeStigma.png'; ?>" alt="支援総合">
+                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるのが少し恥ずかしい？そんなことありません！</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="articles--content">
+                        <p class="article--content--category">居住支援について</p>
+                        <div class="article--content--list">
+                            <div class="article--content--list--item">
+                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'home.png'; ?>" alt="支援総合">
+                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">居住支援で提供される住宅ってどんな感じなの？正直ボロボロなんじゃ、、、、。</a></p>
                             </div>
                         </div>
                     </div>
