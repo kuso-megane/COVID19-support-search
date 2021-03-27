@@ -34,7 +34,7 @@ implements
                 $data['support_content'],
                 $data['owner'],
                 $data['access'],
-                $datas['appendix']
+                $data['appendix']
             );
         }
 
