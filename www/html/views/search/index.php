@@ -44,7 +44,7 @@
                     <?php require ViewsConfig::COMPONENTS_PATH. 'searchbox.php'; ?>
 
                     <div id="howto" class="main--lower--right">
-                        <p class="bold block-start0">使い方</p>
+                        <p class="bold block-start0">&lt;使い方&gt;</p>
                         <div id="howto--main">
                             <li>まずは、左の検索ボックスから、困っていること、地域、都道府県をお選びください。</li>
                             <li>日本国籍をお持ちでない方は、「国籍不問のみ」にチェックを入れることをおすすめします。</li>
