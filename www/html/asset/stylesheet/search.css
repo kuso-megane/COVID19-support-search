@@ -368,5 +368,8 @@ main {
 #result .tab-content.show .supportBox .td-content {
   width: 80%;
 }
+#result .link-to-searchbox {
+  font-size: 0.8rem;
+}
 
 /*# sourceMappingURL=search.css.map */

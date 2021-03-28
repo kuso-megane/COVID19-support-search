@@ -37,9 +37,10 @@
                 </div>
             </div>
 
-            <div id="page-switch-anchor"></div>
             <div class="center">
                 <div class="main--lower">
+
+                    <div id="searchbox-anchor"></div>
 
                     <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox.php'; ?>
 
@@ -50,6 +51,9 @@
                             <div id="private-tab" class="tab <?php if($is_public_page === FALSE) {echo 'active';} ?>">民間支援</div>
                             <div id="tab-area--explain" class="block-start0 block-end0">&ensp;←クリックでタブ切替</div>
                         </div>
+
+                        <div id="search-result-anchor"></div>
+
                         <div id="result">
                             <!-- xxx-tabがactiveになったとき、xxx-tab-contentがshow状態になる、初期状態はサーバーサイドで決定-->
                             <div id="public-tab-content" class="tab-content <?php if($is_public_page === TRUE) {echo 'show';} ?>" >
@@ -68,7 +72,7 @@
                                             <?php for($i = 1; $i <= $publicPageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($publicCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}#page-switch-anchor"; ?>" >
+                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}#search-result-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
@@ -104,7 +108,7 @@
                                             <?php for($i = 1; $i <= $publicPageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($publicCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}#page-switch-anchor"; ?>" >
+                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}#search-result-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
@@ -114,6 +118,8 @@
                                     </div>
 
                                 <?php endif; ?>
+
+                                <p><a href="#searchbox-anchor">検索条件を変える</a></p>
                             </div>
                             <div id="private-tab-content" class="tab-content <?php if($is_public_page === FALSE) {echo 'show';} ?>">       
                                 <?php if(empty($privateSupports) === TRUE): ?>
@@ -130,7 +136,7 @@
                                             <?php for($i = 1; $i <= $privatePageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($privateCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}#page-switch-anchor"; ?>" >
+                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}#search-result-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
@@ -166,7 +172,7 @@
                                             <?php for($i = 1; $i <= $privatePageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($privateCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}#page-switch-anchor"; ?>" >
+                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}#search-result-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
@@ -176,6 +182,9 @@
                                     </div>
                                 
                                 <?php endif; ?>
+
+                                <p class="link-to-searchbox center"><a href="#searchbox-anchor">検索条件を変える</a></p>
+
                             </div>
                         </div>
                     </div>
