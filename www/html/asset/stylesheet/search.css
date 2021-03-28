@@ -2,7 +2,7 @@
 /*スマホ*/
 @media screen and (min-width: 320px) and (max-width: 480px) {
   html {
-    font-size: 13px;
+    font-size: 11px;
   }
 }
 /*タブレット*/
@@ -154,7 +154,6 @@ main {
 
 #is_only_foreign_ok-container {
   text-align: left;
-  padding-left: 1rem;
 }
 
 #is_only_foreign_ok--label {
