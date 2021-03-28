@@ -235,39 +235,40 @@ main {
 
 /*sp*/
 @media screen and (min-width: 320px) and (max-width: 480px) {
-  .main--upper, .main--lower {
-    width: 95vw;
+  .main--single, .main--double {
+    width: 98vw;
   }
 }
 /*タブレット*/
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-  .main--upper, .main--lower {
+  .main--single, .main--double {
     width: 80vw;
   }
 }
 /*pc*/
 @media screen and (min-width: 1025px) {
-  .main--upper, .main--lower {
+  .main--single, .main--double {
     width: 70vw;
   }
 }
-.main--upper {
+.main--single {
   display: inline-block;
   border: solid 2px #009900;
   border-radius: 1rem;
   overflow-wrap: break-word;
   background-color: white;
   padding: 1rem;
+  margin-top: 2rem;
 }
 
-.main--lower {
+.main--double {
   display: inline-flex;
   justify-content: space-between;
   align-items: flex-start;
   text-align: left;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
-.main--lower--right {
+.main--double--right {
   border: solid 2px #009900;
   border-radius: 1rem;
   background-color: white;
