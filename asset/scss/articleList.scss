@@ -1,15 +1,12 @@
 @use './components/vars' as vars;
 @use './components/common';
 @use './components/header';
+@use './components/article--content--list';
 
 /*sp*/
 @media screen and (min-width: 320px) and (max-width: 480px){
     .main--center{
         width: 95vw;
-    }
-
-    .article--content--list--item {
-        width: 100%;
     }
 }
 
@@ -19,9 +16,6 @@
         width: 80vw;
     }
 
-    .article--content--list--item {
-        width: 50%;
-    }
 }
 
 /*pc*/
@@ -30,9 +24,6 @@
         width: 70vw;
     }
 
-    .article--content--list--item {
-        width: 50%;
-    }
 }
 
 
@@ -68,36 +59,5 @@ $articleBGColor: #EEEEEE;
         $padding: 0.5rem;
         padding-left: $padding;
         padding-right: $padding;
-    }
-
-    &--list {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-
-        &--item {
-            display: flex;
-            $itemHeight: 5rem;
-            height: $itemHeight;
-            $itemMarginVertical: 1rem;
-            margin-top: $itemMarginVertical;
-            margin-bottom: $itemMarginVertical;
-    
-            &--img {
-                width: $itemHeight;
-                height: $itemHeight;
-                padding: 2px;
-            }
-    
-            &--title {
-                font-size: 0.9rem;
-                margin-left: 10px;
-    
-                a{
-                    color: $articleColor;
-                }
-            }
-        }
-    }
-    
+    }    
 }

@@ -19,12 +19,21 @@
             <div class="center">
                 <div id="recommend-articles--box" class="main--upper">
                     <p class="bold block-start0">&lt;おすすめコラム(お役立ち情報)&gt;</p>
-                    <div id="recommend-articles" class="inline-block left">
-                        <li><a href="">公的(行政)支援と民間支援、どちらがいいの？</a></li>
-                        <li><a href="">支援を受けるまでの流れを紹介！</a></li>
-                        <li><a href="">居住支援で提供される住居ってどんな感じなの？</a></li>
-                        <p id="link-to-articleList" class="right"><a href="">&gt;&gt;もっと見る</a></p>
-                    </div>   
+                    <div class="article--content--list">
+                        <div class="article--content--list--item">
+                            <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'which.png'; ?>" alt="支援総合">
+                            <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">公的支援と民間支援、どちらがいいの？ あなたにあった選び方を紹介！</a></p>
+                        </div>
+                        <div class="article--content--list--item">
+                            <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'supportProcess.png'; ?>" alt="支援総合">
+                            <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるまでの流れを紹介!</a></p>
+                        </div>
+                        <div class="article--content--list--item">
+                            <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'removeStigma.png'; ?>" alt="支援総合">
+                            <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるのが少し恥ずかしい？そんなことありません！</a></p>
+                        </div>
+                    </div>
+                    <p id="link-to-articleList" class="right"><a href="">&gt;&gt;もっと見る</a></p>
                 </div>
             </div>
 
