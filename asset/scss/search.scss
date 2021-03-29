@@ -14,14 +14,20 @@
 /*sp*/
 @media screen and (min-width: 320px) and (max-width: 480px){
     .main--single, .main--double{
-        width: 98vw;
+        width: 80vw;
+    }
+    .main--double--right {
+        width: 100%;
     }
 }
 
 /*タブレット*/
 @media screen and (min-width: 481px) and (max-width: 1024px){
     .main--single, .main--double {
-        width: 80vw;
+        width: 90vw;
+    }
+    .main--double--right {
+        width: 60%;
     }
 }
 
@@ -29,6 +35,9 @@
 @media screen and (min-width: 1025px){
     .main--single, .main--double {
         width: 70vw;
+    }
+    .main--double--right {
+        width: 60%;
     }
 }
 
@@ -46,15 +55,16 @@
 .main--double{
     display: inline-flex;
     justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
     align-items: flex-start;
     text-align: left;
-    margin-top: 2rem;
 
     &--right{
         border: solid 2px vars.$baseColor;
         border-radius: 1rem;
         background-color: white;
-        width: 68%;
+        margin-top: vars.$main--doubleMarginTop;
         padding: 0.5rem;
     }
 }
@@ -88,13 +98,16 @@
         list-style: disc;
         text-decoration: underline;
     }
+
 }
 
 
 #link-to-articleList {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     text-decoration: underline;
 }
+
+
 
 
 #tab-area {
@@ -177,8 +190,8 @@
         }
     }
 
-.link-to-searchbox {
-    font-size: 0.8rem;
-}
+    .link-to-searchbox {
+        font-size: 0.8rem;
+    }
 
 }

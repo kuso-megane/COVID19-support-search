@@ -121,13 +121,31 @@ main {
   text-decoration: underline;
 }
 
+/*sp*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  #search-box {
+    width: 100%;
+  }
+}
+/*タブレット*/
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  #search-box {
+    width: 35%;
+  }
+}
+/*pc*/
+@media screen and (min-width: 1025px) {
+  #search-box {
+    width: 35%;
+  }
+}
 #search-box {
   display: block;
   border: 2px solid #009900;
   border-radius: 1rem;
   text-align: center;
   background-color: white;
-  width: 30%;
+  margin-top: 2rem;
   padding: 0.5rem;
 }
 #search-box--main {
@@ -236,19 +254,31 @@ main {
 /*sp*/
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .main--single, .main--double {
-    width: 98vw;
+    width: 80vw;
+  }
+
+  .main--double--right {
+    width: 100%;
   }
 }
 /*タブレット*/
 @media screen and (min-width: 481px) and (max-width: 1024px) {
   .main--single, .main--double {
-    width: 80vw;
+    width: 90vw;
+  }
+
+  .main--double--right {
+    width: 60%;
   }
 }
 /*pc*/
 @media screen and (min-width: 1025px) {
   .main--single, .main--double {
     width: 70vw;
+  }
+
+  .main--double--right {
+    width: 60%;
   }
 }
 .main--single {
@@ -264,15 +294,16 @@ main {
 .main--double {
   display: inline-flex;
   justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
   align-items: flex-start;
   text-align: left;
-  margin-top: 2rem;
 }
 .main--double--right {
   border: solid 2px #009900;
   border-radius: 1rem;
   background-color: white;
-  width: 68%;
+  margin-top: 2rem;
   padding: 0.5rem;
 }
 
@@ -301,7 +332,7 @@ main {
 }
 
 #link-to-articleList {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-decoration: underline;
 }
 

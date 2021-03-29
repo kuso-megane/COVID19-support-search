@@ -1,12 +1,33 @@
 @use './vars' as vars;
 
+/*sp*/
+@media screen and (min-width: 320px) and (max-width: 480px){
+    #search-box{
+        width: 100%;
+    }
+}
+
+/*タブレット*/
+@media screen and (min-width: 481px) and (max-width: 1024px){
+    #search-box{
+        width: 35%;
+    }
+}
+
+/*pc*/
+@media screen and (min-width: 1025px){
+    #search-box {
+        width: 35%;
+    }
+}
+
 #search-box{
     display: block;
     border: 2px solid vars.$baseColor;
     border-radius: 1rem;
     text-align: center;
     background-color: white;
-    width: 30%;
+    margin-top: vars.$main--doubleMarginTop;
     padding: 0.5rem;
 
     &--main{
