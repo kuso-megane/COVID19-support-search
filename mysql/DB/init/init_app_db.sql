@@ -33,6 +33,27 @@ create table SupportOrgs(
         ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
-/* TODO: Articleテーブル*/
+
+drop TABLE if exists ArticleCategory;
+create table ArticleCategory(
+    id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    name varchar(20) NOT NULL unique,
+    meta_words varchar(100) NOT NULL
+);
+
+
+DROP TABLE IF exists Article;
+create TABLE Article(
+    id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    title varchar(50) NOT NULL unique,
+    thumbnailName varchar(20) NOT NULL,
+    content TEXT,
+    category_id TINYINT UNSIGNED,
+
+    CONSTRAINT fk_category_id_on_Article
+        FOREIGN KEY (category_id)
+        REFERENCES ArticleCategory(id)
+        ON DELETE RESTRICT ON UPDATE CASCADE
+);
 
 
