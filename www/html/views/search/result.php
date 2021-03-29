@@ -17,30 +17,22 @@
             </div>
 
             <div class="center">
-                <div id="recommend-articles--box" class="main--upper">
-                    <p class="bold block-start0">&lt;おすすめコラム(お役立ち情報)&gt;</p>
-                    <div id="recommend-articles" class="inline-block left">
-                        <li><a href="">公的(行政)支援と民間支援、どちらがいいの？</a></li>
-                        <li><a href="">支援を受けるまでの流れを紹介！</a></li>
-                        <li><a href="">居住支援で提供される住居ってどんな感じなの？</a></li>
-                        <p id="link-to-articleList" class="right"><a href="">&gt;&gt;もっと見る</a></p>
-                    </div>   
-                </div>
-            </div>
+                <div class="main--double">
 
-            <div id="page-switch-anchor"></div>
-            <div class="center">
-                <div class="main--lower">
+                    <div id="searchbox-anchor"></div>
 
                     <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox.php'; ?>
 
-                    <div class="main--lower--right">
-                        <p class="bold block-start0">&lt;検索結果&gt;</p>
+                    <div id="search-result-anchor"></div>
+
+                    <div class="main--double--right">
+                        <p class="subTitle bold block-start0">&lt;検索結果&gt;</p>
                         <div id="tab-area">
                             <div id="public-tab" class="tab <?php if($is_public_page === TRUE) {echo 'active';} ?>">公的支援</div>
                             <div id="private-tab" class="tab <?php if($is_public_page === FALSE) {echo 'active';} ?>">民間支援</div>
                             <div id="tab-area--explain" class="block-start0 block-end0">&ensp;←クリックでタブ切替</div>
                         </div>
+
                         <div id="result">
                             <!-- xxx-tabがactiveになったとき、xxx-tab-contentがshow状態になる、初期状態はサーバーサイドで決定-->
                             <div id="public-tab-content" class="tab-content <?php if($is_public_page === TRUE) {echo 'show';} ?>" >
@@ -59,7 +51,7 @@
                                             <?php for($i = 1; $i <= $publicPageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($publicCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}#page-switch-anchor"; ?>" >
+                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}#search-result-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
@@ -95,7 +87,7 @@
                                             <?php for($i = 1; $i <= $publicPageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($publicCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}#page-switch-anchor"; ?>" >
+                                                    <a href="<?php echo "/searchResult/1/{$i}/{$privateCurrentPage}{$query}#search-result-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
@@ -105,6 +97,8 @@
                                     </div>
 
                                 <?php endif; ?>
+
+                                <p class="link-to-searchbox center"><a href="#searchbox-anchor">検索条件を変える</a></p>
                             </div>
                             <div id="private-tab-content" class="tab-content <?php if($is_public_page === FALSE) {echo 'show';} ?>">       
                                 <?php if(empty($privateSupports) === TRUE): ?>
@@ -121,7 +115,7 @@
                                             <?php for($i = 1; $i <= $privatePageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($privateCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}#page-switch-anchor"; ?>" >
+                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}#search-result-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
@@ -157,7 +151,7 @@
                                             <?php for($i = 1; $i <= $privatePageTotal; ++$i): ?>
 
                                                 <p class="page-switch--nums <?php if ($privateCurrentPage === $i) {echo 'strong disabled';} ?>">
-                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}#page-switch-anchor"; ?>" >
+                                                    <a href="<?php echo "/searchResult/0/{$publicCurrentPage}/{$i}{$query}#search-result-anchor"; ?>" >
                                                         <?php echo "{$i}"; ?>
                                                     </a>
                                                 </p>
@@ -167,11 +161,36 @@
                                     </div>
                                 
                                 <?php endif; ?>
+
+                                <p class="link-to-searchbox center"><a href="#searchbox-anchor">検索条件を変える</a></p>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="center">
+                <div id="recommend-articles--box" class="main--single">
+                    <p class="subTitle bold block-start0">&lt;おすすめコラム(お役立ち情報)&gt;</p>
+                    <div class="article--content--list">
+                        <div class="article--content--list--item">
+                            <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'which.png'; ?>" alt="支援総合">
+                            <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">公的支援と民間支援、どちらがいいの？ あなたにあった選び方を紹介！</a></p>
+                        </div>
+                        <div class="article--content--list--item">
+                            <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'supportProcess.png'; ?>" alt="支援総合">
+                            <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるまでの流れを紹介!</a></p>
+                        </div>
+                        <div class="article--content--list--item">
+                            <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'removeStigma.png'; ?>" alt="支援総合">
+                            <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるのが少し恥ずかしい？そんなことありません！</a></p>
+                        </div>
+                    </div>
+                    <p id="link-to-articleList" class="right"><a href="">&gt;&gt;もっと見る</a></p>
+                </div>
+            </div>
+ 
         </main>
         <script src="<?php echo ViewsConfig::SCRIPT_URL. 'tabChange.js'; ?>"></script>
     </body>

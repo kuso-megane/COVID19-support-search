@@ -2,7 +2,7 @@
 /*スマホ*/
 @media screen and (min-width: 320px) and (max-width: 480px) {
   html {
-    font-size: 13px;
+    font-size: 11px;
   }
 }
 /*タブレット*/
@@ -121,14 +121,32 @@ main {
   text-decoration: underline;
 }
 
+/*sp*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  #search-box {
+    width: 100%;
+  }
+}
+/*タブレット*/
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  #search-box {
+    width: 35%;
+  }
+}
+/*pc*/
+@media screen and (min-width: 1025px) {
+  #search-box {
+    width: 35%;
+  }
+}
 #search-box {
   display: block;
   border: 2px solid #009900;
   border-radius: 1rem;
   text-align: center;
   background-color: white;
-  width: 30%;
-  padding: 0.5rem;
+  margin-top: 2rem;
+  padding: 1rem;
 }
 #search-box--main {
   display: inline-flex;
@@ -139,6 +157,7 @@ main {
 
 #search-box--title {
   text-align: left;
+  font-size: 1.2rem;
 }
 
 .search-items {
@@ -154,7 +173,6 @@ main {
 
 #is_only_foreign_ok-container {
   text-align: left;
-  padding-left: 1rem;
 }
 
 #is_only_foreign_ok--label {
@@ -166,8 +184,13 @@ main {
 }
 
 #submit-button {
-  width: 95%;
-  font-size: 0.9rem;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  color: white;
+  background-color: #009900;
+  border: outset 1px #00BB00;
+  cursor: pointer;
 }
 
 .page-switch {
@@ -192,44 +215,105 @@ main {
 
 /*sp*/
 @media screen and (min-width: 320px) and (max-width: 480px) {
-  .main--upper, .main--lower {
-    width: 95vw;
+  .article--content--list--item {
+    width: 100%;
   }
 }
 /*タブレット*/
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-  .main--upper, .main--lower {
-    width: 80vw;
+  .article--content--list--item {
+    width: 50%;
   }
 }
 /*pc*/
 @media screen and (min-width: 1025px) {
-  .main--upper, .main--lower {
-    width: 70vw;
+  .article--content--list--item {
+    width: 50%;
   }
 }
-.main--upper {
+.article--content--list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.article--content--list--item {
+  display: flex;
+  height: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.article--content--list--item--img {
+  width: 4rem;
+  height: 4rem;
+  padding: 2px;
+}
+.article--content--list--item--title {
+  font-size: 0.9rem;
+  margin-left: 10px;
+  text-align: left;
+}
+.article--content--list--item--title a {
+  color: #444444;
+}
+
+/*sp*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .main--single, .main--double {
+    width: 80vw;
+  }
+
+  .main--double--right {
+    width: 100%;
+  }
+}
+/*タブレット*/
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .main--single, .main--double {
+    width: 90vw;
+  }
+
+  .main--double--right {
+    width: 60%;
+  }
+}
+/*pc*/
+@media screen and (min-width: 1025px) {
+  .main--single, .main--double {
+    width: 70vw;
+  }
+
+  .main--double--right {
+    width: 60%;
+  }
+}
+.main--single {
   display: inline-block;
   border: solid 2px #009900;
   border-radius: 1rem;
   overflow-wrap: break-word;
   background-color: white;
   padding: 1rem;
+  margin-top: 2rem;
 }
 
-.main--lower {
+.main--double {
   display: inline-flex;
   justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
   align-items: flex-start;
   text-align: left;
-  margin-top: 1rem;
 }
-.main--lower--right {
+.main--double--right {
   border: solid 2px #009900;
   border-radius: 1rem;
   background-color: white;
-  width: 68%;
-  padding: 0.5rem;
+  margin-top: 2rem;
+  padding: 1rem 1rem 0.5rem 0.5rem;
+}
+
+.subTitle {
+  font-size: 1.2rem;
 }
 
 #introduce--main {
@@ -257,7 +341,7 @@ main {
 }
 
 #link-to-articleList {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-decoration: underline;
 }
 
@@ -270,7 +354,7 @@ main {
   border-radius: 10px 10px 0 0;
   margin: 1px;
   color: #00BB00;
-  font-size: 0.85rem;
+  font-size: 1rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -324,6 +408,9 @@ main {
 }
 #result .tab-content.show .supportBox .td-content {
   width: 80%;
+}
+#result .link-to-searchbox {
+  font-size: 0.8rem;
 }
 
 /*# sourceMappingURL=search.css.map */

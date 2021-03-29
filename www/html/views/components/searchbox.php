@@ -62,7 +62,7 @@ echo $searched_area_id;  ?>";
         </span>
     </p>
     <p id="submit-button--container">
-        <input id="submit-button" type="submit" value="この条件で検索" class="center">
+        <input id="submit-button" type="submit" value="この条件で検索" class="center bold">
         
     </p>   
 </form>
