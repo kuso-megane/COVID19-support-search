@@ -26,7 +26,7 @@
                     <div id="search-result-anchor"></div>
 
                     <div class="main--double--right">
-                        <p class="bold block-start0">&lt;検索結果&gt;</p>
+                        <p class="subTitle bold block-start0">&lt;検索結果&gt;</p>
                         <div id="tab-area">
                             <div id="public-tab" class="tab <?php if($is_public_page === TRUE) {echo 'active';} ?>">公的支援</div>
                             <div id="private-tab" class="tab <?php if($is_public_page === FALSE) {echo 'active';} ?>">民間支援</div>
@@ -172,7 +172,7 @@
 
             <div class="center">
                 <div id="recommend-articles--box" class="main--single">
-                    <p class="bold block-start0">&lt;おすすめコラム(お役立ち情報)&gt;</p>
+                    <p class="subTitle bold block-start0">&lt;おすすめコラム(お役立ち情報)&gt;</p>
                     <div class="article--content--list">
                         <div class="article--content--list--item">
                             <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'which.png'; ?>" alt="支援総合">

@@ -41,7 +41,7 @@
 
 #search-box--title {
     text-align: left;
-    font-size: 0.9rem;
+    font-size: vars.$subTitleFontSize;
 }
 
 
@@ -73,8 +73,14 @@
 }
 
 #submit-button {
-    width: 95%;
-    font-size: 0.9rem;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: vars.$baseColor;
+    border: outset 1px vars.$lightColor;
+
+    cursor: pointer;
 }
 
 

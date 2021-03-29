@@ -157,7 +157,7 @@ main {
 
 #search-box--title {
   text-align: left;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 .search-items {
@@ -184,8 +184,13 @@ main {
 }
 
 #submit-button {
-  width: 95%;
-  font-size: 0.9rem;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  color: white;
+  background-color: #009900;
+  border: outset 1px #00BB00;
+  cursor: pointer;
 }
 
 .page-switch {
@@ -305,6 +310,10 @@ main {
   background-color: white;
   margin-top: 2rem;
   padding: 0.5rem;
+}
+
+.subTitle {
+  font-size: 1.1rem;
 }
 
 #introduce--main {
