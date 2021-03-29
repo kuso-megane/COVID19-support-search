@@ -3,8 +3,6 @@
 namespace domain\components\searchBox;
 
 use domain\components\searchBox\Data\TroubleName;
-use domain\components\searchBox\Data\Area;
-use myapp\config\AppConfig;
 
 class Presenter
 {
