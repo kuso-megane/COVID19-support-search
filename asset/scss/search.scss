@@ -65,7 +65,7 @@
         border-radius: 1rem;
         background-color: white;
         margin-top: vars.$main--doubleMarginTop;
-        padding: 0.5rem;
+        padding: 1rem 1rem 0.5rem 0.5rem ;
     }
 }
 
@@ -123,7 +123,7 @@
         border-radius: 10px 10px 0 0;
         margin: 1px;
         color: vars.$lightColor;
-        font-size: 0.85rem;
+        font-size: 1rem;
         $padding: 0.5rem;
         padding-left: $padding;
         padding-right: $padding;

@@ -146,7 +146,7 @@ main {
   text-align: center;
   background-color: white;
   margin-top: 2rem;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 #search-box--main {
   display: inline-flex;
@@ -157,7 +157,7 @@ main {
 
 #search-box--title {
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .search-items {
@@ -309,11 +309,11 @@ main {
   border-radius: 1rem;
   background-color: white;
   margin-top: 2rem;
-  padding: 0.5rem;
+  padding: 1rem 1rem 0.5rem 0.5rem;
 }
 
 .subTitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 #introduce--main {
@@ -354,7 +354,7 @@ main {
   border-radius: 10px 10px 0 0;
   margin: 1px;
   color: #00BB00;
-  font-size: 0.85rem;
+  font-size: 1rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
