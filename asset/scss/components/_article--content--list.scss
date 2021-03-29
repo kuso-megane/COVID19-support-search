@@ -1,0 +1,60 @@
+
+
+$articleColor: #444444;
+$articleBGColor: #EEEEEE;
+
+/*sp*/
+@media screen and (min-width: 320px) and (max-width: 480px){
+
+    .article--content--list--item {
+        width: 100%;
+    }
+}
+
+/*タブレット*/
+@media screen and (min-width: 481px) and (max-width: 1024px){
+
+    .article--content--list--item {
+        width: 50%;
+    }
+}
+
+/*pc*/
+@media screen and (min-width: 1025px){
+
+    .article--content--list--item {
+        width: 50%;
+    }
+}
+
+
+.article--content--list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &--item {
+        display: flex;
+        $itemHeight: 4rem;
+        height: $itemHeight;
+        $itemMarginVertical: 1rem;
+        margin-top: $itemMarginVertical;
+        margin-bottom: $itemMarginVertical;
+
+        &--img {
+            width: $itemHeight;
+            height: $itemHeight;
+            padding: 2px;
+        }
+
+        &--title {
+            font-size: 0.9rem;
+            margin-left: 10px;
+            text-align: left;
+
+            a{
+                color: $articleColor;
+            }
+        }
+    }
+}
