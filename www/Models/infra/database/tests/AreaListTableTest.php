@@ -3,7 +3,6 @@
 use infra\database\src\AreaListTable;
 use myapp\myFrameWork\DB\Connection;
 use myapp\myFrameWork\DB\MyDbh;
-use phpDocumentor\Reflection\PseudoTypes\True_;
 use PHPUnit\Framework\TestCase;
 
 class AreaListTableTest extends TestCase

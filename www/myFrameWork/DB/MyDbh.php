@@ -141,7 +141,7 @@ class MyDbh extends PDO
      *      'limitNum' => ':limitNum'|int
      * ]
      * 
-     * if you execute multiple sort, set 'orderby' like 'id ASC, name DESC' and don't set 'sort'
+     * if you wanna execute multiple sort, set 'orderby' like 'id ASC, name DESC' and don't set 'sort'
      * @param array $boundValues (e.g.) [':id' => int, ':num' => int, ':orderby' => string]
      * 
      * if you wanna bind these manually, this can be empty
