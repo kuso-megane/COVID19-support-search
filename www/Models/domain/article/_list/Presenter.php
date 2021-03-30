@@ -18,7 +18,8 @@ class Presenter
      *              [
      *                  'id' => int,
      *                  'title' => string,
-     *                  'thumbnailName' => string
+     *                  'thumbnailName' => string,
+     *                  'c_id' => int
      *              ],
      *              []
      *          ],
