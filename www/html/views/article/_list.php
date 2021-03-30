@@ -1,6 +1,5 @@
 <?php
     use myapp\config\ViewsConfig;
-    var_dump($articleInfos);
 ?>
 
 <!DOCTYPE html>
@@ -26,32 +25,32 @@
                         <h3 class="center">支援・制度利用時のお役立ち情報</h3>
                     </div>
 
+                    <?php foreach ($articleInfos as $category => $articleInfoItems): ?>
+
                     <div class="articles--content">
-                        <p class="article--content--category">支援全般</p>
+                        <p class="article--content--category"><?php echo $category; ?></p>
                         <div class="article--content--list">
+
+                            <?php foreach ($articleInfoItems as $articleInfoItem): ?>
+
                             <div class="article--content--list--item">
-                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'which.png'; ?>" alt="支援総合">
-                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">公的支援と民間支援、どちらがいいの? あなたにあった選び方を紹介！</a></p>
+                                <img class="article--content--list--item--img"
+                                    src="<?php echo ViewsConfig::IMG_URL. $articleInfoItem['thumbnailName']; ?>"
+                                    alt="<?php echo $articleInfoItem['title']; ?>"
+                                >
+                                <p class="article--content--list--item--title break-word block-start0 block-end0">
+                                    <a href="<?php echo '/article/'. $articleInfoItem['id']; ?>">
+                                        <?php echo $articleInfoItem['title']; ?>
+                                    </a>
+                                </p>
                             </div>
-                            <div class="article--content--list--item">
-                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'supportProcess.png'; ?>" alt="支援総合">
-                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるまでの流れを紹介!</a></p>
-                            </div>
-                            <div class="article--content--list--item">
-                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'removeStigma.png'; ?>" alt="支援総合">
-                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるのが少し恥ずかしい？そんなことありません！</a></p>
-                            </div>
+
+                            <?php endforeach; ?>
                         </div>
                     </div>
-                    <div class="articles--content">
-                        <p class="article--content--category">居住支援について</p>
-                        <div class="article--content--list">
-                            <div class="article--content--list--item">
-                                <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'home.png'; ?>" alt="支援総合">
-                                <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">居住支援で提供される住宅ってどんな感じなの？正直ボロボロなんじゃ、、、、。</a></p>
-                            </div>
-                        </div>
-                    </div>
+
+                    <?php endforeach; ?>
+
                 </div>
             </div>
 
