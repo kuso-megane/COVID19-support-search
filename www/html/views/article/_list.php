@@ -27,27 +27,28 @@
 
                     <?php foreach ($articleInfos as $category => $articleInfoItems): ?>
 
-                    <div class="articles--content">
-                        <p class="article--content--category"><?php echo $category; ?></p>
-                        <div class="article--content--list">
+                        <div class="articles--content">
+                            <p class="article--content--category"><?php echo $category; ?></p>
+                            <div class="article--content--list">
 
-                            <?php foreach ($articleInfoItems as $articleInfoItem): ?>
+                                <?php foreach ($articleInfoItems as $articleInfoItem): ?>
 
-                            <div class="article--content--list--item">
-                                <img class="article--content--list--item--img"
-                                    src="<?php echo ViewsConfig::IMG_URL. $articleInfoItem['thumbnailName']; ?>"
-                                    alt="<?php echo $articleInfoItem['title']; ?>"
-                                >
-                                <p class="article--content--list--item--title break-word block-start0 block-end0">
-                                    <a href="<?php echo '/article/'. $articleInfoItem['id']; ?>">
-                                        <?php echo $articleInfoItem['title']; ?>
-                                    </a>
-                                </p>
+                                    <div class="article--content--list--item">
+                                        <img class="article--content--list--item--img"
+                                            src="<?php echo ViewsConfig::IMG_URL. $articleInfoItem['thumbnailName']; ?>"
+                                            alt="<?php echo $articleInfoItem['title']; ?>"
+                                        >
+                                        <p class="article--content--list--item--title break-word block-start0 block-end0">
+                                            <a href="<?php echo '/article/'. $articleInfoItem['id']; ?>">
+                                                <?php echo $articleInfoItem['title']; ?>
+                                            </a>
+                                        </p>
+                                    </div>
+
+                                <?php endforeach; ?>
+                                
                             </div>
-
-                            <?php endforeach; ?>
                         </div>
-                    </div>
 
                     <?php endforeach; ?>
 
