@@ -3,20 +3,20 @@
 namespace domain\article\_list;
 
 use domain\article\_list\RepositoryPort\AllArticleInfosRepositoryPort;
-use domain\article\_list\RepositoryPort\CategoryListRepositoryPort;
+use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
 
 class Interactor
 {
     private $allArticleInfosRepository;
-    private $categoryListRepository;
+    private $articleCategoryListRepository;
 
     public function __construct(
         AllArticleInfosRepositoryPort $allArticleInfosRepository,
-        CategoryListRepositoryPort $categoryListRepository
+        ArticleCategoryListRepositoryPort $articleCategoryListRepository
     )
     {
         $this->allArticleInfosRepository = $allArticleInfosRepository;
-        $this->categoryListRepository = $categoryListRepository;
+        $this->articleCategoryListRepository = $articleCategoryListRepository;
     }
 
 
@@ -27,7 +27,7 @@ class Interactor
      */
     public function interact()
     {
-        $categoryList = $this->categoryListRepository->getCategoryList();
+        $categoryList = $this->articleCategoryListRepository->getCategoryList();
         $articleInfos = $this->allArticleInfosRepository->getAllArticleInfos();
 
         return (new Presenter)->present($articleInfos, $categoryList);

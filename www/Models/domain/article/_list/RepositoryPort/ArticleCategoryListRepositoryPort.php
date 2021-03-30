@@ -2,7 +2,7 @@
 
 namespace domain\article\_list\RepositoryPort;
 
-interface CategoryListRepositoryPort
+interface ArticleCategoryListRepositoryPort
 {
 
     /**

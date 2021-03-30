@@ -3,12 +3,12 @@
 namespace infra\Repository;
 
 use domain\article\_list\Data\ArticleCategory;
-use domain\article\_list\RepositoryPort\CategoryListRepositoryPort;
+use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
 use infra\database\src\ArticleCategoryTable;
 
 class ArticleCategoryRepository
 implements
-    CategoryListRepositoryPort
+    ArticleCategoryListRepositoryPort
 {
     private $table;
     
