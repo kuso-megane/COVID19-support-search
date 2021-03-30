@@ -23,7 +23,7 @@ implements
      */
     public function getCategoryList(): array
     {
-        $categories = $this->table->findAllNames();
+        $categories = $this->table->findAll();
 
         foreach ($categories as &$category) {
             $category = new ArticleCategory($category['id'], $category['name']);
