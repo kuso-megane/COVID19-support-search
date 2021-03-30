@@ -10,5 +10,6 @@
 # mysqlコンテナのデータ永続化
 /mysql/data
 
-
+#sample data
+/mysql/DB/sample
 
