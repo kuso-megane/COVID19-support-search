@@ -1,5 +1,6 @@
 <?php
     use myapp\config\ViewsConfig;
+    var_dump($articleInfos);
 ?>
 
 <!DOCTYPE html>

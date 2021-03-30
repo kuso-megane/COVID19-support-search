@@ -39,8 +39,8 @@ class Presenter
     {
         $ans = [];
 
-        $categoryListFormatted = [];
-
+        $categoryListFormatted = []; // [1 => name1, 2]
+        
         foreach($categoryList as $category) {
             $category = $category->toArray();
             $id = $category['id'];
