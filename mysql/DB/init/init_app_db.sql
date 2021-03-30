@@ -37,8 +37,7 @@ create table SupportOrgs(
 drop TABLE if exists ArticleCategory;
 create table ArticleCategory(
     id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    name varchar(20) NOT NULL unique,
-    meta_words varchar(100) NOT NULL
+    name varchar(20) NOT NULL unique
 );
 
 
