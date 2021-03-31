@@ -3,25 +3,29 @@
 namespace domain\search\result;
 
 use domain\Exception\ValidationFailException;
-use domain\search\result\RepositoryPort\MetaTroubleRepositoryPort;
+use domain\search\result\RepositoryPort\SearchItemsRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use domain\search\result\Validator\Validator;
 use domain\components\searchBox\Interactor as SearchBoxInteractor;
+use domain\search\result\RepositoryPort\RecommendedArticlesRepositoryPort;
 use myapp\config\AppConfig;
 use myapp\myFrameWork\SuperGlobalVars;
 
 class Interactor
 {
     private $searchedSupportOrgsRepository;
-    private $metaTroubleRepository;
+    private $searchItemsRepository;
+    private $recommendedArticleInfosRepository;
 
     public function __construct(
         SearchedSupportsRepositoryPort $searchedSupportOrgsRepository,
-        MetaTroubleRepositoryPort $metaTroubleReporitory
+        SearchItemsRepositoryPort $searchItemsReporitory,
+        RecommendedArticlesRepositoryPort $recommendedArticleInfosRepository
     )
     {
         $this->searchedSupportOrgsRepository = $searchedSupportOrgsRepository;
-        $this->metaTroubleRepository = $metaTroubleReporitory;
+        $this->searchItemsRepository = $searchItemsReporitory;
+        $this->recommendedArticleInfosRepository = $recommendedArticleInfosRepository;
     }
 
     /**
@@ -46,21 +50,27 @@ class Interactor
         $pri_p = $input['pri_p'];
 
 
-        $metaTrouble = $this->metaTroubleRepository->getMetaTrouble($trouble_id);
-
-        if ($metaTrouble === NULL) {
+        $searchItems = $this->searchItemsRepository->getSearchItems($trouble_id)->toArray();
+        $meta_word = $searchItems['meta_word'];
+        $articleC_id = $searchItems['articleC_id'];
+ 
+        if ($meta_word === NULL || $articleC_id === NULL) {
             return (new Presenter)->reportUnexpectedSearch('想定外の「困っていること」が指定されています。');
         }
 
+
         $publicSupportsTotal = 0;
         $publicSupports = $this->searchedSupportOrgsRepository->searchSupports(
-            $publicSupportsTotal, $metaTrouble, $area_id, $is_only_foreign_ok, TRUE, $pub_p
+            $publicSupportsTotal, $meta_word, $area_id, $is_only_foreign_ok, TRUE, $pub_p
         );
 
         $privateSupportsTotal = 0;
         $privateSupports = $this->searchedSupportOrgsRepository->searchSupports(
-            $privateSupportsTotal, $metaTrouble, $area_id, $is_only_foreign_ok, FALSE, $pri_p
+            $privateSupportsTotal, $meta_word, $area_id, $is_only_foreign_ok, FALSE, $pri_p
         );
+
+        $recommendedArticleInfos = $this->recommendedArticleInfosRepository
+        ->getRecommendedArticleInfos($articleC_id, AppConfig::MAXNUM_RECOMMENDED_ARTICLES);
 
 
         $builder = new \DI\ContainerBuilder();
@@ -90,7 +100,8 @@ class Interactor
 
         return (new Presenter)->present(
             $pub_p, $pri_p, $publicSupportsTotal, $privateSupportsTotal, $publicPageTotal,
-            $privatePageTotal, $publicSupports, $privateSupports, $is_public_page, $searchBoxData, $query
+            $privatePageTotal, $publicSupports, $privateSupports, $is_public_page, $recommendedArticleInfos,
+            $searchBoxData, $query
         );
 
     }

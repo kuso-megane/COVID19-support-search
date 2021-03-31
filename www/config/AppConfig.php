@@ -15,4 +15,6 @@ class AppConfig
     const DEFAULT_IMG = 'default.jpg';
 
     const ZENKOKU_ID = 1;
+
+    const MAXNUM_RECOMMENDED_ARTICLES = 3;
 }

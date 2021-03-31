@@ -3,7 +3,7 @@
 namespace domain\search\result\RepositoryPort;
 
 use domain\search\result\Data\SearchedSupport;
-use domain\search\result\Data\MetaTrouble;
+use domain\search\result\Data\SearchItems;
 
 interface SearchedSupportsRepositoryPort
 {
@@ -11,7 +11,7 @@ interface SearchedSupportsRepositoryPort
      * search the supports which meets given condition including 'zenkoku' ones
      * 
      * @param int &$total total num of coming up supports
-     * @param MetaTrouble $trouble_id
+     * @param string $metaWord
      * @param int $area_id
      * @param bool $is_only_foreign_ok
      * @param bool $is_public
@@ -24,6 +24,6 @@ interface SearchedSupportsRepositoryPort
      * 
      * if no record is found, this returns empty array.
      */
-    public function searchSupports(int &$total, MetaTrouble $metaTrouble, int $area_id, bool $is_only_foreign_ok, bool $is_public, int $page):array;
+    public function searchSupports(int &$total, string $metaWord, int $area_id, bool $is_only_foreign_ok, bool $is_public, int $page):array;
 
 }

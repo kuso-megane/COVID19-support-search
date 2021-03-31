@@ -2,7 +2,7 @@
 
 namespace domain\search\result;
 
-
+use domain\search\result\Data\RecommendedArticleInfo;
 use myapp\config\AppConfig;
 
 class Presenter
@@ -18,7 +18,9 @@ class Presenter
      * @param SeachedSupports[] $publicSupports
      * @param SeachedSupports[] $privateSupports
      * @param bool $is_public_page
+     * @param RecommendedArticleInfo[] $recommendedArticleInfos
      * @param array $searchBoxData
+     * @param array $query
      * 
      * @return array [
      *      'publicCurrentPage' => int,
@@ -39,7 +41,12 @@ class Presenter
      *      ],
      *      'privateSupports' => [ the same as publicSupports ],
      *      'is_public_page' => bool,
-     *      'query' => string
+     *      'query' => string,
+     *      'recommendedArticleInfos' => [
+     *          'id' => int,
+     *          'title' => string,
+     *          'thumbnailName' => string
+     *      ]
      * ]
      *  +$searchedBox
      * 
@@ -48,7 +55,7 @@ class Presenter
     public function present(
         int $publicCurrentPage, int $privateCurrentPage, int $publicSupportsTotal, int $privateSupportsTotal,
         int $publicPageTotal, int $privatePageTotal, array $publicSupports, array $privateSupports,
-        bool $is_public_page, array $searchBoxData, string $query
+        bool $is_public_page, array $recommendedArticleInfos, array $searchBoxData, string $query
     ): array
     {
 
@@ -62,6 +69,7 @@ class Presenter
             'publicSupports' => $this->format($publicSupports),
             'privateSupports' => $this->format($privateSupports),
             'is_public_page' => $is_public_page,
+            'recommendedArticleInfos' => $this->format($recommendedArticleInfos),
             'query' => $query
         ];
 
@@ -93,14 +101,14 @@ class Presenter
     }
 
 
-    private function format(array $searchedSupportOrgs): array
+    private function format(array $datas): array
     {
-        foreach ($searchedSupportOrgs as &$searchedSupportOrg) {
-            if ($searchedSupportOrg != NULL) {
-                $searchedSupportOrg = $searchedSupportOrg->toArray();
+        foreach ($datas as &$data) {
+            if ($data != NULL) {
+                $data = $data->toArray();
             }
         }
 
-        return $searchedSupportOrgs;
+        return $datas;
     }
 }
