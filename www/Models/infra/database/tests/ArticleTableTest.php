@@ -23,6 +23,8 @@ class ArticleTableTest extends TestCase
         'content' => 'sampleContent2', 'c_id' => self::SAMPLE_C_ID]
     ];
 
+    const FAKE_ID = 100;
+
     private $dbh;
     private $table;
 
@@ -85,11 +87,49 @@ class ArticleTableTest extends TestCase
     }
 
 
+    /**
+     * @dataProvider providerForFindById()
+     */
+    public function testFindById(int $id, bool $is_content_needed)
+    {
+        if ($id === 1) {
+            if ($is_content_needed === FALSE) {
+                $expected = [
+                    'id' => $this::SAMPLE_DATAS[0]['id'], 'title' => $this::SAMPLE_DATAS[0]['title'],
+                    'thumbnailName' => $this::SAMPLE_DATAS[0]['thumbnailName'], 'c_id' => $this::SAMPLE_DATAS[0]['c_id']
+                ];
+            }
+            elseif ($is_content_needed === TRUE) {
+                $expected = [
+                    'id' => $this::SAMPLE_DATAS[0]['id'], 'title' => $this::SAMPLE_DATAS[0]['title'],
+                    'thumbnailName' => $this::SAMPLE_DATAS[0]['thumbnailName'], 'content' => $this::SAMPLE_DATAS[0]['content'],
+                    'c_id' => $this::SAMPLE_DATAS[0]['c_id']
+                ];
+            }
+        }
+        elseif ($id === $this::FAKE_ID) {
+            $expected = NULL;
+        }
+
+        $this->assertSame($expected, $this->table->findById($id, $is_content_needed));
+    }
+
+
     public function providerForFindInfosByC_id(): array
     {
         return [
             'when given existent c_id' => [self::SAMPLE_C_ID],
             'when given non-existent c_id' => [self::FAKE_C_ID]
+        ];
+    }
+
+
+    public function providerForFindById(): array
+    {
+        return [
+            'when given existent id and content is needed' => [1, TRUE],
+            'when given existent id and content is not needed' => [1, FALSE],
+            'when given non-existent id' => [self::FAKE_ID, TRUE]
         ];
     }
 }

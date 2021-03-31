@@ -2,6 +2,7 @@
 
 use domain\article\_list\RepositoryPort\AllArticleInfosRepositoryPort;
 use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
+use domain\article\show\RepositoryPort\ArticleContentRepositoryPort;
 use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use domain\search\result\RepositoryPort\SearchItemsRepositoryPort;
@@ -19,6 +20,7 @@ return [
 
     AllArticleInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
     RecommendedArticleInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
+    ArticleContentRepositoryPort::class => \DI\create(ArticleRepository::class),
 
     ArticleCategoryListRepositoryPort::class => \DI\create(ArticleCategoryRepository::class)
 ];

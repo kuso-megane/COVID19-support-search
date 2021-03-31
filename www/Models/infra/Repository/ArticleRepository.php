@@ -4,14 +4,18 @@ namespace infra\Repository;
 
 use domain\article\_list\Data\ArticleInfo;
 use domain\article\_list\RepositoryPort\AllArticleInfosRepositoryPort;
+use domain\article\show\Data\ArticleContent;
+use domain\article\show\RepositoryPort\ArticleContentRepositoryPort;
 use domain\search\result\Data\RecommendedArticleInfo;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use infra\database\src\ArticleTable;
 
+
 class ArticleRepository
 implements
     AllArticleInfosRepositoryPort,
-    RecommendedArticleInfosRepositoryPort
+    RecommendedArticleInfosRepositoryPort,
+    ArticleContentRepositoryPort
 {
     private $table;
 
@@ -53,5 +57,23 @@ implements
         }
 
         return $articleInfos;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getArticleContent(int $article_id): ?ArticleContent
+    {
+        $articleContent = $this->table->findById($article_id);
+
+        if ($articleContent === NULL) {
+            return NULL;
+        }
+        else {
+            return new ArticleContent(
+                $articleContent['title'], $articleContent['thumbnailName'], $articleContent['content']
+            );
+        }
     }
 }

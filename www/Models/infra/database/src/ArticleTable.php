@@ -57,4 +57,32 @@ class ArticleTable
         ['orderby' => 'id', 'sort' => 'ASC', 'limitNum' => ':limitNum'],
         [':c_id' => $c_id, ':limitNum' => $maxNum]);
     }
+
+
+    /**
+     * return the record of given id
+     * @param int $id
+     * @param bool $is_content_needed
+     * 
+     * @return NULL|array [
+     *      'id' => int,
+     *      'title' => string,
+     *      'thumbnailName' => string,
+     *      'content' => string,
+     *      'c_id' => int
+     * ]
+     * 
+     * if no record is found, returns NULL
+     */
+    public function findById(int $id, bool $is_content_needed = TRUE): ?array
+    {
+        if ($is_content_needed === TRUE) {
+            $columns = '*';
+        }
+        elseif($is_content_needed === FALSE) {
+            $columns = 'id, title, thumbnailName, c_id';
+        }
+
+        return $this->dbh->select($columns, $this::TABLENAME, 'id = :id', [], [':id' => $id])[0];
+    }
 }
