@@ -16,5 +16,6 @@ class AppConfig
 
     const ZENKOKU_ID = 1;
 
+    const GENERAL_C_ID = 1;
     const MAXNUM_RECOMMENDED_ARTICLES = 3;
 }

@@ -72,6 +72,12 @@ class Interactor
         $recommendedArticleInfos = $this->recommendedArticleInfosRepository
         ->getRecommendedArticleInfos($articleC_id, AppConfig::MAXNUM_RECOMMENDED_ARTICLES);
 
+        $tmpArticleTotal = count($recommendedArticleInfos);
+
+        //おすすめコラムが一定量に見たない場合は、支援一般カテゴリのコラムを追加
+        $generalArticleInfos = $this->recommendedArticleInfosRepository
+        ->getRecommendedArticleInfos(AppConfig::GENERAL_C_ID, AppConfig::MAXNUM_RECOMMENDED_ARTICLES - $tmpArticleTotal);
+        $recommendedArticleInfos = array_merge($recommendedArticleInfos, $generalArticleInfos);
 
         $builder = new \DI\ContainerBuilder();
         $builder->addDefinitions('/var/www/Models/diconfig.php');

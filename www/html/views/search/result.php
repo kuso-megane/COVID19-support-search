@@ -174,18 +174,22 @@
                 <div id="recommend-articles--box" class="main--single">
                     <p class="subTitle bold block-start0">&lt;おすすめコラム(お役立ち情報)&gt;</p>
                     <div class="article--content--list">
-                        <div class="article--content--list--item">
-                            <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'which.png'; ?>" alt="支援総合">
-                            <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">公的支援と民間支援、どちらがいいの？ あなたにあった選び方を紹介！</a></p>
-                        </div>
-                        <div class="article--content--list--item">
-                            <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'supportProcess.png'; ?>" alt="支援総合">
-                            <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるまでの流れを紹介!</a></p>
-                        </div>
-                        <div class="article--content--list--item">
-                            <img class="article--content--list--item--img" src="<?php echo ViewsConfig::IMG_URL. 'removeStigma.png'; ?>" alt="支援総合">
-                            <p class="article--content--list--item--title break-word block-start0 block-end0"><a href="">支援を受けるのが少し恥ずかしい？そんなことありません！</a></p>
-                        </div>
+                        <?php foreach ($recommendedArticleInfos as $articleInfo): ?>
+
+                            <div class="article--content--list--item">
+                                <img class="article--content--list--item--img"
+                                    src="<?php echo ViewsConfig::IMG_URL. $articleInfo['thumbnailName']; ?>"
+                                    alt="<?php echo $articleInfo['title']; ?>"
+                                >
+                                <p class="article--content--list--item--title break-word block-start0 block-end0">
+                                    <a href="<?php echo '/article/'. $articleInfo['id']; ?>">
+                                        <?php echo $articleInfo['title']; ?>
+                                    </a>
+                                </p>
+                            </div>
+
+                        <?php endforeach; ?>
+
                     </div>
                     <p id="link-to-articleList" class="right"><a href="">&gt;&gt;もっと見る</a></p>
                 </div>
