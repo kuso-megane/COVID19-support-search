@@ -3,6 +3,7 @@
 use domain\article\_list\RepositoryPort\AllArticleInfosRepositoryPort;
 use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
 use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
+use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use domain\search\result\RepositoryPort\SearchItemsRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use infra\Repository\ArticleCategoryRepository;
@@ -17,6 +18,7 @@ return [
     SearchedSupportsRepositoryPort::class => \DI\create(SupportOrgsRepository::class),
 
     AllArticleInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
+    RecommendedArticleInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
 
     ArticleCategoryListRepositoryPort::class => \DI\create(ArticleCategoryRepository::class)
 ];

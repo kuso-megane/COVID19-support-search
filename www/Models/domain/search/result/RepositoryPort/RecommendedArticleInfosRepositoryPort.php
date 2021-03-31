@@ -4,7 +4,7 @@ namespace domain\search\result\RepositoryPort;
 
 use domain\search\result\Data\RecommendedArticleInfo;
 
-interface RecommendedArticlesRepositoryPort
+interface RecommendedArticleInfosRepositoryPort
 {
     /**
      * return articleInfos of given category. 

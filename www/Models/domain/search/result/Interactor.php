@@ -7,7 +7,7 @@ use domain\search\result\RepositoryPort\SearchItemsRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use domain\search\result\Validator\Validator;
 use domain\components\searchBox\Interactor as SearchBoxInteractor;
-use domain\search\result\RepositoryPort\RecommendedArticlesRepositoryPort;
+use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use myapp\config\AppConfig;
 use myapp\myFrameWork\SuperGlobalVars;
 
@@ -20,7 +20,7 @@ class Interactor
     public function __construct(
         SearchedSupportsRepositoryPort $searchedSupportOrgsRepository,
         SearchItemsRepositoryPort $searchItemsReporitory,
-        RecommendedArticlesRepositoryPort $recommendedArticleInfosRepository
+        RecommendedArticleInfosRepositoryPort $recommendedArticleInfosRepository
     )
     {
         $this->searchedSupportOrgsRepository = $searchedSupportOrgsRepository;

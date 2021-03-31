@@ -33,4 +33,28 @@ class ArticleTable
         return $this->dbh->select('id, title, thumbnailName, c_id', $this::TABLENAME, '',
         ['orderby' => 'id', 'sort' => 'ASC']);
     }
+
+
+    /**
+     * return some columns(called Info in this app) of given category sorted by id in ascending order
+     * @param int $c_id
+     * @param int $maxNum
+     * 
+     * @return array [
+     *      [
+     *          'id' => int,
+     *          'title' => string,
+     *          'thumbnailName' => string
+     *      ],
+     *      []
+     * ]
+     * 
+     * if no record is found, this returns empty array
+     */
+    public function findInfosByC_id(int $c_id, int $maxNum): array
+    {
+        return $this->dbh->select('id, title, thumbnailName', $this::TABLENAME, 'c_id = :c_id',
+        ['orderby' => 'id', 'sort' => 'ASC', 'limitNum' => ':limitNum'],
+        [':c_id' => $c_id, ':limitNum' => $maxNum]);
+    }
 }

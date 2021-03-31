@@ -11,6 +11,7 @@ class ArticleTableTest extends TestCase
     const PARENTTABLE1 = 'ArticleCategory';
 
     const SAMPLE_C_ID = 1;
+    const FAKE_C_ID = 0;
     const SAMPLE_PARENT1_DATAS = [
         ['id' => self::SAMPLE_C_ID, 'name' => 'sample1']
     ];
@@ -57,5 +58,38 @@ class ArticleTableTest extends TestCase
         ];
 
         $this->assertSame($expected, $this->table->findAllInfos());
+    }
+
+
+    /**
+     * @dataProvider providerForFindInfosByC_id()
+     */
+    public function testFindInfosByC_id(int $c_id)
+    {
+        $maxNum_mock = 2;
+
+        if ($c_id == self::SAMPLE_C_ID) {
+            $expected = [
+                ['id' => $this::SAMPLE_DATAS[0]['id'], 'title' => $this::SAMPLE_DATAS[0]['title'],
+                'thumbnailName' => $this::SAMPLE_DATAS[0]['thumbnailName']],
+                ['id' => $this::SAMPLE_DATAS[1]['id'], 'title' => $this::SAMPLE_DATAS[1]['title'],
+                'thumbnailName' => $this::SAMPLE_DATAS[1]['thumbnailName']]
+            ];
+        }
+        elseif($c_id == self::FAKE_C_ID) {
+            $expected = [];
+        }
+
+        $this->assertSame($expected, $this->table->findInfosByC_id($c_id, $maxNum_mock));
+
+    }
+
+
+    public function providerForFindInfosByC_id(): array
+    {
+        return [
+            'when given existent c_id' => [self::SAMPLE_C_ID],
+            'when given non-existent c_id' => [self::FAKE_C_ID]
+        ];
     }
 }
