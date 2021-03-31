@@ -31,7 +31,7 @@ function callAction (string $handler, ?array $vars = NULL)
     elseif ($handler == 'articleList') {
 
         $controller = new ArticleController;
-        $controller->list();
+        $controller->_list();
 
     }
     elseif ($handler == 'articleShow') {

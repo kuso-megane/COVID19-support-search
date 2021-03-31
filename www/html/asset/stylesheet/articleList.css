@@ -167,7 +167,7 @@ main {
 /*sp*/
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .main--center {
-    width: 95vw;
+    width: 80vw;
   }
 }
 /*タブレット*/
