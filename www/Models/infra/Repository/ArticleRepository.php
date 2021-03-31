@@ -28,7 +28,7 @@ implements
         foreach ($articleInfos as &$articleInfo) {
             $articleInfo = new ArticleInfo(
                 $articleInfo['id'], $articleInfo['title'], 
-                $articleInfo['thumbnailName'], $articleInfo['category_id']
+                $articleInfo['thumbnailName'], $articleInfo['c_id']
             );
         }
 

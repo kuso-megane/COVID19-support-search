@@ -20,19 +20,19 @@ class TroubleListTable
      * @param bool $meta_word_is_needed
      * 
      * @return array [
-     *      ['id' => int, 'name' => string, 'meta_word' => string],
+     *      ['id' => int, 'name' => string, 'meta_word' => string, 'ArticleC_id' => int],
      *      []
      * ]
      */
     public function findAll(bool $meta_word_isNeeded = TRUE): array
     {
         if ($meta_word_isNeeded === TRUE) {
-            $columns = 'id, name, meta_word';
+            $columns = 'id, name, meta_word, ArticleC_id';
 
             return $this->dbh->select($columns, $this::TABLENAME, '', ['orderby' => 'id', 'sort' => 'ASC']);
         }
         elseif ($meta_word_isNeeded === FALSE) {
-            $columns = 'id, name';
+            $columns = 'id, name, ArticleC_id';
 
             return $this->dbh->select($columns, $this::TABLENAME, '', ['orderby' => 'id', 'sort' => 'ASC']);
         }

@@ -8,10 +8,16 @@ use PHPUnit\Framework\TestCase;
 class TroubleListTableTest extends TestCase
 {
     const TABLENAME = 'TroubleList';
+    const PARENT_TABLE1 = 'ArticleCategory';
+
+    const SAMPLE_ARTICLE_C_ID = 1;
+    const PARENT1_SAMPLE_DATAS = [
+        ['id' => self::SAMPLE_ARTICLE_C_ID, 'name' => 'sampleC1']
+    ];
 
     const SAMPLE_DATAS = [
-        ['name' => 'sampleTrouble1', 'meta_word' => 'meta1'],
-        ['name' => 'sampleTrouble2', 'meta_word' => 'meta2']
+        ['name' => 'sampleTrouble1', 'meta_word' => 'meta1', 'ArticleC_id' => self::SAMPLE_ARTICLE_C_ID],
+        ['name' => 'sampleTrouble2', 'meta_word' => 'meta2', 'ArticleC_id' => self::SAMPLE_ARTICLE_C_ID]
     ];
 
     private $dbh;
@@ -24,9 +30,14 @@ class TroubleListTableTest extends TestCase
 
         $this->dbh->truncate($this::TABLENAME);
 
-        $sth = $this->dbh->insert($this::TABLENAME, '0, :name, :meta_word', [], MyDbh::ONLY_PREPARE);
-        $sth->execute([':name' => $this::SAMPLE_DATAS[0]['name'], ':meta_word' => $this::SAMPLE_DATAS[0]['meta_word']]);
-        $sth->execute([':name' => $this::SAMPLE_DATAS[1]['name'], ':meta_word' => $this::SAMPLE_DATAS[1]['meta_word']]);
+        $sth = $this->dbh->insert($this::TABLENAME, '0, :name, :meta_word, :ArticleC_id', [], MyDbh::ONLY_PREPARE);
+        foreach ($this::SAMPLE_DATAS as $sampleData) {
+            $sth->execute([
+                ':name' => $sampleData['name'],
+                ':meta_word' => $sampleData['meta_word'],
+                ':ArticleC_id' => $sampleData['ArticleC_id']
+            ]);
+        }
     }
 
 
@@ -38,8 +49,10 @@ class TroubleListTableTest extends TestCase
         if ($meta_word_isNeeded === TRUE) {
 
             $expected = [
-                ['id' => 1, 'name' => $this::SAMPLE_DATAS[0]['name'], 'meta_word' => $this::SAMPLE_DATAS[0]['meta_word']],
-                ['id' => 2, 'name' => $this::SAMPLE_DATAS[1]['name'], 'meta_word' => $this::SAMPLE_DATAS[1]['meta_word']]
+                ['id' => 1, 'name' => $this::SAMPLE_DATAS[0]['name'],
+                'meta_word' => $this::SAMPLE_DATAS[0]['meta_word'], 'ArticleC_id' => $this::SAMPLE_DATAS[0]['ArticleC_id']],
+                ['id' => 2, 'name' => $this::SAMPLE_DATAS[1]['name'],
+                'meta_word' => $this::SAMPLE_DATAS[1]['meta_word'], 'ArticleC_id' => $this::SAMPLE_DATAS[1]['ArticleC_id']]
             ];
 
             $this->assertSame($expected, $this->table->findAll(TRUE));
@@ -47,8 +60,8 @@ class TroubleListTableTest extends TestCase
         elseif ($meta_word_isNeeded === FALSE) {
 
             $expected = [
-                ['id' => 1, 'name' => $this::SAMPLE_DATAS[0]['name']],
-                ['id' => 2, 'name' => $this::SAMPLE_DATAS[1]['name']]
+                ['id' => 1, 'name' => $this::SAMPLE_DATAS[0]['name'], 'ArticleC_id' => $this::SAMPLE_DATAS[0]['ArticleC_id']],
+                ['id' => 2, 'name' => $this::SAMPLE_DATAS[1]['name'], 'ArticleC_id' => $this::SAMPLE_DATAS[1]['ArticleC_id']]
             ];
 
             $this->assertSame($expected, $this->table->findAll(FALSE));
@@ -70,7 +83,8 @@ class TroubleListTableTest extends TestCase
             $expected = [
                 'id' => $id,
                 'name' => $this::SAMPLE_DATAS[0]['name'],
-                'meta_word' => $this::SAMPLE_DATAS[0]['meta_word']
+                'meta_word' => $this::SAMPLE_DATAS[0]['meta_word'],
+                'ArticleC_id' => $this::SAMPLE_DATAS[0]['ArticleC_id']
             ];
 
             $this->assertSame($expected, $this->table->findById($id));

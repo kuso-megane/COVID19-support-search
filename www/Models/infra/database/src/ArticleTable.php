@@ -23,14 +23,14 @@ class ArticleTable
      *          'id' => int,
      *          'title' => string,
      *          'thumbnailName' => string,
-     *          'category_id' => int
+     *          'c_id' => int
      *      ],
      *      []
      * ]
      */
     public function findAllInfos(): array
     {
-        return $this->dbh->select('id, title, thumbnailName, category_id', $this::TABLENAME, '',
+        return $this->dbh->select('id, title, thumbnailName, c_id', $this::TABLENAME, '',
         ['orderby' => 'id', 'sort' => 'ASC']);
     }
 }
