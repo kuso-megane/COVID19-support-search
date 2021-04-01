@@ -8,6 +8,7 @@
         <title>支援総合検索サイト</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL . 'search.css'; ?>" >
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 　　</head>
     <body>
         <?php require ViewsConfig::COMPONENTS_PATH . 'header.php'; ?>
@@ -26,6 +27,14 @@
                     <div id="search-result-anchor"></div>
 
                     <div class="main--double--right">
+
+                        <a href="#searchbox-anchor" class="nav--absolute block center">
+                            <i class="fas fa-search"></i>
+                            <p class="inline-block block-end0 block-start0">
+                                条件を変えて検索
+                            </p>
+                        </a>
+
                         <p class="subTitle bold block-start0">&lt;検索結果&gt;</p>
                         <div id="tab-area">
                             <div id="public-tab" class="tab <?php if($is_public_page === TRUE) {echo 'active';} ?>">公的支援</div>

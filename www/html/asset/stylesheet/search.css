@@ -147,6 +147,10 @@ main {
   display: flex;
 }
 
+.block {
+  display: block;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -314,6 +318,18 @@ main {
 }
 .article--content--list--item--title a {
   color: #444444;
+}
+
+.nav--absolute {
+  background-color: #009900;
+  position: fixed;
+  width: 60vw;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0.5rem;
+  color: white;
 }
 
 #introduce--main {
