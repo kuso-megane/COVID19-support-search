@@ -1,12 +1,12 @@
+<?php
+    use myapp\config\ViewsConfig;
+?>
 
 <script>
     // for initAreaSelect() in asset/js/initAreaSelect.js
-    const searchedAreaId = "<?php
-
-use myapp\config\ViewsConfig;
-
-echo $searched_area_id;  ?>";
+    const searchedAreaId = "<?php echo $searched_area_id;  ?>";
 </script>
+
 
 <form id="search-box" action="/searchResult/1/1/1">
     <p id="search-box--title" class="block-start0 block-end0 bold">&lt;検索はこちら&gt;</p>
