@@ -5,8 +5,10 @@ use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
 use domain\article\show\RepositoryPort\ArticleContentRepositoryPort;
 use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
+use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
 use domain\search\result\RepositoryPort\SearchItemsRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
+use infra\Repository\AreaListRepository;
 use infra\Repository\ArticleCategoryRepository;
 use infra\Repository\ArticleRepository;
 use infra\Repository\SupportOrgsRepository;
@@ -22,5 +24,7 @@ return [
     RecommendedArticleInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
     ArticleContentRepositoryPort::class => \DI\create(ArticleRepository::class),
 
-    ArticleCategoryListRepositoryPort::class => \DI\create(ArticleCategoryRepository::class)
+    ArticleCategoryListRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
+
+    SearchedAreaNameRepositoryPort::class => \DI\create(AreaListRepository::class)
 ];

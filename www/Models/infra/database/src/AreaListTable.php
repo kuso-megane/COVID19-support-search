@@ -30,4 +30,22 @@ class AreaListTable
 
         return $records;
     }
+
+
+    /**
+     * @param int $id
+     * 
+     * @return NULL|array [
+     *      'id' => int,
+     *      'name' => string
+     * ]
+     * 
+     * if no record is found, returns NULL
+     */
+    public function findById(int $id): ?array
+    {
+        $record = $this->dbh->select('*', self::TABLENAME, 'id = :id', [], [':id' => $id])[0];
+
+        return $record;
+    }
 }

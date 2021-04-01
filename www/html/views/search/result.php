@@ -35,7 +35,12 @@
                             </p>
                         </a>
 
-                        <p class="subTitle bold block-start0">&lt;検索結果&gt;</p>
+                        <p class="subTitle bold block-start0">
+                            &lt;
+                            <?php echo $searchedAreaName; ?>
+                            の検索結果
+                            &gt;
+                        </p>
                         <div id="tab-area">
                             <div id="public-tab" class="tab <?php if($is_public_page === TRUE) {echo 'active';} ?>">公的支援</div>
                             <div id="private-tab" class="tab <?php if($is_public_page === FALSE) {echo 'active';} ?>">民間支援</div>

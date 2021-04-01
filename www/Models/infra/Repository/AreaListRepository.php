@@ -2,10 +2,12 @@
 
 namespace infra\Repository;
 
-use domain\components\searchBox\Data\Area;
+use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
 use infra\database\src\AreaListTable;
 
 class AreaListRepository
+implements
+    SearchedAreaNameRepositoryPort
 {
     private $table;
 
@@ -14,4 +16,14 @@ class AreaListRepository
         $this->table = new AreaListTable();
     }
 
+
+    /**
+     * @inheritDoc
+     */
+    public function getSearchedAreaName(int $area_id): string
+    {
+        $data = $this->table->findById($area_id);
+
+        return $data['name'];
+    }
 }

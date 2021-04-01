@@ -8,6 +8,7 @@ use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use domain\search\result\Validator\Validator;
 use domain\components\searchBox\Interactor as SearchBoxInteractor;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
+use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
 use myapp\config\AppConfig;
 use myapp\myFrameWork\SuperGlobalVars;
 
@@ -16,16 +17,19 @@ class Interactor
     private $searchedSupportOrgsRepository;
     private $searchItemsRepository;
     private $recommendedArticleInfosRepository;
+    private $searchedAreaNameRepository;
 
     public function __construct(
         SearchedSupportsRepositoryPort $searchedSupportOrgsRepository,
         SearchItemsRepositoryPort $searchItemsReporitory,
-        RecommendedArticleInfosRepositoryPort $recommendedArticleInfosRepository
+        RecommendedArticleInfosRepositoryPort $recommendedArticleInfosRepository,
+        SearchedAreaNameRepositoryPort $searchedAreaNameRepository
     )
     {
         $this->searchedSupportOrgsRepository = $searchedSupportOrgsRepository;
         $this->searchItemsRepository = $searchItemsReporitory;
         $this->recommendedArticleInfosRepository = $recommendedArticleInfosRepository;
+        $this->searchedAreaNameRepository = $searchedAreaNameRepository;
     }
 
     /**
@@ -49,6 +53,7 @@ class Interactor
         $pub_p = $input['pub_p'];
         $pri_p = $input['pri_p'];
 
+        $searchedAreaName = $this->searchedAreaNameRepository->getSearchedAreaName($area_id);
 
         $searchItems = $this->searchItemsRepository->getSearchItems($trouble_id)->toArray();
         $meta_word = $searchItems['meta_word'];
@@ -107,7 +112,7 @@ class Interactor
         return (new Presenter)->present(
             $pub_p, $pri_p, $publicSupportsTotal, $privateSupportsTotal, $publicPageTotal,
             $privatePageTotal, $publicSupports, $privateSupports, $is_public_page, $recommendedArticleInfos,
-            $searchBoxData, $query
+            $searchBoxData, $query, $searchedAreaName
         );
 
     }
