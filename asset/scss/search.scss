@@ -11,68 +11,6 @@
 
 @use './components/article--content--list';
 
-/*sp*/
-@media screen and (min-width: 320px) and (max-width: 480px){
-    .main--single, .main--double{
-        width: 80vw;
-    }
-    .main--double--right {
-        width: 100%;
-    }
-}
-
-/*タブレット*/
-@media screen and (min-width: 481px) and (max-width: 1024px){
-    .main--single, .main--double {
-        width: 90vw;
-    }
-    .main--double--right {
-        width: 60%;
-    }
-}
-
-/*pc*/
-@media screen and (min-width: 1025px){
-    .main--single, .main--double {
-        width: 70vw;
-    }
-    .main--double--right {
-        width: 60%;
-    }
-}
-
-
-.main--single{
-    display: inline-block;
-    border: solid 2px vars.$baseColor;
-    border-radius: 1rem;
-    overflow-wrap: break-word;
-    background-color: white;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-.main--double{
-    display: inline-flex;
-    justify-content: space-between;
-    align-content: space-between;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    text-align: left;
-
-    &--right{
-        border: solid 2px vars.$baseColor;
-        border-radius: 1rem;
-        background-color: white;
-        margin-top: vars.$main--doubleMarginTop;
-        padding: 1rem 1rem 0.5rem 0.5rem ;
-    }
-}
-
-.subTitle {
-    font-size: vars.$subTitleFontSize;
-}
-
 
 // index
 #introduce--main {

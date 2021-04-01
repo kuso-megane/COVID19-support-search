@@ -20,7 +20,7 @@
             </div>
 
             <div class="center">
-                <div id="articles" class="main--center left">
+                <div id="articles" class="main--single left">
                     <div id="articles--title">
                         <h3 class="center">支援・制度利用時のお役立ち情報</h3>
                     </div>

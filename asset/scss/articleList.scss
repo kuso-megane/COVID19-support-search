@@ -3,38 +3,7 @@
 @use './components/header';
 @use './components/article--content--list';
 
-/*sp*/
-@media screen and (min-width: 320px) and (max-width: 480px){
-    .main--center{
-        width: 80vw;
-    }
-}
 
-/*タブレット*/
-@media screen and (min-width: 481px) and (max-width: 1024px){
-    .main--center{
-        width: 80vw;
-    }
-
-}
-
-/*pc*/
-@media screen and (min-width: 1025px){
-    .main--center{
-        width: 70vw;
-    }
-
-}
-
-
-.main--center{
-    display: inline-block;
-    border: solid 2px vars.$baseColor;
-    border-radius: 1rem;
-    overflow-wrap: break-word;
-    background-color: white;
-    padding: 1rem;
-}
 
 $articleColor: #444444;
 $articleBGColor: #EEEEEE;
