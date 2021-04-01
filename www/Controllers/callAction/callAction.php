@@ -4,8 +4,7 @@
 
 use myapp\Controllers\ArticleController;
 use myapp\controllers\SearchController;
-use myapp\controllers\OrganizationController;
-//use myapp\controllers\BackyardController as Backyard;
+use myapp\controllers\BackyardArticleController as BYArticleController;
 
 
 /**
@@ -38,30 +37,22 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller = new ArticleController;
         $controller->show($vars);
     }
-    /*
-    elseif ($handler == 'backyardIndex') {
+    elseif ($handler == 'backyardArticleIndex') {
 
-        $controller = new Backyard;
+        $controller = new BYArticleController;
         $controller->index($vars);
 
     }
-    elseif ($handler == 'backyardEdit') {
+    elseif ($handler == 'backyardArticleEdit') {
 
-        $controller = new Backyard;
+        $controller = new BYArticleController;
         $controller->edit($vars);
 
     }
-    elseif ($handler == 'backyardCreate') {
+    elseif ($handler == 'backyardArticlePost') {
 
-        $controller = new Backyard;
-        $controller->create($vars);
-
-    }
-    elseif ($handler == 'backyardUpdate') {
-        
-        $controller = new Backyard;
-        $controller->update($vars);
+        $controller = new BYArticleController;
+        $controller->post($vars);
 
     }
-    */
 }
