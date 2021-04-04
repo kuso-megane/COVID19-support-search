@@ -165,7 +165,6 @@ main {
   justify-content: space-between;
   background-color: white;
   color: black;
-  padding: 0.5rem;
   border-bottom: 1rem solid #009900;
 }
 
@@ -381,10 +380,9 @@ main {
 }
 
 #introduce--main {
-  display: inline-block;
   text-align: left;
   font-size: 0.75rem;
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 #introduce--main li {
   list-style: disc;
