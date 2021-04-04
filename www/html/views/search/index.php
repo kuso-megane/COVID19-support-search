@@ -25,7 +25,7 @@ use myapp\config\ViewsConfig;
                         <h3 id="introduce--title" class="inline-block block-start0 left">生活で困ったことがあったらぜひ一度、当サイトを利用してみてください！</h3>
                     </div>
                     <div id="introduce--main">
-                        <p class="bold">このサイトは、コロナ禍をはじめとした様々な生活上の困りごとに合った支援・相談先を探せる、検索サービスです。</p>
+                        <p class="bold">「<?php echo AppConfig::TITLE; ?>」は、コロナ禍をはじめとした様々な生活上のお困りごとに合った支援・相談先を探せる、検索サービスです。</p>
                         <li>仕事を失った、生活費が足りない、、、。</li>
                         <li>一人ではどうしようもない。でも相談先がない。</li>
                         <li>どんな支援があるか、支援を受ける条件も方法もわからない。</li>
@@ -45,7 +45,7 @@ use myapp\config\ViewsConfig;
                         </div>
                         <p class="bold left">お役立ち情報(コラム)も書いています！以下のような悩みに答えています！</p>
                         <li class="red bold">そもそも支援を受けるのが少し恥ずかしい、、、。</li>
-                        <li>支援ってそもそもどうやって受けるの？</li>
+                        <li>支援って具体的にどうやって受けるの？</li>
                         <div class="center">
                             <a id="nav-to-article" class="nav-box left" href="/article/list">
                                 <p class="bold">
