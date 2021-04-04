@@ -20,10 +20,10 @@
             <div class="center">
                 <div id="introduce" class="main--single">
                     <div class="center">
-                        <h3 id="introduce--title" class="inline-block block-start0 left">困っていることにあった支援・相談先を探せる<br>検索システム!</h3>
+                        <h3 id="introduce--title" class="inline-block block-start0 left">生活で困ったことがあったらぜひ一度こちらで検索してみてください！</h3>
                     </div>
                     <div id="introduce--main" class="inline-block left">
-                        <p class="bold">このサイトは、官僚志望の学生と、プログラマー志望の学生が協力して、コロナ禍などが原因で困っている方々の力になるために作り上げた検索サービスです!</p>
+                        <p class="bold">このサイトは、都内の大学生二人とその友人が協力して作り上げた、コロナ禍をはじめとした様々な生活上の困りごとにあった支援先を探せる検索サービスです!</p>
                         <li>仕事を失った、生活費が足りない。</li>
                         <li>一人ではどうしようもない。でも相談先がない。</li>
                         <li>どんな支援があるか、受給資格があるかわからない。</li>
