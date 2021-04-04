@@ -12,6 +12,7 @@ use myapp\config\ViewsConfig;
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'search.css'; ?>">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     </head>
     <body>
@@ -20,28 +21,48 @@ use myapp\config\ViewsConfig;
         <main>
             <div class="center">
                 <div id="introduce" class="main--single">
-                    <h3 id="introduce--title" class="block-start0">困っていることにあった支援・相談先を探せる<br>検索システム!</h3>
-                    <div id="introduce--main" class="inline-block left">
-                        <p class="bold">このサイトは、官僚志望の学生と、プログラマー志望の学生が協力して、コロナ禍などが原因で困っている方々の力になるために作り上げた検索サービスです!</p>
-                        <li>仕事を失った、生活費が足りない。</li>
+                    <div class="center">
+                        <h3 id="introduce--title" class="inline-block block-start0 left">生活で困ったことがあったらぜひ一度、当サイトを利用してみてください！</h3>
+                    </div>
+                    <div id="introduce--main">
+                        <p class="bold">このサイトは、コロナ禍をはじめとした様々な生活上の困りごとに合った支援・相談先を探せる、検索サービスです。</p>
+                        <li>仕事を失った、生活費が足りない、、、。</li>
                         <li>一人ではどうしようもない。でも相談先がない。</li>
-                        <li>どんな支援があるか、受給資格があるかわからない。</li>
+                        <li>どんな支援があるか、支援を受ける条件も方法もわからない。</li>
                         <p class="break-word">
                             <span class="red bold">こんな時に、支援・相談先を簡単に探せるように、お手伝いさせていただきます！</span>
                         </p>
                         <p>
                             &#9733;特に民間支援には<span class="green">支援を受ける条件が基本的にありません。</span> 諦める前に一度だけでも検索してみてください。
                         </p>
-                        <p>
-                            &#9733;支援を受ける際の<span class ="green">お役立ち情報</span>も発信しています！詳細は画面上部の<span class="green">「&gt;&gt;支援・制度利用時のお役立ち情報」</span>へ！
-                        </p>
-
+                        <div class="center">
+                            <a id="nav-to-search" class="nav-box left" href="#search-box-anchor">
+                                <p class="bold">
+                                    <i class="fas fa-search"></i>
+                                    支援・相談先を検索する<span class="gt">&gt;</span>
+                                </p>
+                            </a>
+                        </div>
+                        <p class="bold left">お役立ち情報(コラム)も書いています！以下のような悩みに答えています！</p>
+                        <li class="red bold">そもそも支援を受けるのが少し恥ずかしい、、、。</li>
+                        <li>支援ってそもそもどうやって受けるの？</li>
+                        <div class="center">
+                            <a id="nav-to-article" class="nav-box left" href="/article/list">
+                                <p class="bold">
+                                    <i class="fas fa-book-open"></i>
+                                    お役立ち情報(コラム)を見る<span class="gt">&gt;</span>
+                                </p>
+                            </a>
+                        </div>
                     </div>
                 </div> 
             </div>
+
             
             <div class="center">
                 <div class="main--double">
+
+                    <div id="search-box-anchor"></div>
 
                     <?php require ViewsConfig::COMPONENTS_PATH. 'searchbox.php'; ?>
 
@@ -60,6 +81,6 @@ use myapp\config\ViewsConfig;
             
         </main>
 
-
+        <script src="<?php echo ViewsConfig::SCRIPT_URL. 'smoothScroll.js'; ?>"></script>
     </body>
 </html>

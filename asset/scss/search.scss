@@ -13,18 +13,51 @@
 
 @use './components/nav--absolute';
 
-// index
-#introduce--main {
+.nav-box {
+    display: inline-block;
+    border: solid 2px vars.$baseColor;
+    border-radius: 1rem;
+    cursor: pointer;
+    width: 15rem;
+    font-size: 0.8rem;
+    color: vars.$baseColor;
+    padding: 1rem;
+
+    top: 0;
+    bottom: 0;
     margin: auto;
-    font-size: 0.75rem;
+}
+
+.gt {
+    float: right;
+}
+
+// index
+
+$topFontSize: 0.75rem;
+
+#introduce, #introduce2 {
+    margin-top: 0;
+}
+
+#introduce--main, #introduce2--main{
+    display: inline-block;
+    text-align: left;
+    font-size: $topFontSize;
 
     li {
         list-style: disc;
     }
+
+    .nav-box {
+        margin: 1rem;
+    }
 }
 
+
+
 #howto--main {
-    font-size: 0.75rem;
+    font-size: $topFontSize;
 
     li {
         list-style-type: disc;

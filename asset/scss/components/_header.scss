@@ -2,15 +2,44 @@
 
 /*header*/
 #title-container {
+    display: flex;
+    justify-content: space-between;
     background-color: white;  
     color:black;
-    height: 4rem;
-    padding: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1rem solid vars.$baseColor;
 }
     
 #title{
-    margin-block-start: 0;
-    margin-block-end: 0;
+
+    &--left {
+        display: inline-flex;
+
+        h2 {
+            font-size: 1.5rem;
+            margin-block-start: 0;
+            margin-block-end: 0;
+
+            margin-top: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        &--logo {
+            $size: 2.5rem;
+            height: $size;
+            width: $size;
+    
+        }
+    }
+
+    &--right {
+        &--menu {
+            margin-right: 3rem;
+            margin-top: 1.5rem;
+        }
+    }
+    
+    
 }
 
 #header-menu-container{

@@ -57,6 +57,7 @@ main {
 
   .main--double--right {
     width: 60%;
+    margin-left: 5%;
   }
 }
 /*pc*/
@@ -67,6 +68,7 @@ main {
 
   .main--double--right {
     width: 60%;
+    margin-left: 5%;
   }
 }
 .main--single {
@@ -81,8 +83,6 @@ main {
 
 .main--double {
   display: inline-flex;
-  justify-content: space-between;
-  align-content: space-between;
   flex-wrap: wrap;
   align-items: flex-start;
   text-align: left;
@@ -157,15 +157,31 @@ main {
 
 /*header*/
 #title-container {
+  display: flex;
+  justify-content: space-between;
   background-color: white;
   color: black;
-  height: 4rem;
-  padding: 1rem;
+  padding: 0.5rem;
+  border-bottom: 1rem solid #009900;
 }
 
-#title {
+#title--left {
+  display: inline-flex;
+}
+#title--left h2 {
+  font-size: 1.5rem;
   margin-block-start: 0;
   margin-block-end: 0;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+#title--left--logo {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+#title--right--menu {
+  margin-right: 3rem;
+  margin-top: 1.5rem;
 }
 
 #header-menu-container {
@@ -332,12 +348,38 @@ main {
   color: white;
 }
 
-#introduce--main {
+.nav-box {
+  display: inline-block;
+  border: solid 2px #009900;
+  border-radius: 1rem;
+  cursor: pointer;
+  width: 15rem;
+  font-size: 0.8rem;
+  color: #009900;
+  padding: 1rem;
+  top: 0;
+  bottom: 0;
   margin: auto;
+}
+
+.gt {
+  float: right;
+}
+
+#introduce, #introduce2 {
+  margin-top: 0;
+}
+
+#introduce--main, #introduce2--main {
+  display: inline-block;
+  text-align: left;
   font-size: 0.75rem;
 }
-#introduce--main li {
+#introduce--main li, #introduce2--main li {
   list-style: disc;
+}
+#introduce--main .nav-box, #introduce2--main .nav-box {
+  margin: 1rem;
 }
 
 #howto--main {
