@@ -22,5 +22,11 @@
             
         </div>
 
-    </div>  
+    </div>
+    <div id="link-to-top--container">
+        <a id="link-to-top" href="/index">
+            <i class="fas fa-home"></i>
+            トップページへ
+        </a>
+    </div>
 </header>

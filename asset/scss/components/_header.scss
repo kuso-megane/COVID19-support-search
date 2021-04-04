@@ -6,51 +6,59 @@
     justify-content: space-between;
     background-color: white;  
     color:black;
-    border-bottom: 0.2rem solid vars.$baseColor;
     margin-top: 1rem;
 }
 
 
 /*スマホ*/
 @media screen and (min-width: 320px) and (max-width: 480px){
-    $titleMargin: 10vw;
+    $headerMargin: 10vw;
     #title{
         &--left {
-            margin-left: $titleMargin;
+            margin-left: $headerMargin;
         }
 
         &--right {
-            margin-right: $titleMargin;
+            margin-right: $headerMargin;
         }
+    }
+    #link-to-top {
+        margin-left: $headerMargin;
     }
 }
 
 /*タブレット*/
 @media screen and (min-width: 481px) and (max-width: 1024px){
-    $titleMargin: 5vw;
+    $headerMargin: 5vw;
     #title{
         &--left {
-            margin-left: $titleMargin;
+            margin-left: $headerMargin;
         }
 
         &--right {
-            margin-right: $titleMargin;
+            margin-right: $headerMargin;
         }
     } 
+    #link-to-top {
+        margin-left: $headerMargin;
+    }
 }
 
 
 /*pc*/
 @media screen and (min-width: 1025px){
-    $titleMargin: 15vw;
+    $headerMargin: 15vw;
     #title{
         &--left {
-            margin-left: $titleMargin;
+            margin-left: $headerMargin;
         }
 
         &--right {
-            margin-right: $titleMargin;
+            margin-right: $headerMargin;
         }
+    }
+    #link-to-top {
+        margin-left: $headerMargin;
     }
 }
     
@@ -78,27 +86,22 @@
 
     &--right {
         &--menu {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
     }
     
     
 }
 
-#header-menu-container{
-    background-color: vars.$baseColor;  
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.header-menu-items {
-    margin-block-start: 2px;
-    margin-block-end: 2px;
-
-    a{
-        margin:1rem;
-        font-size: 0.8rem;
-        color:white;
-        text-decoration: underline;
+#link-to-top--container {
+    background-color: vars.$baseColor;
+    $TBPadding: 0.3rem;
+    padding-top: $TBPadding;
+    padding-bottom: $TBPadding;
+    text-decoration: underline;
+    font-size: 0.7rem;
+    
+    a {
+        color: white;
     }
 }

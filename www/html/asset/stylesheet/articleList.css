@@ -174,13 +174,18 @@ main {
   display: inline-block;
 }
 
+.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
 /*header*/
 #title-container {
   display: flex;
   justify-content: space-between;
   background-color: white;
   color: black;
-  border-bottom: 0.2rem solid #009900;
   margin-top: 1rem;
 }
 
@@ -192,6 +197,10 @@ main {
   #title--right {
     margin-right: 10vw;
   }
+
+  #link-to-top {
+    margin-left: 10vw;
+  }
 }
 /*タブレット*/
 @media screen and (min-width: 481px) and (max-width: 1024px) {
@@ -201,6 +210,10 @@ main {
   #title--right {
     margin-right: 5vw;
   }
+
+  #link-to-top {
+    margin-left: 5vw;
+  }
 }
 /*pc*/
 @media screen and (min-width: 1025px) {
@@ -209,6 +222,10 @@ main {
   }
   #title--right {
     margin-right: 15vw;
+  }
+
+  #link-to-top {
+    margin-left: 15vw;
   }
 }
 #title--left {
@@ -226,24 +243,18 @@ main {
   margin-left: 0.5rem;
 }
 #title--right--menu {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
-#header-menu-container {
+#link-to-top--container {
   background-color: #009900;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.header-menu-items {
-  margin-block-start: 2px;
-  margin-block-end: 2px;
-}
-.header-menu-items a {
-  margin: 1rem;
-  font-size: 0.8rem;
-  color: white;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
   text-decoration: underline;
+  font-size: 0.7rem;
+}
+#link-to-top--container a {
+  color: white;
 }
 
 /*sp*/

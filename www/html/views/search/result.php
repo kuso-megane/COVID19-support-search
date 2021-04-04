@@ -15,10 +15,6 @@ use myapp\config\ViewsConfig;
     <body>
         <?php require ViewsConfig::COMPONENTS_PATH . 'header.php'; ?>
         <main>
-            <div>
-                <p class="block-start0 bold"><a href="/index">←トップページに戻る</a></p>
-            </div>
-
             <div class="center">
                 <div class="main--double">
 
