@@ -422,11 +422,12 @@ main {
 }
 #introduce--main .nav-title {
   display: inline-block;
-  background-color: #009900;
-  color: white;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 2px;
+}
+#introduce--main .nav-title p {
+  border-bottom: double 3px #009900;
 }
 #introduce--main .nav-box {
   margin: 1rem;

@@ -61,11 +61,13 @@ $topFontSize: 0.75rem;
 
     .nav-title {
         display: inline-block;
-        background-color: vars.$baseColor;
-        color: white;
         margin-top: 1rem;
         margin-bottom: 1rem;
         padding: 2px;
+
+        p {
+            border-bottom: double 3px vars.$baseColor;
+        }
     }
 
     .nav-box {
