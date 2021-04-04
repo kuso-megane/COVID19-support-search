@@ -57,7 +57,7 @@
                 <?php if ($searched_is_foreign_ok === TRUE) {echo 'checked';} ?> >
 
             <label for="is_only_foreign_ok" id="is_only_foreign_ok--label">
-                国籍不問のみ
+                国籍不問の団体のみ表示
             </label>
         </span>
     </p>
