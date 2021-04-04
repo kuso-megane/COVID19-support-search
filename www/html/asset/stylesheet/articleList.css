@@ -57,6 +57,7 @@ main {
 
   .main--double--right {
     width: 60%;
+    margin-left: 5%;
   }
 }
 /*pc*/
@@ -67,6 +68,7 @@ main {
 
   .main--double--right {
     width: 60%;
+    margin-left: 5%;
   }
 }
 .main--single {
@@ -81,8 +83,6 @@ main {
 
 .main--double {
   display: inline-flex;
-  justify-content: space-between;
-  align-content: space-between;
   flex-wrap: wrap;
   align-items: flex-start;
   text-align: left;
