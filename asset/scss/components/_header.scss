@@ -11,25 +11,35 @@
 }
     
 #title{
-    margin-block-start: 0;
-    margin-block-end: 0;
 
-    margin-left: 1rem;
+    &--left {
+        display: inline-flex;
 
-    &--logo {
-        $size: 2.5rem;
-        height: $size;
-        width: $size;
+        h2 {
+            font-size: 1.5rem;
+            margin-block-start: 0;
+            margin-block-end: 0;
 
-        margin-left: 0rem;
-        margin-top: 0.5rem;
-    }
+            margin-top: 0.5rem;
+            margin-left: 1rem;
+        }
 
+        &--logo {
+            $size: 2.5rem;
+            height: $size;
+            width: $size;
     
-    &--menu {
-        margin-right: 3rem;
-        margin-top: 1.5rem;
+        }
     }
+
+    &--right {
+        &--menu {
+            margin-right: 3rem;
+            margin-top: 1.5rem;
+        }
+    }
+    
+    
 }
 
 #header-menu-container{

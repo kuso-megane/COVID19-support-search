@@ -5,16 +5,21 @@
 <header>
     <div id="title-container">
 
-        <h2 id="title">
-            <a class="black" href="/index">支援総合検索</a>
-            <img id="title--logo" src="<?php echo ViewsConfig::IMG_URL. 'title_logo_test2.jpg'; ?>" alt="タイトルロゴ">
-        </h2>
+        <div id="title--left">
+            <h2>
+                <a class="black" href="/index">支援総合検索</a>
+            </h2>
+            <img id="title--left--logo" src="<?php echo ViewsConfig::IMG_URL. 'title_logo_heart.jpg'; ?>" alt="タイトルロゴ">
+        </div>
         
 
-        <p id="title--menu" class="block-start0 block-end0">
-            <i class="fas fa-caret-down"></i>
-            メニュー
-        </p>
+        <div id="title--right">
+            <p id="title--right--menu" class="block-start0 block-end0">
+                <i class="fas fa-caret-down"></i>
+                メニュー
+            </p>
+            
+        </div>
 
     </div>  
 </header>
