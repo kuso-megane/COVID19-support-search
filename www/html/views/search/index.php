@@ -1,12 +1,14 @@
-<?php 
-    use myapp\config\ViewsConfig;
+<?php
+
+use myapp\config\AppConfig;
+use myapp\config\ViewsConfig;
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>支援総合検索サイト</title>
+        <title><?php echo AppConfig::TITLE; ?></title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'search.css'; ?>">
