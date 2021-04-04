@@ -348,12 +348,38 @@ main {
   color: white;
 }
 
-#introduce--main {
+.nav-box {
+  display: inline-block;
+  border: solid 2px #009900;
+  border-radius: 1rem;
+  cursor: pointer;
+  width: 15rem;
+  font-size: 0.8rem;
+  color: #009900;
+  padding: 0.5rem;
+  top: 0;
+  bottom: 0;
   margin: auto;
+}
+
+.gt {
+  float: right;
+}
+
+#introduce, #introduce2 {
+  margin-top: 0;
+}
+
+#introduce--main, #introduce2--main {
+  display: inline-block;
+  text-align: left;
   font-size: 0.75rem;
 }
-#introduce--main li {
+#introduce--main li, #introduce2--main li {
   list-style: disc;
+}
+#introduce--main .nav-box, #introduce2--main .nav-box {
+  margin: 1rem;
 }
 
 #howto--main {
