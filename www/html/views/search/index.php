@@ -21,22 +21,17 @@ use myapp\config\ViewsConfig;
         <main>
             <div class="center">
                 <div id="introduce" class="main--single">
-                    <div class="center">
-                        <h3 id="introduce--title" class="inline-block block-start0 left">生活で困ったことがあったらぜひ一度、当サイトを利用してみてください！</h3>
-                    </div>
+                    <h3 id="introduce--title" class="block-start0 left">生活で困ったことがあったらぜひ一度、当サイトを利用してみてください！</h3>
                     <div id="introduce--subTitle" class="left">
-                        <p><span class="larger green">「<?php echo AppConfig::TITLE; ?>」</span>は、</p>
-                        <p id="introduce--subTitle--after" class="break-word left bold">コロナ禍をはじめとした様々な生活上のお困りごとに合った支援・相談先を探せる、検索サービスです。</p>
+                        <p class="block-end0"><span class="larger green"><?php echo AppConfig::TITLE; ?></span>&ensp;は、</p>
+                        <p id="introduce--subTitle--after" class="break-word left bold block-start0">コロナ禍をはじめとした様々な生活上のお困りごとに合った支援・相談先を探せる、検索サービスです。</p>
                     </div>
                     
                     <div id="introduce--main">
-                        
+                        <p class="bold left">こんなお悩みありませんか？</p>
                         <li>仕事を失った、生活費が足りない、、、。</li>
                         <li>一人ではどうしようもない。でも相談先がない。</li>
                         <li>どんな支援があるか、支援を受ける条件も方法もわからない。</li>
-                        <p class="break-word">
-                            <span class="red bold">こんな時に、支援・相談先を簡単に探せるように、お手伝いさせていただきます！</span>
-                        </p>
                         <p>
                             &#9733;特に民間支援には<span class="green">支援を受ける条件が基本的にありません。</span> 諦める前に一度だけでも検索してみてください。
                         </p>

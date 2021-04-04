@@ -373,19 +373,18 @@ main {
 
 #introduce {
   margin-top: 0;
+  padding-left: 2rem;
 }
 #introduce--subTitle {
   font-size: 0.7rem;
   font-weight: bold;
-}
-#introduce--subTitle--after {
-  margin-left: 1rem;
 }
 
 #introduce--main {
   display: inline-block;
   text-align: left;
   font-size: 0.75rem;
+  margin-top: 2rem;
 }
 #introduce--main li {
   list-style: disc;
