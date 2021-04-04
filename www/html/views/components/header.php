@@ -10,7 +10,7 @@
             <h2>
                 <a class="black" href="/index"><?php echo AppConfig::TITLE; ?></a>
             </h2>
-            <img id="title--left--logo" src="<?php echo ViewsConfig::IMG_URL. 'title_logo_heart.jpg'; ?>" alt="タイトルロゴ">
+            <img id="title--left--logo" src="<?php echo ViewsConfig::IMG_URL. 'title_logo_test2.jpg'; ?>" alt="タイトルロゴ">
         </div>
         
 

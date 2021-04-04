@@ -24,8 +24,13 @@ use myapp\config\ViewsConfig;
                     <div class="center">
                         <h3 id="introduce--title" class="inline-block block-start0 left">生活で困ったことがあったらぜひ一度、当サイトを利用してみてください！</h3>
                     </div>
+                    <div id="introduce--subTitle" class="left">
+                        <p><span class="larger green">「<?php echo AppConfig::TITLE; ?>」</span>は、</p>
+                        <p id="introduce--subTitle--after" class="break-word left bold">コロナ禍をはじめとした様々な生活上のお困りごとに合った支援・相談先を探せる、検索サービスです。</p>
+                    </div>
+                    
                     <div id="introduce--main">
-                        <p class="bold">「<?php echo AppConfig::TITLE; ?>」は、コロナ禍をはじめとした様々な生活上のお困りごとに合った支援・相談先を探せる、検索サービスです。</p>
+                        
                         <li>仕事を失った、生活費が足りない、、、。</li>
                         <li>一人ではどうしようもない。でも相談先がない。</li>
                         <li>どんな支援があるか、支援を受ける条件も方法もわからない。</li>

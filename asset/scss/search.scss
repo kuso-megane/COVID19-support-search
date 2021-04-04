@@ -36,11 +36,20 @@
 
 $topFontSize: 0.75rem;
 
-#introduce, #introduce2 {
+#introduce {
     margin-top: 0;
+
+    &--subTitle {
+        font-size: 0.7rem;
+        font-weight: bold;
+
+        &--after {
+            margin-left: 1rem;
+        }
+    }
 }
 
-#introduce--main, #introduce2--main{
+#introduce--main{
     display: inline-block;
     text-align: left;
     font-size: $topFontSize;

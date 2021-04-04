@@ -99,6 +99,10 @@ main {
   font-size: 1.2rem;
 }
 
+.larger {
+  font-size: 1.5em;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -178,6 +182,7 @@ main {
 #title--left--logo {
   height: 2.5rem;
   width: 2.5rem;
+  margin-left: 0.5rem;
 }
 #title--right--menu {
   margin-right: 3rem;

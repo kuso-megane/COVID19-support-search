@@ -99,6 +99,10 @@ main {
   font-size: 1.2rem;
 }
 
+.larger {
+  font-size: 1.5em;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -178,6 +182,7 @@ main {
 #title--left--logo {
   height: 2.5rem;
   width: 2.5rem;
+  margin-left: 0.5rem;
 }
 #title--right--menu {
   margin-right: 3rem;
@@ -366,19 +371,26 @@ main {
   float: right;
 }
 
-#introduce, #introduce2 {
+#introduce {
   margin-top: 0;
 }
+#introduce--subTitle {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+#introduce--subTitle--after {
+  margin-left: 1rem;
+}
 
-#introduce--main, #introduce2--main {
+#introduce--main {
   display: inline-block;
   text-align: left;
   font-size: 0.75rem;
 }
-#introduce--main li, #introduce2--main li {
+#introduce--main li {
   list-style: disc;
 }
-#introduce--main .nav-box, #introduce2--main .nav-box {
+#introduce--main .nav-box {
   margin: 1rem;
 }
 
