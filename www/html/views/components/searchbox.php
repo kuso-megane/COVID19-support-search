@@ -8,7 +8,7 @@
 </script>
 
 
-<form id="search-box" action="/searchResult/1/1/1">
+<form id="search-box" class="main--double--left" action="/searchResult/1/1/1">
     <p id="search-box--title" class="block-start0 block-end0 bold">&lt;検索はこちら&gt;</p>
     <div id="search-box--main">
 

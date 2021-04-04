@@ -38,14 +38,15 @@ $topFontSize: 0.75rem;
 
 #introduce {
     margin-top: 0;
-    padding-left: 2rem;
+
+    .keiko {
+        background: linear-gradient(transparent 70%, vars.$lightColor 30%);
+    }
 
 
     &--subTitle {
-        font-size: 0.7rem;
-        font-weight: bold;
-
-        
+        font-size: $topFontSize;
+        font-weight: bold;    
     }
 }
 
@@ -56,6 +57,15 @@ $topFontSize: 0.75rem;
 
     li {
         list-style: disc;
+    }
+
+    .nav-title {
+        display: inline-block;
+        background-color: vars.$baseColor;
+        color: white;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding: 2px;
     }
 
     .nav-box {
@@ -70,7 +80,6 @@ $topFontSize: 0.75rem;
 
     li {
         list-style-type: disc;
-        margin: 1rem;
     }
 }
 
@@ -124,6 +133,19 @@ $topFontSize: 0.75rem;
 
 #result {
     border: 2px solid vars.$baseColor;
+
+    $resultLRPadding: 0.5rem;
+
+    &--container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: $resultLRPadding;
+        padding-right: $resultLRPadding;
+
+        .subTitle {
+            padding-left: vars.$mainBoxPadding - $resultLRPadding;
+        }
+    }
 
     .tab-content {
         display: none;

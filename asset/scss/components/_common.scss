@@ -1,3 +1,4 @@
+
 @use './vars' as vars;
 
 
@@ -87,7 +88,7 @@ main {
     border-radius: 1rem;
     overflow-wrap: break-word;
     background-color: white;
-    padding: 1rem;
+    padding: vars.$mainBoxPadding;
     margin-top: 2rem;
 }
 
@@ -96,13 +97,30 @@ main {
     flex-wrap: wrap;
     align-items: flex-start;
     text-align: left;
+    $TBPadding: 1rem;
+
+    &--left {
+        display: block;
+        border: 2px solid vars.$baseColor;
+        border-radius: 1rem;
+        text-align: center;
+        background-color: white;
+        margin-top: vars.$main--doubleMarginTop;
+        padding-top: $TBPadding;
+        padding-bottom: $TBPadding;
+        padding-left: vars.$mainBoxPadding;
+        padding-right: vars.$mainBoxPadding;
+    }
 
     &--right{
         border: solid 2px vars.$baseColor;
         border-radius: 1rem;
         background-color: white;
         margin-top: vars.$main--doubleMarginTop;
-        padding: 1rem 1rem 0.5rem 0.5rem ;
+        padding-top: $TBPadding;
+        padding-bottom: $TBPadding;
+        padding-left: vars.$mainBoxPadding;
+        padding-right: vars.$mainBoxPadding;
     }
 }
 

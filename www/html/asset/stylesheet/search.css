@@ -77,7 +77,7 @@ main {
   border-radius: 1rem;
   overflow-wrap: break-word;
   background-color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-top: 2rem;
 }
 
@@ -87,12 +87,27 @@ main {
   align-items: flex-start;
   text-align: left;
 }
+.main--double--left {
+  display: block;
+  border: 2px solid #009900;
+  border-radius: 1rem;
+  text-align: center;
+  background-color: white;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 .main--double--right {
   border: solid 2px #009900;
   border-radius: 1rem;
   background-color: white;
   margin-top: 2rem;
-  padding: 1rem 1rem 0.5rem 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .subTitle {
@@ -166,6 +181,7 @@ main {
   background-color: white;
   color: black;
   border-bottom: 0.2rem solid #009900;
+  margin-top: 1rem;
 }
 
 /*スマホ*/
@@ -248,22 +264,12 @@ main {
     width: 35%;
   }
 }
-#search-box {
-  display: block;
-  border: 2px solid #009900;
-  border-radius: 1rem;
-  text-align: center;
-  background-color: white;
-  margin-top: 2rem;
-  padding: 1rem;
-}
 #search-box--main {
   display: inline-flex;
   text-align: left;
   flex-wrap: wrap;
   align-content: space-between;
 }
-
 #search-box--title {
   text-align: left;
   font-size: 1.2rem;
@@ -397,10 +403,12 @@ main {
 
 #introduce {
   margin-top: 0;
-  padding-left: 2rem;
+}
+#introduce .keiko {
+  background: linear-gradient(transparent 70%, #00BB00 30%);
 }
 #introduce--subTitle {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 
@@ -412,6 +420,14 @@ main {
 #introduce--main li {
   list-style: disc;
 }
+#introduce--main .nav-title {
+  display: inline-block;
+  background-color: #009900;
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 2px;
+}
 #introduce--main .nav-box {
   margin: 1rem;
 }
@@ -421,7 +437,6 @@ main {
 }
 #howto--main li {
   list-style-type: disc;
-  margin: 1rem;
 }
 
 #recommend-articles {
@@ -461,6 +476,15 @@ main {
 
 #result {
   border: 2px solid #009900;
+}
+#result--container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+#result--container .subTitle {
+  padding-left: 1rem;
 }
 #result .tab-content {
   display: none;

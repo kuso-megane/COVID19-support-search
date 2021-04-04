@@ -77,7 +77,7 @@ main {
   border-radius: 1rem;
   overflow-wrap: break-word;
   background-color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-top: 2rem;
 }
 
@@ -87,12 +87,27 @@ main {
   align-items: flex-start;
   text-align: left;
 }
+.main--double--left {
+  display: block;
+  border: 2px solid #009900;
+  border-radius: 1rem;
+  text-align: center;
+  background-color: white;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 .main--double--right {
   border: solid 2px #009900;
   border-radius: 1rem;
   background-color: white;
   margin-top: 2rem;
-  padding: 1rem 1rem 0.5rem 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .subTitle {
@@ -166,6 +181,7 @@ main {
   background-color: white;
   color: black;
   border-bottom: 0.2rem solid #009900;
+  margin-top: 1rem;
 }
 
 /*スマホ*/

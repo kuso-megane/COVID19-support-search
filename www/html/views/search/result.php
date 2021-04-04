@@ -28,7 +28,7 @@ use myapp\config\ViewsConfig;
 
                     <div id="search-result-anchor"></div>
 
-                    <div class="main--double--right">
+                    <div id="result--container" class="main--double--right">
 
                         <a href="#searchbox-anchor" class="nav--absolute block center">
                             <i class="fas fa-search"></i>
@@ -188,7 +188,7 @@ use myapp\config\ViewsConfig;
 
             <div class="center">
                 <div id="recommend-articles--box" class="main--single">
-                    <p class="subTitle bold block-start0">&lt;おすすめコラム(お役立ち情報)&gt;</p>
+                    <p class="subTitle bold left block-start0">&lt;おすすめコラム(お役立ち情報)&gt;</p>
                     <div class="article--content--list">
                         <?php foreach ($recommendedArticleInfos as $articleInfo): ?>
 

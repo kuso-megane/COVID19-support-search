@@ -22,13 +22,6 @@
 }
 
 #search-box{
-    display: block;
-    border: 2px solid vars.$baseColor;
-    border-radius: 1rem;
-    text-align: center;
-    background-color: white;
-    margin-top: vars.$main--doubleMarginTop;
-    padding: 1rem;
 
     &--main{
         display: inline-flex;
@@ -36,12 +29,11 @@
         flex-wrap: wrap;
         align-content: space-between;
     }
-}
 
-
-#search-box--title {
-    text-align: left;
-    font-size: vars.$subTitleFontSize;
+    &--title {
+        text-align: left;
+        font-size: vars.$subTitleFontSize;
+    }
 }
 
 

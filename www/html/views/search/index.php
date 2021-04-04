@@ -21,19 +21,22 @@ use myapp\config\ViewsConfig;
         <main>
             <div class="center">
                 <div id="introduce" class="main--single left">
-                    <h3 id="introduce--title" class="block-start0">生活で困ったことがあったらぜひ一度、当サイトを利用してみてください！</h3>
+                    <h3 id="introduce--title" class="block-start0"><span class="keiko">生活で困ったことがあったらぜひ一度、当サイトを利用してみてください！</span></h3>
                     <div id="introduce--subTitle">
                         <p class="block-end0"><span class="larger green"><?php echo AppConfig::TITLE; ?></span>&ensp;は、</p>
                         <p id="introduce--subTitle--after" class="break-word bold block-start0">コロナ禍をはじめとした様々な生活上のお困りごとに合った支援・相談先を探せる、検索サービスです。</p>
                     </div>
                     
                     <div id="introduce--main">
-                        <p class="bold">こんなお悩みありませんか？</p>
+                        <div class="nav-title">
+                            <p class="bold block-start0 block-end0">例えばこんなお悩みありませんか？</p>
+                        </div> 
                         <li>仕事を失った、生活費が足りない、、、。</li>
-                        <li>一人ではどうしようもない。でも相談先がない。</li>
-                        <li>どんな支援があるか、支援を受ける条件も方法もわからない。</li>
+                        <li>性暴力、ハラスメント、DVで苦しんでいる、、、。</li>
+                        <li>でも一人ではどうしようもない。でも相談先がない。</li>
+                        <li>そもそもどんな支援があるか、支援を受ける条件も方法もわからない。</li>
                         <p>
-                            &#9733;特に民間支援には<span class="green">支援を受ける条件が基本的にありません。</span> 諦める前に一度だけでも検索してみてください。
+                            &#9733;特に民間支援には<span class="red bold">支援を受ける条件が基本的にありません。</span> 諦める前に一度だけでも検索してみてください。
                         </p>
                         <div class="center">
                             <a id="nav-to-search" class="nav-box left" href="#search-box-anchor">
@@ -43,7 +46,9 @@ use myapp\config\ViewsConfig;
                                 </p>
                             </a>
                         </div>
-                        <p class="bold left">お役立ち情報(コラム)も書いています！以下のような悩みに答えています！</p>
+                        <div class="nav-title">
+                            <p class="bold block-end0 block-start0">お役立ち情報(コラム)も書いています！以下のような悩みに答えています！</p>
+                        </div>
                         <li class="red bold">そもそも支援を受けるのが少し恥ずかしい、、、。</li>
                         <li>支援って具体的にどうやって受けるの？</li>
                         <div class="center">
