@@ -18,7 +18,9 @@
         <main>
             <div class="center">
                 <div id="introduce" class="main--single">
-                    <h3 id="introduce--title" class="block-start0">困っていることにあった支援・相談先を探せる<br>検索システム!</h3>
+                    <div class="center">
+                        <h3 id="introduce--title" class="inline-block block-start0 left">困っていることにあった支援・相談先を探せる<br>検索システム!</h3>
+                    </div>
                     <div id="introduce--main" class="inline-block left">
                         <p class="bold">このサイトは、官僚志望の学生と、プログラマー志望の学生が協力して、コロナ禍などが原因で困っている方々の力になるために作り上げた検索サービスです!</p>
                         <li>仕事を失った、生活費が足りない。</li>
