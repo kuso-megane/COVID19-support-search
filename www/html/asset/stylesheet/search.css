@@ -453,24 +453,24 @@ main {
 }
 
 #followingLink-to-searchbox {
+  position: fixed;
   width: 60vw;
-  bottom: 30px;
-  left: 0;
-  right: 0;
-  margin: auto;
   padding: 0.5rem;
   color: white;
   background-color: #009900;
-  transition: all 100s;
+  transition: all 0.4s;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 #followingLink-to-searchbox.hidden {
-  display: none;
-}
-#followingLink-to-searchbox.absolute {
-  position: absolute;
+  transform: translateY(100px);
+  opacity: 0;
 }
 #followingLink-to-searchbox.fixed {
-  position: fixed;
+  transform: translateY(0);
+  opacity: 1;
 }
 
 #tab-area {

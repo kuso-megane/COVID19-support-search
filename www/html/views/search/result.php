@@ -26,13 +26,6 @@ use myapp\config\ViewsConfig;
 
                     <div id="result--container" class="main--double--right">
 
-                        <a id="followingLink-to-searchbox" href="#searchbox-anchor" class="center hidden">
-                            <i class="fas fa-search"></i>
-                            <p class="inline-block block-end0 block-start0">
-                                条件を変えて検索
-                            </p>
-                        </a>
-
                         <p class="subTitle bold block-start0">
                             &lt;
                             <?php echo $searchedAreaName; ?>
@@ -204,6 +197,10 @@ use myapp\config\ViewsConfig;
                     <p id="link-to-articleList" class="right"><a href="">&gt;&gt;もっと見る</a></p>
                 </div>
             </div>
+            <a id="followingLink-to-searchbox" href="#searchbox-anchor" class="center inline-block hidden">
+                <i class="fas fa-search"></i>
+                条件を変えて検索
+            </a>
  
         </main>
         <script src="<?php echo ViewsConfig::SCRIPT_URL. 'search/tabChange.js'; ?>"></script>

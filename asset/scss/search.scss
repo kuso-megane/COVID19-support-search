@@ -104,27 +104,25 @@ $topFontSize: 0.75rem;
 
 
 #followingLink-to-searchbox {
-
+    position: fixed;
     width: 60vw;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    margin: auto;
     padding: 0.5rem;
     color: white;
     background-color: vars.$baseColor;
-    transition: all 100s;
-    
-    &.hidden {
-        display: none;
-    }
+    transition: all 0.4s;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
 
-    &.absolute {
-        position: absolute;
+    &.hidden {
+        transform: translateY(100px);
+        opacity: 0;
     }
 
     &.fixed {
-        position: fixed;
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 

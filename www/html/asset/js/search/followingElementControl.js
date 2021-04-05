@@ -3,25 +3,25 @@
 const followingElementControl = () => {
 
     const element = document.getElementById("followingLink-to-searchbox");
-    const trigger = document.getElementById("result--container");
+    const trigger = document.getElementById("searchbox-anchor");
+    const trigger2 = document.getElementById("recommend-articles--box")
     
     const screenTop = window.pageYOffset;
     const screenBottom = screenTop + window.innerHeight;
     const startY = screenTop + trigger.getBoundingClientRect().top;
-    const endY = screenTop + trigger.getBoundingClientRect().bottom;
+    const endY = screenTop + trigger2.getBoundingClientRect().top;
 
     if (scrollY > startY) {
         element.classList.remove("hidden");
-        //element.classList.remove("absolute");
         element.classList.add("fixed");
 
         if (screenBottom > endY) {
             element.classList.remove("fixed");
             element.classList.add("hidden");
-            //element.classList.add("absolute");
         }
     }
     else {
+        element.classList.remove("fixed");
         element.classList.add("hidden");
     }
 }
