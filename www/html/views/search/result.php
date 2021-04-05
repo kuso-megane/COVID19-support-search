@@ -26,7 +26,7 @@ use myapp\config\ViewsConfig;
 
                     <div id="result--container" class="main--double--right">
 
-                        <a href="#searchbox-anchor" class="nav--absolute block center">
+                        <a id="nav-to-searchbox" href="#searchbox-anchor" class="nav--absolute block center">
                             <i class="fas fa-search"></i>
                             <p class="inline-block block-end0 block-start0">
                                 条件を変えて検索
@@ -206,8 +206,9 @@ use myapp\config\ViewsConfig;
             </div>
  
         </main>
-        <script src="<?php echo ViewsConfig::SCRIPT_URL. 'tabChange.js'; ?>"></script>
+        <script src="<?php echo ViewsConfig::SCRIPT_URL. 'search/tabChange.js'; ?>"></script>
         <script src="<?php echo ViewsConfig::SCRIPT_URL. 'smoothScroll.js'; ?>"></script>
+        <script src="<?php echo ViewsConfig::SCRIPT_URL. 'search/fixedControl.js'; ?>"></script>
     </body>
            
 
