@@ -174,8 +174,6 @@ use myapp\config\ViewsConfig;
                                 
                                 <?php endif; ?>
 
-                                <p class="link-to-searchbox center"><a href="#searchbox-anchor">検索条件を変える</a></p>
-
                             </div>
                         </div>
                     </div>
