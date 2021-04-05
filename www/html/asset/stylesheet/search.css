@@ -382,18 +382,6 @@ main {
   color: #444444;
 }
 
-.nav--absolute {
-  background-color: #009900;
-  position: fixed;
-  width: 60vw;
-  bottom: 30px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  padding: 0.5rem;
-  color: white;
-}
-
 .nav-box {
   display: inline-block;
   border: solid 2px #009900;
@@ -462,6 +450,27 @@ main {
 #link-to-articleList {
   font-size: 0.8rem;
   text-decoration: underline;
+}
+
+#followingLink-to-searchbox {
+  width: 60vw;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0.5rem;
+  color: white;
+  background-color: #009900;
+  transition: all 100s;
+}
+#followingLink-to-searchbox.hidden {
+  display: none;
+}
+#followingLink-to-searchbox.absolute {
+  position: absolute;
+}
+#followingLink-to-searchbox.fixed {
+  position: fixed;
 }
 
 #tab-area {

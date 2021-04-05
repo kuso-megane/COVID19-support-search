@@ -11,7 +11,6 @@
 
 @use './components/article--content--list';
 
-@use './components/nav--absolute';
 
 .nav-box {
     display: inline-block;
@@ -104,6 +103,30 @@ $topFontSize: 0.75rem;
 }
 
 
+#followingLink-to-searchbox {
+
+    width: 60vw;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0.5rem;
+    color: white;
+    background-color: vars.$baseColor;
+    transition: all 100s;
+    
+    &.hidden {
+        display: none;
+    }
+
+    &.absolute {
+        position: absolute;
+    }
+
+    &.fixed {
+        position: fixed;
+    }
+}
 
 
 #tab-area {
