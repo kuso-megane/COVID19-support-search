@@ -51,7 +51,7 @@
 </header>
 <div id="dummy-header"></div>
 <script>
-    /*
+    
     const makeDummyHeader = () => {
         const dummyHeader = document.getElementById("dummy-header");
         const header = document.getElementById("header");
@@ -59,6 +59,7 @@
         dummyHeader.style.height = String(header.offsetHeight) + 'px';
     }
 
-    window.addEventListener("load", makeDummyHeader);
-    */
+    window.addEventListener("DOMContentLoaded", makeDummyHeader);
+    window.addEventListener("resize", makeDummyHeader); //for dev
+    
 </script>
