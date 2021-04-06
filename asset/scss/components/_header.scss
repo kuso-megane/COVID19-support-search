@@ -2,6 +2,18 @@
 @use './vars' as vars;
 
 
+#header {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    margin: auto;
+}
+
+#dummy-header {
+    height: 7rem; //headerのおおよその大きさ
+    background-color: vars.$mainBGColor;
+}
+
 
 /*スマホ*/
 @media screen and (min-width: 320px) and (max-width: 480px){
@@ -60,8 +72,8 @@
     justify-content: space-between;
     background-color: white;  
     color:black;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
 
     &--left {
         display: inline-flex;

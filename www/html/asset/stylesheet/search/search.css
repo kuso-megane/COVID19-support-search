@@ -182,6 +182,18 @@ main {
   right: 0;
 }
 
+#header {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  margin: auto;
+}
+
+#dummy-header {
+  height: 7rem;
+  background-color: #CBFFD3;
+}
+
 /*スマホ*/
 @media screen and (min-width: 320px) and (max-width: 480px) {
   #title--left {
@@ -226,8 +238,8 @@ main {
   justify-content: space-between;
   background-color: white;
   color: black;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
 }
 #title--left {
   display: inline-flex;

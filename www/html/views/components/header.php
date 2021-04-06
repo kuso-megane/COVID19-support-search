@@ -3,7 +3,7 @@
     use myapp\config\ViewsConfig;
 ?>
 
-<header>
+<header id="header">
     <div id="title">
 
         <div id="title--left">
@@ -49,3 +49,16 @@
     
     <script src="<?php echo ViewsConfig::SCRIPT_URL. 'components/header/titleRightMenuControl.js'; ?>"></script>
 </header>
+<div id="dummy-header"></div>
+<script>
+    /*
+    const makeDummyHeader = () => {
+        const dummyHeader = document.getElementById("dummy-header");
+        const header = document.getElementById("header");
+
+        dummyHeader.style.height = String(header.offsetHeight) + 'px';
+    }
+
+    window.addEventListener("load", makeDummyHeader);
+    */
+</script>
