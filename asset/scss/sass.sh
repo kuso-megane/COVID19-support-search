@@ -2,5 +2,5 @@
 
 targetPath="../../www/html/asset/stylesheet/"
 
-sass search.scss ${targetPath}search.css
-sass articleList.scss ${targetPath}articleList.css
+sass search.scss ${targetPath}search/search.css
+sass articleList.scss ${targetPath}article/articleList.css
