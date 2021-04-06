@@ -5,7 +5,7 @@
 use myapp\Controllers\ArticleController;
 use myapp\controllers\SearchController;
 use myapp\controllers\BackyardArticleController as BYArticleController;
-
+use myapp\Controllers\SubContentsController;
 
 /**
  * @param string $handler
@@ -54,5 +54,21 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller = new BYArticleController;
         $controller->post($vars);
 
+    }
+    elseif($handler == 'subContentsAdminInfo') {
+        $controller = new SubContentsController;
+        $controller->adminIntro();
+    }
+    elseif($handler == 'subContentsGuideline') {
+        $controller = new SubContentsController;
+        $controller->guideline();
+    }
+    elseif ($handler == 'subContentsContact') {
+        $controller = new SubContentsController;
+        $controller->contact();
+    }
+    else {
+        http_response_code(404);
+        echo "ページが見つかりませんでした\n";
     }
 }

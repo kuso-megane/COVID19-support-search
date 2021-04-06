@@ -35,9 +35,9 @@
                 お役立ち情報(コラム)
             </a>
         </li>
-        <li><a href="">免責事項</a></li>
-        <li><a href="">運営者紹介</a></li>
-        <li><a href="">お問い合わせ</a></li>
+        <li><a href="/subContents/guideline">免責事項</a></li>
+        <li><a href="/subContents/adminInfo">運営者紹介</a></li>
+        <li><a href="/subContents/contact">お問い合わせ</a></li>
     </div>
 
     <div id="link-to-top--container">

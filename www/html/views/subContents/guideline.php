@@ -1,7 +1,6 @@
 <?php
-require_once '../../../vendor/autoload.php'; //for dev
-use myapp\config\AppConfig;
-use myapp\config\ViewsConfig;
+    use myapp\config\AppConfig;
+    use myapp\config\ViewsConfig;
 ?>
 
 <!DOCTYPE html>
