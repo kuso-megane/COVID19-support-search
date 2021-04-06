@@ -425,65 +425,6 @@ main {
   color: #444444;
 }
 
-.nav-box {
-  display: inline-block;
-  border: solid 2px #009900;
-  border-radius: 1rem;
-  cursor: pointer;
-  width: 16rem;
-  font-size: 0.8rem;
-  color: #009900;
-  padding: 1rem;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.gt {
-  float: right;
-}
-
-#introduce {
-  margin-top: 0;
-}
-#introduce .keiko {
-  background: linear-gradient(transparent 70%, #00BB00 30%);
-}
-#introduce--subTitle {
-  font-size: 0.75rem;
-  font-weight: bold;
-}
-
-#introduce--main {
-  text-align: left;
-  font-size: 0.75rem;
-  margin-top: 5rem;
-  padding-left: 1rem;
-}
-#introduce--main li {
-  list-style: disc;
-}
-#introduce--main .nav-title {
-  display: inline-block;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding: 2px;
-}
-#introduce--main .nav-title p {
-  border-bottom: double 3px #009900;
-}
-#introduce--main .nav-box {
-  margin: 1rem;
-}
-
-#howto--main {
-  font-size: 0.75rem;
-}
-#howto--main li {
-  list-style-type: disc;
-  margin-top: 1rem;
-}
-
 #recommend-articles {
   font-size: 0.8rem;
 }
@@ -595,4 +536,4 @@ main {
   font-size: 0.8rem;
 }
 
-/*# sourceMappingURL=search.css.map */
+/*# sourceMappingURL=result.css.map */

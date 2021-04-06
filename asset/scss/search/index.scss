@@ -1,0 +1,84 @@
+@use '../components/vars' as vars;
+
+@use '../components/common';
+
+@use '../components/header';
+
+@use '../components/searchBox';
+
+@use '../components/page_switch';
+
+.nav-box {
+    display: inline-block;
+    border: solid 2px vars.$baseColor;
+    border-radius: 1rem;
+    cursor: pointer;
+    width: 16rem;
+    font-size: 0.8rem;
+    color: vars.$baseColor;
+    padding: 1rem;
+
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.gt {
+    float: right;
+}
+
+// index
+
+$topFontSize: 0.75rem;
+
+#introduce {
+    margin-top: 0;
+
+    .keiko {
+        background: linear-gradient(transparent 70%, vars.$lightColor 30%);
+    }
+
+
+    &--subTitle {
+        font-size: $topFontSize;
+        font-weight: bold;    
+    }
+}
+
+#introduce--main{
+    text-align: left;
+    font-size: $topFontSize;
+    margin-top: 5rem;
+    padding-left: 1rem;
+
+    li {
+        list-style: disc;
+    }
+
+    .nav-title {
+        display: inline-block;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding: 2px;
+
+        p {
+            border-bottom: double 3px vars.$baseColor;
+        }
+    }
+
+    .nav-box {
+        margin: 1rem;
+    }
+}
+
+
+
+#howto--main {
+    font-size: $topFontSize;
+
+    li {
+        list-style-type: disc;
+        margin-top: 1rem;
+    }
+}
+
