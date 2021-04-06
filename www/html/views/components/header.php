@@ -4,7 +4,7 @@
 ?>
 
 <header>
-    <div id="title-container">
+    <div id="title">
 
         <div id="title--left">
             <h2>
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div id="title--right--menu--content" class="show">
+    <div id="title--right--menu--content" class="">
         <p id="close"><i class="far fa-times-circle fa-3x"></i></p>
         <li>
             <a href="/index#search-box">
@@ -47,4 +47,5 @@
         </a>
     </div>
     
+    <script src="<?php echo ViewsConfig::SCRIPT_URL. 'components/header/titleRightMenuControl.js'; ?>"></script>
 </header>

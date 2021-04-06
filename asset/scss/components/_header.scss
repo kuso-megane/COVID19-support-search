@@ -1,13 +1,6 @@
+
 @use './vars' as vars;
 
-/*header*/
-#title-container {
-    display: flex;
-    justify-content: space-between;
-    background-color: white;  
-    color:black;
-    margin-top: 1rem;
-}
 
 
 /*スマホ*/
@@ -63,6 +56,12 @@
 }
     
 #title{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;  
+    color:black;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 
     &--left {
         display: inline-flex;
@@ -88,11 +87,12 @@
         &--menu {
 
             margin-top: 1rem;
+            font-size: 1rem;
 
             &--content {
                 $alpha: 0.9;
 
-                width: 13rem;
+                width: 15rem;
                 color: white;
                 background-color: rgba(51,51,51,$alpha);
                 position: fixed;
@@ -110,7 +110,7 @@
                 }
 
                 li {
-                    padding: 0.5rem;
+                    padding: 1rem;
                     border-top: 1px #999999 dotted;
 
                     &:hover {

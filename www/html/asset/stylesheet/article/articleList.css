@@ -182,15 +182,6 @@ main {
   right: 0;
 }
 
-/*header*/
-#title-container {
-  display: flex;
-  justify-content: space-between;
-  background-color: white;
-  color: black;
-  margin-top: 1rem;
-}
-
 /*スマホ*/
 @media screen and (min-width: 320px) and (max-width: 480px) {
   #title--left {
@@ -230,6 +221,14 @@ main {
     margin-left: 15vw;
   }
 }
+#title {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  color: black;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
 #title--left {
   display: inline-flex;
 }
@@ -246,9 +245,10 @@ main {
 }
 #title--right--menu {
   margin-top: 1rem;
+  font-size: 1rem;
 }
 #title--right--menu--content {
-  width: 13rem;
+  width: 15rem;
   color: white;
   background-color: rgba(51, 51, 51, 0.9);
   position: fixed;
@@ -263,7 +263,7 @@ main {
   padding-right: 1rem;
 }
 #title--right--menu--content li {
-  padding: 0.5rem;
+  padding: 1rem;
   border-top: 1px #999999 dotted;
 }
 #title--right--menu--content li:hover {
