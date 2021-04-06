@@ -1,0 +1,29 @@
+@use '../components/common';
+@use '../components/vars' as vars;
+@use '../components/header';
+
+
+#guideline {
+
+    &--personalInfo {
+
+        &--main {
+
+            & > li {
+               list-style: none; 
+            }
+        }
+    }
+
+}
+
+.guideline--mains {
+    font-size: 0.8rem;
+
+    & > li {
+        list-style-type: decimal;
+        margin: 1rem;
+        word-wrap: break-word;
+    }
+
+}
