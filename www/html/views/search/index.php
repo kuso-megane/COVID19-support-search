@@ -20,12 +20,17 @@ use myapp\config\ViewsConfig;
 
         <main>
             <div class="center">
-                <div id="introduce" class="main--single left">
-                    <h3 id="introduce--title" class="block-start0"><span class="keiko">生活で困ったことがあったらぜひ一度、当サイトを利用してみてください！</span></h3>
-                    <div id="introduce--subTitle">
-                        <p class="block-end0"><span class="larger green"><?php echo AppConfig::TITLE; ?></span>&ensp;は、</p>
-                        <p id="introduce--subTitle--after" class="break-word bold block-start0">コロナ禍をはじめとした様々な生活上のお困りごとに合った支援・相談先を探せる、検索サービスです。</p>
+                <div id="introduce" class="main--single">
+                    <div class="center">
+                        <div class="inline-block left">
+                            <h3 id="introduce--title" class="block-start0"><span class="keiko">生活で困ったことがあったらぜひ一度、当サイトを利用してみてください！</span></h3>
+                            <div id="introduce--subTitle">
+                                <p class="block-end0 center"><span class="larger green"><?php echo AppConfig::TITLE; ?></span>&ensp;は、</p>
+                                <p id="introduce--subTitle--after" class="break-word bold block-start0">コロナ禍をはじめとした、様々な生活上のお困りごとに合った支援・相談先を探せる検索サービスです。</p>
+                            </div>
+                        </div>
                     </div>
+                    
                     
                     <div id="introduce--main">
                         <div class="nav-title">

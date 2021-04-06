@@ -81,6 +81,7 @@ main {
   background-color: white;
   padding: 1.5rem;
   margin-top: 2rem;
+  text-align: left;
 }
 
 .main--double {
@@ -117,7 +118,7 @@ main {
 }
 
 .larger {
-  font-size: 1.5em;
+  font-size: 1.7em;
 }
 
 .bold {

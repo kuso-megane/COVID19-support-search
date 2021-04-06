@@ -81,6 +81,7 @@ main {
   background-color: white;
   padding: 1.5rem;
   margin-top: 2rem;
+  text-align: left;
 }
 
 .main--double {
@@ -117,7 +118,7 @@ main {
 }
 
 .larger {
-  font-size: 1.5em;
+  font-size: 1.7em;
 }
 
 .bold {
@@ -457,6 +458,7 @@ main {
   text-align: left;
   font-size: 0.75rem;
   margin-top: 5rem;
+  padding-left: 1rem;
 }
 #introduce--main li {
   list-style: disc;
