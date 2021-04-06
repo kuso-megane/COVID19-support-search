@@ -1,15 +1,15 @@
 
-@use './components/vars' as vars;
+@use '../components/vars' as vars;
 
-@use './components/common';
+@use '../components/common';
 
-@use './components/header';
+@use '../components/header';
 
-@use './components/searchBox';
+@use '../components/searchBox';
 
-@use './components/page_switch';
+@use '../components/page_switch';
 
-@use './components/article--content--list';
+@use '../components/article--content--list';
 
 
 .nav-box {
