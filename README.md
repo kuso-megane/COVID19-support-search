@@ -8,3 +8,8 @@
 - cssは、www/html/asset/stylesheet/配下に
 - (scssで書くことも検討中)
 - 画像は、www/html/asset/img/配下に
+
+## 外部ライブラリ
+- polyfill.js
+- [Font Awesome](https://fontawesome.com/)
+- あとはwww/composer.jsonみてください
