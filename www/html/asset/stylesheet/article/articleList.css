@@ -38,7 +38,7 @@ body {
 main {
   background-color: #CBFFD3;
   padding-top: 2rem;
-  padding-bottom: 15rem;
+  padding-bottom: 7rem;
 }
 
 /*sp*/
@@ -272,15 +272,19 @@ main {
   transition: all 0.3s;
 }
 #title--right--menu--content #close {
-  text-align: right;
+  text-align: left;
   font-size: 35px;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  padding-right: 1rem;
+  padding-left: 1rem;
 }
 #title--right--menu--content li {
-  padding: 1rem;
   border-top: 1px #999999 dotted;
+}
+#title--right--menu--content li > a {
+  display: inline-block;
+  padding: 1rem;
+  width: 100%;
 }
 #title--right--menu--content li:hover {
   background-color: rgba(119, 119, 119, 0.9);
