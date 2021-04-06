@@ -118,6 +118,9 @@
 
                 #close {
                     text-align: right;
+                    $margin: 0.5rem;
+                    margin-top: $margin;
+                    margin-bottom: $margin;
                     padding-right: 1rem;
                 }
 

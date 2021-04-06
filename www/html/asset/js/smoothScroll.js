@@ -12,9 +12,10 @@ window.addEventListener('DOMContentLoaded', () => {
             const targetId = link.hash;
             const targetElement = document.querySelector(targetId);
             const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top;
+            const headerHeight = document.getElementById("header").offsetHeight;
             
             window.scrollTo({
-                top: targetOffsetTop,
+                top: targetOffsetTop - headerHeight,
                 behavior: "smooth"
             });
         });

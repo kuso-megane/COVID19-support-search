@@ -22,7 +22,7 @@
     </div>
 
     <div id="title--right--menu--content" class="">
-        <p id="close"><i class="far fa-times-circle fa-3x"></i></p>
+        <p id="close" class="block-end0 block-start0"><i class="far fa-times-circle fa-3x"></i></p>
         <li>
             <a href="/index#search-box">
                 <i class="fas fa-search"></i>

@@ -272,6 +272,8 @@ main {
 }
 #title--right--menu--content #close {
   text-align: right;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   padding-right: 1rem;
 }
 #title--right--menu--content li {
