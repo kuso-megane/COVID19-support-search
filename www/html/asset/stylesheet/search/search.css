@@ -259,7 +259,7 @@ main {
   font-size: 1rem;
 }
 #title--right--menu--content {
-  width: 15rem;
+  width: 18rem;
   color: white;
   background-color: rgba(51, 51, 51, 0.9);
   position: fixed;
@@ -271,6 +271,7 @@ main {
 }
 #title--right--menu--content #close {
   text-align: right;
+  font-size: 35px;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding-right: 1rem;
