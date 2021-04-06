@@ -11,7 +11,7 @@ use myapp\config\ViewsConfig;
         <title><?php echo 'コラム一覧 -' . AppConfig::TITLE; ?></title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'articleList.css'; ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'article/articleList.css'; ?>">
 
     </head>
     <body>

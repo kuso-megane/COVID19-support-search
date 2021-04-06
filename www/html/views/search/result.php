@@ -9,7 +9,7 @@ use myapp\config\ViewsConfig;
         <meta charset="utf-8">
         <title><?php echo "{$searchedAreaName}の検索結果 -" . AppConfig::TITLE; ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL . 'search.css'; ?>" >
+        <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL . 'search/search.css'; ?>" >
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 　　</head>
     <body>
