@@ -1,0 +1,24 @@
+@use '../components/common';
+@use '../components/vars' as vars;
+@use '../components/header';
+
+
+#note {
+    font-size: 0.6rem;
+}
+
+.administrators {
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+
+    &--part {
+        font-size: 0.9rem;
+        text-decoration: underline solid vars.$baseColor;
+    }
+
+    &--main {
+        font-size: 0.65rem;
+        
+    }
+}

@@ -1,5 +1,5 @@
 <?php
-require_once '../../../vendor/autoload.php';
+require_once '../../../vendor/autoload.php'; //for dev
 use myapp\config\AppConfig;
 use myapp\config\ViewsConfig;
 ?>
@@ -22,7 +22,7 @@ use myapp\config\ViewsConfig;
                 <div id="guideline" class="main--single">
 
                     <div id="guideline--core">
-                        <h3 class="subTitle">&lt;免責事項&gt;</h3>
+                        <h3 class="subTitle block-start0">&lt;免責事項&gt;</h3>
                         <div id="guideline--core--main" class="guideline--mains">
                             <li>
                                 本サイトで提示する公的機関と民間機関の情報はなるべく最新かつ正確な状態で維持するように心がけております。しかし、完全無欠と言い切ることはできないので、その点ご留意ください。
