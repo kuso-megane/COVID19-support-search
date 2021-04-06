@@ -67,4 +67,4 @@
     </p>   
 </form>
 
-<script src="<?php echo ViewsConfig::SCRIPT_URL. 'searchbox/initAreaSelect.js'; ?>"></script>
+<script src="<?php echo ViewsConfig::SCRIPT_URL. 'components/searchbox/initAreaSelect.js'; ?>"></script>
