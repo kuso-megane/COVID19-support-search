@@ -15,20 +15,12 @@
         
 
         <div id="title--right">
-            <div id="title--right--menu--container">
-                <p id="title--right--menu" class="block-start0 block-end0">
-                    <i class="fas fa-bars"></i> メニュー
-                </p>  
-            </div>
+            <p id="title--right--menu" class="block-start0 block-end0">
+                <i class="fas fa-bars"></i> メニュー
+            </p>  
         </div>
     </div>
 
-    <div id="link-to-top--container">
-        <a id="link-to-top" href="/index">
-            <i class="fas fa-home"></i>
-            トップページへ
-        </a>
-    </div>
     <div id="title--right--menu--content" class="show">
         <p id="close"><i class="far fa-times-circle fa-3x"></i></p>
         <li>
@@ -47,4 +39,12 @@
         <li><a href="">運営者紹介</a></li>
         <li><a href="">お問い合わせ</a></li>
     </div>
+
+    <div id="link-to-top--container">
+        <a id="link-to-top" href="/index">
+            <i class="fas fa-home"></i>
+            トップページへ
+        </a>
+    </div>
+    
 </header>
