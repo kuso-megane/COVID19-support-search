@@ -5,6 +5,7 @@
 use myapp\Controllers\ArticleController;
 use myapp\controllers\SearchController;
 use myapp\controllers\BackyardArticleController as BYArticleController;
+use myapp\Controllers\BackyardArticleController;
 use myapp\Controllers\BackyardController;
 use myapp\Controllers\SubContentsController;
 
@@ -70,6 +71,10 @@ function callAction (string $handler, ?array $vars = NULL)
     }
     elseif($handler == 'backyardIndex') {
         $controller = new BackyardController;
+        $controller->index();
+    }
+    elseif($handler == 'backyardArticleIndex') {
+        $controller = new BackyardArticleController;
         $controller->index();
     }
     else {

@@ -8,7 +8,7 @@ class BackyardArticleController extends BaseController
 {
     public function index()
     {
-
+        $this->render([], 'backyardArticle', 'index');
     }
 
     
