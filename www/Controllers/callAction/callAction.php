@@ -17,6 +17,7 @@ use myapp\Controllers\SubContentsController;
  */
 function callAction (string $handler, ?array $vars = NULL)
 {
+
     if ($handler == 'index') {
 
         $controller = new SearchController;
@@ -29,6 +30,7 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller->result($vars);
         
     }
+
     elseif ($handler == 'articleList') {
 
         $controller = new ArticleController;
@@ -39,6 +41,25 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller = new ArticleController;
         $controller->show($vars);
     }
+
+    elseif($handler == 'subContentsAdminInfo') {
+        $controller = new SubContentsController;
+        $controller->adminIntro();
+    }
+    elseif($handler == 'subContentsGuideline') {
+        $controller = new SubContentsController;
+        $controller->guideline();
+    }
+    elseif ($handler == 'subContentsContact') {
+        $controller = new SubContentsController;
+        $controller->contact();
+    }
+
+    elseif($handler == 'backyardIndex') {
+        $controller = new BackyardController;
+        $controller->index();
+    }
+    
     elseif ($handler == 'backyardArticleIndex') {
 
         $controller = new BYArticleController;
@@ -57,26 +78,7 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller->post($vars);
 
     }
-    elseif($handler == 'subContentsAdminInfo') {
-        $controller = new SubContentsController;
-        $controller->adminIntro();
-    }
-    elseif($handler == 'subContentsGuideline') {
-        $controller = new SubContentsController;
-        $controller->guideline();
-    }
-    elseif ($handler == 'subContentsContact') {
-        $controller = new SubContentsController;
-        $controller->contact();
-    }
-    elseif($handler == 'backyardIndex') {
-        $controller = new BackyardController;
-        $controller->index();
-    }
-    elseif($handler == 'backyardArticleIndex') {
-        $controller = new BackyardArticleController;
-        $controller->index();
-    }
+
     else {
         http_response_code(404);
         echo "ページが見つかりませんでした\n";
