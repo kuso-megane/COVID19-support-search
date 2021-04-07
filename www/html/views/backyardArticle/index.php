@@ -10,11 +10,12 @@ use myapp\config\ViewsConfig;
 </head>
 <body>
     <h2>コラム編集</h2>
+    <p><a href="/backyard/article/edit">新規作成</a></p>
     <thead>
         <tr>
             <td></td>
             <td>タイトル</td>
-            <td>サムネ</td>
+            <td>カテゴリ</td>
         </tr>
     </thead>
     <tbody>
