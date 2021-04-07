@@ -5,6 +5,7 @@
 use myapp\Controllers\ArticleController;
 use myapp\controllers\SearchController;
 use myapp\controllers\BackyardArticleController as BYArticleController;
+use myapp\Controllers\BackyardController;
 use myapp\Controllers\SubContentsController;
 
 /**
@@ -66,6 +67,10 @@ function callAction (string $handler, ?array $vars = NULL)
     elseif ($handler == 'subContentsContact') {
         $controller = new SubContentsController;
         $controller->contact();
+    }
+    elseif($handler == 'backyardIndex') {
+        $controller = new BackyardController;
+        $controller->index();
     }
     else {
         http_response_code(404);

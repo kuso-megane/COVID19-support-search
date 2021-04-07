@@ -9,12 +9,12 @@ abstract class BaseController
     const VIEW_FILE_PATH = '/var/www/html/views/';
 
     /**
-     * This renders views/{controller}/{action}.php
+     * This renders views/{dir}/{view}.php
      * 
      * 
      * @param array $vm used in viewFile
-     * @param string $controller
-     * @param string $action
+     * @param string $dir
+     * @param string $view
      * 
      * @return void
      * 
@@ -24,12 +24,12 @@ abstract class BaseController
      * 
      * 
      */
-    protected function render(array $vm, string $controller, string $action)
+    protected function render(array $vm, string $dir, string $view)
     {
         foreach ($vm as $key => $value) {
             $$key = $value;
         }
 
-        require $this::VIEW_FILE_PATH. $controller. '/'. $action. '.php';
+        require $this::VIEW_FILE_PATH. $dir. '/'. $view. '.php';
     }
 }
