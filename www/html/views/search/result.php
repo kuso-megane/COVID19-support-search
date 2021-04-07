@@ -101,7 +101,6 @@ use myapp\config\ViewsConfig;
 
                                 <?php endif; ?>
 
-                                <p class="link-to-searchbox center"><a href="#searchbox-anchor">検索条件を変える</a></p>
                             </div>
                             <div id="private-tab-content" class="tab-content <?php if($is_public_page === FALSE) {echo 'show';} ?>">       
                                 <?php if(empty($privateSupports) === TRUE): ?>
@@ -192,7 +191,7 @@ use myapp\config\ViewsConfig;
                         <?php endforeach; ?>
 
                     </div>
-                    <p id="link-to-articleList" class="right"><a href="">&gt;&gt;もっと見る</a></p>
+                    <p id="link-to-articleList" class="right"><a href="/article/list">&gt;&gt;もっと見る</a></p>
                 </div>
             </div>
             <a id="followingLink-to-searchbox" href="#searchbox-anchor" class="center inline-block hidden">
