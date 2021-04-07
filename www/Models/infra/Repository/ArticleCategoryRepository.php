@@ -4,11 +4,14 @@ namespace infra\Repository;
 
 use domain\article\_list\Data\ArticleCategory;
 use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
+use domain\backyardArticle\index\Data\ArticleCategoryName;
+use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use infra\database\src\ArticleCategoryTable;
 
 class ArticleCategoryRepository
 implements
-    ArticleCategoryListRepositoryPort
+    ArticleCategoryListRepositoryPort,
+    ArticleCategoryNamesRepositoryPort
 {
     private $table;
     
@@ -30,5 +33,20 @@ implements
         }
 
         return $categories;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getArticleCategoryNames(): array
+    {
+        $records = $this->table->findAll();
+
+        foreach ($records as &$record) {
+            $record = new ArticleCategoryName($record['id'], $record['name']);
+        }
+
+        return $records;
     }
 }

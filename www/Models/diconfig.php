@@ -3,6 +3,8 @@
 use domain\article\_list\RepositoryPort\AllArticleInfosRepositoryPort;
 use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
 use domain\article\show\RepositoryPort\ArticleContentRepositoryPort;
+use domain\backyardArticle\index\RepositoryPort\ArticleBYInfosRepositoryPort;
+use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
@@ -23,8 +25,10 @@ return [
     AllArticleInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
     RecommendedArticleInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
     ArticleContentRepositoryPort::class => \DI\create(ArticleRepository::class),
+    ArticleBYInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
 
     ArticleCategoryListRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
+    ArticleCategoryNamesRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
 
     SearchedAreaNameRepositoryPort::class => \DI\create(AreaListRepository::class)
 ];

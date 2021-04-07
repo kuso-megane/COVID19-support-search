@@ -6,6 +6,8 @@ use domain\article\_list\Data\ArticleInfo;
 use domain\article\_list\RepositoryPort\AllArticleInfosRepositoryPort;
 use domain\article\show\Data\ArticleContent;
 use domain\article\show\RepositoryPort\ArticleContentRepositoryPort;
+use domain\backyardArticle\index\Data\ArticleBYInfo;
+use domain\backyardArticle\index\RepositoryPort\ArticleBYInfosRepositoryPort;
 use domain\search\result\Data\RecommendedArticleInfo;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use infra\database\src\ArticleTable;
@@ -15,7 +17,8 @@ class ArticleRepository
 implements
     AllArticleInfosRepositoryPort,
     RecommendedArticleInfosRepositoryPort,
-    ArticleContentRepositoryPort
+    ArticleContentRepositoryPort,
+    ArticleBYInfosRepositoryPort
 {
     private $table;
 
@@ -75,5 +78,24 @@ implements
                 $articleContent['title'], $articleContent['thumbnailName'], $articleContent['content']
             );
         }
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getArticleBYInfos(): array
+    {
+        $records = $this->table->findAllInfos();
+
+        foreach ($records as &$record) {
+            $record = new ArticleBYInfo(
+                $record['id'],
+                $record['title'],
+                $record['c_id']
+            );
+        }
+
+        return $records;
     }
 }

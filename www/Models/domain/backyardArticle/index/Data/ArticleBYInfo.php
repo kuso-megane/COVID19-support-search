@@ -2,15 +2,17 @@
 
 namespace domain\backyardArticle\index\Data;
 
-class ArticleTitle
+class ArticleBYInfo
 {
     private $id;
     private $title;
+    private $c_id;
 
-    public function __construct(int $id, string $title)
+    public function __construct(int $id, string $title, int $c_id)
     {
         $this->id = $id;
         $this->title = $title;
+        $this->c_id = $c_id;
     }
 
 
@@ -18,7 +20,8 @@ class ArticleTitle
     {
         return [
             'id' => $this->id,
-            'title' => $this->title
+            'title' => $this->title,
+            'c_id' => $this->c_id
         ];
     }
 }

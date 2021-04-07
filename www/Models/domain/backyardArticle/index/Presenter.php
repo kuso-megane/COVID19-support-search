@@ -3,17 +3,17 @@
 namespace domain\backyardArticle\index;
 
 use myapp\config\AppConfig;
-use domain\backyardArticle\index\Data\ArticleTitle;
+use domain\backyardArticle\index\Data\ArticleBYInfo;
 use domain\backyardArticle\index\Data\ArticleCategoryName;
 
 class Presenter
 {
     /**
-     * @param ArticleTitle[] $articleTitles
+     * @param ArticleBYInfo[] $articleBYInfos
      * @param ArticleCategoryName[] $articleCategoryNames
      * @return array [
-     *      'articleTitles' => [
-     *          ['id' => int, 'title' => string],
+     *      'articleBYInfos' => [
+     *          ['id' => int, 'title' => string, 'c_id' => int],
      *          []
      *      ],
      *      'articleCategoryNames' => [
@@ -23,11 +23,11 @@ class Presenter
      * ]
      * 
      */
-    public function present(array $articleTitles, array $articleCategoryNames) :array
+    public function present(array $articleBYInfos, array $articleCategoryNames) :array
     {
-        $articleTitles = $this->format($articleTitles);
+        $articleBYInfos = $this->format($articleBYInfos);
         $articleCategoryNames = $this->formatForArticleCategoryNames($articleCategoryNames);
-        return compact(['articleTitles', 'articleCategoryNames']);
+        return compact(['articleBYInfos', 'articleCategoryNames']);
     }
 
 

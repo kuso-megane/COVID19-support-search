@@ -3,20 +3,20 @@
 namespace domain\backyardArticle\index;
 
 use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort;
-use domain\backyardArticle\index\RepositoryPort\ArticleTitlesRepositoryPort;
+use domain\backyardArticle\index\RepositoryPort\ArticleBYInfosRepositoryPort;
 
 class Interactor
 {
 
-    private $articleTitlesRepository;
+    private $articleBYInfosRepository;
     private $articleCategoryNamesRepository;
     
     public function __construct(
-        ArticleTitlesRepositoryPort $articleTitlesRepository,
+        ArticleBYInfosRepositoryPort $articleBYInfosRepository,
         ArticleCategoryNamesRepositoryPort $articleCategoryNamesRepository
     )
     {
-        $this->articleTitlesRepository = $articleTitlesRepository;
+        $this->articleBYInfosRepository = $articleBYInfosRepository;
         $this->articleCategoryNamesRepository = $articleCategoryNamesRepository;
     }
 
@@ -28,9 +28,10 @@ class Interactor
      */
     public function interact()
     {
-        $articleTitles = $this->articleTitlesRepository->getArticleTitles();
+        $articleBYInfos = $this->articleBYInfosRepository->getArticleBYInfos();
         $articleCategoryNames = $this->articleCategoryNamesRepository->getArticleCategoryNames();
 
-        return (new Presenter)->present($articleTitles, $articleCategoryNames);
+
+        return (new Presenter)->present($articleBYInfos, $articleCategoryNames);
     }
 }
