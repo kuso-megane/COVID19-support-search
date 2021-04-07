@@ -9,3 +9,5 @@ sass article/articleList.scss ${targetPath}article/articleList.css
 
 sass subContents/guideline.scss ${targetPath}subContents/guideline.css
 sass subContents/adminIntro.scss ${targetPath}subContents/adminIntro.css
+
+sass backyardArticle/index.scss ${targetPath}backyardArticle/index.css
