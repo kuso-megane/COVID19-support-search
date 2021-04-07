@@ -1,18 +1,26 @@
 <?php
 
-namespace domain\backyardArticle;
+namespace domain\backyardArticle\index;
 
 use myapp\config\AppConfig;
+use domain\backyardArticle\index\Data\ArticleTitle;
 
 class Presenter
 {
     /**
-     * @return array
+     * @param ArticleTitle[] $articleTitles
+     * @return array [
+     *      'articleTitles' => [
+     *          ['id' => int, 'title' => string],
+     *          []
+     *      ]
+     * ]
      * 
      */
-    public function present() :array
+    public function present(array $articleTitles) :array
     {
-
+        $articleTitles = $this->format($articleTitles);
+        return compact('articleTitles');
     }
 
 
@@ -39,5 +47,15 @@ class Presenter
         http_response_code(404);
         echo $message;
         return AppConfig::INVALID_PARAMS;
+    }
+
+
+    private function format(array $datas):array
+    {
+        foreach($datas as &$data) {
+            $data = $data->toArray();
+        }
+
+        return $datas;
     }
 }
