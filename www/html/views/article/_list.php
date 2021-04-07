@@ -7,12 +7,9 @@ use myapp\config\ViewsConfig;
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
         <title><?php echo 'コラム一覧 -' . AppConfig::TITLE; ?></title>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'article/articleList.css'; ?>">
-
+        <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'article/articleList.css'; ?>">
+        <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
     </head>
     <body>
         <?php require ViewsConfig::COMPONENTS_PATH . 'header.php'; ?>

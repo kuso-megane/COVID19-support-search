@@ -6,11 +6,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
         <title><?php echo '運営方針 - '. AppConfig::TITLE; ?></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'subContents/guideline.css'; ?>">
-        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
     </head>
     <body>
 
