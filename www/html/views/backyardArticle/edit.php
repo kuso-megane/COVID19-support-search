@@ -19,7 +19,11 @@ if (empty($oldArticleContent)) {
         <h2>コラム編集</h2>
         <form action="<?php echo "/backyard/article/post/". $oldArticleContent['id']; ?>" method="post">
             <p>
-                タイトル:
+                タイトル(50文字以内):
+                <input type="text" name="title" value="<?php echo $oldArticleContent['title']; ?>" size="40" maxlength="50">
+            </p>
+            <p>
+                カテゴリ:
                 <select name="title" id="">
                     <?php foreach($articleCategoryNames as $articleCategoryName): ?>
                         <option value="<?php echo $articleCategoryName['id']; ?>" <?php if ($articleCategoryName['id'] == $selectedId) {echo 'selected';} ?>>
