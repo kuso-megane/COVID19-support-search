@@ -11,3 +11,4 @@ sass subContents/guideline.scss ${targetPath}subContents/guideline.css
 sass subContents/adminIntro.scss ${targetPath}subContents/adminIntro.css
 
 sass backyardArticle/index.scss ${targetPath}backyardArticle/index.css
+sass backyardArticle/edit.scss ${targetPath}backyardArticle/edit.css

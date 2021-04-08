@@ -1,0 +1,33 @@
+@use '../components/common';
+
+@use '../components/confirmation';
+
+body {
+    padding: 2rem;
+    padding-bottom: 5rem;
+    font-size: 15px;
+}
+
+
+#oldThumbnail {
+    $size: 100px;
+    height: $size;
+    width: $size;
+}
+
+#newThumbnail-uploader {
+    display: inline;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+#submit-button {
+    display: block;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 2rem;
+}
+

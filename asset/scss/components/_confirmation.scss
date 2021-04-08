@@ -1,0 +1,43 @@
+
+
+#confirmation {
+    display: block;
+    position: fixed;
+    height: 100px;
+    width: 400px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
+    background-color: #EEEEEE;
+    border: black solid 1px;
+    text-align: center;
+
+    &.hidden {
+        display: none;
+    }
+
+
+    &--button-container {
+        display: inline-flex;
+        justify-content: space-around;
+        width: 100%;
+
+        & .confirmation--buttons {
+            font-size: 1.2em;
+        }
+
+    }
+
+    &--submit-button {
+        background-color: blue;
+        color: white;
+    }
+
+    &--back-button {
+        background-color: white;
+
+    }
+}
