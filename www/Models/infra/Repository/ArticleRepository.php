@@ -6,6 +6,8 @@ use domain\article\_list\Data\ArticleInfo;
 use domain\article\_list\RepositoryPort\AllArticleInfosRepositoryPort;
 use domain\article\show\Data\ArticleContent;
 use domain\article\show\RepositoryPort\ArticleContentRepositoryPort;
+use domain\backyardArticle\edit\Data\OldArticleContent;
+use domain\backyardArticle\edit\RepositoryPort\OldArticleContentRepositoryPort;
 use domain\backyardArticle\index\Data\ArticleBYInfo;
 use domain\backyardArticle\index\RepositoryPort\ArticleBYInfosRepositoryPort;
 use domain\search\result\Data\RecommendedArticleInfo;
@@ -18,7 +20,8 @@ implements
     AllArticleInfosRepositoryPort,
     RecommendedArticleInfosRepositoryPort,
     ArticleContentRepositoryPort,
-    ArticleBYInfosRepositoryPort
+    ArticleBYInfosRepositoryPort,
+    OldArticleContentRepositoryPort
 {
     private $table;
 
@@ -97,5 +100,27 @@ implements
         }
 
         return $records;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getOldArticleContent(int $artcl_id): ?OldArticleContent
+    {
+        $record = $this->table->findById($artcl_id);
+
+        if ($record != NULL) {
+            return new OldArticleContent(
+                $record['id'],
+                $record['title'],
+                $record['thumbnailName'],
+                $record['content'],
+                $record['c_id']
+            );
+        }
+        else {
+            return NULL;
+        }
     }
 }

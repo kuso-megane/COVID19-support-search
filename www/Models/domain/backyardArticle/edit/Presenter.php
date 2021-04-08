@@ -11,18 +11,18 @@ class Presenter
      * @param OldArticleContent $oldArticleContent
      * 
      * @return array [
-     *      'oldArticleContent' => NULL | [
+     *      'oldArticleContent' => [
      *          'id' => int,
      *          'title' => string,
      *          'thumbnailName' => string,
      *          'content' => string,
      *          'c_id' => int
-     *      ]
+     *      ] or empty array,
      * ]
      */
     public function present(?OldArticleContent $oldArticleContent): array
     {
-        $oldArticleContent = ($oldArticleContent != NULL) ? $oldArticleContent->toArray() : NULL;
+        $oldArticleContent = ($oldArticleContent != NULL) ? $oldArticleContent->toArray() : [];
 
         return compact(['oldArticleContent']);
     }
