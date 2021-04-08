@@ -3,6 +3,7 @@
 namespace domain\backyardArticle\edit;
 
 use domain\backyardArticle\edit\Presenter;
+use domain\backyardArticle\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use domain\backyardArticle\edit\RepositoryPort\OldArticleContentRepositoryPort;
 use domain\backyardArticle\edit\Validator\Validator;
 use domain\Exception\ValidationFailException;
@@ -10,12 +11,15 @@ use domain\Exception\ValidationFailException;
 class Interactor
 {
     private $oldArticleContentRepository;
+    private $articleCategoryNamesRepository;
     
     public function __construct(
-        OldArticleContentRepositoryPort $oldArticleContentRepository
+        OldArticleContentRepositoryPort $oldArticleContentRepository,
+        ArticleCategoryNamesRepositoryPort $articleCategoryNamesRepository
     )
     {
         $this->oldArticleContentRepository = $oldArticleContentRepository;
+        $this->articleCategoryNamesRepository = $articleCategoryNamesRepository;
     }
     /**
      * @param array $vars
@@ -43,8 +47,10 @@ class Interactor
         else {
             $oldArticleContent = NULL;
         }
+
+        $articleCategoryNames = $this->articleCategoryNamesRepository->getArticleCategoryNames();
         
 
-        return (new Presenter)->present($oldArticleContent);
+        return (new Presenter)->present($oldArticleContent, $articleCategoryNames, $artcl_id);
     }
 }

@@ -9,6 +9,8 @@ class Presenter
 {
     /**
      * @param OldArticleContent $oldArticleContent
+     * @param ArticleCategoryName[] $articleCategoryNames
+     * @param int $selectedId
      * 
      * @return array [
      *      'oldArticleContent' => [
@@ -18,13 +20,18 @@ class Presenter
      *          'content' => string,
      *          'c_id' => int
      *      ] or empty array,
+     *      'articleCategoryNames' => [
+     *          ['id' => int, 'name' => string]
+     *      ],
+     *      'selectedId' => int
      * ]
      */
-    public function present(?OldArticleContent $oldArticleContent): array
+    public function present(?OldArticleContent $oldArticleContent, array $articleCategoryNames, int $selectedId): array
     {
         $oldArticleContent = ($oldArticleContent != NULL) ? $oldArticleContent->toArray() : [];
+        $articleCategoryNames = $this->format($articleCategoryNames);
 
-        return compact(['oldArticleContent']);
+        return compact(['oldArticleContent', 'articleCategoryNames', 'selectedId']);
     }
 
 
