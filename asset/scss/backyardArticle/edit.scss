@@ -24,10 +24,14 @@ body {
 }
 
 #submit-button {
-    display: block;
+    display: inline-block;
     top: 0;
     bottom: 0;
     margin: auto;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    border: black solid 1px;
+    padding: 5px;
+    background-color: #dddddd;
+    cursor: pointer;
 }
 

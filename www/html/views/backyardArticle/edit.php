@@ -45,7 +45,7 @@ if (empty($oldArticleContent)) {
                     <?php echo $oldArticleContent['content']; ?>
                 </textarea>
             </p>
-            <button id="submit-button">投稿</button>
+            <div id="submit-button" class="confirmation--trigger">投稿</div>
 
             <?php require ViewsConfig::COMPONENTS_PATH. 'confirmation.php'; ?>
 
@@ -78,5 +78,8 @@ if (empty($oldArticleContent)) {
             });
         </script>
 
+        <script>
+
+        </script>
     </body>
 </html>
