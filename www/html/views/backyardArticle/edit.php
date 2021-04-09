@@ -17,11 +17,11 @@ if (empty($oldArticleContent)) {
     </head>
     <body>
         <h2>コラム編集</h2>
-        <form action="<?php echo "/backyard/article/post/". $oldArticleContent['id']; ?>" method="post">
+        <form name="articleForm" action="<?php echo "/backyard/article/post/". $oldArticleContent['id']; ?>" method="post">
             <div>
                 タイトル(50文字以内):<br>
                 <input id="new-title" type="text" name="title" value="<?php echo $oldArticleContent['title']; ?>" size="40" maxlength="50">
-                <div id="title-reset-button" class="confirmation--trigger buttons">タイトルを元に戻す</div>
+                <div id="title-reset-button" class="buttons">タイトルを元に戻す</div>
             </div>
             <div>
                 カテゴリ: <br>
@@ -32,7 +32,7 @@ if (empty($oldArticleContent)) {
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <div id="category-reset-button" class="confirmation--trigger buttons">カテゴリを元に戻す</div>
+                <div id="category-reset-button" class="buttons">カテゴリを元に戻す</div>
             </div>
             <p>
                 変更前のサムネ:
@@ -47,12 +47,12 @@ if (empty($oldArticleContent)) {
             </p>
             <div>
                 本文:
-                <div id="content-reset-button" class="confirmation--trigger buttons">本文を元に戻す</div>
+                <div id="content-reset-button" class=" buttons">本文を元に戻す</div>
                 <textarea id="editor" name="content" id="" cols="50" rows="10">
                     <?php echo $oldArticleContent['content']; ?>
                 </textarea>
             </div>
-            <button id="submit-button" class="confirmation--trigger buttons" type="submit">投稿</button>
+            <button id="submit-button" class="buttons">投稿</button>
         </form>
         
         <!--サムネアップロードボックスの管理-->
@@ -123,9 +123,21 @@ if (empty($oldArticleContent)) {
                 }  
             }
 
+            const submit = (e) => {
+                e.preventDefault();
+                if (window.confirm("投稿しますか?")) {
+                    document.articleForm.submit();
+                }
+                else {
+                    return;
+                }
+            }
+
             document.getElementById("title-reset-button").addEventListener("click", resetTitle);
             document.getElementById("category-reset-button").addEventListener("click", resetCategory);
             document.getElementById("content-reset-button").addEventListener("click", resetEditor);
+
+            document.getElementById("submit-button").addEventListener("click", submit);
         </script>
     </body>
 </html>
