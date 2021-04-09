@@ -33,6 +33,10 @@ input, select{
     width: $size;
 }
 
+#oldThumbnailName {
+    display: none;
+}
+
 #newThumbnail-uploader {
     display: inline;
 

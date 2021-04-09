@@ -254,6 +254,10 @@ input.invalid, select.invalid {
   width: 100px;
 }
 
+#oldThumbnailName {
+  display: none;
+}
+
 #newThumbnail-uploader {
   display: inline;
 }

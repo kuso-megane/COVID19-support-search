@@ -41,15 +41,16 @@ use myapp\config\ViewsConfig;
                 <p>
                     <img id="oldThumbnail" src="<?php echo ViewsConfig::IMG_URL. $oldArticleContent['thumbnailName']; ?>" alt="thumbnail">
                 </p>
+                <input type="text" name="oldThumbnailName" id="oldThumbnailName" value="<?php echo ViewsConfig::IMG_URL. $oldArticleContent['thumbnailName']; ?>">
             <?php endif; ?>
 
             <p>
-                <input id="is_thumbnail_changed" type="checkbox" name="is_thumbnail_changed" value="on">
-                <label for="is_thumbnail_changed">
+                <input id="is_thumbnail_uploaded" type="checkbox" name="is_thumbnail_uploaded" value="on">
+                <label for="is_thumbnail_uploaded">
                     <?php if ($isNew): ?>
                         新しいサムネをアップロードする(指定しなかった場合は"no image"と表示されます。)
                     <?php else: ?>
-                        新しいサムネをアップロードする(古いサムネは消去されます)
+                        新しいサムネをアップロードする(古いサムネは消去されます。指定しなかった場合は"no image"と表示されます。)
                     <?php endif; ?>
                 </label>
             </p>
@@ -74,7 +75,7 @@ use myapp\config\ViewsConfig;
 
         <!--サムネアップロードボックスの管理-->
         <script>
-            const checkbox = document.getElementById("is_thumbnail_changed");
+            const checkbox = document.getElementById("is_thumbnail_uploaded");
             const newThumbnailControl = (e) => {
                 const target = e.target;
                 const uploader = document.getElementById("newThumbnail-uploader");
