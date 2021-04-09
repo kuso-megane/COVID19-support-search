@@ -127,6 +127,10 @@
             padding: 2px;
             background-color: white;
 
+            li {
+                list-style: disc;
+            }
+
             .owner {
                 border-bottom: 1px solid $borderColor;
             }
@@ -146,6 +150,7 @@
             }
             .td-content {
                 width: 80%;
+                padding: 3px;
             }
 
         }

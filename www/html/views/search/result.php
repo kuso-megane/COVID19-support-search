@@ -70,7 +70,11 @@ use myapp\config\ViewsConfig;
                                             <table>
                                                 <tr>
                                                     <td class="td-column">支援内容</td>
-                                                    <td class="td-content"><?php echo $support['support_content'] ?></td>
+                                                    <td class="td-content">
+                                                        <li>
+                                                            <?php echo str_replace('<br>', '</li><li>', $support['support_content']); ?>
+                                                        </li>   
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="td-column">アクセス</td>

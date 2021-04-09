@@ -525,6 +525,9 @@ main {
   padding: 2px;
   background-color: white;
 }
+#result .tab-content.show .supportBox li {
+  list-style: disc;
+}
 #result .tab-content.show .supportBox .owner {
   border-bottom: 1px solid #cccccc;
 }
@@ -541,6 +544,7 @@ main {
 }
 #result .tab-content.show .supportBox .td-content {
   width: 80%;
+  padding: 3px;
 }
 #result .link-to-searchbox {
   font-size: 0.8rem;
