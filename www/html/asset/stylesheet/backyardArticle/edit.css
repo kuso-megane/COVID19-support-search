@@ -236,6 +236,18 @@ body {
 input, select {
   font-size: inherit;
 }
+input.invalid, select.invalid {
+  border: red solid 5px;
+}
+
+.invalid-note {
+  display: none;
+  color: red;
+  text-decoration: underline double red;
+}
+.invalid-note.show {
+  display: block;
+}
 
 #oldThumbnail {
   height: 100px;

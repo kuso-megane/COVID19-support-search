@@ -2,10 +2,6 @@
 
 use myapp\config\ViewsConfig;
 
-if ($isNew) {
-    $oldArticleContent['id'] = '';
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -20,12 +16,15 @@ if ($isNew) {
         <form name="articleForm" action="<?php echo "/backyard/article/post/". $oldArticleContent['id']; ?>" method="post">
             <div>
                 タイトル(50文字以内):<br>
-                <input id="new-title" type="text" name="title" value="<?php echo $oldArticleContent['title']; ?>" size="70">
+                <p id="title-invalid-note" class="invalid-note">
+                    タイトルは1文字以上50文字以内にしてください。
+                </p>
+                <input id="new-title" type="text" name="title" value="<?php echo $oldArticleContent['title']; ?>" placeholder="タイトルを入力" size="70">
                 <div id="title-reset-button" class="buttons">タイトルを元に戻す</div>
             </div>
             <div>
                 カテゴリ: <br>
-                <select id="new-category" name="c_id" id="">
+                <select id="new-category" name="c_id">
                     <?php foreach($articleCategoryNames as $articleCategoryName): ?>
                         <option value="<?php echo $articleCategoryName['id']; ?>" <?php if ($articleCategoryName['id'] === $oldArticleContent['id']) {echo 'selected';} ?>>
                             <?php echo $articleCategoryName['name']; ?>
@@ -66,6 +65,9 @@ if ($isNew) {
                 </textarea>
             </div>
             <button id="submit-button" class="buttons">投稿</button>
+            <p id="general-invalid-note" class="invalid-note">
+                不正な入力があります。内容を見直してください。
+            </p>
         </form>
         
         <!--サムネアップロードボックスの管理-->
@@ -111,7 +113,7 @@ if ($isNew) {
 
             const resetCategory = (e) => {
                 if (window.confirm("カテゴリを元に戻します。")) {
-                    const oldC_id = "<?php echo $oldArticleContent['c_id'] ?>";
+                    const oldC_id = "<?php echo ($oldArticleContent['c_id'] != NULL)? $oldArticleContent['c_id'] : 1; ?>";
                     const newCategorySelect = document.getElementById("new-category");
                     newCategorySelect.selectedIndex = oldC_id - 1;
                 }
@@ -136,6 +138,56 @@ if ($isNew) {
                 }  
             }
 
+            
+
+            document.getElementById("title-reset-button").addEventListener("click", resetTitle);
+            document.getElementById("category-reset-button").addEventListener("click", resetCategory);
+            document.getElementById("content-reset-button").addEventListener("click", resetEditor);
+        </script>
+
+        <!--formのvalidation-->
+        <script>
+            const submitButton = document.getElementById("submit-button");
+            const titleInput = document.getElementById("new-title");
+            const titleInvalidNote = document.getElementById("title-invalid-note");
+            const generalInvalidNote = document.getElementById("general-invalid-note");
+            
+            const initSubmitButton = (e) => {
+                generalInvalidNote.classList.remove("show");
+                submitButton.disabled = false;
+            }
+
+            const disableSubmitButton = () => {
+                submitButton.disabled = true;
+                generalInvalidNote.classList.add("show");
+            }
+
+
+            const validateTitle = (e) => {
+                const titleLen = titleInput.value.length;
+                if (titleLen == 0 || titleLen > 50) {
+                    titleInvalidNote.classList.add("show");
+                    titleInput.classList.add("invalid");
+                    disableSubmitButton();
+                }
+                else {
+                    titleInvalidNote.classList.remove("show");
+                    titleInput.classList.remove("invalid");
+                    initSubmitButton();
+                }
+            }
+
+            
+            const validate = (e) => {
+                validateTitle(); 
+            } 
+
+            titleInput.addEventListener("keyup", validateTitle);
+            submitButton.addEventListener("mouseover", validate);
+        </script>
+
+        <!--submit-->
+        <script>
             const submit = (e) => {
                 e.preventDefault();
                 if (window.confirm("投稿しますか?")) {
@@ -145,10 +197,6 @@ if ($isNew) {
                     return;
                 }
             }
-
-            document.getElementById("title-reset-button").addEventListener("click", resetTitle);
-            document.getElementById("category-reset-button").addEventListener("click", resetCategory);
-            document.getElementById("content-reset-button").addEventListener("click", resetEditor);
 
             document.getElementById("submit-button").addEventListener("click", submit);
         </script>

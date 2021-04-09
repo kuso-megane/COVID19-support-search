@@ -10,6 +10,21 @@ body {
 
 input, select{
     font-size: inherit;
+
+    &.invalid {
+        border: red solid 5px;
+    }
+}
+
+
+.invalid-note {
+    display: none;
+    color: red;
+    text-decoration: underline double red;
+
+    &.show {
+        display: block;
+    }
 }
 
 #oldThumbnail {

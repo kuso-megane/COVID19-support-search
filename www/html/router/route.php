@@ -23,8 +23,8 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) u
 
         $r->addGroup('/article', function (FastRoute\RouteCollector $r) {
             $r->addRoute('GET', '/index[/]', 'backyardArticleIndex');
-            $r->addRoute('GET', '/edit[/{artcl_id:\d+}]', 'backyardArticleEdit');
-            $r->addRoute('POST', '/post[/{artcl_id:\d+}]', 'backyardArticlePost');
+            $r->addRoute('GET', '/edit[/[{artcl_id:\d+}]]', 'backyardArticleEdit');
+            $r->addRoute('POST', '/post[/[{artcl_id:\d+}]]', 'backyardArticlePost');
         });
     });
     
