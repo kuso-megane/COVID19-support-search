@@ -11,13 +11,41 @@
     <p class="confirmation--note">本当に実行しますか</p>
     <div class="confirmation--button-container">
         <div class="confirmation--main-button confirmation--buttons"></div>
-        <div class="confirmation--back-button confirmation--buttons">戻る</div>
-        
+        <div class="confirmation--back-button confirmation--buttons">戻る</div>    
     </div>
 </div>
 
 
 <script>
+    /*
+    const completeFlags = [
+        true, //dummy
+        false,
+        false
+    ];
+    */
+
+    /**
+     * @param {Function} func
+     * @param {number} num  the number in which the func is expected to be executed
+     */
+    /*
+    const tryFunc = (func, num) => {
+        let executeFlag = true;
+        for (i = 0; (i < num) && (executeFlag); ++i) {
+            executeFlag &= completeFlags[i];
+        }
+
+        if (executeFlag) {
+            func();
+            completeFlags[i] = true;
+        }
+        else {
+            setTimeout(function() {tryFunc(func, num)}, 200);
+        }
+    }
+
+    */
         
     const confirmationTriggers = document.querySelectorAll(".confirmation--trigger");
 
@@ -42,7 +70,7 @@
         }
         mainButton.addEventListener("click", hiddenConfirmation);
         backButton.addEventListener("click", hiddenConfirmation); 
-        
+
         confirmation.classList.add("show");
     }
 
@@ -56,6 +84,7 @@
         if (onClick != undefined) {
             mainButton.removeEventListener("click", onClick);
         }
+        mainButton.removeEventListener("click", hiddenConfirmation);
         confirmation.classList.remove("show");
     }
 
