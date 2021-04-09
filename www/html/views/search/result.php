@@ -71,9 +71,7 @@ use myapp\config\ViewsConfig;
                                                 <tr>
                                                     <td class="td-column">支援内容</td>
                                                     <td class="td-content">
-                                                        <li>
-                                                            <?php echo str_replace('<br>', '</li><li>', $support['support_content']); ?>
-                                                        </li>   
+                                                        <?php echo $support['support_content']; ?>   
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -133,15 +131,12 @@ use myapp\config\ViewsConfig;
                                     <?php foreach($privateSupports as $support): ?>
                                     
                                         <div class="supportBox">
-                                            <h3 class="owner"><?php echo  $support['owner']; ?></h3>
+                                            <h3 class="owner"><?php echo $support['owner']; ?></h3>
                                             <table>
                                                 <tr>
                                                     <td class="td-column">支援内容</td>
                                                     <td class="td-content">
-                                                        <li>
-                                                            <!--応急措置、dbの支援内容を直接リストにしたい-->
-                                                            <?php echo str_replace('<br>', '</li><li>', $support['support_content']); ?>
-                                                        </li> 
+                                                        <?php echo $support['support_content']; ?>
                                                     </td>
                                                 </tr>
                                                 <tr>
