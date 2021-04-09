@@ -57,6 +57,8 @@ use myapp\config\ViewsConfig;
             <p>
                 <input id="newThumbnail-uploader" type="file" name="thumbnail" accept="image/*" class="hidden">
             </p>
+                    
+            
             <div>
                 本文:
                 <div id="content-reset-button" class=" buttons">本文を元に戻す</div>
@@ -81,6 +83,7 @@ use myapp\config\ViewsConfig;
                 }
                 else {
                     uploader.classList.add("hidden");
+                    uploader.value = '';
                 }
             }
 
