@@ -3,7 +3,7 @@
 .confirmation {
     display: none;
     position: fixed;
-    height: 100px;
+    height: 200px;
     width: 400px;
     top: 0;
     left: 0;
@@ -24,23 +24,32 @@
         display: inline-flex;
         justify-content: space-around;
         width: 100%;
+        margin-top: 50px;
 
         .confirmation--buttons {
             font-size: 1.2em;
+            padding: 5px;
+            box-shadow: 0px 0px 1px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.7;
+            }
         }
 
     }
 
     &--main-button {
-        background-color: blue;
+        $color: blue;
+        background-color: $color;
         color: white;
+        border: $color outset 1px;
     }
 
     &--back-button {
         background-color: white;
         border: black solid 1px;
-        padding: 5px;
         background-color: white;
-        cursor: pointer;
+        
     }
 }

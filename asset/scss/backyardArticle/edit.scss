@@ -8,6 +8,9 @@ body {
     font-size: 18px;
 }
 
+input, select{
+    font-size: inherit;
+}
 
 #oldThumbnail {
     $size: 100px;
@@ -27,9 +30,10 @@ body {
     display: inline-block;
     margin: 10px;
     border: black solid 1px;
-    padding: 5px;
     background-color: #eeeeee;
     cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
 
     &:hover {
         background-color: #dddddd;
