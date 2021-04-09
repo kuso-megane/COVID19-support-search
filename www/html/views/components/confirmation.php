@@ -8,7 +8,7 @@
 </script>
 
 <div class="confirmation">
-    <p class="confirmation--note">本当に実行しますか</p>
+    <p class="confirmation--note">本当に実行しますか?</p>
     <div class="confirmation--button-container">
         <div class="confirmation--main-button confirmation--buttons"></div>
         <div class="confirmation--back-button confirmation--buttons">戻る</div>    

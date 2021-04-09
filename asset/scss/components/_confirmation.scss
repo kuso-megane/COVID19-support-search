@@ -11,7 +11,7 @@
     bottom: 0;
     margin: auto;
     z-index: 10;
-    background-color: #EEEEEE;
+    background-color: white;
     border: black solid 1px;
     text-align: center;
 
@@ -48,8 +48,6 @@
 
     &--back-button {
         background-color: white;
-        border: black solid 1px;
-        background-color: white;
-        
+        border: black solid 1px;   
     }
 }
