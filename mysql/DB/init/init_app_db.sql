@@ -13,7 +13,7 @@ DROP TABLE IF exists Article;
 create TABLE Article(
     id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     title varchar(50) NOT NULL unique,
-    thumbnailName varchar(20) default "no_image.jpg",
+    thumbnailName varchar(30) default "no_image.jpg",
     content TEXT,
     c_id TINYINT UNSIGNED,
 
