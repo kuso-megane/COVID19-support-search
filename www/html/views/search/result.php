@@ -177,24 +177,11 @@ use myapp\config\ViewsConfig;
             <div class="center">
                 <div id="recommend-articles--box" class="main--single">
                     <p class="subTitle bold left block-start0">&lt;おすすめコラム(お役立ち情報)&gt;</p>
-                    <div class="article--content--list">
-                        <?php foreach ($recommendedArticleInfos as $articleInfo): ?>
-
-                            <div class="article--content--list--item">
-                                <img class="article--content--list--item--img"
-                                    src="<?php echo ViewsConfig::IMG_URL. $articleInfo['thumbnailName']; ?>"
-                                    alt="<?php echo $articleInfo['title']; ?>"
-                                >
-                                <p class="article--content--list--item--title break-word block-start0 block-end0">
-                                    <a href="<?php echo '/article/'. $articleInfo['id']; ?>">
-                                        <?php echo $articleInfo['title']; ?>
-                                    </a>
-                                </p>
-                            </div>
-
-                        <?php endforeach; ?>
-
-                    </div>
+                    <?php
+                        $_items = $recommendedArticleInfos;
+                        require ViewsConfig::COMPONENTS_PATH. 'articleContentList.php';
+                        unset($_items);
+                    ?>
                     <p id="link-to-articleList" class="right"><a href="/article/list">&gt;&gt;もっと見る</a></p>
                 </div>
             </div>

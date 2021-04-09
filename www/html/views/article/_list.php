@@ -24,25 +24,11 @@ use myapp\config\ViewsConfig;
 
                         <div class="articles--content">
                             <p class="article--content--category"><?php echo $category; ?></p>
-                            <div class="article--content--list">
-
-                                <?php foreach ($articleInfoItems as $articleInfoItem): ?>
-
-                                    <div class="article--content--list--item">
-                                        <img class="article--content--list--item--img"
-                                            src="<?php echo ViewsConfig::IMG_URL. $articleInfoItem['thumbnailName']; ?>"
-                                            alt="<?php echo $articleInfoItem['title']; ?>"
-                                        >
-                                        <p class="article--content--list--item--title break-word block-start0 block-end0">
-                                            <a href="<?php echo '/article/'. $articleInfoItem['id']; ?>">
-                                                <?php echo $articleInfoItem['title']; ?>
-                                            </a>
-                                        </p>
-                                    </div>
-
-                                <?php endforeach; ?>
-                                
-                            </div>
+                            <?php
+                                $_items = $articleInfoItems;
+                                require ViewsConfig::COMPONENTS_PATH. 'articleContentList.php';
+                                unset($_items);
+                            ?>
                         </div>
 
                     <?php endforeach; ?>

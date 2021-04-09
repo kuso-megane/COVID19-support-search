@@ -41,6 +41,10 @@ $articleBGColor: #EEEEEE;
         margin-top: $itemMarginVertical;
         margin-bottom: $itemMarginVertical;
 
+        &:hover {
+            background-color: #DDDDDD;
+        }
+
         &--img {
             width: $itemHeight;
             height: $itemHeight;
@@ -52,7 +56,7 @@ $articleBGColor: #EEEEEE;
             margin-left: 10px;
             text-align: left;
 
-            a{
+            p {
                 color: $articleColor;
             }
         }

@@ -335,6 +335,9 @@ main {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.article--content--list--item:hover {
+  background-color: #DDDDDD;
+}
 .article--content--list--item--img {
   width: 4rem;
   height: 4rem;
@@ -345,7 +348,7 @@ main {
   margin-left: 10px;
   text-align: left;
 }
-.article--content--list--item--title a {
+.article--content--list--item--title p {
   color: #444444;
 }
 
