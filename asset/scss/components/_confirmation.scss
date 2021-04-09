@@ -1,7 +1,7 @@
 
 
-#confirmation {
-    display: block;
+.confirmation {
+    display: none;
     position: fixed;
     height: 100px;
     width: 400px;
@@ -15,8 +15,8 @@
     border: black solid 1px;
     text-align: center;
 
-    &.hidden {
-        display: none;
+    &.show {
+        display: block;
     }
 
 
@@ -25,13 +25,13 @@
         justify-content: space-around;
         width: 100%;
 
-        & .confirmation--buttons {
+        .confirmation--buttons {
             font-size: 1.2em;
         }
 
     }
 
-    &--submit-button {
+    &--main-button {
         background-color: blue;
         color: white;
     }

@@ -184,8 +184,8 @@ main {
   right: 0;
 }
 
-#confirmation {
-  display: block;
+.confirmation {
+  display: none;
   position: fixed;
   height: 100px;
   width: 400px;
@@ -199,22 +199,22 @@ main {
   border: black solid 1px;
   text-align: center;
 }
-#confirmation.hidden {
-  display: none;
+.confirmation.show {
+  display: block;
 }
-#confirmation--button-container {
+.confirmation--button-container {
   display: inline-flex;
   justify-content: space-around;
   width: 100%;
 }
-#confirmation--button-container .confirmation--buttons {
+.confirmation--button-container .confirmation--buttons {
   font-size: 1.2em;
 }
-#confirmation--submit-button {
+.confirmation--main-button {
   background-color: blue;
   color: white;
 }
-#confirmation--back-button {
+.confirmation--back-button {
   background-color: white;
   border: black solid 1px;
   padding: 5px;
@@ -225,7 +225,7 @@ main {
 body {
   padding: 2rem;
   padding-bottom: 5rem;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 #oldThumbnail {
@@ -240,16 +240,20 @@ body {
   display: none;
 }
 
-#submit-button {
+.buttons {
   display: inline-block;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  font-size: 1.5rem;
+  margin: 10px;
   border: black solid 1px;
   padding: 5px;
-  background-color: #dddddd;
+  background-color: #eeeeee;
   cursor: pointer;
+}
+.buttons:hover {
+  background-color: #dddddd;
+}
+
+#submit-button {
+  font-size: 1.5em;
 }
 
 /*# sourceMappingURL=edit.css.map */

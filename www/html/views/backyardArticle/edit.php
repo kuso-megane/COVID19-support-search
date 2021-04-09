@@ -18,20 +18,22 @@ if (empty($oldArticleContent)) {
     <body>
         <h2>コラム編集</h2>
         <form action="<?php echo "/backyard/article/post/". $oldArticleContent['id']; ?>" method="post">
-            <p>
-                タイトル(50文字以内):
-                <input type="text" name="title" value="<?php echo $oldArticleContent['title']; ?>" size="40" maxlength="50">
-            </p>
-            <p>
-                カテゴリ:
-                <select name="title" id="">
+            <div>
+                タイトル(50文字以内):<br>
+                <input id="new-title" type="text" name="title" value="<?php echo $oldArticleContent['title']; ?>" size="40" maxlength="50">
+                <div id="title-reset-button" class="confirmation--trigger buttons" data-on-click="resetTitle">タイトルを元に戻す</div>
+            </div>
+            <div>
+                カテゴリ: <br>
+                <select id="new-category" name="c_id" id="">
                     <?php foreach($articleCategoryNames as $articleCategoryName): ?>
                         <option value="<?php echo $articleCategoryName['id']; ?>" <?php if ($articleCategoryName['id'] == $selectedId) {echo 'selected';} ?>>
                             <?php echo $articleCategoryName['name']; ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
-            </p>
+                <div id="category-reset-button" class="confirmation--trigger buttons" data-on-click="resetCategory">カテゴリを元に戻す</div>
+            </div>
             <p>
                 変更前のサムネ:
             </p>
@@ -43,13 +45,15 @@ if (empty($oldArticleContent)) {
             <p>
                 <input id="newThumbnail-uploader" type="file" name="thumbnail" accept="image/*" class="hidden">
             </p>
-            <p>
-                内容:<br>
+            <div>
+                本文:
+                <div id="content-reset-button" class="confirmation--trigger buttons" data-on-click="resetEditor">本文を元に戻す</div>
                 <textarea id="editor" name="content" id="" cols="50" rows="10">
                     <?php echo $oldArticleContent['content']; ?>
                 </textarea>
-            </p>
-            <div id="submit-button" class="confirmation--trigger">投稿</div>
+            </div>
+            <button id="submit-button" class="confirmation--trigger buttons" type="submit">投稿</button>
+            
 
             <?php require ViewsConfig::COMPONENTS_PATH. 'confirmation.php'; ?>
 
@@ -82,8 +86,30 @@ if (empty($oldArticleContent)) {
             });
         </script>
 
+        <!--formのリセット-->
         <script>
+            const resetTitle = (e) => {
+                const oldTitle = "<?php echo $oldArticleContent['title']; ?>";
+                const newTitleInput = document.getElementById("new-title");
+                newTitleInput.value = oldTitle;
+            }
 
+            const resetCategory = (e) => {
+                const oldC_id = "<?php echo $oldArticleContent['c_id'] ?>";
+                const newCategorySelect = document.getElementById("new-category");
+                newCategorySelect.selectedIndex = oldC_id - 1;
+            }
+
+            const resetEditor = (e) => {
+                const oldContent =
+                `<?php 
+                    $oldArticleContent['content'] = str_replace("\\", "\\\\", $oldArticleContent['content']);
+                    echo str_replace("`", "\`", $oldArticleContent['content']); 
+                ?>`;
+                const editor = document.getElementById("editor");
+                
+                simplemde.value(oldContent);     
+            }
         </script>
     </body>
 </html>
