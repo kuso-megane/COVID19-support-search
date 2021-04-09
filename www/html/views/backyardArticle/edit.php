@@ -21,7 +21,7 @@ if (empty($oldArticleContent)) {
             <div>
                 タイトル(50文字以内):<br>
                 <input id="new-title" type="text" name="title" value="<?php echo $oldArticleContent['title']; ?>" size="40" maxlength="50">
-                <div id="title-reset-button" class="confirmation--trigger buttons" data-on-click="resetTitle">タイトルを元に戻す</div>
+                <div id="title-reset-button" class="confirmation--trigger buttons">タイトルを元に戻す</div>
             </div>
             <div>
                 カテゴリ: <br>
@@ -32,7 +32,7 @@ if (empty($oldArticleContent)) {
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <div id="category-reset-button" class="confirmation--trigger buttons" data-on-click="resetCategory">カテゴリを元に戻す</div>
+                <div id="category-reset-button" class="confirmation--trigger buttons">カテゴリを元に戻す</div>
             </div>
             <p>
                 変更前のサムネ:
@@ -47,18 +47,15 @@ if (empty($oldArticleContent)) {
             </p>
             <div>
                 本文:
-                <div id="content-reset-button" class="confirmation--trigger buttons" data-on-click="resetEditor">本文を元に戻す</div>
+                <div id="content-reset-button" class="confirmation--trigger buttons">本文を元に戻す</div>
                 <textarea id="editor" name="content" id="" cols="50" rows="10">
                     <?php echo $oldArticleContent['content']; ?>
                 </textarea>
             </div>
             <button id="submit-button" class="confirmation--trigger buttons" type="submit">投稿</button>
-            
-
-            <?php require ViewsConfig::COMPONENTS_PATH. 'confirmation.php'; ?>
-
         </form>
         
+        <!--サムネアップロードボックスの管理-->
         <script>
             const checkbox = document.getElementById("is_thumbnail_changed");
             const newThumbnailControl = (e) => {
@@ -89,27 +86,46 @@ if (empty($oldArticleContent)) {
         <!--formのリセット-->
         <script>
             const resetTitle = (e) => {
-                const oldTitle = "<?php echo $oldArticleContent['title']; ?>";
-                const newTitleInput = document.getElementById("new-title");
-                newTitleInput.value = oldTitle;
+                if (window.confirm("タイトルを元に戻します。")) {
+                    const oldTitle = "<?php echo $oldArticleContent['title']; ?>";
+                    const newTitleInput = document.getElementById("new-title");
+                    newTitleInput.value = oldTitle;
+                }
+                else {
+                    return;
+                }
             }
 
             const resetCategory = (e) => {
-                const oldC_id = "<?php echo $oldArticleContent['c_id'] ?>";
-                const newCategorySelect = document.getElementById("new-category");
-                newCategorySelect.selectedIndex = oldC_id - 1;
+                if (window.confirm("カテゴリを元に戻します。")) {
+                    const oldC_id = "<?php echo $oldArticleContent['c_id'] ?>";
+                    const newCategorySelect = document.getElementById("new-category");
+                    newCategorySelect.selectedIndex = oldC_id - 1;
+                }
+                else {
+                    return;
+                }  
             }
 
             const resetEditor = (e) => {
-                const oldContent =
-                `<?php 
-                    $oldArticleContent['content'] = str_replace("\\", "\\\\", $oldArticleContent['content']);
-                    echo str_replace("`", "\`", $oldArticleContent['content']); 
-                ?>`;
-                const editor = document.getElementById("editor");
-                
-                simplemde.value(oldContent);     
+                if (window.confirm("本文を元に戻します。")) {
+                    const oldContent =
+                    `<?php 
+                        $oldArticleContent['content'] = str_replace("\\", "\\\\", $oldArticleContent['content']);
+                        echo str_replace("`", "\`", $oldArticleContent['content']); 
+                    ?>`;
+                    const editor = document.getElementById("editor");
+                    
+                    simplemde.value(oldContent);   
+                }
+                else {
+                    return;
+                }  
             }
+
+            document.getElementById("title-reset-button").addEventListener("click", resetTitle);
+            document.getElementById("category-reset-button").addEventListener("click", resetCategory);
+            document.getElementById("content-reset-button").addEventListener("click", resetEditor);
         </script>
     </body>
 </html>
