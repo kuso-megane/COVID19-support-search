@@ -11,7 +11,7 @@ class Validator
 {
     public function validate(array $vars)
     {
-        $get = (new SuperGlobalVars)->getGet();
+        $get = SuperGlobalVars::getGet();
 
         $trouble_id = (int) $get['trouble_id'];
         if ($trouble_id <= 0) {

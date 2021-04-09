@@ -5,41 +5,33 @@ namespace myapp\myFrameWork;
 
 class SuperGlobalVars
 {
-    private $get;
-    private $post;
-    private $server;
-    private $cookie;
 
-
-    public function __construct()
+    public static function getGet():array
     {
-        $this->get = $_GET;
-        $this->post = $_POST;
-        $this->server = $_SERVER;
-        $this->cookie = $_COOKIE;
+        return $_GET;
     }
 
 
-    public function getGet():array
+    public static function getPost():array
     {
-        return $this->get;
+        return $_POST;
     }
 
 
-    public function getPost():array
+    public static function getServer():array
     {
-        return $this->post;
+
+        return $_SERVER;
+    }
+
+    public static function getCookie():array
+    {
+        return $_COOKIE;
     }
 
 
-    public function getServer():array
+    public static function getFiles():array
     {
-
-        return $this->server;
-    }
-
-    public function getCookie():array
-    {
-        return $this->cookie;
+        return $_FILES;
     }
 }

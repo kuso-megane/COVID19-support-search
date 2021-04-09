@@ -15,7 +15,7 @@ class Validator
      */
     public function validate():InputData
     {   
-        $get = (new SuperGlobalVars)->getGet();
+        $get = SuperGlobalVars::getGet();
 
         $searched_trouble_id = ($get['trouble_id'] != NULL) ? (int) $get['trouble_id'] : NULL;
         if (!($searched_trouble_id === NULL || $searched_trouble_id > 0)) {

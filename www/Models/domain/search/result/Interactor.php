@@ -104,7 +104,7 @@ class Interactor
             $privatePageTotal += 1;
         }
 
-        $uri = (new SuperGlobalVars)->getServer()['REQUEST_URI'];
+        $uri = SuperGlobalVars::getServer()['REQUEST_URI'];
         if (false !== $pos = strpos($uri, '?')) {
             $query = substr($uri, $pos);
         }
