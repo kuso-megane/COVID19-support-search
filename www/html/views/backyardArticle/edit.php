@@ -69,7 +69,7 @@ use myapp\config\ViewsConfig;
                 不正な入力があります。内容を見直してください。
             </p>
         </form>
-        
+
         <!--サムネアップロードボックスの管理-->
         <script>
             const checkbox = document.getElementById("is_thumbnail_changed");
