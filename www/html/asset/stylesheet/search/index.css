@@ -384,7 +384,7 @@ main {
   font-weight: bold;
   font-size: 1rem;
   pointer-events: none;
-  color: black;
+  color: black !important;
   text-decoration: none;
 }
 

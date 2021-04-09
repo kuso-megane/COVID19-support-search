@@ -1,5 +1,10 @@
-const tabs = document.getElementsByClassName("tab");
+/* 
+    id="xxx-tab"要素がactiveになったとき、id="xxx-tab-content"要素がshow状態になる
+    class="tab"のクリックイベントに対し発火。
+*/
 
+
+const tabs = document.getElementsByClassName("tab");
 
 const changeTab = (e) =>  {
     const tab = e.target;
