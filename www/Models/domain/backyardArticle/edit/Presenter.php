@@ -8,11 +8,12 @@ use myapp\config\AppConfig;
 class Presenter
 {
     /**
+     * @param bool $isNew
      * @param OldArticleContent $oldArticleContent
      * @param ArticleCategoryName[] $articleCategoryNames
-     * @param int $selectedId
      * 
      * @return array [
+     *      'isNew' => bool,
      *      'oldArticleContent' => [
      *          'id' => int,
      *          'title' => string,
@@ -22,16 +23,15 @@ class Presenter
      *      ] or empty array,
      *      'articleCategoryNames' => [
      *          ['id' => int, 'name' => string]
-     *      ],
-     *      'selectedId' => int
+     *      ]
      * ]
      */
-    public function present(?OldArticleContent $oldArticleContent, array $articleCategoryNames, int $selectedId): array
+    public function present(bool $isNew, ?OldArticleContent $oldArticleContent, array $articleCategoryNames): array
     {
         $oldArticleContent = ($oldArticleContent != NULL) ? $oldArticleContent->toArray() : [];
         $articleCategoryNames = $this->format($articleCategoryNames);
 
-        return compact(['oldArticleContent', 'articleCategoryNames', 'selectedId']);
+        return compact(['isNew', 'oldArticleContent', 'articleCategoryNames']);
     }
 
 

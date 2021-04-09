@@ -50,7 +50,8 @@ class Interactor
 
         $articleCategoryNames = $this->articleCategoryNamesRepository->getArticleCategoryNames();
         
+        $isNew = ($artcl_id != NULL) ? FALSE : TRUE;
 
-        return (new Presenter)->present($oldArticleContent, $articleCategoryNames, $artcl_id);
+        return (new Presenter)->present($isNew, $oldArticleContent, $articleCategoryNames);
     }
 }

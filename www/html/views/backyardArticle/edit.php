@@ -2,7 +2,7 @@
 
 use myapp\config\ViewsConfig;
 
-if (empty($oldArticleContent)) {
+if ($isNew) {
     $oldArticleContent['id'] = '';
 }
 
@@ -20,28 +20,41 @@ if (empty($oldArticleContent)) {
         <form name="articleForm" action="<?php echo "/backyard/article/post/". $oldArticleContent['id']; ?>" method="post">
             <div>
                 タイトル(50文字以内):<br>
-                <input id="new-title" type="text" name="title" value="<?php echo $oldArticleContent['title']; ?>" size="40" maxlength="50">
+                <input id="new-title" type="text" name="title" value="<?php echo $oldArticleContent['title']; ?>" size="70">
                 <div id="title-reset-button" class="buttons">タイトルを元に戻す</div>
             </div>
             <div>
                 カテゴリ: <br>
                 <select id="new-category" name="c_id" id="">
                     <?php foreach($articleCategoryNames as $articleCategoryName): ?>
-                        <option value="<?php echo $articleCategoryName['id']; ?>" <?php if ($articleCategoryName['id'] == $selectedId) {echo 'selected';} ?>>
+                        <option value="<?php echo $articleCategoryName['id']; ?>" <?php if ($articleCategoryName['id'] === $oldArticleContent['id']) {echo 'selected';} ?>>
                             <?php echo $articleCategoryName['name']; ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
                 <div id="category-reset-button" class="buttons">カテゴリを元に戻す</div>
             </div>
+
+            <?php if ($isNew === FALSE): ?>
+                <p>
+                    変更前のサムネ:
+                </p>
+                <p>
+                    <img id="oldThumbnail" src="<?php echo ViewsConfig::IMG_URL. $oldArticleContent['thumbnailName']; ?>" alt="thumbnail">
+                </p>
+            <?php endif; ?>
+
             <p>
-                変更前のサムネ:
+                <input id="is_thumbnail_changed" type="checkbox" name="is_thumbnail_changed" value="on">
+                <label for="is_thumbnail_changed">
+                    <?php if ($isNew): ?>
+                        新しいサムネをアップロードする(指定しなかった場合は"no image"と表示されます。)
+                    <?php else: ?>
+                        新しいサムネをアップロードする(古いサムネは消去されます)
+                    <?php endif; ?>
+                </label>
             </p>
-            <p>
-                <img id="oldThumbnail" src="<?php echo ViewsConfig::IMG_URL. $oldArticleContent['thumbnailName']; ?>" alt="thumbnail">
-            </p>
-            <input id="is_thumbnail_changed" type="checkbox" name="is_thumbnail_changed" value="on">
-            <label for="is_thumbnail_changed">新しいサムネをアップロードする(古いサムネは消去されます)</label>
+            
             <p>
                 <input id="newThumbnail-uploader" type="file" name="thumbnail" accept="image/*" class="hidden">
             </p>
