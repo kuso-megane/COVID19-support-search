@@ -4,6 +4,8 @@ namespace myapp\Controllers;
 
 use myapp\myFrameWork\Bases\BaseController;
 use domain\backyardArticleCategory\index\Interactor as IndexInteractor;
+use domain\backyardArticleCategory\edit\Interactor as EditInteractor;
+use myapp\config\AppConfig;
 
 class BackyardArticleCategoryController extends BaseController
 {
@@ -23,7 +25,20 @@ class BackyardArticleCategoryController extends BaseController
 
     public function edit (array $vars)
     {
-        $this->render([], self::DIR, 'edit');
+        $builder = new \DI\ContainerBuilder();
+        $builder->addDefinitions('/var/www/Models/diconfig.php');
+        $container = $builder->build();
+
+        $interactor = $container->get(EditInteractor::class);
+        $vm =  $interactor->interact($vars);
+
+        if ($vm === AppConfig::INVALID_PARAMS) {
+            return FALSE;
+        }
+        else {
+            $this->render($vm, self::DIR, 'edit');
+        }
+        
     }
 
 

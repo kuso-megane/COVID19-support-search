@@ -24,7 +24,7 @@ use myapp\config\ViewsConfig;
                 <?php foreach($articleCategoryNames as $articleCategory): ?>
                     <tr>
                         <td>
-                            <a href="<?php echo '/backyard/article/category/edit/'. $articleCategory['id']; ?>">編集</a>
+                            <a href="<?php echo '/backyard/articleCategory/edit/'. $articleCategory['id']; ?>">編集</a>
                         </td>
                         <td>
                             <?php echo $articleCategory['name']; ?>
