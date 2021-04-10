@@ -11,6 +11,22 @@ use myapp\config\ViewsConfig;
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
     </head>
     <body>
-        galknga
+        <h2>コラム編集</h2>
+        <p><a href="/backyard/articleCategory/edit">新規作成</a></p>
+        <table>
+            <thead>
+                <tr>
+                    <td>編集ページ</td>
+                </tr>
+                <tr>
+                    <td>カテゴリ名</td>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        <p><a href="/backyard/index">管理画面topへ</a></p>
+        <p><a href="/index"><i class="fas fa-home"></i>トップページへ</a></p>
     </body>
 </html>
