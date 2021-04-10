@@ -42,10 +42,12 @@ class Validator
 
         $is_thumbnail_uploaded = $post['is_thumbnail_uploaded'];
         if ($is_thumbnail_uploaded === 'on') {
+            $is_thumbnail_uploaded = TRUE;
             $file = SuperGlobalVars::getFiles();
             $newThumbnailFileInfo = $file['thumbnail'];
         }
         else {
+            $is_thumbnail_uploaded = FALSE;
             $newThumbnailFileInfo = NULL;
         }
         
@@ -65,7 +67,8 @@ class Validator
         }
         
         try {
-            return new InputData($artcl_id, $title, $oldthumbnailName, $newThumbnailFileInfo, $content, $c_id);
+            return new InputData($artcl_id, $title, $oldthumbnailName,
+                                $is_thumbnail_uploaded, $newThumbnailFileInfo, $content, $c_id);
         }
         catch(TypeError $e) {
             throw new ValidationFailException('不正なパラメータが渡されています。');

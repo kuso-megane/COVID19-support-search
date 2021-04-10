@@ -40,12 +40,13 @@ class Interactor
         $artcl_id = $input['artcl_id'];
         $title = $input['title'];
         $oldThumbnailName = $input['oldThumbnailName'];
+        $is_thumbnail_uploaded = $input['is_thumbnail_uploaded'];
         $newThumbnailFileInfo = $input['newThumbnailFileInfo'];
         $content = $input['content'];
         $c_id = $input['c_id'];
         
 
-        if ($newThumbnailFileInfo != NULL) {
+        if ($is_thumbnail_uploaded === TRUE) {
             try {
                 $newThumbnailName = (new ImgUploadInteractor)->interact($newThumbnailFileInfo);
             }
@@ -54,7 +55,12 @@ class Interactor
             }
         }
         else {
-            $newThumbnailName = AppConfig::DEFAULT_IMG;
+            if ($oldThumbnailName != NULL) {
+                $newThumbnailName = $oldThumbnailName;
+            }
+            else {
+                $newThumbnailName = AppConfig::DEFAULT_IMG;
+            }    
         }
 
 
@@ -69,9 +75,11 @@ class Interactor
             return (new Presenter)->present(FALSE, $e->getMessage());
         }
 
-        //変更前サムネの消去
-        if ($oldThumbnailName != NULL && $oldThumbnailName != AppConfig::DEFAULT_IMG) {
-            unlink(AppConfig::UPLOAD_IMG_PATH. $oldThumbnailName);
+        if ($is_thumbnail_uploaded === TRUE) {
+            //変更前サムネの消去
+            if ($oldThumbnailName != NULL && $oldThumbnailName != AppConfig::DEFAULT_IMG) {
+                unlink(AppConfig::UPLOAD_IMG_PATH. $oldThumbnailName);
+            }
         }
 
         return (new Presenter)->present(TRUE, '作成・更新に成功しました。');
