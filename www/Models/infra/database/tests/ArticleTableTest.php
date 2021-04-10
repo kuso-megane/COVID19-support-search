@@ -115,6 +115,40 @@ class ArticleTableTest extends TestCase
     }
 
 
+    public function testCreate()
+    {
+        $newId = count(self::SAMPLE_DATAS) + 1;
+        $newTitle = 'new title';
+        $newThumbnailName = 'newimg.jpg';
+        $newContent = 'new content';
+        $newC_id = self::SAMPLE_C_ID;
+
+        $this->table->create($newTitle, $newThumbnailName, $newContent, $newC_id);
+
+        $expected = [
+            ['id' => $newId, 'title' => $newTitle, 'thumbnailName' => $newThumbnailName, 'content' => $newContent, 'c_id' => $newC_id]
+        ];
+        $this->assertSame($expected, $this->dbh->select('*', self::TABLENAME, "id = {$newId}"));
+    }
+
+
+    public function testUpdate()
+    {
+        $id = 1;
+        $newTitle = 'new Title';
+        $newThumbnailName = 'newimg.jpg';
+        $newContent = 'new content';
+        $newC_id = self::SAMPLE_C_ID;
+
+        $this->table->update($id, $newTitle, $newThumbnailName, $newContent, $newC_id);
+
+        $expected = [
+            ['id' => $id, 'title' => $newTitle, 'thumbnailName' => $newThumbnailName, 'content' => $newContent, 'c_id' => $newC_id]
+        ];
+        $this->assertSame($expected, $this->dbh->select('*', self::TABLENAME, "id = {$id}"));
+    }
+
+
     public function providerForFindInfosByC_id(): array
     {
         return [

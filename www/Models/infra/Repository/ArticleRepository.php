@@ -10,10 +10,12 @@ use domain\backyardArticle\edit\Data\OldArticleContent;
 use domain\backyardArticle\edit\RepositoryPort\OldArticleContentRepositoryPort;
 use domain\backyardArticle\index\Data\ArticleBYInfo;
 use domain\backyardArticle\index\RepositoryPort\ArticleBYInfosRepositoryPort;
+use domain\backyardArticle\post\RepositoryPort\PostArticleRepositoryPort;
 use domain\search\result\Data\RecommendedArticleInfo;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use infra\database\src\ArticleTable;
-
+use PDOException;
+use SebastianBergmann\RecursionContext\Context;
 
 class ArticleRepository
 implements
@@ -21,7 +23,8 @@ implements
     RecommendedArticleInfosRepositoryPort,
     ArticleContentRepositoryPort,
     ArticleBYInfosRepositoryPort,
-    OldArticleContentRepositoryPort
+    OldArticleContentRepositoryPort,
+    PostArticleRepositoryPort
 {
     private $table;
 
@@ -122,5 +125,26 @@ implements
         else {
             return NULL;
         }
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function postArticle(?int $artcl_id, string $title, string $thumbnailName, string $content, int $c_id): bool
+    {
+        try {
+            if ($artcl_id != NULL) {
+                $this->table->update($artcl_id, $title, $thumbnailName, $content, $c_id);
+            }
+            else {
+                $this->table->create($title, $thumbnailName, $content, $c_id);
+            }
+        }
+        catch (PDOException $e) {
+            return FALSE;
+        }
+
+        return TRUE;
     }
 }

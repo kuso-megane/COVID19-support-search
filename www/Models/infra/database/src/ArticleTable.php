@@ -85,4 +85,39 @@ class ArticleTable
 
         return $this->dbh->select($columns, $this::TABLENAME, 'id = :id', [], [':id' => $id])[0];
     }
+
+
+    /**
+     * @param string $title
+     * @param string $thumbnailName
+     * @param string $content
+     * @param int $c_id
+     * 
+     * if something goes wrong, this throws PDOExeption
+     */
+    public function create(string $title, string $thumbnailName, string $content, int $c_id)
+    {
+        $columns = '0, :title, :thumbnailName, :content, :c_id';
+        $boundColumns = [':title' => $title, ':thumbnailName' => $thumbnailName, ':content' => $content, ':c_id' => $c_id];
+        $this->dbh->insert(self::TABLENAME, $columns, $boundColumns);
+    }
+
+
+    /**
+     * @param int $id
+     * @param string $title
+     * @param string $thumbnailName
+     * @param string $content
+     * @param int $c_id
+     * 
+     * if something goes wrong, this throws PDOExeption
+     */
+    public function update(int $id, string $title, string $thumbnailName, string $content, int $c_id)
+    {
+        $columns = 'title = :title, thumbnailName = :thumbnailName, content = :content, c_id = :c_id';
+        $boundValues = [':id' => $id, ':title' => $title,
+        ':thumbnailName' => $thumbnailName, ':content' => $content, ':c_id' => $c_id];
+
+        $this->dbh->update(self::TABLENAME, $columns, 'id = :id', $boundValues);
+    }
 }
