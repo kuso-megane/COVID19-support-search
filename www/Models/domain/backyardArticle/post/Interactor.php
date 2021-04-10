@@ -61,8 +61,7 @@ class Interactor
             $newThumbnailName = AppConfig::DEFAULT_IMG;
         }
 
-        var_dump($newThumbnailName);
-        
+
         if (is_string($newThumbnailName) === FALSE) {
             return (new Presenter)->present(FALSE, '画像アップロードに失敗しました');
         }

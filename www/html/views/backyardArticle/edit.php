@@ -40,7 +40,7 @@ use myapp\config\ViewsConfig;
                 <p>
                     <img id="oldThumbnail" src="<?php echo ViewsConfig::IMG_URL. $oldArticleContent['thumbnailName']; ?>" alt="thumbnail">
                 </p>
-                <input type="text" name="oldThumbnailName" id="oldThumbnailName" value="<?php echo ViewsConfig::IMG_URL. $oldArticleContent['thumbnailName']; ?>">
+                <input type="text" name="oldThumbnailName" id="oldThumbnailName" value="<?php echo $oldArticleContent['thumbnailName']; ?>">
             <?php endif; ?>
 
             <p>
