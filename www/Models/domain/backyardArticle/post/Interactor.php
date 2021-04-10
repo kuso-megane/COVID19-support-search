@@ -43,10 +43,6 @@ class Interactor
         $newThumbnailFileInfo = $input['newThumbnailFileInfo'];
         $content = $input['content'];
         $c_id = $input['c_id'];
-
-        if ($oldThumbnailName != NULL && $oldThumbnailName != AppConfig::DEFAULT_IMG) {
-            unlink($oldThumbnailName);
-        }
         
 
         if ($newThumbnailFileInfo != NULL) {
@@ -72,7 +68,11 @@ class Interactor
         catch (PDOException $e) {
             return (new Presenter)->present(FALSE, $e->getMessage());
         }
-        
+
+        //変更前サムネの消去
+        if ($oldThumbnailName != NULL && $oldThumbnailName != AppConfig::DEFAULT_IMG) {
+            unlink(AppConfig::UPLOAD_IMG_PATH. $oldThumbnailName);
+        }
 
         return (new Presenter)->present(TRUE, '作成・更新に成功しました。');
     }
