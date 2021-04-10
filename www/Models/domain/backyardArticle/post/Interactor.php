@@ -7,8 +7,7 @@ use domain\backyardArticle\post\Validator\Validator;
 use domain\Exception\ValidationFailException;
 use domain\components\imgUpload\Interactor as ImgUploadInteractor;
 use myapp\config\AppConfig;
-use PDO;
-use PDOException;
+
 
 class Interactor
 {
@@ -68,12 +67,13 @@ class Interactor
             return (new Presenter)->present(FALSE, '画像アップロードに失敗しました');
         }
 
-        try {
-            $this->postArticleRepository->postArticle($artcl_id, $title, $newThumbnailName, $content, $c_id);
-        }
-        catch (PDOException $e) {
-            return (new Presenter)->present(FALSE, $e->getMessage());
-        }
+        
+        $isPostSucceeded =  $this->postArticleRepository->postArticle($artcl_id, $title, $newThumbnailName, $content, $c_id);
+        
+        if ($isPostSucceeded === FALSE) {
+            return (new Presenter)->present(FALSE, '作成・更新に失敗しました。');
+        }   
+        
 
         if ($is_thumbnail_uploaded === TRUE) {
             //変更前サムネの消去
