@@ -87,10 +87,10 @@
         }
 
         &--logo {
-            $size: 2.5rem;
+            
+            $size: 3rem;
             height: $size;
-            width: $size;
-            margin-left: 0.5rem;
+            width: $size * 4;
         }
     }
 

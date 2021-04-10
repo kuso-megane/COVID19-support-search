@@ -7,10 +7,12 @@
     <div id="title">
 
         <div id="title--left">
+            <!--
             <h2>
                 <a class="black" href="/index"><?php echo AppConfig::TITLE; ?></a>
             </h2>
-            <img id="title--left--logo" src="<?php echo ViewsConfig::IMG_URL. 'title_logo_test2.jpg'; ?>" alt="タイトルロゴ">
+            -->
+            <img id="title--left--logo" src="<?php echo ViewsConfig::IMG_URL. 'titleLogo/jp.jpg'; ?>" alt="タイトルロゴ">
         </div>
         
 
