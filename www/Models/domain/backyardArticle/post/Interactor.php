@@ -42,12 +42,21 @@ class Interactor
         $content = $input['content'];
         $c_id = $input['c_id'];
 
-        unlink($oldThumbnailName);
-        try {
-            $newThumbnailName = (new ImgUploadInteractor)->interact($newThumbnailFileInfo);
+        if ($oldThumbnailName != NULL && $oldThumbnailName != AppConfig::DEFAULT_IMG) {
+            unlink($oldThumbnailName);
         }
-        catch (ValidationFailException $e) {
-            return (new Presenter)->reportValidationFailure($e->getMessage());
+        
+
+        if ($newThumbnailFileInfo != NULL) {
+            try {
+                $newThumbnailName = (new ImgUploadInteractor)->interact($newThumbnailFileInfo);
+            }
+            catch (ValidationFailException $e) {
+                return (new Presenter)->reportValidationFailure($e->getMessage());
+            }
+        }
+        else {
+            $newThumbnailName = AppConfig::DEFAULT_IMG;
         }
 
         $isUploadSucceeded = (is_string($newThumbnailName) === TRUE)? TRUE : FALSE;
