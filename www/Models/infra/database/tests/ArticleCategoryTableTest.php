@@ -14,6 +14,8 @@ class ArticleCategoryTableTest extends TestCase
         ['id' => 2, 'name' => 'sample2']
     ];
 
+    const FAKE_ID = 100; //存在しないカテゴリのid
+
 
     private $table;
     private $dbh;
@@ -40,5 +42,34 @@ class ArticleCategoryTableTest extends TestCase
         ];
 
         $this->assertSame($expected, $this->table->findAll());
+    }
+
+
+    /**
+     * @dataProvider providerForFindById()
+     */
+    public function testFindById(bool $isFound)
+    {
+        if ($isFound === TRUE) {
+            $id = 1;
+            $expected = [
+                'id' => 1, 'name' => $this::SAMPLE_DATAS[0]['name']
+            ];
+        }
+        else {
+            $id = self::FAKE_ID;
+            $expected = NULL;
+        }
+        
+        $this->assertSame($expected, $this->table->findById($id));
+    }
+
+
+    public function providerForFindById():array
+    {
+        return [
+            'when existent id is given' => [TRUE],
+            'when no-existent id is given' => [FALSE]
+        ];
     }
 }

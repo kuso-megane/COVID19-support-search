@@ -2,8 +2,10 @@
 
 namespace infra\Repository;
 
-use domain\article\_list\Data\ArticleCategory;
+use domain\article\_list\Data\ArticleCategory as ArticleList_ArticleCategory;
 use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
+use domain\backyardArticleCategory\edit\Data\ArticleCategory as BYArticleCategoryEdit_ArticleCategory;
+use domain\backyardArticleCategory\edit\RepositoryPort\ArticleCategoryRepositoryPort;
 use domain\components\articleCategoryNames\Data\ArticleCategoryName;
 use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use infra\database\src\ArticleCategoryTable;
@@ -11,7 +13,8 @@ use infra\database\src\ArticleCategoryTable;
 class ArticleCategoryRepository
 implements
     ArticleCategoryListRepositoryPort,
-    ArticleCategoryNamesRepositoryPort
+    ArticleCategoryNamesRepositoryPort,
+    ArticleCategoryRepositoryPort
 {
     private $table;
     
@@ -29,7 +32,7 @@ implements
         $categories = $this->table->findAll();
 
         foreach ($categories as &$category) {
-            $category = new ArticleCategory($category['id'], $category['name']);
+            $category = new ArticleList_ArticleCategory($category['id'], $category['name']);
         }
 
         return $categories;
@@ -48,5 +51,19 @@ implements
         }
 
         return $records;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getArticleCategory(int $id): ?BYArticleCategoryEdit_ArticleCategory
+    {
+        $record = $this->table->findById($id);
+
+        return new BYArticleCategoryEdit_ArticleCategory(
+            $record['id'],
+            $record['name']
+        );
     }
 }
