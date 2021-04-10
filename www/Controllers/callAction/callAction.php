@@ -5,7 +5,7 @@
 use myapp\Controllers\ArticleController;
 use myapp\controllers\SearchController;
 use myapp\controllers\BackyardArticleController as BYArticleController;
-use myapp\Controllers\BackyardArticleController;
+use myapp\Controllers\BackyardArticleCategoryController as BYArticleCategoryController;
 use myapp\Controllers\BackyardController;
 use myapp\Controllers\SubContentsController;
 
@@ -77,6 +77,25 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller = new BYArticleController;
         $controller->post($vars);
 
+    }
+
+    elseif($handler == 'backyardArticleCategoryIndex') {
+
+        $controller = new BYArticleCategoryController;
+        $controller->index();
+
+    }
+    elseif ($handler == 'backyardArticleCategoryEdit') {
+
+        $controller = new BYArticleCategoryController;
+        $controller->edit($vars);
+
+    }
+    elseif ($handler == 'backyardArticleCategoryPost') {
+
+        $controller = new BYArticleCategoryController;
+        $controller->post($vars);
+        
     }
 
     else {
