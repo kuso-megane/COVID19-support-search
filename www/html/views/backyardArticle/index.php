@@ -38,6 +38,7 @@ use myapp\config\ViewsConfig;
             </tbody>
         </table>
             
+        <p><a href="/backyard/index">管理画面topへ</a></p>
 
         <p><a href="/index"><i class="fas fa-home"></i>トップページへ</a></p>
     </body>
