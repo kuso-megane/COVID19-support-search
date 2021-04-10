@@ -32,8 +32,9 @@ class Validator
         $post = SuperGlobalVars::getPost();
 
         $title = $post['title'];
-        $lenTitle = strlen($title);
+        $lenTitle = mb_strlen($title, 'UTF-8');
         if (!($lenTitle > 0 && $lenTitle <= 50)) {
+            var_dump($lenTitle);
             throw new ValidationFailException("タイトルの文字数が不正です。");
         }
 
@@ -41,10 +42,12 @@ class Validator
 
         $is_thumbnail_uploaded = $post['is_thumbnail_uploaded'];
         if ($is_thumbnail_uploaded === 'on') {
+            $is_thumbnail_uploaded = TRUE;
             $file = SuperGlobalVars::getFiles();
             $newThumbnailFileInfo = $file['thumbnail'];
         }
         else {
+            $is_thumbnail_uploaded = FALSE;
             $newThumbnailFileInfo = NULL;
         }
         
@@ -53,7 +56,7 @@ class Validator
         if ($content === NULL) {
             $content = '';
         }
-        if (strlen($content) > 65535) {
+        if (mb_strlen($content, 'UTF-8') > 65535) {
             throw new ValidationFailException("本文が長すぎます。");
         }
 
@@ -64,7 +67,8 @@ class Validator
         }
         
         try {
-            return new InputData($artcl_id, $title, $oldthumbnailName, $newThumbnailFileInfo, $content, $c_id);
+            return new InputData($artcl_id, $title, $oldthumbnailName,
+                                $is_thumbnail_uploaded, $newThumbnailFileInfo, $content, $c_id);
         }
         catch(TypeError $e) {
             throw new ValidationFailException('不正なパラメータが渡されています。');
