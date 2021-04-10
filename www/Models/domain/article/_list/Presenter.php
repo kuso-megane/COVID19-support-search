@@ -34,7 +34,7 @@ class Presenter
         ];
     }
 
-
+    // the categories which has no article are excluded
     private function formatForArticleInfos(array $articleInfos, $categoryList):array
     {
         $ans = [];

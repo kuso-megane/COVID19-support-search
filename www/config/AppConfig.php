@@ -19,4 +19,6 @@ class AppConfig
     const INVALID_PARAMS = -1; 
     const POST_SUCCESS = 100;
     const POST_FAILURE = -100;
+    
+    const UPLOAD_IMG_PATH = '/var/www/html' . ViewsConfig::IMG_URL;
 }

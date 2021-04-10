@@ -43,9 +43,17 @@ class Interactor
         $c_id = $input['c_id'];
 
         unlink($oldThumbnailName);
-        $newThumbnailName = (new ImgUploadInteractor)->interact($newThumbnailFileInfo);
+        try {
+            $newThumbnailName = (new ImgUploadInteractor)->interact($newThumbnailFileInfo);
+        }
+        catch (ValidationFailException $e) {
+            return (new Presenter)->reportValidationFailure($e->getMessage());
+        }
 
-        $isSuccess = $this->postArticleRepository->postArticle($artcl_id, $title, $newThumbnailName, $content, $c_id);
+        $isUploadSucceeded = (is_string($newThumbnailName) === TRUE)? TRUE : FALSE;
+
+        $isPostSucceeded = $this->postArticleRepository->postArticle($artcl_id, $title, $newThumbnailName, $content, $c_id);
+        $isSuccess = $isUploadSucceeded && $isPostSucceeded;
 
         return (new Presenter)->present($isSuccess);
     }
