@@ -4,7 +4,6 @@ namespace domain\backyardArticle\index;
 
 use myapp\config\AppConfig;
 use domain\backyardArticle\index\Data\ArticleBYInfo;
-use domain\backyardArticle\index\Data\ArticleCategoryName;
 
 class Presenter
 {

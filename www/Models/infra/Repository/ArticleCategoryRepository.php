@@ -4,16 +4,14 @@ namespace infra\Repository;
 
 use domain\article\_list\Data\ArticleCategory;
 use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
-use domain\backyardArticle\index\Data\ArticleCategoryName;
-use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleIndexArticleCategoryNamesRepositoryPort;
-use domain\backyardArticle\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleEditArticleCategoryNamesRepositoryPort;
+use domain\components\articleCategoryNames\Data\ArticleCategoryName;
+use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use infra\database\src\ArticleCategoryTable;
 
 class ArticleCategoryRepository
 implements
     ArticleCategoryListRepositoryPort,
-    BYArticleIndexArticleCategoryNamesRepositoryPort,
-    BYArticleEditArticleCategoryNamesRepositoryPort
+    ArticleCategoryNamesRepositoryPort
 {
     private $table;
     

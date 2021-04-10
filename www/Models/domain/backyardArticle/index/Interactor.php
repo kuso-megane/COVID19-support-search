@@ -2,7 +2,7 @@
 
 namespace domain\backyardArticle\index;
 
-use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort;
+use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use domain\backyardArticle\index\RepositoryPort\ArticleBYInfosRepositoryPort;
 
 class Interactor

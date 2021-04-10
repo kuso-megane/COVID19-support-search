@@ -1,8 +1,8 @@
 <?php
 
-namespace domain\backyardArticleCategory\index\Data;
+namespace domain\components\articleCategoryNames\Data;
 
-class InputData
+class ArticleCategoryName
 {
     private $attr;
 

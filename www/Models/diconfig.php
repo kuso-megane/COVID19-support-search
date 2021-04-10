@@ -4,8 +4,7 @@ use domain\article\_list\RepositoryPort\AllArticleInfosRepositoryPort;
 use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
 use domain\article\show\RepositoryPort\ArticleContentRepositoryPort;
 use domain\backyardArticle\index\RepositoryPort\ArticleBYInfosRepositoryPort;
-use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleIndexArticleCategoryNamesRepositoryPort;
-use domain\backyardArticle\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleEditArticleCategoryNamesRepositoryPort;
+use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort ;
 use domain\backyardArticle\edit\RepositoryPort\OldArticleContentRepositoryPort;
 use domain\backyardArticle\post\RepositoryPort\PostArticleRepositoryPort;
 use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
@@ -33,8 +32,8 @@ return [
     PostArticleRepositoryPort::class => \DI\create(ArticleRepository::class),
 
     ArticleCategoryListRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
-    BYArticleIndexArticleCategoryNamesRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
-    BYArticleEditArticleCategoryNamesRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
+    ArticleCategoryNamesRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
+
 
     SearchedAreaNameRepositoryPort::class => \DI\create(AreaListRepository::class)
 ];
