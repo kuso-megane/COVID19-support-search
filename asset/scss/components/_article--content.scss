@@ -1,7 +1,7 @@
 
 #article--content, .editor-preview {
 
-    font-size: 1rem;
+    font-size: 0.8rem;
     overflow-wrap: break-word;
 
     .red {
@@ -17,6 +17,7 @@
     }
     //  h element
     h1, h2, h3, h4 {
+        font-size: 1rem;
         border-bottom: 1px solid #ddd;
     }
 

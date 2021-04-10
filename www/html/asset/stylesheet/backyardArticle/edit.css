@@ -185,7 +185,7 @@ main {
 }
 
 #article--content, .editor-preview {
-  font-size: 1rem;
+  font-size: 0.8rem;
   overflow-wrap: break-word;
 }
 #article--content .red, .editor-preview .red {
@@ -198,6 +198,7 @@ main {
   text-decoration: underline;
 }
 #article--content h1, #article--content h2, #article--content h3, #article--content h4, .editor-preview h1, .editor-preview h2, .editor-preview h3, .editor-preview h4 {
+  font-size: 1rem;
   border-bottom: 1px solid #ddd;
 }
 #article--content li, .editor-preview li {
