@@ -1,7 +1,7 @@
 <?php
 
 use myapp\config\ViewsConfig;
-
+var_dump($articleCategoryNames[0]['name']);
 ?>
 
 <!DOCTYPE html>
@@ -17,13 +17,20 @@ use myapp\config\ViewsConfig;
             <thead>
                 <tr>
                     <td>編集ページ</td>
-                </tr>
-                <tr>
                     <td>カテゴリ名</td>
                 </tr>
             </thead>
             <tbody>
-                
+                <?php foreach($articleCategoryNames as $articleCategory): ?>
+                    <tr>
+                        <td>
+                            <a href="<?php echo '/backyard/article/category/edit/'. $articleCategory['id']; ?>">編集</a>
+                        </td>
+                        <td>
+                            <?php echo $articleCategory['name']; ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
         <p><a href="/backyard/index">管理画面topへ</a></p>

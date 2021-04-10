@@ -3,6 +3,7 @@
 namespace myapp\Controllers;
 
 use myapp\myFrameWork\Bases\BaseController;
+use domain\backyardArticleCategory\index\Interactor as IndexInteractor;
 
 class BackyardArticleCategoryController extends BaseController
 {
@@ -10,7 +11,13 @@ class BackyardArticleCategoryController extends BaseController
 
     public function index()
     {
-        $this->render([], self::DIR, 'index');
+        $builder = new \DI\ContainerBuilder();
+        $builder->addDefinitions('/var/www/Models/diconfig.php');
+        $container = $builder->build();
+
+        $interactor = $container->get(IndexInteractor::class);
+        $vm = $interactor->interact();
+        $this->render($vm, self::DIR, 'index');
     }
 
 
