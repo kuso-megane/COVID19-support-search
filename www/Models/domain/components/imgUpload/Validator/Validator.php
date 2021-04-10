@@ -19,14 +19,14 @@ class Validator
     public function validate(array $imgFileInfo):InputData
     {
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        list($mime, $ext) = str_split($finfo::file($imgFileInfo['tmpname']));
-        if ($mime != 'img') {
+        list($mime, $ext) = explode('/', $imgFileInfo['type']);
+        if ($mime != 'image') {
             finfo_close($finfo);
-            throw new ValidationFailException('送信されたファイルが画像ではありません。');
+            throw new ValidationFailException("送信されたファイルが画像ではありません。mime: {$mime}");
         }
 
         try {
-            return new InputData($imgFileInfo['tmpname'], $ext);
+            return new InputData($imgFileInfo['tmp_name'], $ext);
         }
         catch (TypeError $e) {
             throw new ValidationFailException("不正なパラメータが渡されています。");

@@ -40,7 +40,7 @@ class Validator
         $oldthumbnailName = $post['oldThumbnailName'];
 
         $is_thumbnail_uploaded = $post['is_thumbnail_uploaded'];
-        if ($is_thumbnail_uploaded === TRUE) {
+        if ($is_thumbnail_uploaded === 'on') {
             $file = SuperGlobalVars::getFiles();
             $newThumbnailFileInfo = $file['thumbnail'];
         }
