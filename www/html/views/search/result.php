@@ -179,7 +179,7 @@ use myapp\config\ViewsConfig;
                     <p class="subTitle bold left block-start0">&lt;おすすめコラム(お役立ち情報)&gt;</p>
                     <?php
                         $_items = $recommendedArticleInfos;
-                        require ViewsConfig::COMPONENTS_PATH. 'articleContentList.php';
+                        require ViewsConfig::COMPONENTS_PATH. 'articleBoxList.php';
                         unset($_items);
                     ?>
                     <p id="link-to-articleList" class="right"><a href="/article/list">&gt;&gt;もっと見る</a></p>

@@ -308,47 +308,47 @@ main {
 
 /*sp*/
 @media screen and (min-width: 320px) and (max-width: 480px) {
-  .article--content--list--item {
+  .article-box--list--item {
     width: 100%;
   }
 }
 /*タブレット*/
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-  .article--content--list--item {
+  .article-box--list--item {
     width: 50%;
   }
 }
 /*pc*/
 @media screen and (min-width: 1025px) {
-  .article--content--list--item {
+  .article-box--list--item {
     width: 50%;
   }
 }
-.article--content--list {
+.article-box--list {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
-.article--content--list--item {
+.article-box--list--item {
   display: flex;
   height: 4rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.article--content--list--item:hover {
+.article-box--list--item:hover {
   background-color: #DDDDDD;
 }
-.article--content--list--item--img {
+.article-box--list--item--img {
   width: 4rem;
   height: 4rem;
   padding: 2px;
 }
-.article--content--list--item--title {
+.article-box--list--item--title {
   font-size: 0.9rem;
   margin-left: 10px;
   text-align: left;
 }
-.article--content--list--item--title p {
+.article-box--list--item--title p {
   color: #444444;
 }
 

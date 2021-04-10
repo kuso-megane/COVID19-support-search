@@ -26,7 +26,7 @@ use myapp\config\ViewsConfig;
                             <p class="article--content--category"><?php echo $category; ?></p>
                             <?php
                                 $_items = $articleInfoItems;
-                                require ViewsConfig::COMPONENTS_PATH. 'articleContentList.php';
+                                require ViewsConfig::COMPONENTS_PATH. 'articleBoxList.php';
                                 unset($_items);
                             ?>
                         </div>

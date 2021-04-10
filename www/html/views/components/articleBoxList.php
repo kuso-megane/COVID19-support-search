@@ -6,16 +6,16 @@
      */
 ?>
 
-<div class="article--content--list">
+<div class="article-box--list">
 
     <?php foreach ($_items as $item): ?>
 
-        <a class="article--content--list--item" href="<?php echo '/article/'. $item['id']; ?>">
-            <img class="article--content--list--item--img"
+        <a class="article-box--list--item" href="<?php echo '/article/'. $item['id']; ?>">
+            <img class="article-box--list--item--img"
                 src="<?php echo ViewsConfig::IMG_URL. $item['thumbnailName']; ?>"
                 alt="<?php echo $item['title']; ?>"
             >
-            <p class="article--content--list--item--title break-word block-start0 block-end0">
+            <p class="article-box--list--item--title break-word block-start0 block-end0">
                 
                 <?php echo $item['title']; ?>
 

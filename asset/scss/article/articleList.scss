@@ -1,18 +1,17 @@
 @use '../components/vars' as vars;
 @use '../components/common';
 @use '../components/header';
-@use '../components/article--content--list';
+@use '../components/article-box--list';
 
 
 
-$articleColor: #444444;
-$articleBGColor: #EEEEEE;
+
 
 #articles {
 
     &--title {
-        color: $articleColor;
-        background-color: $articleBGColor;
+        color: vars.$articleColor;
+        background-color: vars.$articleBGColor;
     }
 
 }
@@ -21,8 +20,8 @@ $articleBGColor: #EEEEEE;
 
     &--category {
         display: inline-block;
-        color: $articleColor;
-        background-color: $articleBGColor;
+        color: vars.$articleColor;
+        background-color: vars.$articleBGColor;
         font-size: 0.9rem;
         text-align: center;
         $padding: 0.5rem;
