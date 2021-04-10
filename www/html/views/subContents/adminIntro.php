@@ -28,14 +28,14 @@
                     </div>
                     <div class="administrators">
                         <h4><i class="fas fa-glasses"></i> O.K</h4>
-                        <p class="administrators--part">ページ設計、ページデザイン担当</p>
+                        <p class="administrators--part">サイト設計、サイトデザイン担当</p>
                         <p class="administrators--main">
-                            &emsp;上のH.Yと同じ大学の3年生。エンジニア志望。<br>&emsp;約1年間、企業のwebページ開発部門でのインターン経験があり、そこで学んだスキルを生かす機会がないか考えていたところ、友人たちとのオンラインの雑談のなかで、H.Yにこのサービスの開発に誘われた。今は、宗教学科という一見怪しいところに通っている。(実際は、ちゃんとしたところです。)
+                            &emsp;上のH.Yと同じ大学の3年生。エンジニア志望。<br>&emsp;約1年間、企業のwebページ開発部門でのインターン経験があり、そこで学んだスキルを生かす機会がないか考えていたところ、友人たちとzoomで雑談しているなかで、同席していたH.Yにこのサービスの開発に誘われた。いまはゲーム開発に興味がある。
                         </p>
                     </div>
                     <div class="administrators">
                         <h4><i class="fas fa-pencil-ruler"></i> K.K</h4>
-                        <p class="administrators--part">タイトルロゴ、ページデザイン(一部)担当</p>
+                        <p class="administrators--part">タイトルロゴ、サイトデザイン(一部)担当</p>
                         <p class="administrators--main">
                             &emsp;上のO.Kの友人。現在は、関東の大学を卒業し、デザイナーを目指して就職活動中。<br>&emsp;就活で忙しいなか、O.Kの誘いで協力してもらった。ちなみにO.Kのtwitterアイコンも彼が作ったもの。
                         </p>

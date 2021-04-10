@@ -4,7 +4,7 @@ namespace myapp\config;
 
 class AppConfig
 {   
-    const TITLE = '支援総合検索';
+    const TITLE = 'サポファイ';
 
     const MAXNUM_PER_PAGE = 10; // 検索結果1ページあたりの支援表示数 
     const MAXNUM_RECOMMENDED_ARTICLES = 3; // 検索結果1ページあたりのおすすめコラムの数
