@@ -11,7 +11,7 @@ use myapp\config\ViewsConfig;
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'backyardArticleCategory/index.css'; ?>">
     </head>
     <body>
-        <h2>コラム編集</h2>
+        <h2>コラムカテゴリ編集</h2>
         <p><a href="/backyard/articleCategory/edit">新規作成</a></p>
         <table>
             <thead>
