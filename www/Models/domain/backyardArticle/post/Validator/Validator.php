@@ -32,8 +32,9 @@ class Validator
         $post = SuperGlobalVars::getPost();
 
         $title = $post['title'];
-        $lenTitle = strlen($title);
+        $lenTitle = mb_strlen($title, 'UTF-8');
         if (!($lenTitle > 0 && $lenTitle <= 50)) {
+            var_dump($lenTitle);
             throw new ValidationFailException("タイトルの文字数が不正です。");
         }
 
@@ -53,7 +54,7 @@ class Validator
         if ($content === NULL) {
             $content = '';
         }
-        if (strlen($content) > 65535) {
+        if (mb_strlen($content, 'UTF-8') > 65535) {
             throw new ValidationFailException("本文が長すぎます。");
         }
 
