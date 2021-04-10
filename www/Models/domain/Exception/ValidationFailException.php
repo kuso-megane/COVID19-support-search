@@ -13,7 +13,7 @@ class ValidationFailException extends Exception
      */
     public function __construct(string $problem)
     {
-
+        debug_print_backtrace();
         $message = "不正なurlです。{$problem}\n";
         parent::__construct($message);
     }
