@@ -2,7 +2,7 @@
 
 namespace domain\backyardArticleCategory\post\Validator;
 
-use domain\backyardArticleCategory\Data\InputData;
+use domain\backyardArticleCategory\post\Data\InputData;
 use domain\Exception\ValidationFailException;
 use myapp\myFrameWork\SuperGlobalVars;
 use TypeError;

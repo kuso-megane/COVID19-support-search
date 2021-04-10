@@ -6,7 +6,7 @@ use domain\backyardArticleCategory\post\RepositoryPort\PostArticleCategoryReposi
 use domain\backyardArticleCategory\post\Validator\Validator;
 use domain\Exception\ValidationFailException;
 
-class Interacter
+class Interactor
 {
     private $postArticleCategoryRepository;
 
