@@ -14,12 +14,12 @@ class Presenter
      *      'articleCategory' => [
      *          'id' => int,
      *          'name' => string
-     *      ]
+     *      ] or empty array
      * ]
      */
-    public function present(ArticleCategory $articleCategory): array
+    public function present(?ArticleCategory $articleCategory): array
     {
-        $articleCategory = $articleCategory->toArray();
+        $articleCategory = ($articleCategory != NULL) ? $articleCategory->toArray() : [];
 
         return compact('articleCategory');
     }
