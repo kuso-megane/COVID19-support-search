@@ -47,7 +47,6 @@
         </a>
     </div>
     
-    <script src="<?php echo ViewsConfig::SCRIPT_URL. 'components/header/titleRightMenuControl.js'; ?>"></script>
 </header>
 <div id="dummy-header"></div>
 
