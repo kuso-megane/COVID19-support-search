@@ -25,7 +25,7 @@ use myapp\config\ViewsConfig;
                 カテゴリ: <br>
                 <select id="new-category" name="c_id">
                     <?php foreach($articleCategoryNames as $articleCategoryName): ?>
-                        <option value="<?php echo $articleCategoryName['id']; ?>" <?php if ($articleCategoryName['id'] === $oldArticleContent['id']) {echo 'selected';} ?>>
+                        <option value="<?php echo $articleCategoryName['id']; ?>" <?php if ($articleCategoryName['id'] === $oldArticleContent['c_id']) {echo 'selected';} ?>>
                             <?php echo htmlspecialchars($articleCategoryName['name'], ENT_QUOTES); ?>
                         </option>
                     <?php endforeach; ?>

@@ -1,0 +1,26 @@
+
+#article--content, .editor-preview {
+
+    font-size: 1rem;
+    overflow-wrap: break-word;
+
+    .red {
+        color: red;
+    }
+
+    a {
+        color: blue;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    //  h element
+    h1, h2, h3, h4 {
+        border-bottom: 1px solid #ddd;
+    }
+
+    li {
+        list-style: disc !important;
+    }
+}

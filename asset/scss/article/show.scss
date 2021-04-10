@@ -1,0 +1,19 @@
+@use '../components/common';
+@use '../components/vars' as vars;
+@use '../components/header';
+@use '../components/article--content';
+
+
+#article {
+    
+    &--title {
+        display: inline-block;
+        color: vars.$articleColor;
+        background-color: vars.$articleBGColor;
+    }
+
+    &--content {
+        margin-top: 4rem;
+    }
+
+}
