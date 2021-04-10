@@ -416,6 +416,10 @@ main {
   font-size: 0.75rem;
   font-weight: bold;
 }
+#introduce--subTitle--after {
+  width: 90%;
+  display: inline-block;
+}
 
 #introduce--main {
   text-align: left;

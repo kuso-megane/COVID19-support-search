@@ -41,7 +41,12 @@ $topFontSize: 0.75rem;
 
     &--subTitle {
         font-size: $topFontSize;
-        font-weight: bold;    
+        font-weight: bold; 
+        
+        &--after {
+            width: 90%;
+            display: inline-block;
+        }
     }
 }
 
