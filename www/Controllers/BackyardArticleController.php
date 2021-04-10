@@ -48,7 +48,7 @@ class BackyardArticleController extends BaseController
         $container = $builder->build();
 
         $interactor = $container->get(PostInteractor::class);
-        $vm = $interactor->interact();
+        $vm = $interactor->interact($vars);
 
         $this->render($vm, 'backyardArticle', 'post');
     }

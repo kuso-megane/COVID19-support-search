@@ -14,7 +14,7 @@ class Presenter
      *      'inSuccess' => int
      * ]
      */
-    public function present(bool $isSuccess): int
+    public function present(bool $isSuccess): array
     {
         if ($isSuccess === TRUE) {
             http_response_code(201);
