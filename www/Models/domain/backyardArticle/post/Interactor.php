@@ -7,6 +7,8 @@ use domain\backyardArticle\post\Validator\Validator;
 use domain\Exception\ValidationFailException;
 use domain\components\imgUpload\Interactor as ImgUploadInteractor;
 use myapp\config\AppConfig;
+use PDO;
+use PDOException;
 
 class Interactor
 {
@@ -23,7 +25,7 @@ class Interactor
     /**
      * @param array $vars
      * 
-     * @return array
+     * @return array|int
      * refer to Presenter
      */
     public function interact(array $vars)
@@ -59,11 +61,20 @@ class Interactor
             $newThumbnailName = AppConfig::DEFAULT_IMG;
         }
 
-        $isUploadSucceeded = (is_string($newThumbnailName) === TRUE)? TRUE : FALSE;
+        var_dump($newThumbnailName);
+        
+        if (is_string($newThumbnailName) === FALSE) {
+            return (new Presenter)->present(FALSE, '画像アップロードに失敗しました');
+        }
 
-        $isPostSucceeded = $this->postArticleRepository->postArticle($artcl_id, $title, $newThumbnailName, $content, $c_id);
-        $isSuccess = $isUploadSucceeded && $isPostSucceeded;
+        try {
+            $this->postArticleRepository->postArticle($artcl_id, $title, $newThumbnailName, $content, $c_id);
+        }
+        catch (PDOException $e) {
+            return (new Presenter)->present(FALSE, $e->getMessage());
+        }
+        
 
-        return (new Presenter)->present($isSuccess);
+        return (new Presenter)->present(TRUE, '作成・更新に成功しました。');
     }
 }

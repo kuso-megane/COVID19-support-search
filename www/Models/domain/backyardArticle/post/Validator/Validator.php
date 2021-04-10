@@ -25,14 +25,15 @@ class Validator
             $artcl_id = NULL;
         }
 
-        if ($artcl_id <= 0) {
+        if (!($artcl_id === NULL || $artcl_id > 0)) {
             throw new ValidationFailException('予想外の記事が指定されています。');
         }
 
         $post = SuperGlobalVars::getPost();
 
         $title = $post['title'];
-        if (!($title > 0 && $title <= 50)) {
+        $lenTitle = strlen($title);
+        if (!($lenTitle > 0 && $lenTitle <= 50)) {
             throw new ValidationFailException("タイトルの文字数が不正です。");
         }
 

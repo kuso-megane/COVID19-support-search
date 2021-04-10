@@ -50,6 +50,11 @@ class BackyardArticleController extends BaseController
         $interactor = $container->get(PostInteractor::class);
         $vm = $interactor->interact($vars);
 
-        $this->render($vm, 'backyardArticle', 'post');
+        if ($vm == AppConfig::INVALID_PARAMS) {
+            return FALSE;
+        }
+        else {
+            $this->render($vm, 'backyardArticle', 'post');
+        }     
     }
 }

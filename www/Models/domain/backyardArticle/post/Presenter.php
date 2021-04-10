@@ -9,25 +9,24 @@ class Presenter
 {
     /**
      * @param bool $isSuccess
+     * @param string $message
      * 
      * @return array [
      *      'inSuccess' => int
      * ]
      */
-    public function present(bool $isSuccess): array
+    public function present(bool $isSuccess, string $message): array
     {
         if ($isSuccess === TRUE) {
             http_response_code(201);
-            return [
-                'isSuccess' => AppConfig::POST_SUCCESS
-            ];
+            $isSuccess = AppConfig::POST_SUCCESS;
         }
         else {
             http_response_code(403);
-            return [
-                'isSuccess' => AppConfig::POST_FAILURE
-            ];
+            $isSuccess = AppConfig::POST_FAILURE;
         }
+
+        return compact('isSuccess', 'message');
     }
 
 

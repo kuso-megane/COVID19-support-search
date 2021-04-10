@@ -142,6 +142,7 @@ implements
             }
         }
         catch (PDOException $e) {
+            throw $e;
             return FALSE;
         }
 
