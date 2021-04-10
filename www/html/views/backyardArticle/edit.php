@@ -57,8 +57,11 @@ use myapp\config\ViewsConfig;
             <p>
                 <input id="newThumbnail-uploader" type="file" name="thumbnail" accept="image/*" class="hidden">
             </p>
+
+            <p id="thumbnail-invalid-note" class="invalid-note">
+                新しいサムネがアップロードされていません。
+            </p>
                     
-            
             <div>
                 本文:
                 <div id="content-reset-button" class=" buttons">本文を元に戻す</div>
@@ -83,7 +86,6 @@ use myapp\config\ViewsConfig;
                 }
                 else {
                     uploader.classList.add("hidden");
-                    uploader.value = '';
                 }
             }
 
@@ -158,7 +160,13 @@ use myapp\config\ViewsConfig;
             const submitButton = document.getElementById("submit-button");
             const titleInput = document.getElementById("new-title");
             const titleInvalidNote = document.getElementById("title-invalid-note");
+            
+            const isThumbnailUploaded = document.getElementById("is_thumbnail_uploaded");
+            const newThumbnailUploader = document.getElementById("newThumbnail-uploader");
+            const thumbnailInvalidNote = document.getElementById("thumbnail-invalid-note");
+
             const generalInvalidNote = document.getElementById("general-invalid-note");
+            
             
             const initSubmitButton = (e) => {
                 generalInvalidNote.classList.remove("show");
@@ -185,12 +193,32 @@ use myapp\config\ViewsConfig;
                 }
             }
 
+            const validateThumbnail = (e) => {
+                if (isThumbnailUploaded.checked == true) {
+                    if (newThumbnailUploader.files.length == 0) {
+                        thumbnailInvalidNote.classList.add("show");
+                        disableSubmitButton();
+                    }
+                    else {
+                        thumbnailInvalidNote.classList.remove("show");
+                        initSubmitButton();
+                    }
+                }
+                else {
+                    thumbnailInvalidNote.classList.remove("show");
+                    initSubmitButton();
+                }    
+            }
+
             
             const validate = (e) => {
                 validateTitle(); 
+                validateThumbnail();
             } 
 
             titleInput.addEventListener("keyup", validateTitle);
+            isThumbnailUploaded.addEventListener("change", validateThumbnail);
+            newThumbnailUploader.addEventListener("change", validateThumbnail);
             submitButton.addEventListener("mouseover", validate);
         </script>
 
