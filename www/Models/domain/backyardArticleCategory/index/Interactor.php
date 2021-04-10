@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\backyardArticleCategory;
+namespace domain\backyardArticleCategory\index;
 
 use domain\backyardArticleCategory\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 

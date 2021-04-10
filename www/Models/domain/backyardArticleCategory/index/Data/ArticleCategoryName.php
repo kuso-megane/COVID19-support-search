@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\backyardArticleCategory\Data;
+namespace domain\backyardArticleCategory\index\Data;
 
 class InputData
 {
