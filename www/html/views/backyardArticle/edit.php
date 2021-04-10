@@ -1,7 +1,6 @@
 <?php
 
 use myapp\config\ViewsConfig;
-
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +18,7 @@ use myapp\config\ViewsConfig;
                 <p id="title-invalid-note" class="invalid-note">
                     タイトルは1文字以上50文字以内にしてください。
                 </p>
-                <input id="new-title" type="text" name="title" value="<?php echo $oldArticleContent['title']; ?>" placeholder="タイトルを入力" size="70">
+                <input id="new-title" type="text" name="title" value="<?php echo htmlspecialchars($oldArticleContent['title'], ENT_QUOTES); ?>" placeholder="タイトルを入力" size="70">
                 <div id="title-reset-button" class="buttons">タイトルを元に戻す</div>
             </div>
             <div>
@@ -27,7 +26,7 @@ use myapp\config\ViewsConfig;
                 <select id="new-category" name="c_id">
                     <?php foreach($articleCategoryNames as $articleCategoryName): ?>
                         <option value="<?php echo $articleCategoryName['id']; ?>" <?php if ($articleCategoryName['id'] === $oldArticleContent['id']) {echo 'selected';} ?>>
-                            <?php echo $articleCategoryName['name']; ?>
+                            <?php echo htmlspecialchars($articleCategoryName['name'], ENT_QUOTES); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
@@ -63,8 +62,8 @@ use myapp\config\ViewsConfig;
             <div>
                 本文:
                 <div id="content-reset-button" class=" buttons">本文を元に戻す</div>
-                <textarea id="editor" name="content" id="" cols="50" rows="10">
-                    <?php echo $oldArticleContent['content']; ?>
+                <textarea id="editor" name="content" cols="20" rows="8">
+                    <?php echo ($oldArticleContent['content'] != NULL) ? htmlspecialchars($oldArticleContent['content'], ENT_QUOTES) : ''; ?>
                 </textarea>
             </div>
             <button id="submit-button" class="buttons">投稿</button>
@@ -126,16 +125,20 @@ use myapp\config\ViewsConfig;
                 }  
             }
 
+            const rawResetEditor = (e) => {
+                const oldContent =
+                `<?php 
+                    $oldArticleContent['content'] = str_replace("\\", "\\\\", $oldArticleContent['content']);
+                    echo str_replace("`", "\`", $oldArticleContent['content']); 
+                ?>`;
+                const editor = document.getElementById("editor");
+                
+                simplemde.value(oldContent);
+            }
+
             const resetEditor = (e) => {
                 if (window.confirm("本文を元に戻します。")) {
-                    const oldContent =
-                    `<?php 
-                        $oldArticleContent['content'] = str_replace("\\", "\\\\", $oldArticleContent['content']);
-                        echo str_replace("`", "\`", $oldArticleContent['content']); 
-                    ?>`;
-                    const editor = document.getElementById("editor");
-                    
-                    simplemde.value(oldContent);   
+                    rawResetEditor();
                 }
                 else {
                     return;
@@ -147,6 +150,7 @@ use myapp\config\ViewsConfig;
             document.getElementById("title-reset-button").addEventListener("click", resetTitle);
             document.getElementById("category-reset-button").addEventListener("click", resetCategory);
             document.getElementById("content-reset-button").addEventListener("click", resetEditor);
+            window.addEventListener("DOMContentLoaded", rawResetEditor);
         </script>
 
         <!--formのvalidation-->
