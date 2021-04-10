@@ -8,6 +8,7 @@ use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRe
 use domain\backyardArticle\edit\RepositoryPort\OldArticleContentRepositoryPort;
 use domain\backyardArticle\post\RepositoryPort\PostArticleRepositoryPort;
 use domain\backyardArticleCategory\edit\RepositoryPort\ArticleCategoryRepositoryPort;
+use domain\backyardArticleCategory\post\RepositoryPort\PostArticleCategoryRepositoryPort;
 use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
@@ -35,6 +36,7 @@ return [
     ArticleCategoryListRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
     ArticleCategoryNamesRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
     ArticleCategoryRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
+    PostArticleCategoryRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
 
 
     SearchedAreaNameRepositoryPort::class => \DI\create(AreaListRepository::class)

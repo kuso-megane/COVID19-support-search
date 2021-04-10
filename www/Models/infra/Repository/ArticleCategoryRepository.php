@@ -6,15 +6,18 @@ use domain\article\_list\Data\ArticleCategory as ArticleList_ArticleCategory;
 use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
 use domain\backyardArticleCategory\edit\Data\ArticleCategory as BYArticleCategoryEdit_ArticleCategory;
 use domain\backyardArticleCategory\edit\RepositoryPort\ArticleCategoryRepositoryPort;
+use domain\backyardArticleCategory\post\RepositoryPort\PostArticleCategoryRepositoryPort;
 use domain\components\articleCategoryNames\Data\ArticleCategoryName;
 use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use infra\database\src\ArticleCategoryTable;
+use PDOException;
 
 class ArticleCategoryRepository
 implements
     ArticleCategoryListRepositoryPort,
     ArticleCategoryNamesRepositoryPort,
-    ArticleCategoryRepositoryPort
+    ArticleCategoryRepositoryPort,
+    PostArticleCategoryRepositoryPort
 {
     private $table;
     
@@ -65,5 +68,27 @@ implements
             $record['id'],
             $record['name']
         );
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function postArticleCategory(?int $id, string $name): bool
+    {
+        try {
+            if ($id != NULL) {
+                $this->table->update($id, $name);
+            }
+            else {
+                $this->table->create($name);
+            }
+        }
+        catch (PDOException $e) {
+            return FALSE;
+        }
+
+        return TRUE;
+        
     }
 }

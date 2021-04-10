@@ -43,4 +43,34 @@ class ArticleCategoryTable
     {
         return  $this->dbh->select('*', self::TABLENAME, 'id = :id', [], [':id' => $id])[0];  
     }
+
+
+    /**
+     * @param string $name
+     * 
+     * if something goes wrong, this throws PDOException
+     */
+    public function create(string $name)
+    {
+        $columns = '0, :name';
+        $boundColumns = [':name' => $name];
+
+        $this->dbh->insert(self::TABLENAME, $columns, $boundColumns);
+    }
+
+
+    /**
+     * @param int $id
+     * @param string $name
+     * 
+     * if something goes wrong, this throws PDOException
+     */
+    public function update(int $id, string $name)
+    {
+        $columns = 'name = :name';
+        $condition = 'id = :id';
+        $boundValues = [':id' => $id, ':name' => $name];
+
+        $this->dbh->update(self::TABLENAME, $columns, $condition, $boundValues);
+    }
 }

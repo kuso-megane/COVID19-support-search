@@ -65,6 +65,38 @@ class ArticleCategoryTableTest extends TestCase
     }
 
 
+    public function testCreate()
+    {
+        $newId = count(self::SAMPLE_DATAS) + 1;
+        $newName = 'new name';
+
+        $this->table->create($newName);
+
+        $expected = [
+            'id' => $newId,
+            'name' => $newName
+        ];
+        $this->assertSame($expected,
+            $this->dbh->select('*', self::TABLENAME, "id = {$newId}")[0]);
+    }
+
+
+    public function testUpdate()
+    {
+        $id = 1;
+        $newName = 'new name';
+
+        $this->table->update($id, $newName);
+
+        $expected = [
+            'id' => $id,
+            'name' => $newName
+        ];
+        $this->assertSame($expected,
+            $this->dbh->select('*', self::TABLENAME, "id = {$id}")[0]);
+    }
+
+
     public function providerForFindById():array
     {
         return [
