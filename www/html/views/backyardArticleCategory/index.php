@@ -1,7 +1,6 @@
 <?php
 
 use myapp\config\ViewsConfig;
-var_dump($articleCategoryNames[0]['name']);
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +8,7 @@ var_dump($articleCategoryNames[0]['name']);
     <head>
         <title>コラムカテゴリ編集 -管理者メニュー</title>
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'backyardArticleCategory/index.css'; ?>">
     </head>
     <body>
         <h2>コラム編集</h2>

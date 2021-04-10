@@ -13,3 +13,5 @@ sass subContents/adminIntro.scss ${targetPath}subContents/adminIntro.css
 
 sass backyardArticle/index.scss ${targetPath}backyardArticle/index.css
 sass backyardArticle/edit.scss ${targetPath}backyardArticle/edit.css
+
+sass backyardArticleCategory/index.scss ${targetPath}backyardArticleCategory/index.css
