@@ -12,7 +12,7 @@ use myapp\config\ViewsConfig;
     </head>
     <body>
         <h2>コラム編集</h2>
-        <form name="articleForm" action="<?php echo "/backyard/article/post/". $oldArticleContent['id']; ?>" method="post">
+        <form name="articleForm" action="<?php echo "/backyard/article/post/". $oldArticleContent['id']; ?>" method="post" enctype="multipart/form-data">
             <div>
                 タイトル(50文字以内):<br>
                 <p id="title-invalid-note" class="invalid-note">
