@@ -88,9 +88,9 @@
 
         &--logo {
             
-            $size: 3rem;
+            $size: 4rem;
             height: $size;
-            width: $size * 4;
+            width: $size * 3.2;
         }
     }
 
@@ -100,6 +100,7 @@
             margin-top: 1rem;
             font-size: 1.1rem;
             cursor: pointer;
+            font-weight: bold;
 
             &--content {
                 $alpha: 0.9; //背景の透明度

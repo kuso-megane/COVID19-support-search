@@ -252,13 +252,14 @@ main {
   margin-top: 0.5rem;
 }
 #title--left--logo {
-  height: 3rem;
-  width: 12rem;
+  height: 4rem;
+  width: 12.8rem;
 }
 #title--right--menu {
   margin-top: 1rem;
   font-size: 1.1rem;
   cursor: pointer;
+  font-weight: bold;
 }
 #title--right--menu--content {
   width: 18rem;
