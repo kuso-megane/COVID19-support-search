@@ -240,7 +240,6 @@ main {
   background-color: white;
   color: black;
   padding-top: 1rem;
-  padding-bottom: 0.5rem;
 }
 #title--left {
   display: inline-flex;
@@ -252,8 +251,8 @@ main {
   margin-top: 0.5rem;
 }
 #title--left--logo {
-  height: 4rem;
-  width: 12.8rem;
+  height: 5rem;
+  width: 15rem;
 }
 #title--right--menu {
   margin-top: 1rem;
