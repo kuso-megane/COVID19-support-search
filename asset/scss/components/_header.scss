@@ -72,7 +72,6 @@
     background-color: white;  
     color:black;
     padding-top: 1rem;
-    padding-bottom: 0.5rem;
 
     &--left {
         display: inline-flex;
@@ -88,9 +87,9 @@
 
         &--logo {
             
-            $size: 4rem;
+            $size: 5rem;
             height: $size;
-            width: $size * 3.2;
+            width: $size * 3;
         }
     }
 
