@@ -318,8 +318,7 @@ main {
 #article--content a:hover, .editor-preview a:hover {
   text-decoration: underline;
 }
-#article--content h1, #article--content h2, #article--content h3, #article--content h4, .editor-preview h1, .editor-preview h2, .editor-preview h3, .editor-preview h4 {
-  font-size: 1.3rem;
+#article--content h1, #article--content h2, #article--content h3, #article--content h4, #article--content h5, .editor-preview h1, .editor-preview h2, .editor-preview h3, .editor-preview h4, .editor-preview h5 {
   border-bottom: 2px solid #ddd;
   border-left: 2px solid #009900;
   padding: 5px;
