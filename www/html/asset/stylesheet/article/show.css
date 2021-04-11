@@ -331,9 +331,20 @@ main {
   display: inline-block;
   color: #444444;
   background-color: #EEEEEE;
+  margin-top: 2rem;
 }
 #article--content {
   margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+#article .link-to-articleList {
+  font-size: 0.8rem;
+}
+#article .link-to-articleList p {
+  margin-block-start: 0;
+}
+#article .link-to-articleList p > a {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=show.css.map */
