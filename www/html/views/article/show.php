@@ -24,7 +24,7 @@ use myapp\config\ViewsConfig;
                         <p><a href="/article/list"><i class="fas fa-book-open"></i>コラム一覧へ戻る</a></p>
                     </div>
                     <div id="article--title">
-                        <h2 class="block-end0 block-start0"><?php echo $articleContent['title']; ?></h3>
+                        <h3 class="block-end0 block-start0"><?php echo $articleContent['title']; ?></h3>
                     </div>
                     <div id="article--content"></div>
                     <div class="link-to-articleList">
