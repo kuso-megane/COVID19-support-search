@@ -1,33 +1,27 @@
 <?php
 
-namespace domain\backyardArticle\post;
-
+namespace domain\backyardArticleCategory\edit;
 
 use myapp\config\AppConfig;
+use domain\backyardArticleCategory\edit\Data\ArticleCategory;
 
 class Presenter
 {
     /**
-     * @param bool $isSuccess
-     * @param string $message
+     * @param ArticleCategory $articleCategory
      * 
      * @return array [
-     *      'inSuccess' => bool,
-     *      'message' => string
+     *      'articleCategory' => [
+     *          'id' => int,
+     *          'name' => string
+     *      ] or empty array
      * ]
      */
-    public function present(bool $isSuccess, string $message = ''): array
+    public function present(?ArticleCategory $articleCategory): array
     {
-        if ($isSuccess === TRUE) {
-            http_response_code(201);
-            
-        }
-        else {
-            http_response_code(403);
-            
-        }
+        $articleCategory = ($articleCategory != NULL) ? $articleCategory->toArray() : [];
 
-        return compact('isSuccess', 'message');
+        return compact('articleCategory');
     }
 
 

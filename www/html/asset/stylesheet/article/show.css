@@ -240,7 +240,6 @@ main {
   background-color: white;
   color: black;
   padding-top: 1rem;
-  padding-bottom: 0.5rem;
 }
 #title--left {
   display: inline-flex;
@@ -252,8 +251,8 @@ main {
   margin-top: 0.5rem;
 }
 #title--left--logo {
-  height: 4rem;
-  width: 12.8rem;
+  height: 5rem;
+  width: 15rem;
 }
 #title--right--menu {
   margin-top: 1rem;
@@ -320,7 +319,7 @@ main {
   text-decoration: underline;
 }
 #article--content h1, #article--content h2, #article--content h3, #article--content h4, .editor-preview h1, .editor-preview h2, .editor-preview h3, .editor-preview h4 {
-  font-size: 1rem;
+  font-size: 1.3rem;
   border-bottom: 1px solid #ddd;
 }
 #article--content li, .editor-preview li {
@@ -332,9 +331,20 @@ main {
   color: #444444;
   background-color: #EEEEEE;
   font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  margin-top: 2rem;
 }
 #article--content {
   margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+#article .link-to-articleList {
+  font-size: 0.8rem;
+}
+#article .link-to-articleList p {
+  margin-block-start: 0;
+}
+#article .link-to-articleList p > a {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=show.css.map */

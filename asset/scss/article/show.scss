@@ -11,10 +11,25 @@
         color: vars.$articleColor;
         background-color: vars.$articleBGColor;
         font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+        margin-top: 2rem;
     }
 
     &--content {
         margin-top: 4rem;
+        margin-bottom: 4rem;
     }
 
+    .link-to-articleList {
+        font-size: 0.8rem;
+    
+        p {
+            margin-block-start: 0;
+        }
+    
+        p > a {
+            text-decoration: underline;
+        }
+    }
 }
+
+

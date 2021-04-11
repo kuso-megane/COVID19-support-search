@@ -2,16 +2,22 @@
 
 namespace infra\Repository;
 
-use domain\article\_list\Data\ArticleCategory;
+use domain\article\_list\Data\ArticleCategory as ArticleList_ArticleCategory;
 use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
+use domain\backyardArticleCategory\edit\Data\ArticleCategory as BYArticleCategoryEdit_ArticleCategory;
+use domain\backyardArticleCategory\edit\RepositoryPort\ArticleCategoryRepositoryPort;
+use domain\backyardArticleCategory\post\RepositoryPort\PostArticleCategoryRepositoryPort;
 use domain\components\articleCategoryNames\Data\ArticleCategoryName;
 use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use infra\database\src\ArticleCategoryTable;
+use PDOException;
 
 class ArticleCategoryRepository
 implements
     ArticleCategoryListRepositoryPort,
-    ArticleCategoryNamesRepositoryPort
+    ArticleCategoryNamesRepositoryPort,
+    ArticleCategoryRepositoryPort,
+    PostArticleCategoryRepositoryPort
 {
     private $table;
     
@@ -29,7 +35,7 @@ implements
         $categories = $this->table->findAll();
 
         foreach ($categories as &$category) {
-            $category = new ArticleCategory($category['id'], $category['name']);
+            $category = new ArticleList_ArticleCategory($category['id'], $category['name']);
         }
 
         return $categories;
@@ -48,5 +54,41 @@ implements
         }
 
         return $records;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getArticleCategory(int $id): ?BYArticleCategoryEdit_ArticleCategory
+    {
+        $record = $this->table->findById($id);
+
+        return new BYArticleCategoryEdit_ArticleCategory(
+            $record['id'],
+            $record['name']
+        );
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function postArticleCategory(?int $id, string $name): bool
+    {
+        try {
+            if ($id != NULL) {
+                $this->table->update($id, $name);
+            }
+            else {
+                $this->table->create($name);
+            }
+        }
+        catch (PDOException $e) {
+            return FALSE;
+        }
+
+        return TRUE;
+        
     }
 }

@@ -16,7 +16,7 @@ use myapp\config\ViewsConfig;
     <body>
         <h2>コラム編集</h2>
         <p><a href="/backyard/article/edit">新規作成</a></p>
-        <p><a href="/backyard/articleCategory/index">カテゴリ編集</a></p>
+        <p><a href="/backyard/articleCategory/index">カテゴリの追加・編集</a></p>
         <table>
             <thead>
                 <tr>

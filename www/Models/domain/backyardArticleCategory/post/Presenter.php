@@ -1,33 +1,29 @@
 <?php
 
-namespace domain\backyardArticle\post;
-
+namespace domain\backyardArticleCategory\post;
 
 use myapp\config\AppConfig;
 
 class Presenter
 {
     /**
-     * @param bool $isSuccess
-     * @param string $message
+     * @param bool $isPostSucceeded
      * 
      * @return array [
-     *      'inSuccess' => bool,
-     *      'message' => string
+     *      'isSucceeded' => bool
      * ]
      */
-    public function present(bool $isSuccess, string $message = ''): array
+    public function present(bool $isSucceeded)
     {
-        if ($isSuccess === TRUE) {
+        if ($isSucceeded === TRUE) {
             http_response_code(201);
             
         }
         else {
             http_response_code(403);
-            
         }
 
-        return compact('isSuccess', 'message');
+        return compact('isSucceeded');
     }
 
 

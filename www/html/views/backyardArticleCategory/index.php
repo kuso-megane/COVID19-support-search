@@ -11,7 +11,7 @@ use myapp\config\ViewsConfig;
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'backyardArticleCategory/index.css'; ?>">
     </head>
     <body>
-        <h2>コラム編集</h2>
+        <h2>コラムカテゴリ編集</h2>
         <p><a href="/backyard/articleCategory/edit">新規作成</a></p>
         <table>
             <thead>
@@ -24,7 +24,7 @@ use myapp\config\ViewsConfig;
                 <?php foreach($articleCategoryNames as $articleCategory): ?>
                     <tr>
                         <td>
-                            <a href="<?php echo '/backyard/article/category/edit/'. $articleCategory['id']; ?>">編集</a>
+                            <a href="<?php echo '/backyard/articleCategory/edit/'. $articleCategory['id']; ?>">編集</a>
                         </td>
                         <td>
                             <?php echo $articleCategory['name']; ?>
