@@ -12,7 +12,7 @@ class AppConfig
     const DEFAULT_IMG = 'default.jpg';
 
     const ZENKOKU_ID = 1;
-    const GENERAL_C_ID = 1;
+    const GENERAL_C_ID = 1; //ArticleCategoryテーブルの「支援一般」のid
     
 
     //domain層が例外、エラー発生時に後続処理を中断し、この値を返す
