@@ -75,7 +75,7 @@ use myapp\config\ViewsConfig;
                     <div id="howto" class="main--double--right">
                         <p class="subTitle bold block-start0">&lt;使い方&gt;</p>
                         <div id="howto--main">
-                            <li>まずは、検索ボックスから、困っていること、地域、都道府県をお選びください。</li>
+                            <li>まずは、検索ボックスから、お困りごと、地域、都道府県をお選びください。</li>
                             <li>日本国籍をお持ちでない方は、「国籍不問の団体のみ表示」にチェックを入れることをおすすめします。</li>
                             <li>「この条件で検索」を押していただくと、検索結果とおすすめコラム(お役立ち情報)が表示されます。</li>
                             <li>検索結果ページでは、公的支援と民間支援をタブで切り替えることができます。</li>
