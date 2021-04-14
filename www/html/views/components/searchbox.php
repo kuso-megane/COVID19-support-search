@@ -13,7 +13,7 @@
     <div id="search-box--main">
 
         <div class="search-items">
-            <p><span class="bold">困っていること:</span></p>
+            <p><span class="bold">お困りごと:</span></p>
             <select name="trouble_id" id="trouble">
 
                 <?php foreach($troubleNameList as $troubleName): ?>
