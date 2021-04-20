@@ -34,10 +34,6 @@ $topFontSize: 0.75rem;
 #introduce {
     margin-top: 0;
 
-    .keiko {
-        background: linear-gradient(transparent 70%, vars.$lightColor 30%);
-    }
-
 
     &--subTitle {
         font-size: $topFontSize;
