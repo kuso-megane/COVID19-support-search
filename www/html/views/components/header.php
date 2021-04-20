@@ -7,8 +7,9 @@
     <div id="title">
 
         <div id="title--left">
-            
-            <img id="title--left--logo" src="<?php echo ViewsConfig::IMG_URL. 'titleLogo/production.jpg'; ?>" alt="タイトルロゴ">
+            <a href="/index">
+                <img id="title--left--logo" src="<?php echo ViewsConfig::IMG_URL. 'titleLogo/production.jpg'; ?>" alt="タイトルロゴ">
+            </a>
         </div>
         
 
