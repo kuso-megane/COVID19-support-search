@@ -13,3 +13,5 @@
 #sample data
 /mysql/DB/sample
 
+#cssファイル
+/www/html/asset/stylesheet/
