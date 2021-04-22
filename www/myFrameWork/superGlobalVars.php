@@ -34,4 +34,23 @@ class SuperGlobalVars
     {
         return $_FILES;
     }
+
+
+    public function getSession():array
+    {
+        return $_SESSION;
+    }
+
+    public function setSession(array $vars)
+    {
+        foreach($vars as $key => $value) {
+            $_SESSION[$key] = $value;
+        }
+    }
+
+
+    public function unsetSession(string $key)
+    {
+        unset($_SESSION[$key]);
+    }
 }
