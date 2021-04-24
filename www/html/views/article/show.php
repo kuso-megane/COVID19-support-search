@@ -36,7 +36,7 @@ use myapp\config\ViewsConfig;
             
         </main>
 
-        <!--escape-->
+        <!--記事内容のescapeおよび導入-->
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.7/purify.js"></script>
         <script>
