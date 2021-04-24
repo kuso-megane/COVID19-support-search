@@ -3,6 +3,7 @@
 namespace myapp\Controllers;
 
 use myapp\myFrameWork\Bases\BaseController;
+use domain\adminLogin\authenticate\Interactor as AuthInteractor;
 
 class AdminLoginController extends BaseController
 {
@@ -18,6 +19,6 @@ class AdminLoginController extends BaseController
 
     public function authenticate()
     {
-        
+        (new AuthInteractor)->interact();
     }
 }

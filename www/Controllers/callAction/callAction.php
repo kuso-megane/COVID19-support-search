@@ -102,6 +102,13 @@ function callAction (string $handler, ?array $vars = NULL)
 
         $controller = new AdminLoginController;
         $controller->loginPage();
+
+    }
+    elseif ($handler == 'adminLoginAuthenticate') {
+
+        $controller = new AdminLoginController;
+        $controller->authenticate();
+        
     }
 
     else {
