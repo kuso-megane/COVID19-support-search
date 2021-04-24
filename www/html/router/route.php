@@ -41,7 +41,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) u
     });
 
     $r->addGroup('/adminLogin', function(FastRoute\RouteCollector $r) {
-        $r->addRoute('GET', '/login', 'adminLoginLogin');
+        $r->addRoute('GET', '/loginPage', 'adminLoginLoginPage');
         $r->addRoute('POST', '/authenticate', 'adminLoginAuthenticate');
     });
 });

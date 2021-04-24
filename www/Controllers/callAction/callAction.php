@@ -98,10 +98,10 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller->post($vars);
         
     }
-    elseif($handler == 'adminLoginLogin') {
+    elseif($handler == 'adminLoginLoginPage') {
 
         $controller = new AdminLoginController;
-        $controller->login();
+        $controller->loginPage();
     }
 
     else {

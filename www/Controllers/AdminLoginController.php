@@ -3,7 +3,6 @@
 namespace myapp\Controllers;
 
 use myapp\myFrameWork\Bases\BaseController;
-use myapp\myFrameWork\SuperGlobalVars;
 
 class AdminLoginController extends BaseController
 {
@@ -11,14 +10,14 @@ class AdminLoginController extends BaseController
 
 
     
-    public function login(bool $isRetry = FALSE, string $redirectTo = '/backyard/index')
+    public function loginPage(bool $isRetry = FALSE, string $redirectTo = '/backyard/index')
     {
-        $this->render(compact('redirectTo', 'isRetry'), self::DIR, 'login');
+        $this->render(compact('redirectTo', 'isRetry'), self::DIR, 'loginPage');
     }
 
 
     public function authenticate()
     {
-
+        
     }
 }

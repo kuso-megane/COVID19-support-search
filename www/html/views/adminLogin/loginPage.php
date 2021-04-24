@@ -14,10 +14,10 @@
         <form id="loginForm" action="/adminLogin/authenticate" method="post">
             <div id="login-box">
                 <p>
-                    ID:<input type="text" minlength="1" maxlength="20" required>
+                    ID:<input type="text" name="adminLogin" minlength="1" maxlength="20" required>
                 </p>
                 <p>
-                    パスワード:<input type="password" minlength="1" maxlength="20" required>
+                    パスワード:<input type="password" name="password" minlength="1" maxlength="20" required>
                 </p>
                 <p id="invalid-note">IDまたはパスワードが入力されていません</p>
 
