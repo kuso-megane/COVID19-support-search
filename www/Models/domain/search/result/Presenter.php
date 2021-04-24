@@ -48,7 +48,7 @@ class Presenter
      *          'thumbnailName' => string
      *      ]
      * ]
-     *  +$searchedBox
+     *  +$searchedBoxData
      * 
      * Note that return['searchedSupportOrgs']['access'] is raw html
      */
