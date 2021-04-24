@@ -21,7 +21,7 @@
                 </p>
                 <p id="invalid-note">IDまたはパスワードが入力されていません</p>
 
-                <?php if ($isRetry === TRUE): ?>
+                <?php if ($isRetry === 'true'): ?>
                     <p>IDまたはパスワードが違います。</p>
                 <?php endif; ?>
                 

@@ -9,6 +9,9 @@ class AppConfig
     const MAXNUM_PER_PAGE = 10; // 検索結果1ページあたりの支援表示数 
     const MAXNUM_RECOMMENDED_ARTICLES = 3; // 検索結果1ページあたりのおすすめコラムの数
 
+    const MAXNUM_ADMIN_LOGIN_FAIL = 5; // この回数より多くログインに失敗すると、アカウントロック
+
+    //DB関連
     const DEFAULT_IMG = 'default.jpg';
 
     const ZENKOKU_ID = 1;
