@@ -24,8 +24,6 @@
                 <?php if ($isRetry === TRUE): ?>
                     <p>IDまたはパスワードが違います。</p>
                 <?php endif; ?>
-
-                <input type="hidden" name="redirectTo" value="<?php echo $redirectTo; ?>">
                 
                 <button id="submit-button">送信</button>      
             </div>

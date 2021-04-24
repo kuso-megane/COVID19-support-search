@@ -2,6 +2,7 @@
 
 namespace myapp\config;
 
+//DBとの接続
 class DBConfig
 {
     const DB_HOST = 'db';
