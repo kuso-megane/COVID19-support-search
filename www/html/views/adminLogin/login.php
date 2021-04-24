@@ -19,7 +19,12 @@
                 <p>
                     パスワード:<input type="password" minlength="1" maxlength="20" required>
                 </p>
-                <p id="invalid-note">idまたはパスワードが入力されていません</p>
+                <p id="invalid-note">IDまたはパスワードが入力されていません</p>
+
+                <?php if ($isRetry === TRUE): ?>
+                    <p>IDまたはパスワードが違います。</p>
+                <?php endif; ?>
+                
                 <button id="submit-button">送信</button>      
             </div>
         </form>

@@ -2,6 +2,7 @@
 
 // routerからcontrollerへ繋ぐ
 
+use myapp\Controllers\AdminLoginController;
 use myapp\Controllers\ArticleController;
 use myapp\controllers\SearchController;
 use myapp\controllers\BackyardArticleController as BYArticleController;
@@ -96,6 +97,11 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller = new BYArticleCategoryController;
         $controller->post($vars);
         
+    }
+    elseif($handler == 'adminLoginLogin') {
+
+        $controller = new AdminLoginController;
+        $controller->login();
     }
 
     else {

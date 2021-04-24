@@ -11,17 +11,9 @@ class AdminLoginController extends BaseController
 
 
     
-    public function login()
+    public function login(bool $isRetry = FALSE, string $redirectTo = '/backyard/index')
     {
-        $redirectTo = (new SuperGlobalVars)->getGet()['redirectTo'];
-        if ($redirectTo === NULL) {
-            $redirectTo = '/backyard/index';
-        }
-        else {
-            $redirectTo = rawurldecode($redirectTo);
-        }
-
-        $this->render(compact('redirectTo'), self::DIR, 'login');
+        $this->render(compact('redirectTo', 'isRetry'), self::DIR, 'login');
     }
 
 
