@@ -8,6 +8,7 @@ use domain\backyardArticle\edit\Interactor as EditInteractor;
 use domain\backyardArticle\post\Interactor as PostInteractor;
 use myapp\config\AppConfig;
 use myapp\Controllers\helper\Helper;
+use myapp\myFrameWork\SuperGlobalVars;
 
 class BackyardArticleController extends BaseController
 {
@@ -21,7 +22,8 @@ class BackyardArticleController extends BaseController
         $vm = $interactor->interact();
 
         if ($vm === AppConfig::NOT_LOGIN) {
-            (new Helper)->redirectToAdminLoginPage('/backyard/article/index');
+            $uri = SuperGlobalVars::getServer()['REQUEST_URI'];
+            (new Helper)->redirectToAdminLoginPage($uri);
         }
 
         $this->render($vm, 'backyardArticle', 'index');
@@ -41,7 +43,8 @@ class BackyardArticleController extends BaseController
             return FALSE;
         }
         elseif ($vm === AppConfig::NOT_LOGIN) {
-            (new Helper)->redirectToAdminLoginPage('/backyard/article/index'); //どこの編集か特定するの面倒臭いので、記事編集topへ
+            $uri = SuperGlobalVars::getServer()['REQUEST_URI'];
+            (new Helper)->redirectToAdminLoginPage($uri);
         }
         else {
             $this->render($vm, 'backyardArticle', 'edit');
