@@ -11,6 +11,7 @@ class Interactor
      * 
      * @return string token
      * 
+     * Note that you have to start session manually
      * 
      */
     public function generateTokenAndSetSession():string
@@ -18,7 +19,6 @@ class Interactor
         $byte = openssl_random_pseudo_bytes(self::TOKEN_LEN / 2); //bin2hex()で長さが2倍になるので、半分に
         $token = bin2hex($byte);
 
-        session_start();
         $_SESSION['csrfToken'] = $token;
 
         return $token;
@@ -28,10 +28,11 @@ class Interactor
     /**
      * return whether csrfToken is valid or not
      * @return bool
+     * 
+     * Note that you have to start session manually
      */
     public function validate(string $token)
     {
-        session_start();
         return ($token === $_SESSION['csrfToken']);
     }
 }

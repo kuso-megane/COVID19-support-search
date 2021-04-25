@@ -45,6 +45,7 @@ class Interactor
             return (new Presenter)->reportValidationFailure($e->getMessage());
         }
 
+        session_start();
         $csrfToken = (new CsrfValidator)->generateTokenAndSetSession();
 
         $artcl_id = $input['artcl_id'];

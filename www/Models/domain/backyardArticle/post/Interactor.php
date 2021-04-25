@@ -49,6 +49,7 @@ class Interactor
         $c_id = $input['c_id'];
         $csrfToken = $input['csrfToken'];
 
+        session_start();
         $isCsrfTokenValid = (new CsrfValidator)->validate($csrfToken);
         if (!$isCsrfTokenValid) {
             return (new Presenter)->reportInvalidAccess('不正なフォームからの送信です。');
