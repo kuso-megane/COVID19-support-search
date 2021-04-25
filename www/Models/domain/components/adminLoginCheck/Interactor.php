@@ -10,7 +10,7 @@ class Interactor
     public function interact():bool
     {
         session_start();
-        if (isset($_SESSION['username'])) {
+        if ($_SESSION['username'] === 'admin') {
             return TRUE;
         }
         else {
