@@ -58,7 +58,10 @@ class BackyardArticleController extends BaseController
         $interactor = $container->get(PostInteractor::class);
         $vm = $interactor->interact($vars);
 
-        if ($vm == AppConfig::INVALID_PARAMS) {
+        if ($vm === AppConfig::INVALID_PARAMS) {
+            return FALSE;
+        }
+        elseif($vm === AppConfig::INVALID_ACCESS) {
             return FALSE;
         }
         else {

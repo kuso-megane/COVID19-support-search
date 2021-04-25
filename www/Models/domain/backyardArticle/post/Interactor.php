@@ -7,6 +7,7 @@ use domain\backyardArticle\post\Validator\Validator;
 use domain\Exception\ValidationFailException;
 use domain\components\imgUpload\Interactor as ImgUploadInteractor;
 use myapp\config\AppConfig;
+use domain\components\csrfValidate\Interactor as CsrfValidator;
 
 
 class Interactor
@@ -36,6 +37,9 @@ class Interactor
             return (new Presenter)->reportValidationFailure($e->getMessage());
         }
 
+        
+
+
         $artcl_id = $input['artcl_id'];
         $title = $input['title'];
         $oldThumbnailName = $input['oldThumbnailName'];
@@ -43,7 +47,13 @@ class Interactor
         $newThumbnailFileInfo = $input['newThumbnailFileInfo'];
         $content = $input['content'];
         $c_id = $input['c_id'];
-        
+        $csrfToken = $input['csrfToken'];
+
+        $isCsrfTokenValid = (new CsrfValidator)->validate($csrfToken);
+        if (!$isCsrfTokenValid) {
+            return (new Presenter)->reportInvalidAccess('不正なフォームからの送信です。');
+        }
+
 
         if ($is_thumbnail_uploaded === TRUE) {
             try {

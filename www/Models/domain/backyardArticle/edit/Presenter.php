@@ -11,6 +11,7 @@ class Presenter
      * @param bool $isNew
      * @param OldArticleContent $oldArticleContent
      * @param ArticleCategoryName[] $articleCategoryNames
+     * @param string $csrfToken
      * 
      * @return array [
      *      'isNew' => bool,
@@ -23,15 +24,19 @@ class Presenter
      *      ] or empty array,
      *      'articleCategoryNames' => [
      *          ['id' => int, 'name' => string]
-     *      ]
+     *      ],
+     *      'csrfToken' => string
      * ]
      */
-    public function present(bool $isNew, ?OldArticleContent $oldArticleContent, array $articleCategoryNames): array
+    public function present(
+        bool $isNew, ?OldArticleContent $oldArticleContent,
+        array $articleCategoryNames, string $csrfToken
+    ): array
     {
         $oldArticleContent = ($oldArticleContent != NULL) ? $oldArticleContent->toArray() : [];
         $articleCategoryNames = $this->format($articleCategoryNames);
 
-        return compact(['isNew', 'oldArticleContent', 'articleCategoryNames']);
+        return compact(['isNew', 'oldArticleContent', 'articleCategoryNames', 'csrfToken']);
     }
 
 

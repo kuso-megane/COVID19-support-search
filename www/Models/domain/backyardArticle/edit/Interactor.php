@@ -9,6 +9,7 @@ use domain\backyardArticle\edit\Validator\Validator;
 use domain\Exception\ValidationFailException;
 use domain\components\adminLoginCheck\Interactor as LoginCheckInteractor;
 use myapp\config\AppConfig;
+use domain\components\csrfValidate\Interactor as CsrfValidator;
 
 class Interactor
 {
@@ -44,6 +45,8 @@ class Interactor
             return (new Presenter)->reportValidationFailure($e->getMessage());
         }
 
+        $csrfToken = (new CsrfValidator)->generateTokenAndSetSession();
+
         $artcl_id = $input['artcl_id'];
 
         if ($artcl_id != NULL) {
@@ -61,6 +64,6 @@ class Interactor
         
         $isNew = ($artcl_id != NULL) ? FALSE : TRUE;
 
-        return (new Presenter)->present($isNew, $oldArticleContent, $articleCategoryNames);
+        return (new Presenter)->present($isNew, $oldArticleContent, $articleCategoryNames, $csrfToken);
     }
 }

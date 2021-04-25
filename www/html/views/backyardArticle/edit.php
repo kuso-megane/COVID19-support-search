@@ -69,6 +69,9 @@ use myapp\config\ViewsConfig;
                     <?php echo ($oldArticleContent['content'] != NULL) ? htmlspecialchars($oldArticleContent['content'], ENT_QUOTES) : ''; ?>
                 </textarea>
             </div>
+
+            <input type="hidden" name="csrfToken" value="<?php echo $csrfToken; ?>">
+
             <button id="submit-button" class="buttons">投稿</button>
             <p id="general-invalid-note" class="invalid-note">
                 不正な入力があります。内容を見直してください。
