@@ -2,6 +2,12 @@ drop database if exists app;
 create database app;
 use app;
 
+drop TABLE if exists AdminLoginInfo;
+create TABLE AdminLoginInfo(
+    adminID varchar(20) NOT NULL UNIQUE,
+    pass varchar(50) NOT NULL
+);
+
 
 drop TABLE if exists ArticleCategory;
 create table ArticleCategory(
