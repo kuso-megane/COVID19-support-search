@@ -8,10 +8,8 @@ class Interactor
 {
 
     /**
-     * @return array [
-     *      'afterLogin' => string,
-     *      'isRetry' => ()'true' | ''
-     *  ]
+     * @return array 
+     * refer to Presenter
      */
     public function interact()
     {
@@ -20,8 +18,9 @@ class Interactor
 
         $afterLogin = rawurldecode((string) $get['afterLogin']);
         $isRetry = (string) $cookie['isRetry'];
+        $isLocked = (string) $cookie['isLocked'];
 
-        return compact('afterLogin', 'isRetry');
+        return (new Presenter)->present($afterLogin, $isRetry, $isLocked);
     }
     
 }

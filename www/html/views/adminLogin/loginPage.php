@@ -19,10 +19,17 @@
                 <p>
                     パスワード:<input type="password" name="password" minlength="1" maxlength="20" required>
                 </p>
+                <p id="lock-note">
+                    <?php echo AppConfig::MAXNUM_LOGIN_FAIL . '回失敗すると、' . (int)(AppConfig::ACCOUNT_LOCK_TIME / 60) . '分ロックされます。'; ?>
+                </p>
                 <p id="invalid-note">IDまたはパスワードが入力されていません</p>
 
-                <?php if ($isRetry === 'true'): ?>
+                <?php if ($isRetry != NULL): ?>
                     <p>IDまたはパスワードが違います。</p>
+                <?php endif; ?>
+
+                <?php if($isLocked != NULL): ?>
+                    <p>アカウントがロックされました。しばらく時間をおいてから入力してください。</p>
                 <?php endif; ?>
                 
                 <input type="hidden" name="afterLogin" value="<?php echo $afterLogin; ?>">
