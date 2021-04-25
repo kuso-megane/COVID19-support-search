@@ -23,7 +23,12 @@ class AdminLoginController extends BaseController
 
     public function authenticate()
     {
-        $vm = (new AuthInteractor)->interact();
+        $builder = new \DI\ContainerBuilder();
+        $builder->addDefinitions('/var/www/Models/diconfig.php');
+        $container = $builder->build();
+
+        $interactor = $container->get(AuthInteractor::class);
+        $vm = $interactor->interact();
 
         if ($vm['isSucceeded'] === TRUE) {
             (new Helper)->redirectTo($vm['afterLogin']);

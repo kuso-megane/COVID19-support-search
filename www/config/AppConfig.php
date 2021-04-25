@@ -9,12 +9,13 @@ class AppConfig
     const MAXNUM_PER_PAGE = 10; // 検索結果1ページあたりの支援表示数 
     const MAXNUM_RECOMMENDED_ARTICLES = 3; // 検索結果1ページあたりのおすすめコラムの数
 
-    const MAXNUM_ADMIN_LOGIN_FAIL = 5; // この回数より多くログインに失敗すると、アカウントロック
+    const MAXNUM_LOGIN_FAIL = 5; // この回数より多くログインに失敗すると、アカウントロック
+    const ACCOUNT_LOCK_TIME = 60 * 10; // アカウントロックの時間(秒)
 
-    //DB関連
+    // domainに関わる、DB関連の情報
     const DEFAULT_IMG = 'default.jpg';
 
-    const ZENKOKU_ID = 1;
+    const ZENKOKU_ID = 1; //areaテーブルの「全国」のid
     const GENERAL_C_ID = 1; //ArticleCategoryテーブルの「支援一般」のid
     
 
