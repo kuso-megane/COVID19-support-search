@@ -4,6 +4,8 @@ namespace domain\backyardArticle\index;
 
 use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use domain\backyardArticle\index\RepositoryPort\ArticleBYInfosRepositoryPort;
+use domain\components\adminLoginCheck\Interactor as LoginCheckInteractor;
+use myapp\config\AppConfig;
 
 class Interactor
 {
@@ -22,12 +24,21 @@ class Interactor
 
 
     /**
-     * @return array
+     * @return array|int
      * 
      * refer to Presenter
+     * 
+     * if not login, return AppConfig::NOT_LOGIN
      */
     public function interact()
     {
+        $isLogin = (new LoginCheckInteractor)->interact();
+
+        if ($isLogin === FALSE) {
+            return AppConfig::NOT_LOGIN;
+        }
+
+
         $articleBYInfos = $this->articleBYInfosRepository->getArticleBYInfos();
         $articleCategoryNames = $this->articleCategoryNamesRepository->getArticleCategoryNames();
 

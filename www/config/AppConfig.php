@@ -18,8 +18,13 @@ class AppConfig
     const GENERAL_C_ID = 1; //ArticleCategoryテーブルの「支援一般」のid
     
 
-    //domain層が例外、エラー発生時に後続処理を中断し、この値を返す
-    const INVALID_PARAMS = -1; 
+    // domainの返り値
+    const INVALID_PARAMS = -1; //domain層が例外、エラー発生時に後続処理を中断し、この値を返す
     
+    const NOT_LOGIN = -2; //ログインが必要な操作で、ログインしていない場合
+
+    // domainで使用
     const UPLOAD_IMG_PATH = '/var/www/html' . ViewsConfig::IMG_URL;
+
+    
 }

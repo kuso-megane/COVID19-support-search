@@ -4,6 +4,7 @@ namespace myapp\Controllers;
 
 use myapp\myFrameWork\Bases\BaseController;
 use domain\adminLogin\authenticate\Interactor as AuthInteractor;
+use myapp\Controllers\helper\Helper;
 use myapp\myFrameWork\SuperGlobalVars;
 
 class AdminLoginController extends BaseController
@@ -25,10 +26,10 @@ class AdminLoginController extends BaseController
         $vm = (new AuthInteractor)->interact();
 
         if ($vm['isSucceeded'] === TRUE) {
-            header('Location: ' . $vm['afterLogin']);
+            (new Helper)->redirectTo($vm['redirectTo']);
         }
         else {
-            header('Location: /adminLogin/loginPage');
+            (new Helper)->redirectToAdminLoginPage();
         }
     }
 }

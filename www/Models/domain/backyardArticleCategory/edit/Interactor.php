@@ -4,8 +4,9 @@ namespace domain\backyardArticleCategory\edit;
 
 use domain\backyardArticleCategory\edit\RepositoryPort\ArticleCategoryRepositoryPort;
 use domain\backyardArticleCategory\edit\Validator\Validator;
-
 use domain\Exception\ValidationFailException;
+use domain\components\adminLoginCheck\Interactor as LoginCheckInteractor;
+use myapp\config\AppConfig;
 
 class Interactor
 {
@@ -24,9 +25,16 @@ class Interactor
      * 
      * @return array|int
      * refer to Presenter
+     * 
+     * if not login, this returns, AppConfig::NOT_LOGIN
      */
     public function interact(array $vars)
     {
+        $isLogin = (new LoginCheckInteractor)->interact();
+        if ($isLogin === FALSE) {
+            return AppConfig::NOT_LOGIN;
+        }
+
         try {
             $input = (new Validator)->validate($vars)->toArray();
         }

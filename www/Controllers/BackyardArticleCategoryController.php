@@ -7,6 +7,7 @@ use domain\backyardArticleCategory\index\Interactor as IndexInteractor;
 use domain\backyardArticleCategory\edit\Interactor as EditInteractor;
 use domain\backyardArticleCategory\post\Interactor as PostInteractor;
 use myapp\config\AppConfig;
+use myapp\Controllers\helper\Helper;
 
 class BackyardArticleCategoryController extends BaseController
 {
@@ -20,7 +21,14 @@ class BackyardArticleCategoryController extends BaseController
 
         $interactor = $container->get(IndexInteractor::class);
         $vm = $interactor->interact();
-        $this->render($vm, self::DIR, 'index');
+
+        if ($vm === AppConfig::NOT_LOGIN) {
+            (new Helper)->redirectToAdminLoginPage();
+        }
+        else {
+            $this->render($vm, self::DIR, 'index');
+        }
+        
     }
 
 
@@ -35,6 +43,9 @@ class BackyardArticleCategoryController extends BaseController
 
         if ($vm === AppConfig::INVALID_PARAMS) {
             return FALSE;
+        }
+        elseif ($vm === AppConfig::NOT_LOGIN) {
+            (new Helper)->redirectToAdminLoginPage();
         }
         else {
             $this->render($vm, self::DIR, 'edit');
