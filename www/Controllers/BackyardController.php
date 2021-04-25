@@ -14,7 +14,7 @@ class BackyardController extends BaseController
         $vm = (new IndexInteractor)->interact();
 
         if ($vm === AppConfig::NOT_LOGIN) {
-            (new Helper)->redirectToAdminLoginPage();
+            (new Helper)->redirectToAdminLoginPage('/backyard/index');
         }
         else {
             $this->render([], 'backyard', 'index');

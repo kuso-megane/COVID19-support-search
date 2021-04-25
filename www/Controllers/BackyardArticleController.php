@@ -21,7 +21,7 @@ class BackyardArticleController extends BaseController
         $vm = $interactor->interact();
 
         if ($vm === AppConfig::NOT_LOGIN) {
-            (new Helper)->redirectToAdminLoginPage();
+            (new Helper)->redirectToAdminLoginPage('/backyard/article/index');
         }
 
         $this->render($vm, 'backyardArticle', 'index');
@@ -41,7 +41,7 @@ class BackyardArticleController extends BaseController
             return FALSE;
         }
         elseif ($vm === AppConfig::NOT_LOGIN) {
-            (new Helper)->redirectToAdminLoginPage();
+            (new Helper)->redirectToAdminLoginPage('/backyard/article/index'); //どこの編集か特定するの面倒臭いので、記事編集topへ
         }
         else {
             $this->render($vm, 'backyardArticle', 'edit');

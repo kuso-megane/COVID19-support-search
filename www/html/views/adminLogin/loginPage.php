@@ -25,6 +25,8 @@
                     <p>IDまたはパスワードが違います。</p>
                 <?php endif; ?>
                 
+                <input type="hidden" name="afterLogin" value="<?php echo $afterLogin; ?>">
+
                 <button id="submit-button">送信</button>      
             </div>
         </form>

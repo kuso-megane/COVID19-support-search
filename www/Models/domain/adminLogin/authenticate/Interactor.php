@@ -27,11 +27,10 @@ class Interactor
     public function interact()
     {
         $post = SuperGlobalVars::getPost();
-        $cookie = SuperGlobalVars::getCookie();
 
         $postedAdminID = (string) $post['adminID'];
         $postedPassword = (string) $post['password'];
-        $afterLogin = ($cookie['afterLogin'] != NULL) ? (string) $cookie['afterLogin'] : '/backyard/index';
+        $afterLogin = ($post['afterLogin'] != NULL) ? (string) $post['afterLogin'] : '/backyard/index';
 
         $adminID = AdminInfoConfig::ADMIN_ID;
         $password = AdminInfoConfig::ADMIN_PASSWORD;

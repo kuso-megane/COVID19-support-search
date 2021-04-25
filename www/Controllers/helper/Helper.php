@@ -12,9 +12,9 @@ class Helper
         header('Location: ' . $redirectTo);
     }
 
-    public function redirectToAdminLoginPage()
+    public function redirectToAdminLoginPage(string $afterLogin)
     {
-        $this->redirectTo(self::ADMIN_LOGIN_PAGE_URL);
+        $this->redirectTo(self::ADMIN_LOGIN_PAGE_URL. '?afterLogin=' . $afterLogin);
     }
 
     
