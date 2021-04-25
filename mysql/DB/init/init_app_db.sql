@@ -4,6 +4,7 @@ use app;
 
 drop TABLE if exists AdminLoginInfo;
 create table AdminLoginInfo(
+    id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     adminID varchar(20) NOT NULL UNIQUE,
     pass varchar(255) NOT NULL,
     failCount TINYINT UNSIGNED DEFAULT 0,

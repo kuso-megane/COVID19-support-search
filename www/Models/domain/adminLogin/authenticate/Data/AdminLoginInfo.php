@@ -7,7 +7,7 @@ class AdminLoginInfo
 {
     private $attr;
 
-
+    // $lockedTime = 'H:i:s' formatted DateTime string
     public function __construct(string $adminID, string $pass, int $failCount, string $lockedTime)
     {
         $this->attr = compact('adminID', 'pass', 'failCount', 'lockedTime');
