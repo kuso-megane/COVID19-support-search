@@ -69,6 +69,9 @@ class BackyardArticleCategoryController extends BaseController
         if ($vm === AppConfig::INVALID_PARAMS) {
             return FALSE;
         }
+        elseif ($vm === AppConfig::INVALID_ACCESS) {
+            return FALSE;
+        }
         else {
             $this->render($vm, self::DIR, 'post');
         }

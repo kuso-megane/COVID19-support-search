@@ -35,8 +35,10 @@ class Validator
             throw new ValidationFailException('カテゴリ名の文字数が不正です。');
         }
 
+        $csrfToken = $post['csrfToken'];
+
         try {
-            return new InputData($c_id, $name);
+            return new InputData($c_id, $name, $csrfToken);
         }
         catch (TypeError $e) {
             throw new ValidationFailException('不正なパラメータが渡されています。');

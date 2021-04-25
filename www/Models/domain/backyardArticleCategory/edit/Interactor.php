@@ -7,6 +7,7 @@ use domain\backyardArticleCategory\edit\Validator\Validator;
 use domain\Exception\ValidationFailException;
 use domain\components\adminLoginCheck\Interactor as LoginCheckInteractor;
 use myapp\config\AppConfig;
+use domain\components\csrfValidate\Interactor as CsrfValidator;
 
 class Interactor
 {
@@ -42,6 +43,8 @@ class Interactor
             return (new Presenter)->reportValidationFailure($e->getMessage());
         }
 
+        $csrfToken = (new CsrfValidator)->generateTokenAndSetSession();
+
         $c_id = $input['c_id'];
 
         if ($c_id != NULL) {
@@ -54,7 +57,7 @@ class Interactor
             $articleCategory = NULL;
         }
         
-        return (new Presenter)->present($articleCategory);
+        return (new Presenter)->present($articleCategory, $csrfToken);
     }
 
 }

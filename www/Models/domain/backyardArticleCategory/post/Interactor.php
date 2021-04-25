@@ -5,6 +5,7 @@ namespace domain\backyardArticleCategory\post;
 use domain\backyardArticleCategory\post\RepositoryPort\PostArticleCategoryRepositoryPort;
 use domain\backyardArticleCategory\post\Validator\Validator;
 use domain\Exception\ValidationFailException;
+use domain\components\csrfValidate\Interactor as CsrfValidator;
 
 class Interactor
 {
@@ -34,6 +35,12 @@ class Interactor
 
         $c_id = $input['c_id'];
         $name = $input['name'];
+        $csrfToken = $input['csrfToken'];
+
+        $isCsrfTokenValid = (new CsrfValidator)->validate($csrfToken);
+        if (!$isCsrfTokenValid) {
+            return (new Presenter)->reportInvalidAccess('不正なフォームからの送信です。');
+        }
 
         $isSucceeded = $this->postArticleCategoryRepository->postArticleCategory($c_id, $name);
 
