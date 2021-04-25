@@ -1,5 +1,6 @@
 <?php
 
+use domain\adminLogin\authenticate\RepositoryPort\AdminLoginInfoRepositoryPort;
 use domain\article\_list\RepositoryPort\AllArticleInfosRepositoryPort;
 use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
 use domain\article\show\RepositoryPort\ArticleContentRepositoryPort;
@@ -14,6 +15,7 @@ use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
 use domain\search\result\RepositoryPort\SearchItemsRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
+use infra\Repository\AdminLoginInfoRepository;
 use infra\Repository\AreaListRepository;
 use infra\Repository\ArticleCategoryRepository;
 use infra\Repository\ArticleRepository;
@@ -38,6 +40,7 @@ return [
     ArticleCategoryRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
     PostArticleCategoryRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
 
+    SearchedAreaNameRepositoryPort::class => \DI\create(AreaListRepository::class),
 
-    SearchedAreaNameRepositoryPort::class => \DI\create(AreaListRepository::class)
+    AdminLoginInfoRepositoryPort::class => \DI\create(AdminLoginInfoRepository::class)
 ];
