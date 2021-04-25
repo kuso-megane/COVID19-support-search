@@ -15,3 +15,6 @@
 
 #cssファイル
 /www/html/asset/stylesheet/
+
+#管理者ID, パスワードの設定
+/www/initAdminLoginInfo/
