@@ -5,7 +5,7 @@ use app;
 drop TABLE if exists AdminLoginInfo;
 create TABLE AdminLoginInfo(
     adminID varchar(20) NOT NULL UNIQUE,
-    pass varchar(50) NOT NULL
+    pass varchar(255) NOT NULL
 );
 
 
