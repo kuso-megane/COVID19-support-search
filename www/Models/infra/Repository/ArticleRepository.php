@@ -113,7 +113,7 @@ implements
     {
         $record = $this->table->findById($artcl_id);
 
-        if ($record != NULL) {
+        if ($record !== NULL) {
             return new OldArticleContent(
                 $record['id'],
                 $record['title'],
@@ -134,7 +134,7 @@ implements
     public function postArticle(?int $artcl_id, string $title, string $thumbnailName, string $content, int $c_id): bool
     {
         try {
-            if ($artcl_id != NULL) {
+            if ($artcl_id !== NULL) {
                 $this->table->update($artcl_id, $title, $thumbnailName, $content, $c_id);
             }
             else {

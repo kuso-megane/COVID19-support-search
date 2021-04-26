@@ -50,7 +50,7 @@ class Interactor
 
         $artcl_id = $input['artcl_id'];
 
-        if ($artcl_id != NULL) {
+        if ($artcl_id !== NULL) {
             $oldArticleContent = $this->oldArticleContentRepository->getOldArticleContent($artcl_id);
 
             if ($oldArticleContent === NULL) {
@@ -63,7 +63,7 @@ class Interactor
 
         $articleCategoryNames = $this->articleCategoryNamesRepository->getArticleCategoryNames();
         
-        $isNew = ($artcl_id != NULL) ? FALSE : TRUE;
+        $isNew = ($artcl_id !== NULL) ? FALSE : TRUE;
 
         return (new Presenter)->present($isNew, $oldArticleContent, $articleCategoryNames, $csrfToken);
     }

@@ -98,11 +98,11 @@ class Interactor
         }
 
         $publicPageTotal = (int) ($publicSupportsTotal / AppConfig::MAXNUM_PER_PAGE);
-        if ($publicSupportsTotal % AppConfig::MAXNUM_PER_PAGE != 0) {
+        if ($publicSupportsTotal % AppConfig::MAXNUM_PER_PAGE !== 0) {
             $publicPageTotal += 1;
         }
         $privatePageTotal = (int) ($privateSupportsTotal / AppConfig::MAXNUM_PER_PAGE);
-        if ($privateSupportsTotal % AppConfig::MAXNUM_PER_PAGE != 0) {
+        if ($privateSupportsTotal % AppConfig::MAXNUM_PER_PAGE !== 0) {
             $privatePageTotal += 1;
         }
 

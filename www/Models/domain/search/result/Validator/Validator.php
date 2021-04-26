@@ -39,12 +39,12 @@ class Validator
             throw new ValidationFailException('想定外の「国籍不問チェックボックス」の値が指定されています。');
         }
 
-        $pub_p = ($vars['pub_p'] != NULL) ? (int) $vars['pub_p'] : 1;
+        $pub_p = ($vars['pub_p'] !== NULL) ? (int) $vars['pub_p'] : 1;
         if ($pub_p <= 0) {
             throw new ValidationFailException('想定外の「ページ」が指定されています。');
         }
 
-        $pri_p = ($vars['pri_p'] != NULL) ? (int) $vars['pri_p'] : 1;
+        $pri_p = ($vars['pri_p'] !== NULL) ? (int) $vars['pri_p'] : 1;
         if ($pri_p <= 0) {
             throw new ValidationFailException('想定外の「ページ」が指定されています。');
         }

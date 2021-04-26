@@ -77,7 +77,7 @@ implements
     public function postArticleCategory(?int $id, string $name): bool
     {
         try {
-            if ($id != NULL) {
+            if ($id !== NULL) {
                 $this->table->update($id, $name);
             }
             else {

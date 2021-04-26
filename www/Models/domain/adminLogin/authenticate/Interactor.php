@@ -29,10 +29,10 @@ class Interactor
 
         $postedAdminID = (string) $post['adminID'];
         $postedPassword = (string) $post['password'];
-        $afterLogin = ($post['afterLogin'] != NULL) ? (string) $post['afterLogin'] : '/backyard/index';
+        $afterLogin = ($post['afterLogin'] !== NULL) ? (string) $post['afterLogin'] : '/backyard/index';
 
         $adminLoginInfo = $this->adminLoginInfoRepository->getAdminLoginInfo()->toArray();
-        
+
         $adminID = $adminLoginInfo['adminID'];
         $pass_hash = $adminLoginInfo['pass'];
         $failCount = $adminLoginInfo['failCount'];

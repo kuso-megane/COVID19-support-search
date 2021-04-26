@@ -18,7 +18,7 @@ class Validator
     public function validate(array $vars): InputData
     {
         $artcl_id = $vars['artcl_id'];
-        if ($artcl_id != NULL) {
+        if ($artcl_id !== NULL) {
             $artcl_id = (int) $artcl_id;
         }
         else {

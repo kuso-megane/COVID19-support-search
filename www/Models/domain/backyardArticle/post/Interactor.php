@@ -65,7 +65,7 @@ class Interactor
             }
         }
         else {
-            if ($oldThumbnailName != NULL) {
+            if ($oldThumbnailName !== NULL) {
                 $newThumbnailName = $oldThumbnailName;
             }
             else {
@@ -88,7 +88,7 @@ class Interactor
 
         if ($is_thumbnail_uploaded === TRUE) {
             //変更前サムネの消去
-            if ($oldThumbnailName != NULL && $oldThumbnailName != AppConfig::DEFAULT_IMG) {
+            if ($oldThumbnailName !== NULL && $oldThumbnailName != AppConfig::DEFAULT_IMG) {
                 unlink(AppConfig::UPLOAD_IMG_PATH. $oldThumbnailName);
             }
         }

@@ -48,7 +48,7 @@ class Interactor
 
         $c_id = $input['c_id'];
 
-        if ($c_id != NULL) {
+        if ($c_id !== NULL) {
             $articleCategory = $this->articleCategoryRepository->getArticleCategory($c_id);
             if ($articleCategory === NULL) {
                 return (new Presenter)->reportNotFound("指定されたカテゴリは見つかりませんでした。");

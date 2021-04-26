@@ -106,7 +106,7 @@ class Presenter
     private function format(array $datas): array
     {
         foreach ($datas as &$data) {
-            if ($data != NULL) {
+            if ($data !== NULL) {
                 $data = $data->toArray();
             }
         }

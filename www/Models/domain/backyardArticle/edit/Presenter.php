@@ -33,7 +33,7 @@ class Presenter
         array $articleCategoryNames, string $csrfToken
     ): array
     {
-        $oldArticleContent = ($oldArticleContent != NULL) ? $oldArticleContent->toArray() : [];
+        $oldArticleContent = ($oldArticleContent !== NULL) ? $oldArticleContent->toArray() : [];
         $articleCategoryNames = $this->format($articleCategoryNames);
 
         return compact(['isNew', 'oldArticleContent', 'articleCategoryNames', 'csrfToken']);
