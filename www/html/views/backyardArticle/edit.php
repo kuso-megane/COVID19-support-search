@@ -66,9 +66,12 @@ use myapp\config\ViewsConfig;
                 本文(画像を埋め込むのは現時点では無理。すまん。):
                 <div id="content-reset-button" class=" buttons">本文を元に戻す</div>
                 <textarea id="editor" name="content" cols="20" rows="8">
-                    <?php echo ($oldArticleContent['content'] != NULL) ? htmlspecialchars($oldArticleContent['content'], ENT_QUOTES) : ''; ?>
+                    <?php echo ($oldArticleContent['content'] !== NULL) ? htmlspecialchars($oldArticleContent['content'], ENT_QUOTES) : ''; ?>
                 </textarea>
             </div>
+
+            <input type="hidden" name="csrfToken" value="<?php echo $csrfToken; ?>">
+
             <button id="submit-button" class="buttons">投稿</button>
             <p id="general-invalid-note" class="invalid-note">
                 不正な入力があります。内容を見直してください。
@@ -118,7 +121,7 @@ use myapp\config\ViewsConfig;
 
             const resetCategory = (e) => {
                 if (window.confirm("カテゴリを元に戻します。")) {
-                    const oldC_id = "<?php echo ($oldArticleContent['c_id'] != NULL)? $oldArticleContent['c_id'] : 1; ?>";
+                    const oldC_id = "<?php echo ($oldArticleContent['c_id'] !== NULL)? $oldArticleContent['c_id'] : 1; ?>";
                     const newCategorySelect = document.getElementById("new-category");
                     newCategorySelect.selectedIndex = oldC_id - 1;
                 }

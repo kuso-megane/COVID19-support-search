@@ -20,9 +20,9 @@ class Interactor
     /**
      * Note that this doesn't execute searching but make search box
      * 
-     * @return array|ValidationFailException Presenter->present() | Presenter->reportValidationFailure()
+     * @return array Presenter->present()
      * 
-     * if validation fails, this throws ValidationFailException
+     * if validation fails, this throws ValidationFailException and return empty array
      */
     public function interact()
     {

@@ -57,6 +57,19 @@ class Presenter
     }
 
 
+    /**
+     * @param string $message
+     * 
+     * @return int AppConfig::INVALID_ACCESS
+     */
+    public function reportInvalidAccess(string $message = 'The necessary token not found. This is probably invalid form')
+    {
+        http_response_code(403);
+        echo $message;
+        return AppConfig::INVALID_ACCESS;
+    }
+
+
     private function format(array $datas):array
     {
         foreach($datas as &$data) {

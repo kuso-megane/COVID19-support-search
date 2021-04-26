@@ -16,6 +16,7 @@ use myapp\config\ViewsConfig;
             <p>
                 カテゴリ名:
                 <input type="text" name="name" value="<?php echo $articleCategory['name']; ?>">
+                <input type="hidden" name="csrfToken", value="<?php echo $csrfToken; ?>">
                 <p>
                     <button id="submit-button">送信</button>
                     <button id="reset-button">リセット</button>

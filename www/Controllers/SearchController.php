@@ -6,7 +6,7 @@ use myapp\myFrameWork\Bases\BaseController;
 use domain\search\index\Interactor as IndexInteractor;
 use myapp\config\AppConfig;
 use domain\search\result\Interactor as SearchResultInteractor;
-use phpDocumentor\Reflection\PseudoTypes\False_;
+
 
 class SearchController extends BaseController
 {

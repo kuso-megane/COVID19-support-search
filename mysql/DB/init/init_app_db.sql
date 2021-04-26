@@ -2,6 +2,15 @@ drop database if exists app;
 create database app;
 use app;
 
+drop TABLE if exists AdminLoginInfo;
+create table AdminLoginInfo(
+    id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    adminID varchar(20) NOT NULL UNIQUE,
+    pass varchar(255) NOT NULL,
+    failCount TINYINT UNSIGNED DEFAULT 0,
+    lockedTime varchar(20) default '00:00:00'
+);
+
 
 drop TABLE if exists ArticleCategory;
 create table ArticleCategory(

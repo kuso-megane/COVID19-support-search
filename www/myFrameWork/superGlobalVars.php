@@ -34,4 +34,5 @@ class SuperGlobalVars
     {
         return $_FILES;
     }
+
 }

@@ -18,7 +18,7 @@ class Validator
     public function validate(array $vars): InputData
     {
         $artcl_id = $vars['artcl_id'];
-        if ($artcl_id != NULL) {
+        if ($artcl_id !== NULL) {
             $artcl_id = (int) $artcl_id;
         }
         else {
@@ -65,10 +65,12 @@ class Validator
         if ($c_id <= 0) {
             throw new ValidationFailException("予想外のカテゴリが指定されています。");
         }
+
+        $csrfToken = $post['csrfToken'];
         
         try {
-            return new InputData($artcl_id, $title, $oldthumbnailName,
-                                $is_thumbnail_uploaded, $newThumbnailFileInfo, $content, $c_id);
+            return new InputData($artcl_id, $title, $oldthumbnailName, $is_thumbnail_uploaded,
+                $newThumbnailFileInfo, $content, $c_id, $csrfToken);
         }
         catch(TypeError $e) {
             throw new ValidationFailException('不正なパラメータが渡されています。');

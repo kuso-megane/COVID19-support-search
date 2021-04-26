@@ -6,9 +6,9 @@ class InputData
 {
     private $attr;
 
-    public function __construct(?int $c_id, string $name)
+    public function __construct(?int $c_id, string $name, string $csrfToken)
     {
-        $this->attr = compact('c_id', 'name');
+        $this->attr = compact('c_id', 'name', 'csrfToken');
     }
 
 

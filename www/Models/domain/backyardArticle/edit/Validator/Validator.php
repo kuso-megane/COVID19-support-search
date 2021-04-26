@@ -15,7 +15,7 @@ class Validator
      */
     public function validate(array $vars):InputData
     {
-        $artcl_id = ($vars['artcl_id'] != NULL) ? (int)$vars['artcl_id'] : NULL;
+        $artcl_id = ($vars['artcl_id'] !== NULL) ? (int)$vars['artcl_id'] : NULL;
         if (!($artcl_id === NULL || $artcl_id > 0)) {
             throw new ValidationFailException('予想外の記事が指定されています。');
         }

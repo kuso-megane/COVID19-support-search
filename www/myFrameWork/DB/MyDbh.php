@@ -70,7 +70,7 @@ class MyDbh extends PDO
     private function rawSelect(string $select, string $tableName, string $condition = '', array $boundValues = [], array $options = []):PDOStatement
     {
 
-        if ($condition != NULL) {
+        if (strlen($condition) !== 0) {
             $where = " WHERE {$condition} ";
         }
         else {
@@ -82,7 +82,7 @@ class MyDbh extends PDO
             $$key = $value;
         }
 
-        if ($orderby != NULL) {
+        if ($orderby !==  NULL) {
             //$sort = ($sort == NULL) ? 'ASC' : $sort;
             $order = " ORDER BY {$orderby} {$sort} ";
         }
@@ -90,8 +90,8 @@ class MyDbh extends PDO
             $order = '';
         }
 
-        if ($limitNum != NULL) {
-            if ($limitStart != NULL) {
+        if ($limitNum !==  NULL) {
+            if ($limitStart !==  NULL) {
                 $limit = " LIMIT {$limitStart},{$limitNum} ";
             }
             else {
@@ -165,10 +165,10 @@ class MyDbh extends PDO
         $sth = $this->rawSelect($columns, $tableName, $condition, $boundValues, $options);
 
 
-        if ($executeFlag == self::ONLY_PREPARE) {
+        if ($executeFlag === self::ONLY_PREPARE) {
             return $sth;
         }
-        else if ($executeFlag == self::EXECUTE) {
+        else if ($executeFlag === self::EXECUTE) {
             $sth->execute();
             return $sth->fetchAll(PDO::FETCH_ASSOC);
         }
@@ -198,10 +198,10 @@ class MyDbh extends PDO
         $select = "count($column) as total";
         $sth = $this->rawSelect($select, $tableName, $condition, $boundValues);
 
-        if ($executeFlag == self::ONLY_PREPARE) {
+        if ($executeFlag === self::ONLY_PREPARE) {
             return $sth;
         }
-        else if ($executeFlag == self::EXECUTE) {
+        else if ($executeFlag === self::EXECUTE) {
             $sth->execute();
             return $sth->fetch(PDO::FETCH_ASSOC)['total'];
         }
@@ -252,10 +252,10 @@ class MyDbh extends PDO
             $sth->bindValue($key, $value, $data_type);
         }
 
-        if ($executeFlag == self::ONLY_PREPARE) {
+        if ($executeFlag === self::ONLY_PREPARE) {
             return $sth;
         }
-        else if ($executeFlag == self::EXECUTE) {
+        else if ($executeFlag === self::EXECUTE) {
             $sth->execute();
         }
         else {
@@ -304,10 +304,10 @@ class MyDbh extends PDO
             $sth->bindValue($key, $value, $data_type);
         }
 
-        if ($executeFlag == self::ONLY_PREPARE) {
+        if ($executeFlag === self::ONLY_PREPARE) {
             return $sth;
         }
-        else if ($executeFlag == self::EXECUTE) {
+        else if ($executeFlag === self::EXECUTE) {
             $sth->execute();
         }
         else {

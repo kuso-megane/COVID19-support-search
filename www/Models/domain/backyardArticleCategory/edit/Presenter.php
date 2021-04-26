@@ -14,14 +14,15 @@ class Presenter
      *      'articleCategory' => [
      *          'id' => int,
      *          'name' => string
-     *      ] or empty array
+     *      ] or empty array,
+     *      'csrfToken' => string
      * ]
      */
-    public function present(?ArticleCategory $articleCategory): array
+    public function present(?ArticleCategory $articleCategory, string $csrfToken): array
     {
-        $articleCategory = ($articleCategory != NULL) ? $articleCategory->toArray() : [];
+        $articleCategory = ($articleCategory !== NULL) ? $articleCategory->toArray() : [];
 
-        return compact('articleCategory');
+        return compact('articleCategory', 'csrfToken');
     }
 
 

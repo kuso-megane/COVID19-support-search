@@ -7,6 +7,8 @@ use domain\backyardArticle\index\Interactor as IndexInteractor;
 use domain\backyardArticle\edit\Interactor as EditInteractor;
 use domain\backyardArticle\post\Interactor as PostInteractor;
 use myapp\config\AppConfig;
+use myapp\Controllers\helper\Helper;
+use myapp\myFrameWork\SuperGlobalVars;
 
 class BackyardArticleController extends BaseController
 {
@@ -18,6 +20,11 @@ class BackyardArticleController extends BaseController
 
         $interactor = $container->get(IndexInteractor::class);
         $vm = $interactor->interact();
+
+        if ($vm === AppConfig::NOT_LOGIN) {
+            $uri = SuperGlobalVars::getServer()['REQUEST_URI'];
+            (new Helper)->redirectToAdminLoginPage($uri);
+        }
 
         $this->render($vm, 'backyardArticle', 'index');
     }
@@ -35,6 +42,10 @@ class BackyardArticleController extends BaseController
         if ($vm == AppConfig::INVALID_PARAMS) {
             return FALSE;
         }
+        elseif ($vm === AppConfig::NOT_LOGIN) {
+            $uri = SuperGlobalVars::getServer()['REQUEST_URI'];
+            (new Helper)->redirectToAdminLoginPage($uri);
+        }
         else {
             $this->render($vm, 'backyardArticle', 'edit');
         }
@@ -50,7 +61,10 @@ class BackyardArticleController extends BaseController
         $interactor = $container->get(PostInteractor::class);
         $vm = $interactor->interact($vars);
 
-        if ($vm == AppConfig::INVALID_PARAMS) {
+        if ($vm === AppConfig::INVALID_PARAMS) {
+            return FALSE;
+        }
+        elseif($vm === AppConfig::INVALID_ACCESS) {
             return FALSE;
         }
         else {

@@ -19,3 +19,5 @@ $command backyardArticle/index.scss ${targetPath}backyardArticle/index.css
 $command backyardArticle/edit.scss ${targetPath}backyardArticle/edit.css
 
 $command backyardArticleCategory/index.scss ${targetPath}backyardArticleCategory/index.css
+
+$command adminLogin/loginPage.scss ${targetPath}adminLogin/loginPage.css

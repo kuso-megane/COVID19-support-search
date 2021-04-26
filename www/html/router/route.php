@@ -14,9 +14,14 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) u
 
     $r->addRoute('GET', $base.'searchResult/{is_public_page:[0-1]}/{pub_p:\d+}/{pri_p:\d+}', 'searchResult');
     
-
     $r->addRoute('GET', $base.'article/list', 'articleList');
     $r->addRoute('GET', $base.'article/{artcl_id:\d+}', 'articleShow');
+
+    $r->addGroup($base.'subContents', function (FastRoute\RouteCollector $r) {
+        $r->addRoute('GET', '/guideline', 'subContentsGuideline');
+        $r->addRoute('GET', '/adminInfo', 'subContentsAdminInfo');
+        $r->addRoute('GET', '/contact', 'subContentsContact');
+    });
 
     $r->addGroup($base.'backyard', function (FastRoute\RouteCollector $r) {
         $r->addRoute('GET', '/index[/]', 'backyardIndex');
@@ -32,12 +37,12 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) u
             $r->addRoute('GET', '/edit[/[{c_id:\d+}]]', 'backyardArticleCategoryEdit');
             $r->addRoute('POST', '/post[/[{c_id:\d+}]]', 'backyardArticleCategoryPost');
         });
+
     });
-    
-    $r->addGroup($base.'subContents', function (FastRoute\RouteCollector $r) {
-        $r->addRoute('GET', '/guideline', 'subContentsGuideline');
-        $r->addRoute('GET', '/adminInfo', 'subContentsAdminInfo');
-        $r->addRoute('GET', '/contact', 'subContentsContact');
+
+    $r->addGroup('/adminLogin', function(FastRoute\RouteCollector $r) {
+        $r->addRoute('GET', '/loginPage', 'adminLoginLoginPage');
+        $r->addRoute('POST', '/authenticate', 'adminLoginAuthenticate');
     });
 });
 
