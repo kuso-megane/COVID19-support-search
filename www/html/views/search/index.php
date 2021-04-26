@@ -23,7 +23,7 @@ use myapp\config\ViewsConfig;
                             <div id="introduce--subTitle" class="center">
                                 <p class="block-end0"><span class="larger green"><?php echo AppConfig::TITLE; ?></span>&ensp;は、</p>
                                 <p id="introduce--subTitle--after" class="break-word bold block-start0">生活上の様々なお困りごとにあった支援・相談窓口を検索できるサービスです！</p>
-                                <p id="precaution">＊支援・相談窓口は行政又は民間団体が行うものです。本サイトの運営者が行うものではありません</p>
+                                <p id="introduce--subTitle--precaution">＊支援・相談窓口は行政又は民間団体が行うものです。本サイトの運営者が行うものではありません</p>
                             </div>
                         </div>
                     </div>

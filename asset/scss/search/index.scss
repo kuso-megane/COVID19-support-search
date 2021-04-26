@@ -43,12 +43,14 @@ $topFontSize: 0.75rem;
             width: 90%;
             display: inline-block;
         }
+        &--precaution{
+            font-size: 0.35rem;
+        }
+        
     }
 }
 
-#precaution{
-    font-size: 0.35rem;
-}
+
 
 #introduce--main{
     text-align: left;
