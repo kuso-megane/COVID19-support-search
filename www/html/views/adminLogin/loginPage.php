@@ -7,35 +7,38 @@
 <html>
     <head>
         <title><?php echo '管理者ログイン -' . AppConfig::TITLE; ?></title>
-        <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'adminLogin/login.css'; ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'adminLogin/loginPage.css'; ?>">
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
     </head>
     <body>
         <form id="loginForm" action="/adminLogin/authenticate" method="post">
-            <div id="login-box">
-                <p>
-                    ID:<input type="text" name="adminID" minlength="1" maxlength="20" required>
-                </p>
-                <p>
-                    パスワード:<input type="password" name="password" minlength="1" maxlength="20" required>
-                </p>
-                <p id="lock-note">
-                    <?php echo AppConfig::MAXNUM_LOGIN_FAIL . '回失敗すると、' . (int)(AppConfig::ACCOUNT_LOCK_TIME / 60) . '分ロックされます。'; ?>
-                </p>
-                <p id="invalid-note">IDまたはパスワードが入力されていません</p>
+            <div class="center">
+                <div id="login-box" class="break-word">
+                    <h3 class="block-start0">管理者ログイン</h3>
+                    <?php if ($isRetry === 'true' && $isLocked !== 'true'): ?>
+                        <p>IDまたはパスワードが違います。</p>
+                    <?php endif; ?>
+                    <p>
+                        ID: <input type="text" name="adminID" minlength="1" maxlength="20" required>
+                    </p>
+                    <p>
+                        パスワード: <input type="password" name="password" minlength="1" maxlength="20" required>
+                    </p>
+                    <p class="smaller">
+                        <?php echo AppConfig::MAXNUM_LOGIN_FAIL . '回以上失敗すると、' . (int)(AppConfig::ACCOUNT_LOCK_TIME / 60) . '分ロックされます。'; ?>
+                    </p>
+                    <p id="invalid-note" class="note">IDまたはパスワードが入力されていません</p>
 
-                <?php if ($isRetry === 'true' && $isLocked !== 'true'): ?>
-                    <p>IDまたはパスワードが違います。</p>
-                <?php endif; ?>
+                    <?php if($isLocked === 'true'): ?>
+                        <p id="lock-note" class="note">アカウントがロックされました。しばらく時間をおいてから入力してください。</p>
+                    <?php endif; ?>
+                    
+                    <input type="hidden" name="afterLogin" value="<?php echo $afterLogin; ?>">
 
-                <?php if($isLocked === 'true'): ?>
-                    <p>アカウントがロックされました。しばらく時間をおいてから入力してください。</p>
-                <?php endif; ?>
-                
-                <input type="hidden" name="afterLogin" value="<?php echo $afterLogin; ?>">
-
-                <button id="submit-button">送信</button>      
+                    <button id="submit-button">送信</button>      
+                </div>
             </div>
+            
         </form>
 
         <script>
@@ -55,7 +58,12 @@
                 }
             }
 
+            const initInvalidNote = (e) => {
+                invalidNote.classList.remove("show");
+            }
+
             submitButton.addEventListener("click", submit);
+            form.addEventListener("change", initInvalidNote);
         </script>
     </body>
 </html>

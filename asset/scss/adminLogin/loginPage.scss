@@ -1,0 +1,29 @@
+@use '../components/common';
+
+.note {
+    color: red;
+    font-size: 1.2em;
+}
+
+#login-box {
+    display: inline-block;
+    text-align: left;
+    
+    border: solid 1px black;
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 30px;
+    font-size: 0.8rem;
+
+    #invalid-note {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    #lock-note {
+        font-weight: bold;
+    }
+}
