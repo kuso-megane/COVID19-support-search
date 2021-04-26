@@ -46,18 +46,22 @@ $topFontSize: 0.75rem;
             width: 90%;
             display: inline-block;
         }
+
         &--precaution{
-            font-size: 0.7em;
+            font-size: 0.6rem;
+            font-weight: normal;
         }        
     }
 
     &--main{
         text-align: left;
         font-size: $topFontSize;
+        padding-left: 1rem;
         margin-top: 3rem;
 
         li {
             list-style: disc;
+            margin: 0.5rem;
         }
 
         .nav-title {
