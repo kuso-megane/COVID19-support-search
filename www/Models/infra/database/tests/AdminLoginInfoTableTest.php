@@ -56,19 +56,19 @@ class AdminLoginInfoTableTest extends TestCase
 
         $expected = self::SAMPLE_DATA;
 
-        if ($newID != NULL) {
+        if ($newID !== NULL) {
             $expected['adminID'] = $newID;
         }
         
-        if ($newPass != NULL) {
+        if ($newPass !== NULL) {
             $expected['pass'] = $newPass;
         }
 
-        if ($newFailCount != NULL) {
+        if ($newFailCount !== NULL) {
             $expected['failCount'] = $newFailCount;
         }
 
-        if ($newLockedTime != NULL) {
+        if ($newLockedTime !== NULL) {
             $expected['lockedTime'] = $newLockedTime;
         }
 

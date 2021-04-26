@@ -24,11 +24,11 @@
                 </p>
                 <p id="invalid-note">IDまたはパスワードが入力されていません</p>
 
-                <?php if ($isRetry != NULL): ?>
+                <?php if ($isRetry !== NULL && $isLocked === NULL): ?>
                     <p>IDまたはパスワードが違います。</p>
                 <?php endif; ?>
 
-                <?php if($isLocked != NULL): ?>
+                <?php if($isLocked !== NULL): ?>
                     <p>アカウントがロックされました。しばらく時間をおいてから入力してください。</p>
                 <?php endif; ?>
                 

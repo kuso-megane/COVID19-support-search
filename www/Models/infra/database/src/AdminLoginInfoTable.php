@@ -47,12 +47,12 @@ class AdminLoginInfoTable
     {
         $columns = '';
         $boundValues = [];
-        if ($adminID != NULL) {
+        if ($adminID !== NULL) {
             $columns .= 'adminID = :adminID';
             $boundValues[':adminID'] = $adminID;
         }
 
-        if ($pass != NULL) {
+        if ($pass !== NULL) {
             if ($columns != '') {
                 $columns .= ', '; 
             }
@@ -60,7 +60,7 @@ class AdminLoginInfoTable
             $boundValues[':pass'] = $pass;
         }
 
-        if ($failCount != NULL) {
+        if ($failCount !== NULL) {
             if ($columns != '') {
                 $columns .= ', '; 
             }
@@ -68,7 +68,7 @@ class AdminLoginInfoTable
             $boundValues[':failCount'] = $failCount;
         }
 
-        if ($lockedTime != NULL) {
+        if ($lockedTime !== NULL) {
             if ($columns != '') {
                 $columns .= ', '; 
             }
