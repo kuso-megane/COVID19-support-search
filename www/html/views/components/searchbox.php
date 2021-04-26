@@ -20,7 +20,7 @@
 
                 <option value="<?php echo $troubleName['id']; ?>"
                     <?php if ($searched_trouble_id === $troubleName['id']) {echo 'selected';} ?> >
-                    <?php echo $troubleName['name']; ?>
+                    <?php echo htmlspecialchars($troubleName['name'], ENT_QUOTES); ?>
                 </option>
 
                 <?php endforeach; ?>
