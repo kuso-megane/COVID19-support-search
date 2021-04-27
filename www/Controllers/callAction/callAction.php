@@ -8,6 +8,7 @@ use myapp\controllers\SearchController;
 use myapp\controllers\BackyardArticleController as BYArticleController;
 use myapp\Controllers\BackyardArticleCategoryController as BYArticleCategoryController;
 use myapp\Controllers\BackyardController;
+use myapp\Controllers\ContactController;
 use myapp\Controllers\SubContentsController;
 
 /**
@@ -51,9 +52,14 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller = new SubContentsController;
         $controller->guideline();
     }
-    elseif ($handler == 'subContentsContact') {
-        $controller = new SubContentsController;
-        $controller->contact();
+
+    elseif ($handler == 'contactContactPage') {
+        $controller = new ContactController;
+        $controller->contactPage();
+    }
+    elseif ($handler == 'contactSendMail') {
+        $controller = new ContactController;
+        $controller->sendMail();
     }
 
     elseif($handler == 'backyardIndex') {

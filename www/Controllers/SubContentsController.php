@@ -17,9 +17,4 @@ class SubContentsController extends BaseController
         $this->render([], 'subContents', 'adminIntro');
     }
 
-
-    public function contact()
-    {
-        $this->render([], 'subContents', 'contact');
-    }
 }
