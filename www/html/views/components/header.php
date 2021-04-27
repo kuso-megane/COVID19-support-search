@@ -36,7 +36,7 @@
         </li>
         <li><a href="/subContents/guideline">免責事項</a></li>
         <li><a href="/subContents/adminInfo">運営者紹介</a></li>
-        <li><a href="/subContents/contact">お問い合わせ</a></li>
+        <li><a href="/contact/contactPage">お問い合わせ</a></li>
     </div>
 
     <div id="link-to-top--container">
