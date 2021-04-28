@@ -8,6 +8,7 @@ use myapp\config\ViewsConfig;
 <html>
     <head>
         <title><?php echo AppConfig::TITLE; ?></title>
+        <meta name="description" content="コロナで仕事がない、住居、DV、性暴力、食料、解雇・休業、シングルマザー、外国籍に関する悩みなどまで幅広く、都道府県ごとに支援・相談窓口・制度を探すことができます！">
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'search/index.css'; ?>">
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
     </head>
@@ -19,7 +20,6 @@ use myapp\config\ViewsConfig;
                 <div id="introduce" class="main--single">
                     <div class="center">
                         <div class="inline-block left">
-                            <h3 id="introduce--title" class="block-start0"><span class="keiko">生活で困ったことがあったらぜひ一度、当サイトを利用してみてください！</span></h3>
                             <div id="introduce--subTitle" class="center">
                                 <p class="block-end0"><span class="larger green"><?php echo AppConfig::TITLE; ?></span>&ensp;は、</p>
                                 <p id="introduce--subTitle--after" class="break-word bold block-start0">コロナ禍をはじめとする、様々な生活上のお困りごとに合った支援・相談先を探せる検索サービスです。</p>
