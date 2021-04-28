@@ -7,18 +7,19 @@ class Presenter
 
     /**
      * @param string $afterLogin
-     * @param 
-     * @param string|NULL $isRetry
-     * @param string|NULL $isLocked
+     * @param bool|NULL $isRetry
+     * @param bool|NULL $isLocked
+     * @param string $csrfToken
      * 
      * @return array [
-     *      'afterLogin' => string
-     *      'isRetry' => 'true' | NULL
-     *      'isLocked' => 'true' | NULL
+     *      'afterLogin' => string,
+     *      'isRetry' => 'true' | NULL,
+     *      'isLocked' => 'true' | NULL,
+     *      'csrfToken' => string
      *  ]
      */
-    public function present(string $afterLogin, ?string $isRetry, ?string $isLocked):array
+    public function present(string $afterLogin, ?bool $isRetry, ?bool $isLocked, string $csrfToken):array
     {
-        return compact('afterLogin', 'isRetry', 'isLocked');
+        return compact('afterLogin', 'isRetry', 'isLocked', 'csrfToken');
     }
 }
