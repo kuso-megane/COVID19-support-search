@@ -17,7 +17,7 @@
             >
             <p class="article-box--list--item--title break-word block-start0 block-end0">
                 
-                <?php echo $item['title']; ?>
+                <?php echo htmlspecialchars($item['title'], ENT_QUOTES); ?>
 
             </p>
         </a>

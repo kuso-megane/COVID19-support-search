@@ -20,7 +20,11 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) u
     $r->addGroup($base.'subContents', function (FastRoute\RouteCollector $r) {
         $r->addRoute('GET', '/guideline', 'subContentsGuideline');
         $r->addRoute('GET', '/adminInfo', 'subContentsAdminInfo');
-        $r->addRoute('GET', '/contact', 'subContentsContact');
+    });
+
+    $r->addGroup($base. 'contact', function(FastRoute\RouteCollector $r) {
+        $r->addRoute('GET', '/contactPage', 'contactContactPage');
+        $r->addRoute('POST', '/sendMail', 'contactSendMail');
     });
 
     $r->addGroup($base.'backyard', function (FastRoute\RouteCollector $r) {

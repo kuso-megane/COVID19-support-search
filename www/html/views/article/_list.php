@@ -23,7 +23,7 @@ use myapp\config\ViewsConfig;
                     <?php foreach ($articleInfos as $category => $articleInfoItems): ?>
 
                         <div class="articles--content">
-                            <p class="article--content--category"><?php echo $category; ?></p>
+                            <p class="article--content--category"><?php echo htmlspecialchars($category, ENT_QUOTES); ?></p>
                             <?php
                                 $_items = $articleInfoItems;
                                 require ViewsConfig::COMPONENTS_PATH. 'articleBoxList.php';

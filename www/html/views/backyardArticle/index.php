@@ -30,8 +30,8 @@ use myapp\config\ViewsConfig;
 
                     <tr>
                         <td><a href="<?php echo "/backyard/article/edit/". $articleBYInfo['id']; ?>">編集</a></td>
-                        <td><?php echo $articleBYInfo['title']; ?></td>
-                        <td><?php echo $articleCategoryNames[$articleBYInfo['c_id']]; ?></td>
+                        <td><?php echo htmlspecialchars($articleBYInfo['title'], ENT_QUOTES); ?></td>
+                        <td><?php echo htmlspecialchars($articleCategoryNames[$articleBYInfo['c_id']], ENT_QUOTES); ?></td>
                     </tr>
 
                 <?php endforeach; ?>
