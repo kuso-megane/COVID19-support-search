@@ -31,8 +31,11 @@ class Interactor
      * 
      * Note that you have to start session manually
      */
-    public function validate(string $token)
+    public function validateAndUnsetSession(string $token)
     {
-        return ($token === $_SESSION['csrfToken']);
+        $isValid = $token === $_SESSION['csrfToken'];
+        unset($_SESSION['csrfToken']); //postの二重送信防止
+
+        return $isValid;
     }
 }
