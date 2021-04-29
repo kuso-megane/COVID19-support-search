@@ -32,7 +32,7 @@ use myapp\config\ViewsConfig;
                         <div class="nav-title">
                             <p class="bold block-start0 block-end0">例えばこんなお悩みありませんか？</p>
                         </div> 
-                        <li>仕事を失った、生活費が足りない、、、。</li>
+                        <li>コロナで仕事を失った、生活費が足りない、、、。</li>
                         <li>性暴力、ハラスメント、DVで苦しんでいる、、、。</li>
                         <li>でも一人ではどうしようもない。相談先がない。</li>
                         <li>そもそもどんな支援があるか、支援を受ける条件も方法もわからない。</li>
