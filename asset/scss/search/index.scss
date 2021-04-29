@@ -34,48 +34,48 @@ $topFontSize: 0.75rem;
 #introduce {
     margin-top: 0;
 
-
-    &--subTitle {
+    &--top {
         font-size: $topFontSize;
         font-weight: bold; 
+
+        &--main {
+            font-size: 2em;
+        }
         
-        &--after {
-            width: 100%;
+        &--explaination {
+            width: 90%;
             display: inline-block;
         }
-     
-        
-    }
-}
 
-
-
-#introduce--main{
-    text-align: left;
-    font-size: $topFontSize;
-    margin-top: 1.5rem;
-    padding-left: 1rem;
-
-    li {
-        list-style: disc;
     }
 
-    .nav-title {
-        display: inline-block;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        padding: 2px;
+    &--main{
+        text-align: left;
+        font-size: $topFontSize;
+        padding-left: 1rem;
+        margin-top: 1.5rem;
 
-        p {
-            border-bottom: double 3px vars.$baseColor;
+        li {
+            list-style: disc;
+            margin: 0.5rem;
+        }
+
+        .nav-title {
+            display: inline-block;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding: 2px;
+
+            p {
+                border-bottom: double 3px vars.$baseColor;
+            }
+        }
+
+        .nav-box {
+            margin: 1rem;
         }
     }
-
-    .nav-box {
-        margin: 1rem;
-    }
 }
-
 
 
 #howto--main {
