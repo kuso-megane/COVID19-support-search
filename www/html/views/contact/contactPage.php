@@ -9,7 +9,7 @@ use myapp\config\ViewsConfig;
 <html>
     <head>
         <title><?php echo "お問い合わせ -" . AppConfig::TITLE; ?></title>
-        <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'subContents/contact.css'; ?>" >
+        <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'contact/contactPage.css'; ?>" >
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
     </head>
     <body>
@@ -18,7 +18,7 @@ use myapp\config\ViewsConfig;
         <main>
             <div class="center">
                 <div id="contact" class="main--single">
-                    <h3>お問い合わせフォーム</h3>
+                    <h2>お問い合わせフォーム</h2>
                     <p>今後実装予定です。至急のお問い合わせは、以下のアドレスへよろしくお願いいたします。</p>
                     <p>アドレス: <span class="bold"><?php echo $adress; ?></span></p>
                 </div>

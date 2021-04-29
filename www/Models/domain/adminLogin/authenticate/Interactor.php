@@ -38,27 +38,36 @@ class Interactor
         $failCount = $adminLoginInfo['failCount'];
         $lockedTime = $adminLoginInfo['lockedTime'];
 
+        session_start([
+            'gc_maxlifetime' => AppConfig::LOGIN_SESSION_LIFETIME,
+            'gc_probability' => 1,
+            'gc_divisor' => 1,
+            'cookie_lifetime' => AppConfig::LOGIN_SESSION_LIFETIME,
+            'use_strict_mode' => TRUE
+        ]);
+
         //lock中
         if (strtotime('now') - strtotime($lockedTime) <= AppConfig::ACCOUNT_LOCK_TIME) {
-            setcookie('isLocked', 'true', time() + AppConfig::ACCOUNT_LOCK_TIME);
+            $_SESSION['isLocked'] = TRUE; // すでに設定されているはずだが、念のため
             return (new Presenter)->present(FALSE, $afterLogin);
+        }
+        else {
+            unset($_SESSION['isLocked']);
+
         }
 
         // ログイン成功
         if ($postedAdminID === $adminID && password_verify($postedPassword, $pass_hash)) {
             $this->adminLoginInfoRepository->updateFailCountAndLockedTime(0, NULL);
 
-            session_start([
-                'gc_maxlifetime' => 60 * 60 * 24,
-                'gc_probability' => 1,
-                'gc_divisor' => 1
-            ]);
+            
             session_regenerate_id(TRUE);
             $_SESSION['username'] = 'admin';
 
-            //cookie削除
-            setcookie('isRetry', '', 1); 
-            setcookie('isLocked', '', 1);
+            //loginPage関連のsession削除
+            unset($_SESSION['isRetry']);
+            unset($_SESSION['isLocked']);
+            
 
             return (new Presenter)->present(TRUE, $afterLogin);
         }
@@ -69,13 +78,13 @@ class Interactor
             //規程回数以上失敗したらlockする
             if ($newFailCount > AppConfig::MAXNUM_LOGIN_FAIL) {
                 $this->adminLoginInfoRepository->updateFailCountAndLockedTime(0, date("H:i:s"));
-                setcookie('isLocked', 'true', time() + AppConfig::ACCOUNT_LOCK_TIME);
+                $_SESSION['isLocked'] = TRUE;
             }
             else {
                 $this->adminLoginInfoRepository->updateFailCountAndLockedTime($newFailCount, NULL);
             }
 
-            setcookie('isRetry', 'true', time() +  60 * 10);
+           $_SESSION['isRetry'] = TRUE;
 
             return (new Presenter)->present(FALSE, $afterLogin);
         }

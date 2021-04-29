@@ -14,7 +14,9 @@ $command article/show.scss ${targetPath}article/show.css
 
 $command subContents/guideline.scss ${targetPath}subContents/guideline.css
 $command subContents/adminIntro.scss ${targetPath}subContents/adminIntro.css
-$command subContents/contact.scss ${targetPath}subContents/contact.css
+
+
+$command contact/contactPage.scss ${targetPath}contact/contactPage.css
 
 $command backyardArticle/index.scss ${targetPath}backyardArticle/index.css
 $command backyardArticle/edit.scss ${targetPath}backyardArticle/edit.css
