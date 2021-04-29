@@ -11,6 +11,7 @@ class AppConfig
 
     const MAXNUM_LOGIN_FAIL = 5; // この回数より多くログインに失敗すると、アカウントロック
     const ACCOUNT_LOCK_TIME = 60 * 10; // アカウントロックの時間(秒)
+    const LOGIN_SESSION_LIFETIME = 60 * 60 * 24; // loginセッションの持続時間(秒)
 
     // domainに関わる、DB関連の情報
     const DEFAULT_IMG = 'default.jpg';

@@ -15,7 +15,7 @@
             <div class="center">
                 <div id="login-box" class="break-word">
                     <h3 class="block-start0">管理者ログイン</h3>
-                    <?php if ($isRetry === 'true' && $isLocked !== 'true'): ?>
+                    <?php if ($isRetry === TRUE && $isLocked !== TRUE): ?>
                         <p>IDまたはパスワードが違います。</p>
                     <?php endif; ?>
                     <p>
@@ -29,7 +29,7 @@
                     </p>
                     <p id="invalid-note" class="note">IDまたはパスワードが入力されていません</p>
 
-                    <?php if($isLocked === 'true'): ?>
+                    <?php if($isLocked === TRUE): ?>
                         <p id="lock-note" class="note">アカウントがロックされました。しばらく時間をおいてから入力してください。</p>
                     <?php endif; ?>
                     
