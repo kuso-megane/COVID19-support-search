@@ -40,12 +40,10 @@ $topFontSize: 0.75rem;
         font-weight: bold; 
         
         &--after {
-            width: 90%;
+            width: 100%;
             display: inline-block;
         }
-        &--precaution{
-            font-size: 0.35rem;
-        }
+     
         
     }
 }
@@ -55,7 +53,7 @@ $topFontSize: 0.75rem;
 #introduce--main{
     text-align: left;
     font-size: $topFontSize;
-    margin-top: 5rem;
+    margin-top: 1.5rem;
     padding-left: 1rem;
 
     li {
