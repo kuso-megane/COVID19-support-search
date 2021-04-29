@@ -7,7 +7,8 @@ use myapp\config\ViewsConfig;
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php echo "すぐに使える支援・相談窓口探しなら". AppConfig::TITLE; ?></title>
+        <title><?php echo "すぐに使える支援・相談窓口探しなら" . AppConfig::TITLE; ?></title>
+        <meta name="description" content="コロナで仕事がない、住居、DV、食料、解雇・休業、シングルマザー/ファザー、外国籍に関する悩みなどまで幅広く、民間の活動を中心に支援・相談窓口・制度を探すことができます！">
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'search/index.css'; ?>">
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
     </head>
