@@ -22,7 +22,7 @@ use myapp\config\ViewsConfig;
                         <div class="inline-block left">
                             <div id="introduce--subTitle" class="center">
                                 <p class="block-end0"><span class="larger green"><?php echo AppConfig::TITLE; ?></span>&ensp;は、</p>
-                                <p id="introduce--subTitle--after" class="break-word bold block-start0">コロナ禍をはじめとする、様々な生活上のお困りごとに合った支援・相談先を探せる検索サービスです。</p>
+                                <p id="introduce--subTitle--after" class="break-word bold block-start0">生活上のお困りごとに合った支援・相談先を探せる検索サービスです。</p>
                             </div>
                         </div>
                     </div>
