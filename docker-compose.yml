@@ -9,8 +9,6 @@ services:
       - ./www:/var/www
     ports:
       - 81:80 #http://localhost:81
-    env_file:
-      - ./apache2/docker-apache2.env
     depends_on:
       - db
     

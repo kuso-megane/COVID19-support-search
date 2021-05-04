@@ -7,7 +7,7 @@
 ## 環境構築
 1. gitでコードをpull
 1. docker, docker-composeのinstall
-1. php, composerのinstall
+1. php, composerのinstall (Macならば、composerはappコンテナに入るので不要)
 1. dart/sassのinstall
 
 1. サービスのrepositoryにて、```docker-compose up -d```
