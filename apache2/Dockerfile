@@ -8,7 +8,7 @@ ENV APACHE_RUN_DIR=/var/run/apache2
 ENV APACHE_LOG_DIR=/var/log/apache2
 ENV APACHE_LOCK_DIR=/var/lock/apache2
 
-
+COPY conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf 
 
 # for routing
 RUN a2enmod rewrite
