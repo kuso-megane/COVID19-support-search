@@ -8,7 +8,7 @@ use myapp\config\ViewsConfig;
 <html>
     <head>
         <title><?php echo "すぐに使える支援・相談窓口探しなら" . AppConfig::TITLE; ?></title>
-        <meta name="description" content="コロナで仕事がない、住居、DV、食料、解雇・休業、シングルマザー/ファザー、外国籍に関する悩みなどまで幅広く、民間の活動を中心に支援・相談窓口・制度を探すことができます！">
+        <meta name="description" content="コロナで仕事がない、住居、DV、生活費、食料、解雇・休業、ひとり親、外国籍に関する悩みなどまで幅広く、民間の活動を中心に支援・相談窓口・制度を探すことができます！">
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'search/index.css'; ?>">
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
     </head>
@@ -30,7 +30,7 @@ use myapp\config\ViewsConfig;
                         <div class="nav-title">
                             <p class="bold block-start0 block-end0">例えばこんなお悩みありませんか？</p>
                         </div> 
-                        <li>コロナ禍で仕事を失った、生活費が足りない。</li>
+                        <li>コロナ禍で仕事や住まいを失った。</li>
                         <li>性暴力、ハラスメント、DVで苦しんでいる。</li>
                         <li>でも、誰にも相談できていない。支援や制度も利用できていない。</li>
                         <li>そもそもどんな支援・相談窓口があるか、支援を受ける条件や方法もわからない。</li>
