@@ -5,12 +5,9 @@ services:
     build: ./apache2/
     volumes:
       - ./apache2/php.ini:/usr/local/etc/php/php.ini
-      - ./apache2/conf/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
       - ./www:/var/www
     ports:
       - 81:80 #http://localhost:81
-    env_file:
-      - ./apache2/docker-apache2.env
     depends_on:
       - db
     
