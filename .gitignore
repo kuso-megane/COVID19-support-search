@@ -18,3 +18,4 @@
 
 #管理者ID, パスワードの設定
 /www/initAdminLoginInfo/
+/mysql/DB/import/AdminLoginInfo.csv
