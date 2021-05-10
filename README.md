@@ -8,6 +8,7 @@
 - aws ECS + EC2 + RDS
 - ECRからappコンテナのイメージを保存
 - ECS管理下のEC2インスタンスに、git経由でコードを反映
+- ECSのappコンテナの環境変数で、RDSの接続関連の情報を設定
 
 ## 環境構築
 1. gitでコードをpull
