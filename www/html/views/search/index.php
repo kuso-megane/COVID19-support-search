@@ -36,7 +36,7 @@ use myapp\config\ViewsConfig;
                         <li>そもそもどんな支援・相談窓口があるか、支援を受ける条件や方法もわからない。</li>
                         <p>そんな時に、本サイトの検索システムを利用してみませんか？</p>
                         <p>
-                            &#9733;特に民間団体（NPOなど）が行う支援には<span class="red bold">支援を受ける条件が基本的にありません。</span> 一度だけでも検索してみてください。
+                            &#10004; 特に民間団体（NPOなど）が行う支援には<span class="red bold">支援を受ける条件が基本的にありません。</span>一度だけでも検索してみてください。
                         </p>
                         <div class="center">
                             <a id="nav-to-search" class="nav-box left" href="#search-box-anchor">
