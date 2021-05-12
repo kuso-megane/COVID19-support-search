@@ -18,7 +18,9 @@ use myapp\config\ViewsConfig;
 
                     <div id="searchbox-anchor"></div>
 
-                    <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox.php'; ?>
+                    <div class="main--double--left">
+                        <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox.php'; ?>
+                    </div>
 
                     <div id="search-result-anchor"></div>
 

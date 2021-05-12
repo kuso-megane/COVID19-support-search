@@ -69,7 +69,9 @@ use myapp\config\ViewsConfig;
 
                     <div id="search-box-anchor"></div>
 
-                    <?php require ViewsConfig::COMPONENTS_PATH. 'searchbox.php'; ?>
+                    <div class="main--double--left">
+                        <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox.php'; ?>
+                    </div>
 
                     <div id="howto" class="main--double--right">
                         <p class="subTitle bold block-start0">&lt;使い方&gt;</p>
