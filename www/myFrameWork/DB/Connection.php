@@ -34,8 +34,12 @@ class Connection
      */
     public function connect():MyDbh
     {
-        $dsn = "mysql:dbname={$this->dbname};" . 'host=' . DBConfig::DB_HOST;
-        $pw = DBConfig::DB_PASS[$this->username];
+        $dbConfig = new DBConfig;
+        $db_host = $dbConfig->getDBHost();
+        $db_pass = $dbConfig->getDBPass();
+
+        $dsn = "mysql:dbname={$this->dbname};" . 'host=' . $db_host;
+        $pw = $db_pass[$this->username];
 
         try {
             $dbh = new MyDbh($dsn, $this->username, $pw);

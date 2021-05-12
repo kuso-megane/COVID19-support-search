@@ -4,8 +4,8 @@
 
 use myapp\Controllers\AdminLoginController;
 use myapp\Controllers\ArticleController;
-use myapp\controllers\SearchController;
-use myapp\controllers\BackyardArticleController as BYArticleController;
+use myapp\Controllers\SearchController;
+use myapp\Controllers\BackyardArticleController as BYArticleController;
 use myapp\Controllers\BackyardArticleCategoryController as BYArticleCategoryController;
 use myapp\Controllers\BackyardController;
 use myapp\Controllers\ContactController;

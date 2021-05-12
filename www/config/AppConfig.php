@@ -9,6 +9,7 @@ class AppConfig
     const MAXNUM_PER_PAGE = 10; // 検索結果1ページあたりの支援表示数 
     const MAXNUM_RECOMMENDED_ARTICLES = 3; // 検索結果1ページあたりのおすすめコラムの数
 
+    //管理者login関連
     const MAXNUM_LOGIN_FAIL = 5; // この回数より多くログインに失敗すると、アカウントロック
     const ACCOUNT_LOCK_TIME = 60 * 10; // アカウントロックの時間(秒)
     const LOGIN_SESSION_LIFETIME = 60 * 60 * 24; // loginセッションの持続時間(秒)

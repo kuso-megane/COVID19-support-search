@@ -1,18 +1,24 @@
-# コロナ支援民間組織の検索、紹介サービス
+# 支援組織・相談窓口の検索サービス
 
-## 環境
+## 開発環境
 - dockerコンテナを構築し、apache2 + php + mysqlで作成。
-- phpのFWは特に使用してません
+- phpのFWは使用してません
+
+## deploy環境
+- aws ECS + EC2 + RDS
+- ECRからappコンテナのイメージを保存
+- ECS管理下のEC2インスタンスに、git経由でコードを反映
+- ECSのappコンテナの環境変数で、RDSの接続関連の情報を設定
 
 ## 環境構築
 1. gitでコードをpull
 1. docker, docker-composeのinstall
-1. php, composerのinstall (Macならば、composerはappコンテナに入るので不要)
+1. php, composerのinstall
 1. dart/sassのinstall
-
-1. サービスのrepositoryにて、```docker-compose up -d```
+1. サービスのdirにて、```docker-compose up -d```
 1. asset/scss/ にて　```./sass.sh```
 1. www/ にて ```composer install```
+
 
 
 
