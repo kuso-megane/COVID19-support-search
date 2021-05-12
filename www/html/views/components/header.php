@@ -66,27 +66,36 @@
 
 <!--右のメニューの管理-->
 <script>
-    const showTrigger = document.getElementById("title--right--menu");
-    const closeTrigger = document.getElementById("close");
+    {
+        const showTrigger = document.getElementById("title--right--menu");
+        const closeTrigger = document.getElementById("close");
 
-    const menuControl = (e) => {
         const menu = document.getElementById("title--right--menu--content");
-        const target = e.currentTarget;
-        const targetId = target.id;
-        const showTriggerId = showTrigger.id;
-        const closeTriggerId = closeTrigger.id;
 
-        if (targetId == showTriggerId) {
+        const menuShow = (e) => { 
             menu.classList.add("show");
-        }
-        else if(targetId == closeTriggerId) {
-            menu.classList.remove("show");
-        }
-        else {
             return;
         }
-    }
 
-    showTrigger.addEventListener("click", menuControl);
-    closeTrigger.addEventListener("click", menuControl);
+
+        const menuClose = (e) => {
+            menu.classList.remove("show");
+            return;
+        }
+
+        window.addEventListener("click", menuClose);
+
+        showTrigger.addEventListener("click", menuShow);
+        closeTrigger.addEventListener("click", menuClose);
+
+        //windowクリックイベントの発火をしない
+        showTrigger.addEventListener("click", function(e) {
+            e.stopPropagation(); 
+        })
+        menu.addEventListener("click", function(e) {
+            e.stopPropagation();
+        })
+        
+    }
+        
 </script>
