@@ -50,12 +50,17 @@
     font-size: 20px;
     color: white;
     background-color: vars.$baseColor;
-    border: outset 1px vars.$lightColor;
+    border: solid 1px vars.$baseColor;
 
     cursor: pointer;
 }
 
-
+/*pc*/
+@media screen and (min-width: 1025px){
+    #submit-button {
+        border: outset 1px vars.$lightColor;
+    }
+}
 
 
 
