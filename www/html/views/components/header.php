@@ -84,15 +84,23 @@
         }
 
         window.addEventListener("click", menuClose);
+        window.addEventListener("touch", menuClose);
 
         showTrigger.addEventListener("click", menuShow);
         closeTrigger.addEventListener("click", menuClose);
 
-        //windowクリックイベントの発火をしない
+        //menuをクリック、タッチしたときにメニューが閉じるのを防ぐ
         showTrigger.addEventListener("click", function(e) {
             e.stopPropagation(); 
-        })
+        });
+        showTrigger.addEventListener("touch", function (e) {
+            e.stopPropagation();
+        });
+
         menu.addEventListener("click", function(e) {
+            e.stopPropagation();
+        });
+        menu.addEventListener("touch", function (e) {
             e.stopPropagation();
         })
         
