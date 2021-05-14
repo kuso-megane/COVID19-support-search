@@ -84,7 +84,7 @@
         }
 
         window.addEventListener("click", menuClose);
-        window.addEventListener("touch", menuClose);
+        window.addEventListener("touchstart", menuClose);
 
         showTrigger.addEventListener("click", menuShow);
         closeTrigger.addEventListener("click", menuClose);
@@ -93,14 +93,14 @@
         showTrigger.addEventListener("click", function(e) {
             e.stopPropagation(); 
         });
-        showTrigger.addEventListener("touch", function (e) {
+        showTrigger.addEventListener("touchstart", function (e) {
             e.stopPropagation();
         });
 
         menu.addEventListener("click", function(e) {
             e.stopPropagation();
         });
-        menu.addEventListener("touch", function (e) {
+        menu.addEventListener("touchstart", function (e) {
             e.stopPropagation();
         })
         
