@@ -13,5 +13,5 @@ use myapp\config\ViewsConfig;
     <p><a href="/backyard/article/index">コラム編集</a></p>
     <p><a href="/backyard/articleCategory/index">コラムカテゴリ編集</a></p>
     <p><a href="">支援団体情報編集(これから実装予定)</a></p>
-    <p><a href="/index"><i class="fas fa-home"></i>トップページへ</a></p>
+    <p><a href="/"><i class="fas fa-home"></i>トップページへ</a></p>
 </body>

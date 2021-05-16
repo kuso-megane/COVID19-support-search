@@ -7,7 +7,7 @@
     <div id="title">
 
         <div id="title--left">
-            <a href="/index">
+            <a href="/">
                 <img id="title--left--logo" src="<?php echo ViewsConfig::IMG_URL. 'titleLogo/production.jpg'; ?>" alt="タイトルロゴ">
             </a>
         </div>
@@ -40,7 +40,7 @@
     </div>
 
     <div id="link-to-top--container">
-        <a id="link-to-top" href="/index">
+        <a id="link-to-top" href="/">
             <i class="fas fa-home"></i>
             トップページへ
         </a>
@@ -84,15 +84,23 @@
         }
 
         window.addEventListener("click", menuClose);
+        window.addEventListener("touchstart", menuClose);
 
         showTrigger.addEventListener("click", menuShow);
         closeTrigger.addEventListener("click", menuClose);
 
-        //windowクリックイベントの発火をしない
+        //menuをクリック、タッチしたときにメニューが閉じるのを防ぐ
         showTrigger.addEventListener("click", function(e) {
             e.stopPropagation(); 
-        })
+        });
+        showTrigger.addEventListener("touchstart", function (e) {
+            e.stopPropagation();
+        });
+
         menu.addEventListener("click", function(e) {
+            e.stopPropagation();
+        });
+        menu.addEventListener("touchstart", function (e) {
             e.stopPropagation();
         })
         
