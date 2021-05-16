@@ -7,7 +7,7 @@
     <div id="title">
 
         <div id="title--left">
-            <a href="/index">
+            <a href="/">
                 <img id="title--left--logo" src="<?php echo ViewsConfig::IMG_URL. 'titleLogo/production.jpg'; ?>" alt="タイトルロゴ">
             </a>
         </div>
@@ -40,7 +40,7 @@
     </div>
 
     <div id="link-to-top--container">
-        <a id="link-to-top" href="/index">
+        <a id="link-to-top" href="/">
             <i class="fas fa-home"></i>
             トップページへ
         </a>
