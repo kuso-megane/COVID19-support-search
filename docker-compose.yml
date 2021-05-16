@@ -6,6 +6,8 @@ services:
     volumes:
       - ./apache2/php.ini:/usr/local/etc/php/php.ini
       - ./www:/var/www
+      - ./apache2/conf/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./apache2/conf/docker-php.conf:/etc/apache2/conf-enabled/docker-php.conf
     ports:
       - 81:80 #http://localhost:81
     depends_on:

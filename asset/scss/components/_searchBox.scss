@@ -1,25 +1,5 @@
 @use './vars' as vars;
 
-/*sp*/
-@media screen and (min-width: 320px) and (max-width: 480px){
-    #search-box{
-        width: 100%;
-    }
-}
-
-/*タブレット*/
-@media screen and (min-width: 481px) and (max-width: 1024px){
-    #search-box{
-        width: 35%;
-    }
-}
-
-/*pc*/
-@media screen and (min-width: 1025px){
-    #search-box {
-        width: 35%;
-    }
-}
 
 #search-box{
 
@@ -38,11 +18,11 @@
 
 
 .search-items {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     width: 100%;
 
     select,input{
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
 
     select {
@@ -70,12 +50,17 @@
     font-size: 20px;
     color: white;
     background-color: vars.$baseColor;
-    border: outset 1px vars.$lightColor;
+    border: solid 1px vars.$baseColor;
 
     cursor: pointer;
 }
 
-
+/*pc*/
+@media screen and (min-width: 1025px){
+    #submit-button {
+        border: outset 1px vars.$lightColor;
+    }
+}
 
 
 

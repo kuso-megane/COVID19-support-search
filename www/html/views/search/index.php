@@ -11,6 +11,7 @@ use myapp\config\ViewsConfig;
         <meta name="description" content="コロナで仕事がない、住居、DV、生活費、食料、解雇・休業、ひとり親、外国籍に関する悩みなどまで幅広く、民間の活動を中心に支援・相談窓口・制度を探すことができます！">
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'search/index.css'; ?>">
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
+        <meta name="google-site-verification" content="QUhvKEg1Tym9PdmUbMMUQPB82zF6iKbccQ-EN_Pcg4A" />
     </head>
     <body>
         <?php require ViewsConfig::COMPONENTS_PATH . 'header.php'; ?>
@@ -36,7 +37,7 @@ use myapp\config\ViewsConfig;
                         <li>そもそもどんな支援・相談窓口があるか、支援を受ける条件や方法もわからない。</li>
                         <p>そんな時に、本サイトの検索システムを利用してみませんか？</p>
                         <p>
-                            &#9733;特に民間団体（NPOなど）が行う支援には<span class="red bold">支援を受ける条件が基本的にありません。</span> 一度だけでも検索してみてください。
+                            &#10004; 特に民間団体（NPOなど）が行う支援には<span class="red bold">支援を受ける条件が基本的にありません。</span>一度だけでも検索してみてください。
                         </p>
                         <div class="center">
                             <a id="nav-to-search" class="nav-box left" href="#search-box-anchor">
@@ -69,7 +70,9 @@ use myapp\config\ViewsConfig;
 
                     <div id="search-box-anchor"></div>
 
-                    <?php require ViewsConfig::COMPONENTS_PATH. 'searchbox.php'; ?>
+                    <div class="main--double--left">
+                        <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox.php'; ?>
+                    </div>
 
                     <div id="howto" class="main--double--right">
                         <p class="subTitle bold block-start0">&lt;使い方&gt;</p>

@@ -7,7 +7,7 @@
     <div id="title">
 
         <div id="title--left">
-            <a href="/index">
+            <a href="/">
                 <img id="title--left--logo" src="<?php echo ViewsConfig::IMG_URL. 'titleLogo/production.jpg'; ?>" alt="タイトルロゴ">
             </a>
         </div>
@@ -40,7 +40,7 @@
     </div>
 
     <div id="link-to-top--container">
-        <a id="link-to-top" href="/index">
+        <a id="link-to-top" href="/">
             <i class="fas fa-home"></i>
             トップページへ
         </a>
@@ -66,27 +66,44 @@
 
 <!--右のメニューの管理-->
 <script>
-    const showTrigger = document.getElementById("title--right--menu");
-    const closeTrigger = document.getElementById("close");
+    {
+        const showTrigger = document.getElementById("title--right--menu");
+        const closeTrigger = document.getElementById("close");
 
-    const menuControl = (e) => {
         const menu = document.getElementById("title--right--menu--content");
-        const target = e.currentTarget;
-        const targetId = target.id;
-        const showTriggerId = showTrigger.id;
-        const closeTriggerId = closeTrigger.id;
 
-        if (targetId == showTriggerId) {
+        const menuShow = (e) => { 
             menu.classList.add("show");
-        }
-        else if(targetId == closeTriggerId) {
-            menu.classList.remove("show");
-        }
-        else {
             return;
         }
-    }
 
-    showTrigger.addEventListener("click", menuControl);
-    closeTrigger.addEventListener("click", menuControl);
+
+        const menuClose = (e) => {
+            menu.classList.remove("show");
+            return;
+        }
+
+        window.addEventListener("click", menuClose);
+        window.addEventListener("touchstart", menuClose);
+
+        showTrigger.addEventListener("click", menuShow);
+        closeTrigger.addEventListener("click", menuClose);
+
+        //menuをクリック、タッチしたときにメニューが閉じるのを防ぐ
+        showTrigger.addEventListener("click", function(e) {
+            e.stopPropagation(); 
+        });
+        showTrigger.addEventListener("touchstart", function (e) {
+            e.stopPropagation();
+        });
+
+        menu.addEventListener("click", function(e) {
+            e.stopPropagation();
+        });
+        menu.addEventListener("touchstart", function (e) {
+            e.stopPropagation();
+        })
+        
+    }
+        
 </script>

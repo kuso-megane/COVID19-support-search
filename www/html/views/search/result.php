@@ -18,7 +18,9 @@ use myapp\config\ViewsConfig;
 
                     <div id="searchbox-anchor"></div>
 
-                    <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox.php'; ?>
+                    <div class="main--double--left">
+                        <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox.php'; ?>
+                    </div>
 
                     <div id="search-result-anchor"></div>
 
@@ -66,7 +68,7 @@ use myapp\config\ViewsConfig;
                                     <?php foreach($publicSupports as $support): ?>
                                     
                                         <div class="supportBox">
-                                            <h3 class="owner"><?php echo  $support['owner']; ?></h3>
+                                            <h3 class="owner"><?php echo $support['owner']; ?></h3>
                                             <table>
                                                 <tr>
                                                     <td class="td-column">支援内容</td>

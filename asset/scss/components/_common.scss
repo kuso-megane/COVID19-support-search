@@ -20,7 +20,7 @@
 /*pc*/
 @media screen and (min-width: 1025px){
     html{
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 
@@ -57,6 +57,9 @@ main {
     .main--single, .main--double{
         width: 80vw;
     }
+    .main--double--left {
+        width: 100%;
+    }
     .main--double--right {
         width: 100%;
     }
@@ -66,6 +69,9 @@ main {
 @media screen and (min-width: 481px) and (max-width: 1024px){
     .main--single, .main--double {
         width: 90vw;
+    }
+    .main--double--left {
+        width: 35%;
     }
     .main--double--right {
         width: 60%;
@@ -77,6 +83,9 @@ main {
 @media screen and (min-width: 1025px){
     .main--single, .main--double {
         width: 70vw;
+    }
+    .main--double--left {
+        width: 35%;
     }
     .main--double--right {
         width: 60%;
