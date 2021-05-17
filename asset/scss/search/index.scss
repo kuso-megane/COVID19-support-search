@@ -13,7 +13,7 @@
     border: solid 2px vars.$baseColor;
     border-radius: 1rem;
     cursor: pointer;
-    width: 16rem;
+    width: 15rem;
     font-size: 0.8rem;
     color: vars.$baseColor;
     padding: 1rem;
@@ -71,7 +71,8 @@ $topFontSize: 0.75rem;
         }
 
         .nav-box {
-            margin: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
         }
     }
 }

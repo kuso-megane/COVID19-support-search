@@ -21,7 +21,7 @@ use myapp\config\ViewsConfig;
                 <div id="introduce" class="main--single">
                     <div class="center">
                         <div id="introduce--top">
-                            <p class="centor"><span id="introduce--top--main" class="green"><?php echo AppConfig::TITLE; ?></span>&ensp;は、</p>
+                            <p class="centor block-start0"><span id="introduce--top--main" class="green"><?php echo AppConfig::TITLE; ?></span>&ensp;は、</p>
                             <p id="introduce--top--explaination" class="break-word block-start0">生活上の様々なお困りごとにあった支援・相談窓口を検索できるサービスです！</p>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ use myapp\config\ViewsConfig;
                             <a id="nav-to-search" class="nav-box left" href="#search-box-anchor">
                                 <p class="bold">
                                     <i class="fas fa-search"></i>
-                                    支援・相談先を検索する<span class="gt">&gt;</span>
+                                    支援・相談先を検索する&emsp;<span class="gt">&gt;</span>
                                 </p>
                             </a>
                         </div>
@@ -56,7 +56,7 @@ use myapp\config\ViewsConfig;
                             <a id="nav-to-article" class="nav-box left" href="/article/list">
                                 <p class="bold">
                                     <i class="fas fa-book-open"></i>
-                                    お役立ち情報(コラム)を見る<span class="gt">&gt;</span>
+                                    お役立ち情報(コラム)を見る&emsp;<span class="gt">&gt;</span>
                                 </p>
                             </a>
                         </div>

@@ -87,7 +87,7 @@
 
         &--logo {
             
-            $size: 5rem;
+            $size: 4.5rem;
             height: $size;
             width: $size * 3;
         }
@@ -97,7 +97,6 @@
         &--menu {
 
             margin-top: 1rem;
-            font-size: 1.4rem;
             cursor: pointer;
             font-weight: bold;
 
@@ -154,11 +153,11 @@
 
 #link-to-top--container {
     background-color: vars.$baseColor;
-    $TBPadding: 0.3rem;
+    $TBPadding: 0.2rem;
     padding-top: $TBPadding;
     padding-bottom: $TBPadding;
     text-decoration: underline;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     
     a {
         color: white;

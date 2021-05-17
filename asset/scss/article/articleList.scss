@@ -12,6 +12,9 @@
     &--title {
         color: vars.$articleColor;
         background-color: vars.$articleBGColor;
+        $padding: 0.3rem;
+        padding-left: $padding;
+        padding-right: $padding;
     }
 
 }
