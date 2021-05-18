@@ -142,6 +142,11 @@ class MyDbh extends PDO
      * ]
      * 
      * if you wanna execute multiple sort, set 'orderby' like 'id ASC, name DESC' and don't set 'sort'
+     * 
+     * limitStart is the start index minus 1 of the records you want. e.g. When you want from 1 to x, set this 0
+     * 
+     * limitNum is the num of the records you want.
+     * 
      * @param array $boundValues (e.g.) [':id' => int, ':num' => int, ':orderby' => string]
      * 
      * if you wanna bind these manually, this can be empty
@@ -151,13 +156,6 @@ class MyDbh extends PDO
      * 
      * @return array|PDOStatement (e.g.)[ ['id' => int, 'name' => string], [] ] 
      * 
-     * 
-     * limitStart is the start index minus 1 of the records you want. e.g. When you want from 1 to x, please set 0
-     * 
-     * limitNum is the num of the records you want.
-     * 
-     * Note that $boundCondition is only for $condition.
-     * Others like $options[':orderby'] will be automatically formatted for prepared statement and bound.
      * 
      */
     public function select(string $columns, string $tableName, string $condition = '', array $options = [], array $boundValues = [], int $executeFlag = self::EXECUTE)
