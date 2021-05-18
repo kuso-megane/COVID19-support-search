@@ -8,7 +8,7 @@ use myapp\config\ViewsConfig;
 <html>
     <head>
         <title><?php echo "すぐに使える支援・相談窓口探しなら" . AppConfig::TITLE; ?></title>
-        <meta name="description" content="民間やNPOの活動を中心に支援・相談窓口・制度を探すことができる検索システムです。住まい、DV、食料、コロナで仕事・バイトが解雇・休業、シングルマザー/ファザー、外国籍に関する悩みなどまで幅広く対応しています。困ったときはためらわずにご利用ください！
+        <meta name="description" content="民間やNPOの活動を中心に支援・相談窓口・制度を探すことができる検索システムです。住まい、DV、食料、コロナによる仕事やバイトの解雇・休業、シングルマザー/ファザー、外国籍に関する悩みなどまで幅広く対応しています。困ったときはためらわずにご利用ください！
 ">
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'search/index.css'; ?>">
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
