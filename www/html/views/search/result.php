@@ -68,6 +68,18 @@ use myapp\config\ViewsConfig;
                                     <?php foreach($publicSupports as $support): ?>
                                     
                                         <div class="supportBox">
+                                            <p class="target block-end0 block-start0">
+                                                &lt;
+                                                <?php 
+                                                    if ($support['area_id'] !== AppConfig::ZENKOKU_ID) {
+                                                        echo $searchedAreaName . 'を中心に活動';
+                                                    }
+                                                    else {
+                                                        echo '全国の方が対象';
+                                                    }
+                                                ?>
+                                                &gt;
+                                            </p>
                                             <h3 class="owner"><?php echo $support['owner']; ?></h3>
                                             <table>
                                                 <tr>
@@ -133,6 +145,18 @@ use myapp\config\ViewsConfig;
                                     <?php foreach($privateSupports as $support): ?>
                                     
                                         <div class="supportBox">
+                                            <p class="target block-end0 block-start0">
+                                                &lt;
+                                                <?php 
+                                                    if ($support['area_id'] !== AppConfig::ZENKOKU_ID) {
+                                                        echo $searchedAreaName . 'を中心に活動';
+                                                    }
+                                                    else {
+                                                        echo '全国の方が対象';
+                                                    }
+                                                ?>
+                                                &gt;
+                                            </p>
                                             <h3 class="owner"><?php echo $support['owner']; ?></h3>
                                             <table>
                                                 <tr>

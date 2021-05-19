@@ -22,7 +22,7 @@ class AppConfig
     
 
     // domainの返り値
-    const INVALID_PARAMS = -1; //domain層が例外、エラー発生時に後続処理を中断し、この値を返す
+    const INVALID_PARAMS = -1; //validationが通らないとき
     const INVALID_ACCESS = -2; // csrfなど、必要なtokenが見つからない時
     const NOT_LOGIN = -3; //ログインが必要な操作で、ログインしていない場合
 

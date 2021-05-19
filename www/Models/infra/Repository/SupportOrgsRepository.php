@@ -30,6 +30,7 @@ implements
 
         foreach ($datas as &$data) {
             $data = new SearchedSupport(
+                $data['area_id'],
                 $data['support_content'],
                 $data['owner'],
                 $data['access'],

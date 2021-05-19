@@ -30,7 +30,8 @@ class SupportOrgsTable
      * @param bool $is_necessary_zenkoku
      * 
      * @return NULL|array [
-     *      'id' => int
+     *      'id' => int,
+     *      'area_id' => int
      *      'support_content' => string,
      *      'owner' => string,
      *      'access' => string,
@@ -42,7 +43,7 @@ class SupportOrgsTable
      */
     public function findSearchedOnes(int &$total, string $meta_word, int $area_id, bool $is_only_foreign_ok, bool $is_public, int $maxNumPerPage, int $page, bool $is_necessary_zenkoku = FALSE): ?array
     {
-        $columns = 'id, support_content, owner, access, appendix';
+        $columns = 'id, area_id, support_content, owner, access, appendix';
         $is_public = ($is_public === TRUE) ? 1 : 0;
         
         if ($is_necessary_zenkoku === FALSE) {

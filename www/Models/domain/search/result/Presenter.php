@@ -31,6 +31,7 @@ class Presenter
      *      'privatePageTotal' => int,
      *      'publicSupports' => [
      *          [
+     *              'area_id' => int,
      *              'support_content' => string,
      *              'owner' => string,
      *              'access' => string,
