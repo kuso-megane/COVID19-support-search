@@ -7,17 +7,19 @@ use myapp\config\ViewsConfig;
 
 <!DOCTYPE html>
 <html>
-    <head>
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# website: http://ogp.me/ns/ website#">
         <title><?php echo "すぐに使える支援・相談窓口探しなら" . AppConfig::TITLE; ?></title>
         <meta name="description" content="コロナで仕事がない、住居、DV、生活費、食料、解雇・休業、ひとり親、外国籍に関する悩みなどまで幅広く、民間の活動を中心に支援・相談窓口・制度を探すことができます！">
 
         <!--ogp-->
+        <meta property="og:url" content="<?php echo URIConfig::URI; ?>" />
         <meta property="og:title" content="<?php echo "すぐに使える支援・相談窓口探しなら" . AppConfig::TITLE; ?>" />
         <meta property="og:image" content="<?php echo URIConfig::URI. ViewsConfig::IMG_URL. 'titleLogo/production.jpg'; ?>" />
         <meta property="og:description"
         content="コロナで仕事がない、住居、DV、生活費、食料、解雇・休業、ひとり親、外国籍に関する悩みなどまで幅広く、民間の活動を中心に支援・相談窓口・制度を探すことができます！"
         />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@suppofy" />
 
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'search/index.css'; ?>">
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
