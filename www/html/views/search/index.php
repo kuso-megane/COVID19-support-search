@@ -30,7 +30,7 @@ use myapp\config\ViewsConfig;
         <?php require ViewsConfig::COMPONENTS_PATH . 'header.php'; ?>
 
         <main>
-            <div id="introduce-container" class="center" >
+            <div id="introduce-container" class="center blur" >
                 <div id="introduce" class="main--single">
                     <div class="center">
                         <div id="introduce--top">
@@ -64,7 +64,6 @@ use myapp\config\ViewsConfig;
                         <li>性暴力、ハラスメント、DVで苦しんでいる。</li>
                         <li>でも、誰にも相談できていない。支援や制度も利用できていない。</li>
                         <li>そもそもどんな支援・相談窓口があるか、支援を受ける条件や方法もわからない。</li>
-                        <p>そんな時に、本サイトの検索システムを利用してみませんか？</p>
                         <p>
                             &#10004; 特に民間団体（NPOなど）が行う支援には<span class="red bold">支援を受ける条件が基本的にありません。</span>一度だけでも検索してみてください。
                         </p>
