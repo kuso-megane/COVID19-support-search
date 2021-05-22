@@ -43,22 +43,24 @@ $topFontSize: 0.75rem;
     text-shadow: 0.1rem 0.1rem 0.2rem black;
 }
 
-#introduce-container:before{
+/*
+#introduce--container:before{
     content: '';
-  background: inherit;
-  -webkit-filter: blur(0.3rem);
-  -moz-filter: blur(0.3rem);
-  -o-filter: blur(0.3rem);
-  -ms-filter: blur(0.3rem);
-  filter: blur(0.3rem);
-  position: absolute;
-  top: -0.3rem;
-  left: -0.3rem;
-  right: -0.3rem;
-  bottom: -0.3rem;
-  z-index: -1;
+    background: inherit;
+    -webkit-filter: blur(0.3rem);
+    -moz-filter: blur(0.3rem);
+    -o-filter: blur(0.3rem);
+    -ms-filter: blur(0.3rem);
+    filter: blur(0.3rem);
+    position: absolute;
+    top: -0.3rem;
+    left: -0.3rem;
+    right: -0.3rem;
+    bottom: -0.3rem;
+    z-index: -1;
 
 }
+*/
 
 
 #nav-to-search{

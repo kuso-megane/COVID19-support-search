@@ -30,7 +30,7 @@ use myapp\config\ViewsConfig;
         <?php require ViewsConfig::COMPONENTS_PATH . 'header.php'; ?>
 
         <main>
-            <div id="introduce-container" class="center blur" >
+            <div id="introduce--container" class="center blur" >
                 <div id="introduce" class="main--single">
                     <div class="center">
                         <div id="introduce--top">
