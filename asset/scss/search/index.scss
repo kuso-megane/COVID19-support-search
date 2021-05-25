@@ -61,13 +61,6 @@ $topFontSize: 0.75rem;
 
 
 
-#nav-to-search{
-    background-color:vars.$baseColor;
-}
-
-#nav-to-article{
-    background-color:vars.$baseColor;
-}
 
 #introduce {
     border: none;
@@ -88,6 +81,41 @@ $topFontSize: 0.75rem;
         }
 
     }
+
+    &--double{
+        margin-right: 1rem;
+       
+        &--box{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            text-align: left;
+            
+            &--left{
+                margin: auto;
+                &--nav-to-search{
+                
+                    background-color:vars.$baseColor;
+                }
+            }
+
+            &--right{
+                margin: auto;
+                &--nav-to-article{
+                
+                    background-color:vars.$baseColor;
+                }
+            }
+
+
+
+        }
+
+        
+
+
+    }
+
 
 
 
