@@ -135,17 +135,10 @@ $topFontSize: 0.75rem;
             color:white;
         }
         
-        &--explaination {
-            width: 90%;
-            display: inline-block;
-        }
-
     }
 
     &--double{
-        
-        
-       
+
         &--box{
             display: flex;
             flex-wrap: wrap;
@@ -159,6 +152,7 @@ $topFontSize: 0.75rem;
                 
                     background-color:vars.$baseColor;
                 }
+
             }
 
             &--right{
@@ -167,6 +161,7 @@ $topFontSize: 0.75rem;
                 
                     background-color:vars.$baseColor;
                 }
+
             }
         }
 
@@ -175,14 +170,10 @@ $topFontSize: 0.75rem;
             flex-wrap: wrap;
             align-items: flex-start;
             text-align: left;
-
-          justify-content:space-evenly;
-
-
+            justify-content:space-evenly;
+            margin-top: 2rem;
         }
         
-
-
     }
 
 
@@ -200,6 +191,7 @@ $topFontSize: 0.75rem;
 
         .nav-title {
             display: inline-block;
+            margin: auto;
             margin-top: 1rem;
             margin-bottom: 1rem;
             padding: 2px;
