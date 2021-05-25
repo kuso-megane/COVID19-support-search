@@ -55,8 +55,23 @@ $topFontSize: 0.75rem;
         left: -0.3rem;
         right: -0.3rem;
         bottom: -0.3rem;
-        z-index: -1;
+        z-index: -2;
     }
+
+    &:after {
+        content: '';
+        /* ↓暗いオーバーレイを半透明で配置 */
+        background-color: rgba(0, 0, 0, 0.3);
+        /* ↓全体を覆うように配置 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index:-1;
+    }
+
 }
 
 
