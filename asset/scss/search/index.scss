@@ -151,9 +151,10 @@ $topFontSize: 0.75rem;
             flex-wrap: wrap;
             align-items: flex-start;
             text-align: left;
-            
+            justify-content:space-evenly;
+
             &--left{
-                margin: auto;
+               
                 &--nav-to-search{
                 
                     background-color:vars.$baseColor;
@@ -161,7 +162,7 @@ $topFontSize: 0.75rem;
             }
 
             &--right{
-                margin: auto;
+                
                 &--nav-to-article{
                 
                     background-color:vars.$baseColor;
@@ -175,12 +176,7 @@ $topFontSize: 0.75rem;
             align-items: flex-start;
             text-align: left;
 
-            &--left{
-                margin: auto;
-                
-            }
-
-           
+          justify-content:space-evenly;
 
 
         }
