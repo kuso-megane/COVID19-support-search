@@ -64,6 +64,14 @@ main {
         width: 100%;
         margin-top: 2rem;
     }
+    .introduce--double--explain--lefter{
+        width: 100%;
+    }
+
+    .introduce--double--explain--righter{
+        width: 100%;
+    }
+
 }
 
 /*タブレット*/
@@ -78,6 +86,16 @@ main {
         width: 60%;
         margin-left: 5%;
     }
+
+    .introduce--double--explain--lefter{
+        width: 50%;
+    }
+
+    .introduce--double--explain--righter{
+        width: 50%;
+        margin-left: 5%;
+    }
+
 }
 
 /*pc*/
@@ -92,6 +110,15 @@ main {
         width: 60%;
         margin-left: 5%;
     }
+
+    .introduce--double--explain--lefter{
+        width: 50%;
+    }
+
+    .introduce--double--explain--righter{
+        width: 50%;
+    }
+
 }
 
 

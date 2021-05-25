@@ -106,11 +106,17 @@ $topFontSize: 0.75rem;
                     background-color:vars.$baseColor;
                 }
             }
-
-
-
         }
 
+        &--explain{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            text-align: left;
+
+           
+
+        }
         
 
 
