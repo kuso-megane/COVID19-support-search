@@ -62,7 +62,7 @@ use myapp\config\ViewsConfig;
                             </div>
 
                             <div id="introduce--double--explain">
-                                <div  id="introduce--double--explain--left" class="introduce--double--explain--lefter">
+                                <div  id="introduce--double--explain--left">
                                     <div class="nav-title">
                                         <p class="bold block-start0 block-end0">例えばこんなお悩みありませんか？</p>
                                     </div> 
@@ -74,7 +74,7 @@ use myapp\config\ViewsConfig;
                                         &#10004; 特に民間団体（NPOなど）が行う支援には<span class="red bold">支援を受ける条件が基本的にありません。</span>一度だけでも検索してみてください。
                                     </p>
                                 </div>
-                                <div id="introduce--double--explain--right" class="introduce--double--explain--righter">
+                                <div id="introduce--double--explain--right">
                                     <div class="nav-title">
                                         <p class="bold block-end0 block-start0">お役立ち情報(コラム)も書いています！以下のような悩みに答えています！</p>
                                     </div>
