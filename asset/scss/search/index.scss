@@ -75,6 +75,50 @@ $topFontSize: 0.75rem;
 }
 
 
+/*sp*/
+@media screen and (min-width: 320px) and (max-width: 480px){
+ 
+    .introduce--double--explain--lefter{
+        width: 100%;
+    }
+
+    .introduce--double--explain--righter{
+        width: 100%;
+    }
+
+}
+
+/*タブレット*/
+@media screen and (min-width: 481px) and (max-width: 1024px){
+   
+
+    .introduce--double--explain--lefter{
+        width: 100%;
+    }
+
+    .introduce--double--explain--righter{
+        width: 100%;
+      
+    }
+}
+
+
+
+@media screen and (min-width: 1025px){
+    
+
+    .introduce--double--explain--lefter{
+        width: 50%;
+    }
+
+    .introduce--double--explain--righter{
+        width: 50%;
+       
+    }
+}
+
+
+
 
 
 #introduce {
