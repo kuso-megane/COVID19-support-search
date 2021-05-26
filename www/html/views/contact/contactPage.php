@@ -18,8 +18,9 @@ use myapp\config\ViewsConfig;
         <main>
             <div class="center">
                 <div id="contact" class="main--single">
-                    <h2>&lt;お問い合わせフォーム&gt;</h2>
-                    <p>メールアドレス: <span class="bold"><?php echo $adress; ?></span></p>
+                    <h3 class="block-start0">&lt;お問い合わせ&gt;</h3>
+                    <p class="block-end0">メールアドレス:</p>
+                    <p class="bold block-start0 block-end0"><?php echo $adress; ?></p>
                     <p>
                         twitter: 
                         <a class ="bold blue" href="https://twitter.com/suppofy" target="_blank" rel="noopener noreferrer">
