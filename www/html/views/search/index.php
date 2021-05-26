@@ -71,14 +71,14 @@ use myapp\config\ViewsConfig;
                                     <li>でも、誰にも相談できていない。支援や制度も利用できていない。</li>
                                     <li>そもそもどんな支援・相談窓口があるか、支援を受ける条件や方法もわからない。</li>
                                     <p>
-                                        &#10004; 特に民間団体（NPOなど）が行う支援には<span id="stress">支援を受ける条件が基本的にありません。</span>一度だけでも検索してみてください。
+                                        &#10004; 特に民間団体（NPOなど）が行う支援には<span class="greenyellow">支援を受ける条件が基本的にありません。</span>一度だけでも検索してみてください。
                                     </p>
                                 </div>
                                 <div id="introduce--double--explain--right">
                                     <div class="nav-title">
                                         <p class="bold block-end0 block-start0">お役立ち情報(コラム)も書いています！以下のような悩みに答えています！</p>
                                     </div>
-                                    <li id="stress">支援・相談窓口の利用にためらいや不安、恥ずかしさを感じる</li>
+                                    <li class="greenyellow">支援・相談窓口の利用にためらいや不安、恥ずかしさを感じる</li>
                                     <li>支援って具体的にどう行われているの？</li>
                                 </div>
                             </div>
