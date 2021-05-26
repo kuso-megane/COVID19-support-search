@@ -190,9 +190,7 @@ $topFontSize: 0.75rem;
 
         .nav-title {
             display: inline-block;
-            margin: auto;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
+            
             padding: 2px;
 
             p {
@@ -200,6 +198,10 @@ $topFontSize: 0.75rem;
             }
         }
     }
+}
+
+.main--double {
+    margin-top: 4rem;
 }
 
 
