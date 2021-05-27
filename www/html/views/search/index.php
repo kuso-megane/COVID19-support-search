@@ -66,12 +66,15 @@ use myapp\config\ViewsConfig;
                                     <div class="nav-title">
                                         <p class="bold block-start0 block-end0">例えばこんなお悩みありませんか？</p>
                                     </div> 
-                                    <li>コロナ禍で仕事や住まいを失った。</li>
-                                    <li>性暴力、ハラスメント、DVで苦しんでいる。</li>
-                                    <li>でも、誰にも相談できていない。支援や制度も利用できていない。</li>
-                                    <li>そもそもどんな支援・相談窓口があるか、支援を受ける条件や方法もわからない。</li>
+                                    <li>仕事や住まいを失った。</li>
+                                    <li>性暴力、DV、病気で苦しい。</li>
+                                    <li>でも相談できていない。支援や制度も利用していない。</li>
+                                    <li>どんな支援・相談窓口があるか、支援を受ける条件や方法もわからない。</li>
                                     <p>
-                                        &#10004; 特に民間団体（NPOなど）が行う支援には<span class="greenyellow">支援を受ける条件が基本的にありません。</span>一度だけでも検索してみてください。
+                                        &#10004; 特に民間の支援には<span class="greenyellow">支援を受ける条件が基本的にありません。</span>
+                                    </p>
+                                    <p>
+                                    一度だけでも検索してみてください。
                                     </p>
                                 </div>
                                 <div id="introduce--double--explain--right">
