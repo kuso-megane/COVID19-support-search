@@ -130,13 +130,18 @@ $topFontSize: 0.75rem;
         font-weight: bold; 
 
         &--main {
-            font-size: 2em;
+            font-size: 2rem;
             color:white;
+        }
+
+        &--explaination{
+            font-size: 0.9rem;
         }
         
     }
 
     &--double{
+        
 
         &--box{
             display: flex;
@@ -144,6 +149,7 @@ $topFontSize: 0.75rem;
             align-items: flex-start;
             text-align: left;
             justify-content:space-evenly;
+            font-size:0.8rem;
 
             &--left{
                
@@ -171,6 +177,8 @@ $topFontSize: 0.75rem;
             text-align: left;
             justify-content:space-evenly;
             margin-top: 2rem;
+            font-size: 0.8rem;
+            
         }
         
     }
