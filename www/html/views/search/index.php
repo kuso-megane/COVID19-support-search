@@ -63,6 +63,7 @@ use myapp\config\ViewsConfig;
                         <div id="introduce--main--explain">
                             <div  id="introduce--main--explain--left">
                                 <div class="explain-title">
+                                    <br>
                                     <p class="bold block-start0 block-end0">例えばこんなお悩みありませんか？</p>
                                 </div>
                                 <div class="explain-list">
