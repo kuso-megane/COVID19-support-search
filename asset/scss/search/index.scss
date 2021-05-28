@@ -199,15 +199,16 @@ $topFontSize: 0.75rem;
             &--left, &--right {
 
                 margin-top: 2rem;
-                text-align: left;
 
                 li {
+                    text-align: left;
                     list-style: disc;
                     margin: 0.5rem;
                 }
         
-                .nav-title {
+                .explain-title {
                     display: inline-block;
+                    text-align: left;
                     margin: auto;
                     padding: 2px;
         
@@ -215,7 +216,11 @@ $topFontSize: 0.75rem;
                         border-bottom: double 3px vars.$baseColor;
                     }
                 }
-                
+
+                .explain-list {
+                    margin-top: 2rem;
+                }
+
             }
         }
     }
