@@ -10,7 +10,7 @@ use myapp\config\AppConfig;
 class Interactor
 {
     /**
-     * @param array $imgFileInfo
+     * @param array $imgFileInfo $_FILES
      * 
      * @return string|FALSE
      * upload given img file and return the new name.

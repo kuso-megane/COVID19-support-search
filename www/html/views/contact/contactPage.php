@@ -18,9 +18,15 @@ use myapp\config\ViewsConfig;
         <main>
             <div class="center">
                 <div id="contact" class="main--single">
-                    <h2>お問い合わせフォーム</h2>
-                    <p>今後実装予定です。至急のお問い合わせは、以下のアドレスへよろしくお願いいたします。</p>
-                    <p>アドレス: <span class="bold"><?php echo $adress; ?></span></p>
+                    <h3 class="block-start0">&lt;お問い合わせ&gt;</h3>
+                    <p class="block-end0">メールアドレス:</p>
+                    <p class="bold block-start0 block-end0"><?php echo $adress; ?></p>
+                    <p>
+                        twitter: 
+                        <a class ="bold blue" href="https://twitter.com/suppofy" target="_blank" rel="noopener noreferrer">
+                            https://twitter.com/suppofy
+                        </a>
+                    </p>
                 </div>
             </div>
         </main>
