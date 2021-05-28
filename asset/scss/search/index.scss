@@ -170,7 +170,6 @@ $topFontSize: 0.75rem;
 
             .nav-box {
                 display: inline-block;
-                border: solid 2px vars.$baseColor;
                 border-radius: 1rem;
                 cursor: pointer;
                 font-size: 0.8rem;
@@ -212,7 +211,7 @@ $topFontSize: 0.75rem;
                     padding: 2px;
         
                     p {
-                        border-bottom: double 3px vars.$baseColor;
+                        border-bottom: double 3px vars.$lightColor;
                     }
                 }
 
