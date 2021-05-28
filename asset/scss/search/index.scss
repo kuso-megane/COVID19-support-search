@@ -8,23 +8,6 @@
 
 @use '../components/page_switch';
 
-.nav-box {
-    display: inline-block;
-    border: solid 2px vars.$baseColor;
-    border-radius: 1rem;
-    cursor: pointer;
-    width: 15rem;
-    font-size: 0.8rem;
-    color: white;
-    padding: 1rem;
-
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.gt {
-    float: right;
-}
 
 // index
 
@@ -77,44 +60,72 @@ $topFontSize: 0.75rem;
 
 /*sp*/
 @media screen and (min-width: 320px) and (max-width: 480px){
- 
 
-    #introduce--double--explain--left{
-        width: 100%;
+    #introduce--double {
+        &--box {
+            &--left, &--right {
+                width: 100%;
+            }
+        }
+
+        &--explain {
+            &--left, &--right{
+                width: 100%;
+            }
+        }
     }
 
-    #introduce--double--explain--right{
-        width: 100%;
+    .nav-box {
+        width: 95%;
     }
 
 }
+
 
 /*タブレット*/
 @media screen and (min-width: 481px) and (max-width: 1024px){
-   
 
-    #introduce--double--explain--left{
-        width: 100%;
+    #introduce--double {
+        &--box {
+            &--left, &--right {
+                width: 100%;
+            }
+        }
+
+        &--explain {
+            &--left, &--right{
+                width: 80%;
+                margin: auto;
+            }
+        }
     }
 
-    #introduce--double--explain--right{
-        width: 100%;
-      
+    .nav-box {
+        width: 45%;
     }
+
 }
 
 
-
+/*pc*/
 @media screen and (min-width: 1025px){
     
+    #introduce--double {
+        &--box {
+            &--left, &--right {
+                width: 45%;
+            }
+        }
 
-    #introduce--double--explain--left{
-        width: 45%;
+        &--explain {
+            &--left, &--right{
+                width: 45%;
+            }
+        }
     }
 
-    #introduce--double--explain--right{
-        width: 45%;
-       
+    .nav-box {
+        width: 70%;
     }
 }
 
@@ -142,45 +153,51 @@ $topFontSize: 0.75rem;
 
     &--double{
         
+        $flexBoxWidth: 100%;
 
         &--box{
             display: flex;
             flex-wrap: wrap;
             align-items: flex-start;
             text-align: left;
-            justify-content:space-evenly;
+            justify-content:space-between;
             font-size:0.8rem;
+            width: $flexBoxWidth;
 
-            &--left{
-               
-                &--nav-to-search{
-                
-                    background-color:vars.$baseColor;
-                }
 
+            .nav-box {
+                display: inline-block;
+                border: solid 2px vars.$baseColor;
+                border-radius: 1rem;
+                cursor: pointer;
+                font-size: 0.8rem;
+                color: white;
+                background-color:vars.$baseColor;
+                padding: 1rem;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
             }
-
-            &--right{
-                
-                &--nav-to-article{
-                
-                    background-color:vars.$baseColor;
-                }
-
+            
+            .gt {
+                float: right;
             }
         }
 
         &--explain{
+
             display: flex;
             flex-wrap: wrap;
             align-items: flex-start;
-            text-align: left;
-            justify-content:space-evenly;
+            justify-content:space-between;
             font-size: 0.8rem;
             line-height: 2;
+            width: $flexBoxWidth;
             
             &--left, &--right {
+
                 margin-top: 2rem;
+                text-align: left;
+
             }
         }
         

@@ -44,7 +44,7 @@ use myapp\config\ViewsConfig;
                         <div id="introduce--double">
                             <div id="introduce--double--box">
                                 <div id="introduce--double--box--left" class="center">
-                                    <a id="introduce--double--box--left--nav-to-search" class="nav-box left" href="#search-box-anchor">
+                                    <a id="introduce--double--box--left--nav-to-search" class="nav-box" href="#search-box-anchor">
                                         <p class="bold">
                                             <i class="fas fa-search"></i>
                                             支援・相談先を検索する&emsp;<span class="gt">&gt;</span>
@@ -52,7 +52,7 @@ use myapp\config\ViewsConfig;
                                     </a>
                                 </div>
                                 <div id="introduce--double--box--right" class="center">
-                                    <a id="introduce--double--box--right--nav-to-article" class="nav-box left" href="/article/list">
+                                    <a id="introduce--double--box--right--nav-to-article" class="nav-box" href="/article/list">
                                         <p class="bold">
                                             <i class="fas fa-book-open"></i>
                                             お役立ち情報(コラム)を見る&emsp;<span class="gt">&gt;</span>
