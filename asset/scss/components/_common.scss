@@ -47,7 +47,7 @@ body {
 
 main {
     background-color: vars.$mainBGColor;
-    padding-top: 2rem;
+    //padding-top: 2rem;
     padding-bottom: 7rem;
 }
 
@@ -62,7 +62,10 @@ main {
     }
     .main--double--right {
         width: 100%;
+        margin-top: 2rem;
     }
+
+
 }
 
 /*タブレット*/
@@ -77,6 +80,8 @@ main {
         width: 60%;
         margin-left: 5%;
     }
+
+
 }
 
 /*pc*/
@@ -91,6 +96,7 @@ main {
         width: 60%;
         margin-left: 5%;
     }
+
 }
 
 
@@ -119,7 +125,6 @@ main {
         border-radius: 1rem;
         text-align: center;
         background-color: white;
-        margin-top: vars.$main--doubleMarginTop;
         padding-top: $TBPadding;
         padding-bottom: $TBPadding;
         padding-left: vars.$mainBoxPadding;
@@ -130,7 +135,6 @@ main {
         border: solid 2px vars.$baseColor;
         border-radius: 1rem;
         background-color: white;
-        margin-top: vars.$main--doubleMarginTop;
         padding-top: $TBPadding;
         padding-bottom: $TBPadding;
         padding-left: vars.$mainBoxPadding;
@@ -223,4 +227,9 @@ main {
 
 .keiko {
     background: linear-gradient(transparent 70%, vars.$lightColor 30%);
+}
+
+
+.greenyellow{
+    color: greenyellow;
 }

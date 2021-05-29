@@ -8,31 +8,133 @@
 
 @use '../components/page_switch';
 
-.nav-box {
-    display: inline-block;
-    border: solid 2px vars.$baseColor;
-    border-radius: 1rem;
-    cursor: pointer;
-    width: 15rem;
-    font-size: 0.8rem;
-    color: vars.$baseColor;
-    padding: 1rem;
-
-    top: 0;
-    bottom: 0;
-    margin: auto;
-}
-
-.gt {
-    float: right;
-}
 
 // index
 
 $topFontSize: 0.75rem;
 
+
+
+#introduce--container{
+    background: url(/asset/img/shakingHands.jpg) center center no-repeat ;
+    background-size: 100% 100%;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    color:white;
+    text-shadow: 0.1rem 0.1rem 0.2rem black;
+
+
+    &:before{
+        content: '';
+        background: inherit;
+        -webkit-filter: blur(0.3rem);
+        -moz-filter: blur(0.3rem);
+        -o-filter: blur(0.3rem);
+        -ms-filter: blur(0.3rem);
+        filter: blur(0.3rem);
+        position: absolute;
+        top: -0.3rem;
+        left: -0.3rem;
+        right: -0.3rem;
+        bottom: -0.3rem;
+        z-index: -2;
+    }
+
+    &:after {
+        content: '';
+        /* ↓暗いオーバーレイを半透明で配置 */
+        background-color: rgba(0, 0, 0, 0.3);
+        /* ↓全体を覆うように配置 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index:-1;
+    }
+
+}
+
+
+/*sp*/
+@media screen and (min-width: 320px) and (max-width: 480px){
+
+    #introduce--main {
+        &--box {
+            &--left, &--right {
+                width: 100%;
+            }
+        }
+
+        &--explain {
+            &--left, &--right{
+                width: 100%;
+            }
+        }
+    }
+
+    .nav-box {
+        width: 95%;
+    }
+
+}
+
+
+/*タブレット*/
+@media screen and (min-width: 481px) and (max-width: 1024px){
+
+    #introduce--main {
+        &--box {
+            &--left, &--right {
+                width: 100%;
+            }
+        }
+
+        &--explain {
+            &--left, &--right{
+                width: 80%;
+                margin: auto;
+            }
+        }
+    }
+
+    .nav-box {
+        width: 45%;
+    }
+
+}
+
+
+/*pc*/
+@media screen and (min-width: 1025px){
+    
+    #introduce--main {
+        &--box {
+            &--left, &--right {
+                width: 45%;
+            }
+        }
+
+        &--explain {
+            &--left, &--right{
+                width: 45%;
+            }
+        }
+    }
+
+    .nav-box {
+        width: 70%;
+    }
+}
+
+
+
+
 #introduce {
-    margin-top: 0;
+    border: none;
+    background-color: transparent;
 
     &--top {
         font-size: $topFontSize;
@@ -40,41 +142,90 @@ $topFontSize: 0.75rem;
 
         &--main {
             font-size: 2em;
-        }
-        
-        &--explaination {
-            width: 90%;
-            display: inline-block;
+            color:yellowgreen;
         }
 
+        &--explaination{
+            font-size: 0.9rem;
+        }
+        
     }
 
     &--main{
+        
+        $flexBoxWidth: 100%;
         text-align: left;
         font-size: $topFontSize;
         margin-top: 1.5rem;
 
-        li {
-            list-style: disc;
-            margin: 0.5rem;
-        }
+        &--box{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            text-align: left;
+            justify-content:space-between;
+            font-size:0.8rem;
+            width: $flexBoxWidth;
 
-        .nav-title {
-            display: inline-block;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            padding: 2px;
 
-            p {
-                border-bottom: double 3px vars.$baseColor;
+            .nav-box {
+                display: inline-block;
+                border-radius: 1rem;
+                cursor: pointer;
+                font-size: 0.8rem;
+                color: white;
+                background-color:vars.$baseColor;
+                padding: 1rem;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .gt {
+                float: right;
             }
         }
 
-        .nav-box {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
+        &--explain{
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content:space-between;
+            font-size: 0.8rem;
+            line-height: 2;
+            width: $flexBoxWidth;
+            
+            &--left, &--right {
+
+                margin-top: 2rem;
+
+                li {
+                    text-align: left;
+                    list-style: disc;
+                    margin: 0.5rem;
+                }
+        
+                .explain-title {
+                    text-align: left;
+                    margin: auto;
+                    padding: 2px;
+        
+                    p {
+                        border-bottom: double 3px vars.$lightColor;
+                    }
+                }
+
+                .explain-list {
+                    margin-top: 2rem;
+                }
+
+            }
         }
     }
+}
+
+.main--double {
+    margin-top: 4rem;
 }
 
 
