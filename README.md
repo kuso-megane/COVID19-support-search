@@ -8,8 +8,8 @@
 - aws ECS + EC2 + RDS
 - ECRからappコンテナのイメージを保存
 - ECS管理下のEC2インスタンスに、git経由でコードを反映
-- ECSのappコンテナの環境変数で、RDSの接続関連の情報を設定
-- appコンテナの環境変数```IS_PROD```を```true```に設定。これに基づき、DBConfigがRDSの接続関連の情報を環境変数から取得。
+- ECS管理下のEC2インスタンス内の、appコンテナの環境変数で、RDSの接続関連の情報を設定
+- appコンテナの環境変数```IS_PROD```を```true```に設定。これに基づき、```www/config/DBConfig```がRDSの接続関連の情報を環境変数から取得。
 
 ## 環境構築
 1. gitでコードをpull
