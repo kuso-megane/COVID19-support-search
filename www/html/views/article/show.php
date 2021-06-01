@@ -52,7 +52,7 @@ use myapp\config\URIConfig;
             marked.setOptions({
                 breaks : true
             });
-            //記事コンテンツの改行を反映するためバッククォート
+            //記事コンテンツの改行を反映するためテンプレートリテラル
             const md = 
             `<?php 
                 $articleContent['content'] = str_replace("\\", "\\\\", $articleContent['content']);
