@@ -28,7 +28,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) u
     });
 
     $r->addGroup($base.'backyard', function (FastRoute\RouteCollector $r) {
-        $r->addRoute('GET', '/index[/]', 'backyardIndex');
+        $r->addRoute('GET', '/[index[/]]', 'backyardIndex');
 
         $r->addGroup('/article', function (FastRoute\RouteCollector $r) {
             $r->addRoute('GET', '/index[/]', 'backyardArticleIndex');
