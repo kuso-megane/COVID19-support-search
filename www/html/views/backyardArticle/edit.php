@@ -70,7 +70,6 @@ use Prophecy\Doubler\NameGenerator;
                 <textarea id="new-ogpDescription" type="text" name="ogp_description" cols="100" row="2">
                     <?php echo ($oldArticleContent['ogp_description'] !== NULL) ? htmlspecialchars($oldArticleContent['ogp_description'], ENT_QUOTES) : ''; ?>
                 </textarea>
-                <br>
                 <div id="ogpDescription-reset-button" class="buttons">ogpの説明文を元に戻す</div>
             </p>
 
@@ -207,6 +206,7 @@ use Prophecy\Doubler\NameGenerator;
                 }
                  
                 newOgpDescriptionTextArea.addEventListener("keyup", wordCount);
+                window.addEventListener("DOMContentLoaded", wordCount);
             }
         </script>
 
