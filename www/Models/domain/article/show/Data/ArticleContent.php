@@ -9,7 +9,7 @@ class ArticleContent
     private $content;
     private $ogp_description;
 
-    public function __construct(string $title, string $thumbnailName, string $content, string $ogp_description)
+    public function __construct(string $title, string $thumbnailName, ?string $content, ?string $ogp_description)
     {
         $this->title = $title;
         $this->thumbnailName = $thumbnailName;

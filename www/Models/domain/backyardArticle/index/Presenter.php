@@ -12,7 +12,7 @@ class Presenter
      * @param ArticleCategoryName[] $articleCategoryNames
      * @return array [
      *      'articleBYInfos' => [
-     *          ['id' => int, 'title' => string, 'c_id' => int, 'ogp_description' => string],
+     *          ['id' => int, 'title' => string, 'c_id' => int, 'ogp_description' => string|NULL],
      *          []
      *      ],
      *      'articleCategoryNames' => [
