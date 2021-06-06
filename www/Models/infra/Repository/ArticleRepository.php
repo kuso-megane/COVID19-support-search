@@ -101,7 +101,8 @@ implements
             $record = new ArticleBYInfo(
                 $record['id'],
                 $record['title'],
-                $record['c_id']
+                $record['c_id'],
+                $record['ogp_description']
             );
         }
 

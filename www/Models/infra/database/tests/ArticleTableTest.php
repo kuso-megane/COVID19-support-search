@@ -54,9 +54,11 @@ class ArticleTableTest extends TestCase
     {
         $expected = [
             ['id' => $this::SAMPLE_DATAS[0]['id'], 'title' => $this::SAMPLE_DATAS[0]['title'],
-            'thumbnailName' => $this::SAMPLE_DATAS[0]['thumbnailName'], 'c_id' => $this::SAMPLE_DATAS[0]['c_id']],
+            'thumbnailName' => $this::SAMPLE_DATAS[0]['thumbnailName'], 'c_id' => $this::SAMPLE_DATAS[0]['c_id'],
+            'ogp_description' => $this::SAMPLE_DATAS[0]['ogp_description']],
             ['id' => $this::SAMPLE_DATAS[1]['id'], 'title' => $this::SAMPLE_DATAS[1]['title'],
-            'thumbnailName' => $this::SAMPLE_DATAS[1]['thumbnailName'], 'c_id' => $this::SAMPLE_DATAS[1]['c_id']]
+            'thumbnailName' => $this::SAMPLE_DATAS[1]['thumbnailName'], 'c_id' => $this::SAMPLE_DATAS[1]['c_id'],
+            'ogp_description' => $this::SAMPLE_DATAS[1]['ogp_description']]
         ];
 
         $this->assertSame($expected, $this->table->findAllInfos());
