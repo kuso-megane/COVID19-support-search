@@ -25,6 +25,7 @@ create TABLE Article(
     thumbnailName varchar(30) default "no_image.jpg",
     content TEXT,
     c_id TINYINT UNSIGNED,
+    ogp_description varchar(200),
 
     CONSTRAINT fk_c_id_on_Article
         FOREIGN KEY (c_id)
