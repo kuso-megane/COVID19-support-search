@@ -79,12 +79,12 @@ class SupportOrgsTableTest extends TestCase
 
                 if ($page === 1) {
                     $expected = [
-                        ['id' => 1, 'support_content' => 'sample1', 'owner' => 'sample1', 'access' => 'sample1', 'appendix' => 'sample1']
+                        ['id' => 1, 'area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample1', 'owner' => 'sample1', 'access' => 'sample1', 'appendix' => 'sample1']
                     ];
                 }
                 elseif ($page === 2) {
                     $expected = [
-                        ['id' => 3, 'support_content' => 'sample3', 'owner' => 'sample3', 'access' => 'sample3', 'appendix' => 'sample3']
+                        ['id' => 3, 'area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample3', 'owner' => 'sample3', 'access' => 'sample3', 'appendix' => 'sample3']
                     ];    
                 }
 
@@ -96,17 +96,17 @@ class SupportOrgsTableTest extends TestCase
                 $maxNumPerPage_mock = count($this::SAMPLE_DATAS);
                 if ($is_necessary_zenkoku === FALSE) {
                     $expected = [
-                        ['id' => 2, 'support_content' => 'sample2', 'owner' => 'sample2', 'access' => 'sample2', 'appendix' => 'sample2'],
-                        ['id' => 4, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4']
+                        ['id' => 2, 'area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample2', 'owner' => 'sample2', 'access' => 'sample2', 'appendix' => 'sample2'],
+                        ['id' => 4, 'area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4']
                     ];
                     $expectedTotal = 2;
                 }
                 elseif ($is_necessary_zenkoku === TRUE) {
 
                     $expected = [
-                        ['id' => 2, 'support_content' => 'sample2', 'owner' => 'sample2', 'access' => 'sample2', 'appendix' => 'sample2'],
-                        ['id' => 4, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4'],
-                        ['id' => 5, 'support_content' => 'sample5', 'owner' => 'sample5', 'access' => 'sample5', 'appendix' => 'sample5']
+                        ['id' => 2, 'area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample2', 'owner' => 'sample2', 'access' => 'sample2', 'appendix' => 'sample2'],
+                        ['id' => 4, 'area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4'],
+                        ['id' => 5, 'area_id' => AppConfig::ZENKOKU_ID,'support_content' => 'sample5', 'owner' => 'sample5', 'access' => 'sample5', 'appendix' => 'sample5']
                     ];
                     $expectedTotal = 3;
 
@@ -118,7 +118,7 @@ class SupportOrgsTableTest extends TestCase
 
                 $maxNumPerPage_mock = count($this::SAMPLE_DATAS);
                 $expected = [
-                    ['id' => 3, 'support_content' => 'sample3', 'owner' => 'sample3', 'access' => 'sample3', 'appendix' => 'sample3']
+                    ['id' => 3, 'area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample3', 'owner' => 'sample3', 'access' => 'sample3', 'appendix' => 'sample3']
                 ];
                 $expectedTotal = 1;
 
@@ -127,7 +127,7 @@ class SupportOrgsTableTest extends TestCase
 
                 $maxNumPerPage_mock = count($this::SAMPLE_DATAS);
                 $expected = [
-                    ['id' => 4, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4']
+                    ['id' => 4, 'area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 'appendix' => 'sample4']
                 ];
                 $expectedTotal = 1;
 
