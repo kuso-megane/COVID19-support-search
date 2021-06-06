@@ -65,7 +65,8 @@ use Prophecy\Doubler\NameGenerator;
             </p>
 
             <p>
-                <p>ogpの説明文(200字以内)</p>
+                <p>ogpの説明文(120字以内、80~90字くらいが良い)</p>
+                <p>現在の文字数: <span id="new-ogpDescription-word-count"></span></p>
                 <textarea id="new-ogpDescription" type="text" name="ogp_description" cols="100" row="2">
                     <?php echo ($oldArticleContent['ogp_description'] !== NULL) ? htmlspecialchars($oldArticleContent['ogp_description'], ENT_QUOTES) : ''; ?>
                 </textarea>
@@ -74,7 +75,7 @@ use Prophecy\Doubler\NameGenerator;
             </p>
 
             <p id="ogpDescription-invalid-note" class="invalid-note">
-                ogpの説明文の文字数は1文字以上、200字以内にしてください。
+                ogpの説明文の文字数は120字以内にしてください。
             </p>
                     
             <div>
@@ -194,6 +195,21 @@ use Prophecy\Doubler\NameGenerator;
             }
         </script>
 
+        <!--ogp説明文の文字数カウント-->
+        <script>
+            {
+                const newOgpDescriptionTextArea = document.getElementById("new-ogpDescription");
+                const ogpDescriptionWordCount = document.getElementById("new-ogpDescription-word-count");
+
+                const wordCount = (e) => {
+                    const len = newOgpDescriptionTextArea.value.length;
+                    ogpDescriptionWordCount.innerHTML = len;
+                }
+                 
+                newOgpDescriptionTextArea.addEventListener("keyup", wordCount);
+            }
+        </script>
+
         <!--formのvalidation-->
         <script>
             {
@@ -255,7 +271,7 @@ use Prophecy\Doubler\NameGenerator;
 
                 const validateOgpDescription = (e) => {
                     const len = newOgpDescriptionTextArea.value.length;
-                    if (len < 1 || len > 200) {
+                    if (len >= 120) {
                         ogpDescriptionInvalidNote.classList.add("show");
                         disableSubmitButton();
                     }
