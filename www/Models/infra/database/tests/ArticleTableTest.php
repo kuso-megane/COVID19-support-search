@@ -125,11 +125,13 @@ class ArticleTableTest extends TestCase
         $newThumbnailName = 'newimg.jpg';
         $newContent = 'new content';
         $newC_id = self::SAMPLE_C_ID;
+        $newOgpDescription = 'new ogp description';
 
-        $this->table->create($newTitle, $newThumbnailName, $newContent, $newC_id);
+        $this->table->create($newTitle, $newThumbnailName, $newContent, $newC_id, $newOgpDescription);
 
         $expected = [
-            ['id' => $newId, 'title' => $newTitle, 'thumbnailName' => $newThumbnailName, 'content' => $newContent, 'c_id' => $newC_id]
+            ['id' => $newId, 'title' => $newTitle, 'thumbnailName' => $newThumbnailName,
+            'content' => $newContent, 'c_id' => $newC_id, 'ogp_description' => $newOgpDescription]
         ];
         $this->assertSame($expected, $this->dbh->select('*', self::TABLENAME, "id = {$newId}"));
     }
@@ -142,11 +144,13 @@ class ArticleTableTest extends TestCase
         $newThumbnailName = 'newimg.jpg';
         $newContent = 'new content';
         $newC_id = self::SAMPLE_C_ID;
+        $newOgpDescription = 'new ogp description';
 
-        $this->table->update($id, $newTitle, $newThumbnailName, $newContent, $newC_id);
+        $this->table->update($id, $newTitle, $newThumbnailName, $newContent, $newC_id, $newOgpDescription);
 
         $expected = [
-            ['id' => $id, 'title' => $newTitle, 'thumbnailName' => $newThumbnailName, 'content' => $newContent, 'c_id' => $newC_id]
+            ['id' => $id, 'title' => $newTitle, 'thumbnailName' => $newThumbnailName,
+            'content' => $newContent, 'c_id' => $newC_id, 'ogp_description' => $newOgpDescription]
         ];
         $this->assertSame($expected, $this->dbh->select('*', self::TABLENAME, "id = {$id}"));
     }

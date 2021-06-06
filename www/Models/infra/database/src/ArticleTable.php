@@ -93,13 +93,17 @@ class ArticleTable
      * @param string $thumbnailName
      * @param string $content
      * @param int $c_id
+     * @param string $ogp_description
      * 
      * if something goes wrong, this throws PDOExeption
      */
-    public function create(string $title, string $thumbnailName, string $content, int $c_id)
+    public function create(string $title, string $thumbnailName, string $content, int $c_id, string $ogp_description)
     {
-        $columns = '0, :title, :thumbnailName, :content, :c_id';
-        $boundColumns = [':title' => $title, ':thumbnailName' => $thumbnailName, ':content' => $content, ':c_id' => $c_id];
+        $columns = '0, :title, :thumbnailName, :content, :c_id, :ogp_description';
+        $boundColumns = [
+            ':title' => $title, ':thumbnailName' => $thumbnailName, ':content' => $content,
+            ':c_id' => $c_id, ':ogp_description' => $ogp_description
+        ];
         $this->dbh->insert(self::TABLENAME, $columns, $boundColumns);
     }
 
@@ -110,14 +114,15 @@ class ArticleTable
      * @param string $thumbnailName
      * @param string $content
      * @param int $c_id
+     * @param string $ogp_description
      * 
      * if something goes wrong, this throws PDOExeption
      */
-    public function update(int $id, string $title, string $thumbnailName, string $content, int $c_id)
+    public function update(int $id, string $title, string $thumbnailName, string $content, int $c_id, string $ogp_description)
     {
-        $columns = 'title = :title, thumbnailName = :thumbnailName, content = :content, c_id = :c_id';
-        $boundValues = [':id' => $id, ':title' => $title,
-        ':thumbnailName' => $thumbnailName, ':content' => $content, ':c_id' => $c_id];
+        $columns = 'title = :title, thumbnailName = :thumbnailName, content = :content, c_id = :c_id, ogp_description = :ogp_description';
+        $boundValues = [':id' => $id, ':title' => $title, ':thumbnailName' => $thumbnailName,
+        ':content' => $content, ':c_id' => $c_id, ':ogp_description' => $ogp_description];
 
         $this->dbh->update(self::TABLENAME, $columns, 'id = :id', $boundValues);
     }
