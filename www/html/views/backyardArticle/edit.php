@@ -1,6 +1,8 @@
 <?php
 
 use myapp\config\ViewsConfig;
+use Prophecy\Doubler\NameGenerator;
+
 ?>
 
 <!DOCTYPE html>
@@ -61,6 +63,14 @@ use myapp\config\ViewsConfig;
             <p id="thumbnail-invalid-note" class="invalid-note">
                 新しいサムネがアップロードされていません。
             </p>
+
+            <div>
+                <p>ogpの説明文</p>
+                <textarea id="new-ogpDescription" type="text" name="ogp_description" col="20" row="10">
+                    <?php echo ($oldArticleContent['ogp_description'] !== NULL) ? htmlspecialchars($oldArticleContent['ogp_description'], ENT_QUOTES) : ''; ?>
+                </textarea>
+                <div id="ogpDescription-reset-button" class="buttons">ogpの説明文を元に戻す</div>
+            </div>
                     
             <div>
                 本文(画像がすでに手動でアップロードされている必要があります。):

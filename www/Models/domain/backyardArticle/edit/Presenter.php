@@ -19,8 +19,9 @@ class Presenter
      *          'id' => int,
      *          'title' => string,
      *          'thumbnailName' => string,
-     *          'content' => string,
-     *          'c_id' => int
+     *          'content' => string|NULL,
+     *          'c_id' => int,
+     *          'ogp_description' => string|NULL
      *      ] or empty array,
      *      'articleCategoryNames' => [
      *          ['id' => int, 'name' => string]

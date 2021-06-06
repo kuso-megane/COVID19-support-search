@@ -123,7 +123,8 @@ implements
                 $record['title'],
                 $record['thumbnailName'],
                 $record['content'],
-                $record['c_id']
+                $record['c_id'],
+                $record['ogp_description']
             );
         }
         else {
