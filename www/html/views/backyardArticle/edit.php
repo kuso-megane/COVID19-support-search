@@ -63,7 +63,7 @@ use Prophecy\Doubler\NameGenerator;
             <p id="thumbnail-invalid-note" class="invalid-note">
                 新しいサムネがアップロードされていません。
             </p>
-
+            <br>
             <p>
                 <p>ogpの説明文(120字以内、80~90字くらいが良い)</p>
                 <p>現在の文字数: <span id="new-ogpDescription-word-count"></span></p>
@@ -78,7 +78,7 @@ use Prophecy\Doubler\NameGenerator;
             </p>
                     
             <div>
-                本文(画像がすでに手動でアップロードされている必要があります。):
+                本文(画像を埋め込む場合、画像ファイルがすでに手動でアップロードされている必要があります。):
                 <div id="content-reset-button" class=" buttons">本文を元に戻す</div>
                 <textarea id="editor" name="content" cols="20" rows="8">
                     <?php echo ($oldArticleContent['content'] !== NULL) ? htmlspecialchars($oldArticleContent['content'], ENT_QUOTES) : ''; ?>
