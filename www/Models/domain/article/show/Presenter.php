@@ -14,7 +14,8 @@ class Presenter
      *      'articleContent' => [
      *          'title' => string,
      *          'thumbnailName' => string,
-     *          'content' => string 
+     *          'content' => string,
+     *          'ogp_description' => string
      *      ]
      * ]
      */

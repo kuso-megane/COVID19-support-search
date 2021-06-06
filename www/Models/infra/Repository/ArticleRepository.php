@@ -81,7 +81,10 @@ implements
         }
         else {
             return new ArticleContent(
-                $articleContent['title'], $articleContent['thumbnailName'], $articleContent['content']
+                $articleContent['title'],
+                $articleContent['thumbnailName'],
+                $articleContent['content'],
+                $articleContent['ogp_description']
             );
         }
     }

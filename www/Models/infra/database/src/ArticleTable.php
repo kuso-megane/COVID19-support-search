@@ -80,7 +80,7 @@ class ArticleTable
             $columns = '*';
         }
         elseif($is_content_needed === FALSE) {
-            $columns = 'id, title, thumbnailName, c_id';
+            $columns = 'id, title, thumbnailName, c_id, ogp_description';
         }
 
         return $this->dbh->select($columns, $this::TABLENAME, 'id = :id', [], [':id' => $id])[0];
