@@ -63,7 +63,7 @@ use myapp\config\ViewsConfig;
             </p>
                     
             <div>
-                本文(画像を埋め込むのは現時点では無理。すまん。):
+                本文(画像がすでに手動でアップロードされている必要があります。):
                 <div id="content-reset-button" class=" buttons">本文を元に戻す</div>
                 <textarea id="editor" name="content" cols="20" rows="8">
                     <?php echo ($oldArticleContent['content'] !== NULL) ? htmlspecialchars($oldArticleContent['content'], ENT_QUOTES) : ''; ?>
