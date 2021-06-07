@@ -47,6 +47,7 @@ class Interactor
         $newThumbnailFileInfo = $input['newThumbnailFileInfo'];
         $content = $input['content'];
         $c_id = $input['c_id'];
+        $ogp_description = $input['ogp_description'];
         $csrfToken = $input['csrfToken'];
 
         session_start();
@@ -79,7 +80,7 @@ class Interactor
         }
 
         
-        $isPostSucceeded =  $this->postArticleRepository->postArticle($artcl_id, $title, $newThumbnailName, $content, $c_id);
+        $isPostSucceeded =  $this->postArticleRepository->postArticle($artcl_id, $title, $newThumbnailName, $content, $c_id, $ogp_description);
         
         if ($isPostSucceeded === FALSE) {
             return (new Presenter)->present(FALSE, '作成・更新に失敗しました。');

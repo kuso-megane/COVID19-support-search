@@ -81,7 +81,10 @@ implements
         }
         else {
             return new ArticleContent(
-                $articleContent['title'], $articleContent['thumbnailName'], $articleContent['content']
+                $articleContent['title'],
+                $articleContent['thumbnailName'],
+                $articleContent['content'],
+                $articleContent['ogp_description']
             );
         }
     }
@@ -98,7 +101,8 @@ implements
             $record = new ArticleBYInfo(
                 $record['id'],
                 $record['title'],
-                $record['c_id']
+                $record['c_id'],
+                $record['ogp_description']
             );
         }
 
@@ -119,7 +123,8 @@ implements
                 $record['title'],
                 $record['thumbnailName'],
                 $record['content'],
-                $record['c_id']
+                $record['c_id'],
+                $record['ogp_description']
             );
         }
         else {
@@ -131,14 +136,14 @@ implements
     /**
      * @inheritDoc
      */
-    public function postArticle(?int $artcl_id, string $title, string $thumbnailName, string $content, int $c_id): bool
+    public function postArticle(?int $artcl_id, string $title, string $thumbnailName, string $content, int $c_id, string $ogp_description): bool
     {
         try {
             if ($artcl_id !== NULL) {
-                $this->table->update($artcl_id, $title, $thumbnailName, $content, $c_id);
+                $this->table->update($artcl_id, $title, $thumbnailName, $content, $c_id, $ogp_description);
             }
             else {
-                $this->table->create($title, $thumbnailName, $content, $c_id);
+                $this->table->create($title, $thumbnailName, $content, $c_id, $ogp_description);
             }
         }
         catch (PDOException $e) {

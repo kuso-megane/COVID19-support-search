@@ -18,9 +18,9 @@ class ArticleTableTest extends TestCase
     
     const SAMPLE_DATAS = [
         ['id' => 1, 'title' => 'sampleTitle1', 'thumbnailName' => 'sampleThumbNail1',
-        'content' => 'sampleContent1', 'c_id' => self::SAMPLE_C_ID],
+        'content' => 'sampleContent1', 'c_id' => self::SAMPLE_C_ID, 'ogp_description' => 'sample_description'],
         ['id' => 2, 'title' => 'sampleTitle2', 'thumbnailName' => 'sampleThumbNail2',
-        'content' => 'sampleContent2', 'c_id' => self::SAMPLE_C_ID]
+        'content' => 'sampleContent2', 'c_id' => self::SAMPLE_C_ID, 'ogp_description' => NULL]
     ];
 
     const FAKE_ID = 100;
@@ -39,12 +39,12 @@ class ArticleTableTest extends TestCase
         $this->dbh->insert($this::PARENTTABLE1, ':id, :name',
         [':id' => $this::SAMPLE_PARENT1_DATAS[0]['id'], ':name' => $this::SAMPLE_PARENT1_DATAS[0]['name']]);
 
-        $sth = $this->dbh->insert($this::TABLENAME, ':id, :title, :thumbnailName, :content, :c_id', [], MyDbh::ONLY_PREPARE);
+        $sth = $this->dbh->insert($this::TABLENAME, ':id, :title, :thumbnailName, :content, :c_id, :ogp_description', [], MyDbh::ONLY_PREPARE);
         foreach ($this::SAMPLE_DATAS as $sampleData) {
             $sth->execute([
                 ':id' => $sampleData['id'], ':title' => $sampleData['title'],
                 ':thumbnailName' => $sampleData['thumbnailName'], ':content' => $sampleData['content'],
-                ':c_id' => $sampleData['c_id']
+                ':c_id' => $sampleData['c_id'], ':ogp_description' => $sampleData['ogp_description']
             ]);
         }
     }
@@ -54,9 +54,11 @@ class ArticleTableTest extends TestCase
     {
         $expected = [
             ['id' => $this::SAMPLE_DATAS[0]['id'], 'title' => $this::SAMPLE_DATAS[0]['title'],
-            'thumbnailName' => $this::SAMPLE_DATAS[0]['thumbnailName'], 'c_id' => $this::SAMPLE_DATAS[0]['c_id']],
+            'thumbnailName' => $this::SAMPLE_DATAS[0]['thumbnailName'], 'c_id' => $this::SAMPLE_DATAS[0]['c_id'],
+            'ogp_description' => $this::SAMPLE_DATAS[0]['ogp_description']],
             ['id' => $this::SAMPLE_DATAS[1]['id'], 'title' => $this::SAMPLE_DATAS[1]['title'],
-            'thumbnailName' => $this::SAMPLE_DATAS[1]['thumbnailName'], 'c_id' => $this::SAMPLE_DATAS[1]['c_id']]
+            'thumbnailName' => $this::SAMPLE_DATAS[1]['thumbnailName'], 'c_id' => $this::SAMPLE_DATAS[1]['c_id'],
+            'ogp_description' => $this::SAMPLE_DATAS[1]['ogp_description']]
         ];
 
         $this->assertSame($expected, $this->table->findAllInfos());
@@ -96,14 +98,15 @@ class ArticleTableTest extends TestCase
             if ($is_content_needed === FALSE) {
                 $expected = [
                     'id' => $this::SAMPLE_DATAS[0]['id'], 'title' => $this::SAMPLE_DATAS[0]['title'],
-                    'thumbnailName' => $this::SAMPLE_DATAS[0]['thumbnailName'], 'c_id' => $this::SAMPLE_DATAS[0]['c_id']
+                    'thumbnailName' => $this::SAMPLE_DATAS[0]['thumbnailName'], 'c_id' => $this::SAMPLE_DATAS[0]['c_id'],
+                    'ogp_description' => $this::SAMPLE_DATAS[0]['ogp_description']
                 ];
             }
             elseif ($is_content_needed === TRUE) {
                 $expected = [
                     'id' => $this::SAMPLE_DATAS[0]['id'], 'title' => $this::SAMPLE_DATAS[0]['title'],
                     'thumbnailName' => $this::SAMPLE_DATAS[0]['thumbnailName'], 'content' => $this::SAMPLE_DATAS[0]['content'],
-                    'c_id' => $this::SAMPLE_DATAS[0]['c_id']
+                    'c_id' => $this::SAMPLE_DATAS[0]['c_id'], 'ogp_description' => $this::SAMPLE_DATAS[0]['ogp_description']
                 ];
             }
         }
@@ -122,11 +125,13 @@ class ArticleTableTest extends TestCase
         $newThumbnailName = 'newimg.jpg';
         $newContent = 'new content';
         $newC_id = self::SAMPLE_C_ID;
+        $newOgpDescription = 'new ogp description';
 
-        $this->table->create($newTitle, $newThumbnailName, $newContent, $newC_id);
+        $this->table->create($newTitle, $newThumbnailName, $newContent, $newC_id, $newOgpDescription);
 
         $expected = [
-            ['id' => $newId, 'title' => $newTitle, 'thumbnailName' => $newThumbnailName, 'content' => $newContent, 'c_id' => $newC_id]
+            ['id' => $newId, 'title' => $newTitle, 'thumbnailName' => $newThumbnailName,
+            'content' => $newContent, 'c_id' => $newC_id, 'ogp_description' => $newOgpDescription]
         ];
         $this->assertSame($expected, $this->dbh->select('*', self::TABLENAME, "id = {$newId}"));
     }
@@ -139,11 +144,13 @@ class ArticleTableTest extends TestCase
         $newThumbnailName = 'newimg.jpg';
         $newContent = 'new content';
         $newC_id = self::SAMPLE_C_ID;
+        $newOgpDescription = 'new ogp description';
 
-        $this->table->update($id, $newTitle, $newThumbnailName, $newContent, $newC_id);
+        $this->table->update($id, $newTitle, $newThumbnailName, $newContent, $newC_id, $newOgpDescription);
 
         $expected = [
-            ['id' => $id, 'title' => $newTitle, 'thumbnailName' => $newThumbnailName, 'content' => $newContent, 'c_id' => $newC_id]
+            ['id' => $id, 'title' => $newTitle, 'thumbnailName' => $newThumbnailName,
+            'content' => $newContent, 'c_id' => $newC_id, 'ogp_description' => $newOgpDescription]
         ];
         $this->assertSame($expected, $this->dbh->select('*', self::TABLENAME, "id = {$id}"));
     }

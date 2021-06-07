@@ -23,6 +23,7 @@ use myapp\config\ViewsConfig;
                     <td>編集ページ</td>
                     <td>タイトル</td>
                     <td>カテゴリ</td>
+                    <td>ogpの説明文</td>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +33,7 @@ use myapp\config\ViewsConfig;
                         <td><a href="<?php echo "/backyard/article/edit/". $articleBYInfo['id']; ?>">編集</a></td>
                         <td><?php echo htmlspecialchars($articleBYInfo['title'], ENT_QUOTES); ?></td>
                         <td><?php echo htmlspecialchars($articleCategoryNames[$articleBYInfo['c_id']], ENT_QUOTES); ?></td>
+                        <td><?php echo htmlspecialchars($articleBYInfo['ogp_description'], ENT_QUOTES); ?></td>
                     </tr>
 
                 <?php endforeach; ?>
