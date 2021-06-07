@@ -16,6 +16,7 @@ use myapp\config\URIConfig;
         <meta property="og:url" content="<?php echo URIConfig::URI; ?>" />
         <meta property="og:title" content="<?php echo $articleContent['title']; ?>" />
         <meta property="og:image" content="<?php echo URIConfig::URI. ViewsConfig::IMG_URL. $articleContent['thumbnailName']; ?>" />
+        <meta property="og:description" content="<?php echo $articleContent['ogp_description']; ?>" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@suppofy" />

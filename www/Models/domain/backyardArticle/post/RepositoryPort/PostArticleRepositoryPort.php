@@ -10,11 +10,11 @@ interface PostArticleRepositoryPort
      * @param string $thumbnailName
      * @param string $content
      * @param int $c_id
+     * @param string $ogp_description
      * 
      * @return bool whether post succeeds or not
      * 
-     * if something goes wrong, throw PDOException
      */
-    public function postArticle(?int $artcl_id, string $title, string $thumbnailName, string $content, int $c_id): bool;
+    public function postArticle(?int $artcl_id, string $title, string $thumbnailName, string $content, int $c_id, string $ogp_description): bool;
 
 }
