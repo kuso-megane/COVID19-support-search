@@ -8,6 +8,7 @@ use myapp\Controllers\SearchController;
 use myapp\Controllers\BackyardArticleController as BYArticleController;
 use myapp\Controllers\BackyardArticleCategoryController as BYArticleCategoryController;
 use myapp\Controllers\BackyardController;
+use myapp\Controllers\BackyardTroubleListController;
 use myapp\Controllers\ContactController;
 use myapp\Controllers\SubContentsController;
 
@@ -115,6 +116,18 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller = new AdminLoginController;
         $controller->authenticate();
         
+    }
+    elseif ($handler == 'backyardTroubleListIndex') {
+        $controller = new BackyardTroubleListController;
+        $controller->index();
+    }
+    elseif ($handler == 'backyardTroubleListEdit') {
+        $controller = new BackyardTroubleListController;
+        $controller->edit($vars);
+    }
+    elseif ($handler == 'backyardTroubleListPost') {
+        $controller = new BackyardTroubleListController;
+        $controller->post($vars);
     }
 
     else {
