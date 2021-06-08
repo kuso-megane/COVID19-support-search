@@ -25,10 +25,11 @@ use infra\Repository\backyardArticle\index\ArticleCategoryNamesRepository as BYA
 use infra\Repository\backyardArticle\edit\OldArticleContentRepository;
 use infra\Repository\backyardArticle\edit\ArticleCategoryNamesRepository as BYArticleEditArticleCategoryNamesRepository;
 use infra\Repository\backyardArticle\post\PostArticleRepository;
+use infra\Repository\backyardArticleCategory\edit\ArticleCategoryRepository;
+use infra\Repository\backyardArticleCategory\post\PostArticleCategoryRepository;
 
 
 use infra\Repository\AreaListRepository;
-use infra\Repository\ArticleCategoryRepository;
 use infra\Repository\ArticleRepository;
 use infra\Repository\SupportOrgsRepository;
 use infra\Repository\TroubleListRepository;
@@ -50,7 +51,7 @@ return [
     BYArticleIndexArticleCategoryNamesRepositoryPort::class => \DI\create(BYArticleIndexArticleCategoryNamesRepository::class),
     BYArticleEditArticleCategoryNamesRepositoryPort::class => \DI\create(BYArticleEditArticleCategoryNamesRepository::class),
     ArticleCategoryRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
-    PostArticleCategoryRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
+    PostArticleCategoryRepositoryPort::class => \DI\create(PostArticleCategoryRepository::class),
 
     SearchedAreaNameRepositoryPort::class => \DI\create(AreaListRepository::class),
 
