@@ -51,25 +51,7 @@ implements
     }
 
 
-    /**
-     * @inheritDoc
-     */
-    public function getArticleContent(int $article_id): ?ArticleContent
-    {
-        $articleContent = $this->table->findById($article_id);
-
-        if ($articleContent === NULL) {
-            return NULL;
-        }
-        else {
-            return new ArticleContent(
-                $articleContent['title'],
-                $articleContent['thumbnailName'],
-                $articleContent['content'],
-                $articleContent['ogp_description']
-            );
-        }
-    }
+    
 
 
     /**

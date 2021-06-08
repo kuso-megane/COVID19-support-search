@@ -17,6 +17,7 @@ use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use infra\Repository\adminLogin\authenticate\AdminLoginInfoRepository;
 use infra\Repository\article\_list\AllArticleInfosRepository;
 use infra\Repository\article\_list\ArticleCategoryListRepository;
+use infra\Repository\article\show\ArticleContentRepository;
 
 
 use infra\Repository\AreaListRepository;
@@ -33,7 +34,7 @@ return [
 
     AllArticleInfosRepositoryPort::class => \DI\create(AllArticleInfosRepository::class),
     RecommendedArticleInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
-    ArticleContentRepositoryPort::class => \DI\create(ArticleRepository::class),
+    ArticleContentRepositoryPort::class => \DI\create(ArticleContentRepository::class),
     ArticleBYInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
     OldArticleContentRepositoryPort::class => \DI\create(ArticleRepository::class),
     PostArticleRepositoryPort::class => \DI\create(ArticleRepository::class),
