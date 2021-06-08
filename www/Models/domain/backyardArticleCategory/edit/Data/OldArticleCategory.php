@@ -2,7 +2,7 @@
 
 namespace domain\backyardArticleCategory\edit\Data;
 
-class ArticleCategory
+class OldArticleCategory
 {
     private $attr;
 

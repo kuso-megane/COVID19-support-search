@@ -2,11 +2,11 @@
 
 namespace infra\Repository\backyardArticleCategory\edit;
 
-use domain\backyardArticleCategory\edit\RepositoryPort\ArticleCategoryRepositoryPort;
-use domain\backyardArticleCategory\edit\Data\ArticleCategory;
+use domain\backyardArticleCategory\edit\RepositoryPort\OldArticleCategoryRepositoryPort;
+use domain\backyardArticleCategory\edit\Data\OldArticleCategory;
 use infra\database\src\ArticleCategoryTable;
 
-class ArticleCategoryRepository implements ArticleCategoryRepositoryPort
+class OldArticleCategoryRepository implements OldArticleCategoryRepositoryPort
 {
     private $table;
     
@@ -19,11 +19,11 @@ class ArticleCategoryRepository implements ArticleCategoryRepositoryPort
     /**
      * @inheritDoc
      */
-    public function getArticleCategory(int $id): ?ArticleCategory
+    public function getOldArticleCategory(int $id): ?OldArticleCategory
     {
         $record = $this->table->findById($id);
 
-        return new ArticleCategory(
+        return new OldArticleCategory(
             $record['id'],
             $record['name']
         );

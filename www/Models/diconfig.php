@@ -7,7 +7,7 @@ use domain\article\show\RepositoryPort\ArticleContentRepositoryPort;
 use domain\backyardArticle\index\RepositoryPort\ArticleBYInfosRepositoryPort;
 use domain\backyardArticle\edit\RepositoryPort\OldArticleContentRepositoryPort;
 use domain\backyardArticle\post\RepositoryPort\PostArticleRepositoryPort;
-use domain\backyardArticleCategory\edit\RepositoryPort\ArticleCategoryRepositoryPort;
+use domain\backyardArticleCategory\edit\RepositoryPort\OldArticleCategoryRepositoryPort;
 use domain\backyardArticleCategory\post\RepositoryPort\PostArticleCategoryRepositoryPort;
 use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
@@ -17,6 +17,8 @@ use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleIndexArticleCategoryNamesRepositoryPort;
 use domain\backyardArticle\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleEditArticleCategoryNamesRepositoryPort;
 use domain\backyardArticleCategory\index\RepositoryPort\ArticleCategoryListRepositoryPort as BYArticleCategoryIndexArticleCategoryListRepositoryPort;
+
+
 use infra\Repository\adminLogin\authenticate\AdminLoginInfoRepository;
 use infra\Repository\article\_list\AllArticleInfosRepository;
 use infra\Repository\article\_list\ArticleCategoryListRepository;
@@ -26,7 +28,7 @@ use infra\Repository\backyardArticle\index\ArticleCategoryNamesRepository as BYA
 use infra\Repository\backyardArticle\edit\OldArticleContentRepository;
 use infra\Repository\backyardArticle\edit\ArticleCategoryNamesRepository as BYArticleEditArticleCategoryNamesRepository;
 use infra\Repository\backyardArticle\post\PostArticleRepository;
-use infra\Repository\backyardArticleCategory\edit\ArticleCategoryRepository;
+use infra\Repository\backyardArticleCategory\edit\OldArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\post\PostArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\index\ArticleCategoryListRepository as BYArticleCategoryIndexArticleCategoryListRepository;
 
@@ -52,7 +54,7 @@ return [
     ArticleCategoryListRepositoryPort::class => \DI\create(ArticleCategoryListRepository::class),
     BYArticleIndexArticleCategoryNamesRepositoryPort::class => \DI\create(BYArticleIndexArticleCategoryNamesRepository::class),
     BYArticleEditArticleCategoryNamesRepositoryPort::class => \DI\create(BYArticleEditArticleCategoryNamesRepository::class),
-    ArticleCategoryRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
+    OldArticleCategoryRepositoryPort::class => \DI\create(OldArticleCategoryRepository::class),
     PostArticleCategoryRepositoryPort::class => \DI\create(PostArticleCategoryRepository::class),
     BYArticleCategoryIndexArticleCategoryListRepositoryPort::class => \DI\create(BYArticleCategoryIndexArticleCategoryListRepository::class),
 
