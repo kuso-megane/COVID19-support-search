@@ -24,6 +24,7 @@ use infra\Repository\backyardArticle\index\ArticleBYInfosRepository;
 use infra\Repository\backyardArticle\index\ArticleCategoryNamesRepository as BYArticleIndexArticleCategoryNamesRepository;
 use infra\Repository\backyardArticle\edit\OldArticleContentRepository;
 use infra\Repository\backyardArticle\edit\ArticleCategoryNamesRepository as BYArticleEditArticleCategoryNamesRepository;
+use infra\Repository\backyardArticle\post\PostArticleRepository;
 
 
 use infra\Repository\AreaListRepository;
@@ -43,7 +44,7 @@ return [
     ArticleContentRepositoryPort::class => \DI\create(ArticleContentRepository::class),
     ArticleBYInfosRepositoryPort::class => \DI\create(ArticleBYInfosRepository::class),
     OldArticleContentRepositoryPort::class => \DI\create(OldArticleContentRepository::class),
-    PostArticleRepositoryPort::class => \DI\create(ArticleRepository::class),
+    PostArticleRepositoryPort::class => \DI\create(PostArticleRepository::class),
 
     ArticleCategoryListRepositoryPort::class => \DI\create(ArticleCategoryListRepository::class),
     BYArticleIndexArticleCategoryNamesRepositoryPort::class => \DI\create(BYArticleIndexArticleCategoryNamesRepository::class),
