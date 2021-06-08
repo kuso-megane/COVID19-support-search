@@ -2,7 +2,7 @@
 
 namespace domain\backyardTroubleList\index;
 
-use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort;
+use domain\backyardTroubleList\index\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use domain\backyardTroubleList\index\RepositoryPort\TroubleListRepositoryPort;
 
 class Interactor
