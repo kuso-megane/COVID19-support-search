@@ -7,8 +7,6 @@ use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
 use domain\backyardArticleCategory\edit\Data\ArticleCategory as BYArticleCategoryEdit_ArticleCategory;
 use domain\backyardArticleCategory\edit\RepositoryPort\ArticleCategoryRepositoryPort;
 use domain\backyardArticleCategory\post\RepositoryPort\PostArticleCategoryRepositoryPort;
-use domain\components\articleCategoryNames\Data\ArticleCategoryName;
-use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use infra\database\src\ArticleCategoryTable;
 use PDOException;
 

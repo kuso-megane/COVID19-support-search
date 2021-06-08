@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\components\articleCategoryNames\Data;
+namespace domain\backyardArticleCategory\index\Data;
 
 class ArticleCategoryName
 {

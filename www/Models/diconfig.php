@@ -5,7 +5,6 @@ use domain\article\_list\RepositoryPort\AllArticleInfosRepositoryPort;
 use domain\article\_list\RepositoryPort\ArticleCategoryListRepositoryPort;
 use domain\article\show\RepositoryPort\ArticleContentRepositoryPort;
 use domain\backyardArticle\index\RepositoryPort\ArticleBYInfosRepositoryPort;
-use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort ;
 use domain\backyardArticle\edit\RepositoryPort\OldArticleContentRepositoryPort;
 use domain\backyardArticle\post\RepositoryPort\PostArticleRepositoryPort;
 use domain\backyardArticleCategory\edit\RepositoryPort\ArticleCategoryRepositoryPort;

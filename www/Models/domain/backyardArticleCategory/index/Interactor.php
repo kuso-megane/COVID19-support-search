@@ -2,7 +2,7 @@
 
 namespace domain\backyardArticleCategory\index;
 
-use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort;
+use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use domain\components\adminLoginCheck\Interactor as LoginCheckInteractor;
 use myapp\config\AppConfig;
 
