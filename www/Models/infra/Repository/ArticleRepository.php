@@ -37,24 +37,6 @@ implements
     /**
      * @inheritDoc
      */
-    public function getAllArticleInfos(): array
-    {
-        $articleInfos = $this->table->findAllInfos();
-
-        foreach ($articleInfos as &$articleInfo) {
-            $articleInfo = new ArticleInfo(
-                $articleInfo['id'], $articleInfo['title'], 
-                $articleInfo['thumbnailName'], $articleInfo['c_id']
-            );
-        }
-
-        return $articleInfos;
-    }
-
-
-    /**
-     * @inheritDoc
-     */
     public function getRecommendedArticleInfos(int $c_id, int $maxNum): array
     {
         $articleInfos = $this->table->findInfosByC_id($c_id, $maxNum);
