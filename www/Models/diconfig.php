@@ -16,6 +16,7 @@ use domain\search\result\RepositoryPort\SearchItemsRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleIndexArticleCategoryNamesRepositoryPort;
 use domain\backyardArticle\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleEditArticleCategoryNamesRepositoryPort;
+use domain\backyardArticleCategory\index\RepositoryPort\ArticleCategoryListRepositoryPort as BYArticleCategoryIndexArticleCategoryListRepositoryPort;
 use infra\Repository\adminLogin\authenticate\AdminLoginInfoRepository;
 use infra\Repository\article\_list\AllArticleInfosRepository;
 use infra\Repository\article\_list\ArticleCategoryListRepository;
@@ -27,6 +28,7 @@ use infra\Repository\backyardArticle\edit\ArticleCategoryNamesRepository as BYAr
 use infra\Repository\backyardArticle\post\PostArticleRepository;
 use infra\Repository\backyardArticleCategory\edit\ArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\post\PostArticleCategoryRepository;
+use infra\Repository\backyardArticleCategory\index\ArticleCategoryListRepository as BYArticleCategoryIndexArticleCategoryListRepository;
 
 
 use infra\Repository\AreaListRepository;
@@ -52,6 +54,7 @@ return [
     BYArticleEditArticleCategoryNamesRepositoryPort::class => \DI\create(BYArticleEditArticleCategoryNamesRepository::class),
     ArticleCategoryRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
     PostArticleCategoryRepositoryPort::class => \DI\create(PostArticleCategoryRepository::class),
+    BYArticleCategoryIndexArticleCategoryListRepositoryPort::class => \DI\create(BYArticleCategoryIndexArticleCategoryListRepository::class),
 
     SearchedAreaNameRepositoryPort::class => \DI\create(AreaListRepository::class),
 

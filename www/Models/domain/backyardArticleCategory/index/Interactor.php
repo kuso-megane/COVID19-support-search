@@ -2,19 +2,19 @@
 
 namespace domain\backyardArticleCategory\index;
 
-use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort;
+use domain\backyardArticleCategory\index\RepositoryPort\ArticleCategoryListRepositoryPort;
 use domain\components\adminLoginCheck\Interactor as LoginCheckInteractor;
 use myapp\config\AppConfig;
 
 class Interactor
 {
-    private $articleCategoryNamesRepository;
+    private $articleCategoryListRepository;
 
     public function __construct(
-        ArticleCategoryNamesRepositoryPort $articleCategoryNamesRepository
+        ArticleCategoryListRepositoryPort $articleCategoryListRepository
     )
     {
-        $this->articleCategoryNamesRepository = $articleCategoryNamesRepository;
+        $this->articleCategoryListRepository = $articleCategoryListRepository;
     }
 
 
@@ -31,8 +31,8 @@ class Interactor
             return AppConfig::NOT_LOGIN;
         }
 
-        $articleCategoryNames = $this->articleCategoryNamesRepository->getArticleCategoryNames();
+        $articleCategoryList = $this->articleCategoryListRepository->getArticleCategoryList();
 
-        return (new Presenter)->present($articleCategoryNames);
+        return (new Presenter)->present($articleCategoryList);
     }
 }

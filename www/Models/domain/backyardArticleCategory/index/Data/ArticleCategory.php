@@ -2,7 +2,7 @@
 
 namespace domain\backyardArticleCategory\index\Data;
 
-class ArticleCategoryName
+class ArticleCategory
 {
     private $attr;
 

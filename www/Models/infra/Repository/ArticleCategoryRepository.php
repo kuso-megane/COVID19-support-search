@@ -40,6 +40,20 @@ implements
     }
 
 
+    /**
+     * @inheritDoc
+     */
+    public function getArticleCategoryNames(): array
+    {
+        $records = $this->table->findAll();
+
+        foreach ($records as &$record) {
+            $record = new ArticleCategoryName($record['id'], $record['name']);
+        }
+
+        return $records;
+    }
+
     
 
 
