@@ -14,7 +14,7 @@ use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
 use domain\search\result\RepositoryPort\SearchItemsRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
-use infra\Repository\AdminLoginInfoRepository;
+use infra\Repository\adminLogin\authenticate\AdminLoginInfoRepository;
 use infra\Repository\AreaListRepository;
 use infra\Repository\ArticleCategoryRepository;
 use infra\Repository\ArticleRepository;
