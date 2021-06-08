@@ -56,27 +56,6 @@ implements
 
 
 
-    /**
-     * @inheritDoc
-     */
-    public function getOldArticleContent(int $artcl_id): ?OldArticleContent
-    {
-        $record = $this->table->findById($artcl_id);
-
-        if ($record !== NULL) {
-            return new OldArticleContent(
-                $record['id'],
-                $record['title'],
-                $record['thumbnailName'],
-                $record['content'],
-                $record['c_id'],
-                $record['ogp_description']
-            );
-        }
-        else {
-            return NULL;
-        }
-    }
 
 
     /**
