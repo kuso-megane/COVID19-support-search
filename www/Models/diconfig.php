@@ -14,10 +14,13 @@ use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
 use domain\search\result\RepositoryPort\SearchItemsRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
+use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use infra\Repository\adminLogin\authenticate\AdminLoginInfoRepository;
 use infra\Repository\article\_list\AllArticleInfosRepository;
 use infra\Repository\article\_list\ArticleCategoryListRepository;
 use infra\Repository\article\show\ArticleContentRepository;
+use infra\Repository\backyardArticle\index\ArticleBYInfosRepository;
+use infra\Repository\backyardArticle\index\ArticleCategoryNamesRepository;
 
 
 use infra\Repository\AreaListRepository;
@@ -35,12 +38,12 @@ return [
     AllArticleInfosRepositoryPort::class => \DI\create(AllArticleInfosRepository::class),
     RecommendedArticleInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
     ArticleContentRepositoryPort::class => \DI\create(ArticleContentRepository::class),
-    ArticleBYInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
+    ArticleBYInfosRepositoryPort::class => \DI\create(ArticleBYInfosRepository::class),
     OldArticleContentRepositoryPort::class => \DI\create(ArticleRepository::class),
     PostArticleRepositoryPort::class => \DI\create(ArticleRepository::class),
 
     ArticleCategoryListRepositoryPort::class => \DI\create(ArticleCategoryListRepository::class),
-    ArticleCategoryNamesRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
+    ArticleCategoryNamesRepositoryPort::class => \DI\create(ArticleCategoryNamesRepository::class),
     ArticleCategoryRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
     PostArticleCategoryRepositoryPort::class => \DI\create(ArticleCategoryRepository::class),
 

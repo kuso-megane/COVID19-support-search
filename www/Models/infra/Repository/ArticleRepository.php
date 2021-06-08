@@ -54,24 +54,6 @@ implements
     
 
 
-    /**
-     * @inheritDoc
-     */
-    public function getArticleBYInfos(): array
-    {
-        $records = $this->table->findAllInfos();
-
-        foreach ($records as &$record) {
-            $record = new ArticleBYInfo(
-                $record['id'],
-                $record['title'],
-                $record['c_id'],
-                $record['ogp_description']
-            );
-        }
-
-        return $records;
-    }
 
 
     /**
