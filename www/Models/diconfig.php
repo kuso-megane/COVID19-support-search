@@ -31,6 +31,7 @@ use infra\Repository\backyardArticle\post\PostArticleRepository;
 use infra\Repository\backyardArticleCategory\edit\OldArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\post\PostArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\index\ArticleCategoryListRepository as BYArticleCategoryIndexArticleCategoryListRepository;
+use infra\Repository\components\searchBox\TroubleNameListRepository;
 
 
 use infra\Repository\AreaListRepository;
@@ -39,7 +40,7 @@ use infra\Repository\SupportOrgsRepository;
 use infra\Repository\TroubleListRepository;
 
 return [
-    TroubleNameListRepositoryPort::class => \DI\create(TroubleListRepository::class),
+    TroubleNameListRepositoryPort::class => \DI\create(TroubleNameListRepository::class),
     SearchItemsRepositoryPort::class => \DI\create(TroubleListRepository::class),
 
     SearchedSupportsRepositoryPort::class => \DI\create(SupportOrgsRepository::class),
