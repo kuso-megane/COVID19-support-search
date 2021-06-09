@@ -20,9 +20,13 @@ use myapp\config\ViewsConfig;
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-            </tr>
+            <?php foreach ($troubleList as $trouble): ?>
+                <tr>
+                    <td><a href="/backyard/troubleList/edit/<?php echo $trouble['id'] ?>">編集</a></td>
+                    <td><?php echo htmlspecialchars($trouble['name'], ENT_QUOTES); ?></td>
+                    <td><?php echo htmlspecialchars($articleCategoryNames[$trouble['articleC_id']]); ?></td>
+                </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
     

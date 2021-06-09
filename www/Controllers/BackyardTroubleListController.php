@@ -6,6 +6,7 @@ use myapp\myFrameWork\Bases\BaseController;
 use myapp\config\AppConfig;
 use myapp\myFrameWork\SuperGlobalVars;
 use myapp\Controllers\helper\Helper;
+use domain\backyardTroubleList\index\Interactor as IndexInteractor;
 
 class BackyardTroubleListController extends BaseController
 {
@@ -13,7 +14,15 @@ class BackyardTroubleListController extends BaseController
 
     public function index()
     {
-        $this->render([], self::DIR, 'index');
+        $builder = new \DI\ContainerBuilder();
+        $builder->addDefinitions('/var/www/Models/diconfig.php');
+        $container = $builder->build();
+
+        $interactor = $container->get(IndexInteractor::class);
+        $vm = $interactor->interact();
+
+
+        $this->render($vm, self::DIR, 'index');
     }
 
 

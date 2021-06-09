@@ -4,6 +4,7 @@ namespace domain\backyardTroubleList\index;
 
 use domain\backyardTroubleList\index\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use domain\backyardTroubleList\index\RepositoryPort\TroubleListRepositoryPort;
+use phpDocumentor\Reflection\Types\Null_;
 
 class Interactor
 {

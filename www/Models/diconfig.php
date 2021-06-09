@@ -17,6 +17,8 @@ use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleIndexArticleCategoryNamesRepositoryPort;
 use domain\backyardArticle\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleEditArticleCategoryNamesRepositoryPort;
 use domain\backyardArticleCategory\index\RepositoryPort\ArticleCategoryListRepositoryPort as BYArticleCategoryIndexArticleCategoryListRepositoryPort;
+use domain\backyardTroubleList\index\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYTroubleListIndexArticleCategoryNamesRepositoryPort;
+use domain\backyardTroubleList\index\RepositoryPort\TroubleListRepositoryPort;
 
 
 use infra\Repository\adminLogin\authenticate\AdminLoginInfoRepository;
@@ -31,16 +33,19 @@ use infra\Repository\backyardArticle\post\PostArticleRepository;
 use infra\Repository\backyardArticleCategory\edit\OldArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\post\PostArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\index\ArticleCategoryListRepository as BYArticleCategoryIndexArticleCategoryListRepository;
+use infra\Repository\backyardTroubleList\index\TroubleListRepository;
 use infra\Repository\components\searchBox\TroubleNameListRepository;
 use infra\Repository\search\result\RecommendedArticleInfosRepository;
 use infra\Repository\search\result\SearchedAreaNameRepository;
 use infra\Repository\search\result\SearchedSupportsRepository;
 use infra\Repository\search\result\SearchItemsRepository;
+use infra\Repository\backyardTroubleList\index\ArticleCategoryNamesRepository as BYTroubleListIndexArticleCategoryNamesRepository;
 
 
 return [
     TroubleNameListRepositoryPort::class => \DI\create(TroubleNameListRepository::class),
     SearchItemsRepositoryPort::class => \DI\create(SearchItemsRepository::class),
+    TroubleListRepositoryPort::class => \DI\create(TroubleListRepository::class),
 
     SearchedSupportsRepositoryPort::class => \DI\create(SearchedSupportsRepository::class),
 
@@ -57,6 +62,7 @@ return [
     OldArticleCategoryRepositoryPort::class => \DI\create(OldArticleCategoryRepository::class),
     PostArticleCategoryRepositoryPort::class => \DI\create(PostArticleCategoryRepository::class),
     BYArticleCategoryIndexArticleCategoryListRepositoryPort::class => \DI\create(BYArticleCategoryIndexArticleCategoryListRepository::class),
+    BYTroubleListIndexArticleCategoryNamesRepositoryPort::class => \DI\create(BYTroubleListIndexArticleCategoryNamesRepository::class),
 
     SearchedAreaNameRepositoryPort::class => \DI\create(SearchedAreaNameRepository::class),
 
