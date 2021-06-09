@@ -29,5 +29,6 @@ use myapp\config\ViewsConfig;
             <?php endforeach; ?>
         </tbody>
     </table>
-    
+
+    <p><a href="/backyard/index">管理画面topへ</a></p>
 </body>
