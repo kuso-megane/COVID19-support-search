@@ -1,14 +1,12 @@
 <?php
 
-namespace infra\Repository;
+namespace infra\Repository\adminLogin\authenticate;
 
 use domain\adminLogin\authenticate\Data\AdminLoginInfo;
 use domain\adminLogin\authenticate\RepositoryPort\AdminLoginInfoRepositoryPort;
 use infra\database\src\AdminLoginInfoTable;
 
-class AdminLoginInfoRepository
-implements
-    AdminLoginInfoRepositoryPort
+class AdminLoginInfoRepository implements AdminLoginInfoRepositoryPort
 {
     private $table;
 

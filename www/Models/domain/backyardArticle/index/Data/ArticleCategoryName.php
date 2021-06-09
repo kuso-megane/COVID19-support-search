@@ -1,14 +1,14 @@
 <?php
 
-namespace domain\backyardArticleCategory\edit\Data;
+namespace domain\backyardArticle\index\Data;
 
-class ArticleCategory
+class ArticleCategoryName
 {
     private $attr;
 
     public function __construct(int $id, string $name)
     {
-       $this->attr = compact('id', 'name'); 
+        $this->attr = compact('id', 'name');
     }
 
 

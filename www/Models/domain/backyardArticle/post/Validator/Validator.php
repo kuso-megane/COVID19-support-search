@@ -67,7 +67,7 @@ class Validator
         }
 
         $ogp_description = $post['ogp_description'];
-        if (strlen($ogp_description) >= 120) {
+        if (mb_strlen($ogp_description, 'UTF-8') >= 120) {
             throw new ValidationFailException(("予想外のogp説明文が指定されています。"));
         }
 

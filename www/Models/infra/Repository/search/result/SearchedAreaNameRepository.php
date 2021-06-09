@@ -1,19 +1,18 @@
 <?php
 
-namespace infra\Repository;
+namespace infra\Repository\search\result;
 
 use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
 use infra\database\src\AreaListTable;
 
-class AreaListRepository
-implements
-    SearchedAreaNameRepositoryPort
+
+class SearchedAreaNameRepository implements SearchedAreaNameRepositoryPort
 {
     private $table;
 
     public function __construct()
     {
-        $this->table = new AreaListTable();
+        $this->table = new AreaListTable;
     }
 
 

@@ -3,12 +3,12 @@
 namespace domain\backyardArticleCategory\edit;
 
 use myapp\config\AppConfig;
-use domain\backyardArticleCategory\edit\Data\ArticleCategory;
+use domain\backyardArticleCategory\edit\Data\OldArticleCategory;
 
 class Presenter
 {
     /**
-     * @param ArticleCategory $articleCategory
+     * @param OldArticleCategory $articleCategory
      * 
      * @return array [
      *      'articleCategory' => [
@@ -18,7 +18,7 @@ class Presenter
      *      'csrfToken' => string
      * ]
      */
-    public function present(?ArticleCategory $articleCategory, string $csrfToken): array
+    public function present(?OldArticleCategory $articleCategory, string $csrfToken): array
     {
         $articleCategory = ($articleCategory !== NULL) ? $articleCategory->toArray() : [];
 

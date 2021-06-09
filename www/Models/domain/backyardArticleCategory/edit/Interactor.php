@@ -2,7 +2,7 @@
 
 namespace domain\backyardArticleCategory\edit;
 
-use domain\backyardArticleCategory\edit\RepositoryPort\ArticleCategoryRepositoryPort;
+use domain\backyardArticleCategory\edit\RepositoryPort\OldArticleCategoryRepositoryPort;
 use domain\backyardArticleCategory\edit\Validator\Validator;
 use domain\Exception\ValidationFailException;
 use domain\components\adminLoginCheck\Interactor as LoginCheckInteractor;
@@ -11,13 +11,13 @@ use domain\components\csrfValidate\Interactor as CsrfValidator;
 
 class Interactor
 {
-    private $articleCategoryRepository;
+    private $oldArticleCategoryRepository;
 
     public function __construct(
-        ArticleCategoryRepositoryPort $articleCategoryRepository
+        OldArticleCategoryRepositoryPort $oldArticleCategoryRepository
     )
     {
-        $this->articleCategoryRepository = $articleCategoryRepository;
+        $this->oldArticleCategoryRepository = $oldArticleCategoryRepository;
     }
 
 
@@ -49,16 +49,16 @@ class Interactor
         $c_id = $input['c_id'];
 
         if ($c_id !== NULL) {
-            $articleCategory = $this->articleCategoryRepository->getArticleCategory($c_id);
-            if ($articleCategory === NULL) {
+            $oldArticleCategory = $this->oldArticleCategoryRepository->getOldArticleCategory($c_id);
+            if ($oldArticleCategory === NULL) {
                 return (new Presenter)->reportNotFound("指定されたカテゴリは見つかりませんでした。");
             }
         }
         else {
-            $articleCategory = NULL;
+            $oldArticleCategory = NULL;
         }
         
-        return (new Presenter)->present($articleCategory, $csrfToken);
+        return (new Presenter)->present($oldArticleCategory, $csrfToken);
     }
 
 }

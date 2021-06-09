@@ -1,23 +1,19 @@
 <?php
 
-namespace infra\Repository;
+namespace infra\Repository\search\result;
 
-use domain\search\result\Data\SearchItems;
-use domain\search\result\Data\SearchedSupport;
 use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
 use infra\database\src\SupportOrgsTable;
+use domain\search\result\Data\SearchedSupport;
 use myapp\config\AppConfig;
 
-class SupportOrgsRepository
-implements
-    SearchedSupportsRepositoryPort
-
+class SearchedSupportsRepository implements SearchedSupportsRepositoryPort
 {
     private $table;
 
     public function __construct()
     {
-        $this->table = new SupportOrgsTable();
+        $this->table = new SupportOrgsTable;
     }
 
 
