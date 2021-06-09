@@ -3,7 +3,7 @@
 namespace domain\backyardArticle\edit;
 
 use domain\backyardArticle\edit\Presenter;
-use domain\components\articleCategoryNames\RepositoryPort\ArticleCategoryNamesRepositoryPort;
+use domain\backyardArticle\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use domain\backyardArticle\edit\RepositoryPort\OldArticleContentRepositoryPort;
 use domain\backyardArticle\edit\Validator\Validator;
 use domain\Exception\ValidationFailException;

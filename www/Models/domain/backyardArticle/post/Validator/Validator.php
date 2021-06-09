@@ -66,11 +66,16 @@ class Validator
             throw new ValidationFailException("予想外のカテゴリが指定されています。");
         }
 
+        $ogp_description = $post['ogp_description'];
+        if (mb_strlen($ogp_description, 'UTF-8') >= 120) {
+            throw new ValidationFailException(("予想外のogp説明文が指定されています。"));
+        }
+
         $csrfToken = $post['csrfToken'];
         
         try {
             return new InputData($artcl_id, $title, $oldthumbnailName, $is_thumbnail_uploaded,
-                $newThumbnailFileInfo, $content, $c_id, $csrfToken);
+                $newThumbnailFileInfo, $content, $c_id, $ogp_description, $csrfToken);
         }
         catch(TypeError $e) {
             throw new ValidationFailException('不正なパラメータが渡されています。');

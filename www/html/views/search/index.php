@@ -30,7 +30,7 @@ use myapp\config\ViewsConfig;
         <?php require ViewsConfig::COMPONENTS_PATH . 'header.php'; ?>
 
         <main>
-            <div class="center">
+            <div id="introduce--container" class="center" >
                 <div id="introduce" class="main--single">
                     <div class="center">
                         <div id="introduce--top">
@@ -41,37 +41,53 @@ use myapp\config\ViewsConfig;
 
 
                     <div id="introduce--main">
-                        <div class="nav-title">
-                            <p class="bold block-start0 block-end0">例えばこんなお悩みありませんか？</p>
-                        </div> 
-                        <li>コロナ禍で仕事や住まいを失った。</li>
-                        <li>性暴力、ハラスメント、DVで苦しんでいる。</li>
-                        <li>でも、誰にも相談できていない。支援や制度も利用できていない。</li>
-                        <li>そもそもどんな支援・相談窓口があるか、支援を受ける条件や方法もわからない。</li>
-                        <p>そんな時に、本サイトの検索システムを利用してみませんか？</p>
-                        <p>
-                            &#10004; 特に民間団体（NPOなど）が行う支援には<span class="red bold">支援を受ける条件が基本的にありません。</span>一度だけでも検索してみてください。
-                        </p>
-                        <div class="center">
-                            <a id="nav-to-search" class="nav-box left" href="#search-box-anchor">
-                                <p class="bold">
-                                    <i class="fas fa-search"></i>
-                                    支援・相談先を検索する&emsp;<span class="gt">&gt;</span>
-                                </p>
-                            </a>
+                        <div id="introduce--main--box">
+                            <div id="introduce--main--box--left" class="center">
+                                <a id="introduce--main--box--left--nav-to-search" class="nav-box" href="#search-box-anchor">
+                                    <p class="bold">
+                                        <i class="fas fa-search"></i>
+                                        支援・相談先を検索する&emsp;<span class="gt">&gt;</span>
+                                    </p>
+                                </a>
+                            </div>
+                            <div id="introduce--main--box--right" class="center">
+                                <a id="introduce--main--box--right--nav-to-article" class="nav-box" href="/article/list">
+                                    <p class="bold">
+                                        <i class="fas fa-book-open"></i>
+                                        お役立ち情報(コラム)を見る&emsp;<span class="gt">&gt;</span>
+                                    </p>
+                                </a>
+                            </div>
                         </div>
-                        <div class="nav-title">
-                            <p class="bold block-end0 block-start0">お役立ち情報(コラム)も書いています！以下のような悩みに答えています！</p>
-                        </div>
-                        <li class="red bold">支援・相談窓口の利用にためらいや不安、恥ずかしさを感じる</li>
-                        <li>支援って具体的にどう行われているの？</li>
-                        <div class="center">
-                            <a id="nav-to-article" class="nav-box left" href="/article/list">
-                                <p class="bold">
-                                    <i class="fas fa-book-open"></i>
-                                    お役立ち情報(コラム)を見る&emsp;<span class="gt">&gt;</span>
-                                </p>
-                            </a>
+
+                        <div id="introduce--main--explain">
+                            <div  id="introduce--main--explain--left">
+                                <div class="explain-title">
+                                    <br>
+                                    <p class="bold block-start0 block-end0">例えばこんなお悩みありませんか？</p>
+                                </div>
+                                <div class="explain-list">
+                                    <li>仕事や住まいを失った。</li>
+                                    <li>性暴力、DV、病気で苦しい。</li>
+                                    <li>でも相談できていない。支援や制度も利用していない。</li>
+                                    <li>どんな支援・相談窓口があるか、支援を受ける条件や方法もわからない。</li>
+                                    <p>
+                                        &#10004; 特に民間の支援には<span class="greenyellow">支援を受ける条件が基本的にありません。</span>
+                                    </p>
+                                    <p>
+                                        一度だけでも検索してみてください。
+                                    </p>
+                                </div>  
+                            </div>
+                            <div id="introduce--main--explain--right">
+                                <div class="explain-title">
+                                    <p class="bold block-end0 block-start0">お役立ち情報(コラム)も書いています！以下のような悩みに答えています！</p>
+                                </div>
+                                <div class="explain-list">
+                                    <li class="greenyellow">支援・相談窓口の利用にためらいや不安、恥ずかしさを感じる</li>
+                                    <li>支援って具体的にどう行われているの？</li>
+                                </div>  
+                            </div>
                         </div>
                     </div>
                 </div> 

@@ -3,13 +3,23 @@
 
 use myapp\config\AppConfig;
 use myapp\config\ViewsConfig;
+use myapp\config\URIConfig;
 
 ?>
 
 <!DOCTYPE html>
 <html>
-    <head>
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# website: http://ogp.me/ns/ website#">
         <title><?php echo $articleContent['title'] . '- '. AppConfig::TITLE; ?></title>
+
+        <!--ogp-->
+        <meta property="og:url" content="<?php echo URIConfig::URI; ?>" />
+        <meta property="og:title" content="<?php echo $articleContent['title']; ?>" />
+        <meta property="og:image" content="<?php echo URIConfig::URI. ViewsConfig::IMG_URL. $articleContent['thumbnailName']; ?>" />
+        <meta property="og:description" content="<?php echo $articleContent['ogp_description']; ?>" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@suppofy" />
 
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'article/show.css'; ?>">
@@ -43,7 +53,7 @@ use myapp\config\ViewsConfig;
             marked.setOptions({
                 breaks : true
             });
-            //記事コンテンツの改行を反映するためバッククォート
+            //記事コンテンツの改行を反映するためテンプレートリテラル
             const md = 
             `<?php 
                 $articleContent['content'] = str_replace("\\", "\\\\", $articleContent['content']);

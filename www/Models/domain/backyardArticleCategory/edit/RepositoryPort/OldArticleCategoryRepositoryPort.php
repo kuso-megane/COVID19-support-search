@@ -2,9 +2,9 @@
 
 namespace domain\backyardArticleCategory\edit\RepositoryPort;
 
-use domain\backyardArticleCategory\edit\Data\ArticleCategory;
+use domain\backyardArticleCategory\edit\Data\OldArticleCategory;
 
-interface ArticleCategoryRepositoryPort
+interface OldArticleCategoryRepositoryPort
 {
     /**
      * @param int $id
@@ -12,5 +12,5 @@ interface ArticleCategoryRepositoryPort
      * @return ArticleCategory|NULL
      * if no data is found, this returns NULL
      */
-    public function getArticleCategory(int $id): ?ArticleCategory;
+    public function getOldArticleCategory(int $id): ?OldArticleCategory;
 }

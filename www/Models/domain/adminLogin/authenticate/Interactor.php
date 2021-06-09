@@ -77,7 +77,7 @@ class Interactor
 
             //規程回数以上失敗したらlockする
             if ($newFailCount > AppConfig::MAXNUM_LOGIN_FAIL) {
-                $this->adminLoginInfoRepository->updateFailCountAndLockedTime(0, date("H:i:s"));
+                $this->adminLoginInfoRepository->updateFailCountAndLockedTime(0, date("Y:m:d H:i:s"));
                 $_SESSION['isLocked'] = TRUE;
             }
             else {

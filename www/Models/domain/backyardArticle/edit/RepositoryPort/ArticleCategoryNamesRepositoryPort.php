@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\components\articleCategoryNames\RepositoryPort;
+namespace domain\backyardArticle\edit\RepositoryPort;
 
 interface ArticleCategoryNamesRepositoryPort
 {

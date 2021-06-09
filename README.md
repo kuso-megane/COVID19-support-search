@@ -2,13 +2,15 @@
 
 ## 開発環境
 - dockerコンテナを構築し、apache2 + php + mysqlで作成。
-- phpのFWは使用してません
+- 勉強のため、phpのFWは使用してません
 
 ## deploy環境
 - aws ECS + EC2 + RDS
 - ECRからappコンテナのイメージを保存
 - ECS管理下のEC2インスタンスに、git経由でコードを反映
-- ECSのappコンテナの環境変数で、RDSの接続関連の情報を設定
+- ECS管理下のEC2インスタンス内の、appコンテナの環境変数で、RDSの接続関連の情報を設定
+- appコンテナの環境変数```IS_PROD```を```true```に設定。これに基づき、```www/config/DBConfig```がRDSの接続関連の情報を環境変数から取得。
+
 
 ## 環境構築
 1. gitでコードをpull
@@ -20,15 +22,34 @@
 1. www/ にて ```composer install```
 
 
-
-
 ## frontend
 - www/html/views配下にhtml(拡張子は基本php)を記述
 - asset/scss配下にscssファイルがある。
 - asset/scssに移動し、```./sass.sh```を実行すると、scssファイルが一括コンパイルされる
 - 画像は、www/html/asset/img/配下に
 
+
+## コードの構造
+- MVC
+- ```views/html/router/route.php```がurlを処理、該当するcontrollerの関数を呼び出す。
+
+### Model
+- domain層がビジネスロジック
+- domainのmainが```Interactor```, viewに渡す変数を定めているのが```Presenter```
+- infra層がDBと連絡する。
+
+### controller
+- Modelから必要なデータを取得
+- MyFrameWork/Bases/BaseControllerという親クラスがある。ここで```render()```関数を実装
+- ```render()```関数が```Model/domain```の```Presenter```の返り値```['xxx' => $yyy]```から```$xxx = $yyy```として抽出、viewに渡す。
+
+### views
+- controllerから呼び出されるhtml(phpファイル)および、css, js, imgなど
+
 ## 外部ライブラリ
 - polyfill.js
 - [Font Awesome](https://fontawesome.com/)
 - あとはwww/composer.jsonみてください
+
+
+

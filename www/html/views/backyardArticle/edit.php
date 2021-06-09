@@ -1,6 +1,8 @@
 <?php
 
 use myapp\config\ViewsConfig;
+use Prophecy\Doubler\NameGenerator;
+
 ?>
 
 <!DOCTYPE html>
@@ -61,9 +63,22 @@ use myapp\config\ViewsConfig;
             <p id="thumbnail-invalid-note" class="invalid-note">
                 新しいサムネがアップロードされていません。
             </p>
+            <br>
+            <p>
+                <p>ogpの説明文(120字以内、80~90字くらいが良い)</p>
+                <p>現在の文字数: <span id="new-ogpDescription-word-count"></span></p>
+                <textarea id="new-ogpDescription" type="text" name="ogp_description" cols="100" row="2">
+                    <?php echo ($oldArticleContent['ogp_description'] !== NULL) ? htmlspecialchars($oldArticleContent['ogp_description'], ENT_QUOTES) : ''; ?>
+                </textarea>
+                <div id="ogpDescription-reset-button" class="buttons">ogpの説明文を元に戻す</div>
+            </p>
+
+            <p id="ogpDescription-invalid-note" class="invalid-note">
+                ogpの説明文の文字数は120字以内にしてください。
+            </p>
                     
             <div>
-                本文(画像を埋め込むのは現時点では無理。すまん。):
+                本文(画像を埋め込む場合、画像ファイルがすでに手動でアップロードされている必要があります。):
                 <div id="content-reset-button" class=" buttons">本文を元に戻す</div>
                 <textarea id="editor" name="content" cols="20" rows="8">
                     <?php echo ($oldArticleContent['content'] !== NULL) ? htmlspecialchars($oldArticleContent['content'], ENT_QUOTES) : ''; ?>
@@ -108,136 +123,194 @@ use myapp\config\ViewsConfig;
 
         <!--formのリセット-->
         <script>
-            const resetTitle = (e) => {
-                if (window.confirm("タイトルを元に戻します。")) {
-                    const oldTitle = "<?php echo $oldArticleContent['title']; ?>";
-                    const newTitleInput = document.getElementById("new-title");
-                    newTitleInput.value = oldTitle;
+            {
+                const resetTitle = (e) => {
+                    if (window.confirm("タイトルを元に戻します。")) {
+                        const oldTitle = "<?php echo htmlspecialchars($oldArticleContent['title'], ENT_QUOTES); ?>";
+                        const newTitleInput = document.getElementById("new-title");
+                        newTitleInput.value = oldTitle;
+                    }
+                    else {
+                        return;
+                    }
                 }
-                else {
+
+                const resetCategory = (e) => {
+                    if (window.confirm("カテゴリを元に戻します。")) {
+                        const oldC_id = "<?php echo ($oldArticleContent['c_id'] !== NULL)? $oldArticleContent['c_id'] : 1; ?>";
+                        const newCategorySelect = document.getElementById("new-category");
+                        newCategorySelect.selectedIndex = oldC_id - 1;
+                    }
+                    else {
+                        return;
+                    }  
+                }
+
+                const rawResetOgpDescription = (e) => {
+                    const oldOgpDescription = "<?php echo htmlspecialchars($oldArticleContent['ogp_description'], ENT_QUOTES); ?>";
+                    const newOgpDescriptionTextArea = document.getElementById("new-ogpDescription");
+                    newOgpDescriptionTextArea.value = oldOgpDescription;
                     return;
                 }
-            }
 
-            const resetCategory = (e) => {
-                if (window.confirm("カテゴリを元に戻します。")) {
-                    const oldC_id = "<?php echo ($oldArticleContent['c_id'] !== NULL)? $oldArticleContent['c_id'] : 1; ?>";
-                    const newCategorySelect = document.getElementById("new-category");
-                    newCategorySelect.selectedIndex = oldC_id - 1;
+
+                const resetOgpDescription = (e) => {
+                    if (window.confirm("ogpの説明文を元に戻します。")) {
+                        rawResetOgpDescription();
+                    }
+                    else {
+                        return;
+                    }
                 }
-                else {
-                    return;
-                }  
-            }
 
-            const rawResetEditor = (e) => {
-                const oldContent =
-                `<?php 
-                    $oldArticleContent['content'] = str_replace("\\", "\\\\", $oldArticleContent['content']);
-                    echo str_replace("`", "\`", $oldArticleContent['content']); 
-                ?>`;
-                const editor = document.getElementById("editor");
+                const rawResetEditor = (e) => {
+                    const oldContent =
+                    `<?php 
+                        $oldArticleContent['content'] = str_replace("\\", "\\\\", $oldArticleContent['content']);
+                        echo str_replace("`", "\`", $oldArticleContent['content']); 
+                    ?>`;
+                    const editor = document.getElementById("editor");
+                    
+                    simplemde.value(oldContent);
+                }
+
+                const resetEditor = (e) => {
+                    if (window.confirm("本文を元に戻します。")) {
+                        rawResetEditor();
+                    }
+                    else {
+                        return;
+                    }  
+                }
+
                 
-                simplemde.value(oldContent);
-            }
 
-            const resetEditor = (e) => {
-                if (window.confirm("本文を元に戻します。")) {
-                    rawResetEditor();
+                document.getElementById("title-reset-button").addEventListener("click", resetTitle);
+                document.getElementById("category-reset-button").addEventListener("click", resetCategory);
+                document.getElementById("ogpDescription-reset-button").addEventListener("click", resetOgpDescription);
+                document.getElementById("content-reset-button").addEventListener("click", resetEditor);
+                window.addEventListener("DOMContentLoaded", rawResetEditor);
+                window.addEventListener("DOMContentLoaded", rawResetOgpDescription);
+            }
+        </script>
+
+        <!--ogp説明文の文字数カウント-->
+        <script>
+            {
+                const newOgpDescriptionTextArea = document.getElementById("new-ogpDescription");
+                const ogpDescriptionWordCount = document.getElementById("new-ogpDescription-word-count");
+
+                const wordCount = (e) => {
+                    const len = newOgpDescriptionTextArea.value.length;
+                    ogpDescriptionWordCount.innerHTML = len;
                 }
-                else {
-                    return;
-                }  
+                 
+                newOgpDescriptionTextArea.addEventListener("keyup", wordCount);
+                window.addEventListener("DOMContentLoaded", wordCount);
             }
-
-            
-
-            document.getElementById("title-reset-button").addEventListener("click", resetTitle);
-            document.getElementById("category-reset-button").addEventListener("click", resetCategory);
-            document.getElementById("content-reset-button").addEventListener("click", resetEditor);
-            window.addEventListener("DOMContentLoaded", rawResetEditor);
         </script>
 
         <!--formのvalidation-->
         <script>
-            const submitButton = document.getElementById("submit-button");
-            const titleInput = document.getElementById("new-title");
-            const titleInvalidNote = document.getElementById("title-invalid-note");
-            
-            const isThumbnailUploaded = document.getElementById("is_thumbnail_uploaded");
-            const newThumbnailUploader = document.getElementById("newThumbnail-uploader");
-            const thumbnailInvalidNote = document.getElementById("thumbnail-invalid-note");
+            {
+                const submitButton = document.getElementById("submit-button");
+                const titleInput = document.getElementById("new-title");
+                const titleInvalidNote = document.getElementById("title-invalid-note");
+                
+                const isThumbnailUploaded = document.getElementById("is_thumbnail_uploaded");
+                const newThumbnailUploader = document.getElementById("newThumbnail-uploader");
+                const thumbnailInvalidNote = document.getElementById("thumbnail-invalid-note");
 
-            const generalInvalidNote = document.getElementById("general-invalid-note");
-            
-            
-            const initSubmitButton = (e) => {
-                generalInvalidNote.classList.remove("show");
-                submitButton.disabled = false;
-            }
+                const newOgpDescriptionTextArea = document.getElementById("new-ogpDescription");
+                const ogpDescriptionInvalidNote = document.getElementById("ogpDescription-invalid-note");
 
-            const disableSubmitButton = () => {
-                submitButton.disabled = true;
-                generalInvalidNote.classList.add("show");
-            }
-
-
-            const validateTitle = (e) => {
-                const titleLen = titleInput.value.length;
-                if (titleLen == 0 || titleLen > 50) {
-                    titleInvalidNote.classList.add("show");
-                    titleInput.classList.add("invalid");
-                    disableSubmitButton();
+                const generalInvalidNote = document.getElementById("general-invalid-note");
+                
+                
+                const initSubmitButton = (e) => {
+                    generalInvalidNote.classList.remove("show");
+                    submitButton.disabled = false;
                 }
-                else {
-                    titleInvalidNote.classList.remove("show");
-                    titleInput.classList.remove("invalid");
-                    initSubmitButton();
-                }
-            }
 
-            const validateThumbnail = (e) => {
-                if (isThumbnailUploaded.checked == true) {
-                    if (newThumbnailUploader.files.length == 0) {
-                        thumbnailInvalidNote.classList.add("show");
+                const disableSubmitButton = () => {
+                    submitButton.disabled = true;
+                    generalInvalidNote.classList.add("show");
+                }
+
+
+                const validateTitle = (e) => {
+                    const titleLen = titleInput.value.length;
+                    if (titleLen == 0 || titleLen > 50) {
+                        titleInvalidNote.classList.add("show");
+                        titleInput.classList.add("invalid");
                         disableSubmitButton();
+                    }
+                    else {
+                        titleInvalidNote.classList.remove("show");
+                        titleInput.classList.remove("invalid");
+                        initSubmitButton();
+                    }
+                }
+
+                const validateThumbnail = (e) => {
+                    if (isThumbnailUploaded.checked == true) {
+                        if (newThumbnailUploader.files.length == 0) {
+                            thumbnailInvalidNote.classList.add("show");
+                            disableSubmitButton();
+                        }
+                        else {
+                            thumbnailInvalidNote.classList.remove("show");
+                            initSubmitButton();
+                        }
                     }
                     else {
                         thumbnailInvalidNote.classList.remove("show");
                         initSubmitButton();
+                    }    
+                }
+
+                const validateOgpDescription = (e) => {
+                    const len = newOgpDescriptionTextArea.value.length;
+                    if (len >= 120) {
+                        ogpDescriptionInvalidNote.classList.add("show");
+                        disableSubmitButton();
+                    }
+                    else {
+                        ogpDescriptionInvalidNote.classList.remove("show");
+                        initSubmitButton();
                     }
                 }
-                else {
-                    thumbnailInvalidNote.classList.remove("show");
-                    initSubmitButton();
-                }    
+
+                
+                const validate = (e) => {
+                    validateTitle(); 
+                    validateThumbnail();
+                    validateOgpDescription();
+                } 
+
+                titleInput.addEventListener("keyup", validateTitle);
+                isThumbnailUploaded.addEventListener("change", validateThumbnail);
+                newThumbnailUploader.addEventListener("change", validateThumbnail);
+                newOgpDescriptionTextArea.addEventListener("keyup", validateOgpDescription);
+                submitButton.addEventListener("mouseover", validate);
             }
-
-            
-            const validate = (e) => {
-                validateTitle(); 
-                validateThumbnail();
-            } 
-
-            titleInput.addEventListener("keyup", validateTitle);
-            isThumbnailUploaded.addEventListener("change", validateThumbnail);
-            newThumbnailUploader.addEventListener("change", validateThumbnail);
-            submitButton.addEventListener("mouseover", validate);
         </script>
 
         <!--submit-->
         <script>
-            const submit = (e) => {
-                e.preventDefault();
-                if (window.confirm("投稿しますか?")) {
-                    document.articleForm.submit();
+            {
+                const submit = (e) => {
+                    e.preventDefault();
+                    if (window.confirm("投稿しますか?")) {
+                        document.articleForm.submit();
+                    }
+                    else {
+                        return;
+                    }
                 }
-                else {
-                    return;
-                }
-            }
 
-            document.getElementById("submit-button").addEventListener("click", submit);
+                document.getElementById("submit-button").addEventListener("click", submit);
+            }
         </script>
     </body>
 </html>
