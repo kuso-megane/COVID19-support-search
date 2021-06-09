@@ -152,7 +152,7 @@ $topFontSize: 0.75rem;
     }
 
     &--main{
-        font-family:  'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','メイリオ','ＭＳ Ｐゴシック','MS PGothic'  ;
+        font-family:  'Avenir','Helvetica Neue', sans-serif ;
         $flexBoxWidth: 100%;
         text-align: left;
         font-size: $topFontSize;
