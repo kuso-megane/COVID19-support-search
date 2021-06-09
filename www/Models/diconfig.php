@@ -32,21 +32,20 @@ use infra\Repository\backyardArticleCategory\edit\OldArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\post\PostArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\index\ArticleCategoryListRepository as BYArticleCategoryIndexArticleCategoryListRepository;
 use infra\Repository\components\searchBox\TroubleNameListRepository;
+use infra\Repository\search\result\RecommendedArticleInfosRepository;
+use infra\Repository\search\result\SearchedAreaNameRepository;
+use infra\Repository\search\result\SearchedSupportsRepository;
+use infra\Repository\search\result\SearchItemsRepository;
 
-
-use infra\Repository\AreaListRepository;
-use infra\Repository\ArticleRepository;
-use infra\Repository\SupportOrgsRepository;
-use infra\Repository\TroubleListRepository;
 
 return [
     TroubleNameListRepositoryPort::class => \DI\create(TroubleNameListRepository::class),
-    SearchItemsRepositoryPort::class => \DI\create(TroubleListRepository::class),
+    SearchItemsRepositoryPort::class => \DI\create(SearchItemsRepository::class),
 
-    SearchedSupportsRepositoryPort::class => \DI\create(SupportOrgsRepository::class),
+    SearchedSupportsRepositoryPort::class => \DI\create(SearchedSupportsRepository::class),
 
     AllArticleInfosRepositoryPort::class => \DI\create(AllArticleInfosRepository::class),
-    RecommendedArticleInfosRepositoryPort::class => \DI\create(ArticleRepository::class),
+    RecommendedArticleInfosRepositoryPort::class => \DI\create(RecommendedArticleInfosRepository::class),
     ArticleContentRepositoryPort::class => \DI\create(ArticleContentRepository::class),
     ArticleBYInfosRepositoryPort::class => \DI\create(ArticleBYInfosRepository::class),
     OldArticleContentRepositoryPort::class => \DI\create(OldArticleContentRepository::class),
@@ -59,7 +58,7 @@ return [
     PostArticleCategoryRepositoryPort::class => \DI\create(PostArticleCategoryRepository::class),
     BYArticleCategoryIndexArticleCategoryListRepositoryPort::class => \DI\create(BYArticleCategoryIndexArticleCategoryListRepository::class),
 
-    SearchedAreaNameRepositoryPort::class => \DI\create(AreaListRepository::class),
+    SearchedAreaNameRepositoryPort::class => \DI\create(SearchedAreaNameRepository::class),
 
     AdminLoginInfoRepositoryPort::class => \DI\create(AdminLoginInfoRepository::class)
 ];
