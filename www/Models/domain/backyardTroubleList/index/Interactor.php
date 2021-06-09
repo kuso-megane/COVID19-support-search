@@ -21,6 +21,10 @@ class Interactor
         $this->troubleListRepository = $troubleListRepository;
     }
 
+
+    /**
+     * @return array refer to Presenter
+     */
     public function interact()
     {
         $articleCategoryNames = $this->articleCategoryNamesRepository->getArticleCategoryNames();
