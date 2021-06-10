@@ -7,23 +7,30 @@ use myapp\config\ViewsConfig;
 <head>
     <title>troubleList - 管理者メニュー</title>
     <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL. 'backyardTroubleList/edit.css'; ?>">
 </head>
 <body>
     <h2>troubleList 編集</h2>
     
     <form name="troubleListForm" action="/backyard/troubleList/post/<?php echo $trouble_id; ?>" method="post">
         <p>検索ボックスの「お困りごと」(50字以内):</p>
-        <input type="text" name="name" id="new-name">
+        <input type="text" name="name" id="new-name" value="<?php echo htmlspecialchars($oldTrouble['name'], ENT_QUOTES); ?>" size="50">
 
         <p>おすすめコラムのカテゴリ:
-            <select name="ArticleC_id" id="new-articleC">
-                <option value="1">aaa</option>
+            <select name="articleC_id" id="new-articleC">
+                <?php foreach ($articleCategoryNames as $articleCategory): ?>
+                    <option value="<?php echo $articleCategory['id']; ?>" <?php if ($articleCategory['id'] === $oldTrouble['articleC_id']) {echo 'selected';} ?>>
+                        <?php echo htmlspecialchars($articleCategory['name'], ENT_QUOTES); ?>
+                    </option>
+                <?php endforeach; ?>
             </select>
+            
         </p>
 
         <input type="hidden" name="csrfToken" value="<?php echo $csrfToken; ?>">
         <br>
-        <button id="submit-button" class="buttons">投稿</button>
+        <div id="submit-button" class="buttons">投稿</div>
+        <div id="reset-button" class="buttons">一括リセット</div>
     </form>
 
     <!--formのsubmit-->
@@ -41,6 +48,26 @@ use myapp\config\ViewsConfig;
             }
 
             $submitButton.addEventListener("click", submit);
+        }
+    </script>
+
+    <!--formのreset-->
+    <script>
+        {
+            const $resetButton = document.getElementById("reset-button");
+
+            const reset = (e) => {
+                e.preventDefault();
+
+                if (window.confirm("本当にリセットしますか?")) {
+                    document.troubleListForm.reset();
+                }
+                else {
+                    return;
+                }
+            }
+
+            $resetButton.addEventListener("click", reset);
         }
     </script>
 </body>

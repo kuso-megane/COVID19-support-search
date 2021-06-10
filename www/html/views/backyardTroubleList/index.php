@@ -11,6 +11,7 @@ use myapp\config\ViewsConfig;
 </head>
 <body>
     <h2>troubleList 編集</h2>
+    <p><a href="/backyard/troubleList/edit">新規作成</a></p>
     <table>
         <thead>
             <tr>
