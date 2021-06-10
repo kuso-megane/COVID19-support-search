@@ -24,5 +24,6 @@ $command backyardArticle/edit.scss ${targetPath}backyardArticle/edit.css
 $command backyardArticleCategory/index.scss ${targetPath}backyardArticleCategory/index.css
 
 $command backyardTroubleList/index.scss ${targetPath}backyardTroubleList/index.css
+$command backyardTroubleList/edit.scss ${targetPath}backyardTroubleList/edit.css
 
 $command adminLogin/loginPage.scss ${targetPath}adminLogin/loginPage.css

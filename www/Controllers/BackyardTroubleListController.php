@@ -28,6 +28,7 @@ class BackyardTroubleListController extends BaseController
 
     public function edit(array $vars)
     {
+        /*
         $builder = new \DI\ContainerBuilder();
         $builder->addDefinitions('/var/www/Models/diconfig.php');
         $container = $builder->build();
@@ -45,6 +46,9 @@ class BackyardTroubleListController extends BaseController
         else {
             $this->render($vm, 'backyardArticle', 'edit');
         }
+        */
+
+        $this->render([], self::DIR, 'edit');
     }
 
 
