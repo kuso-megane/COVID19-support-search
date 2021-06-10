@@ -22,7 +22,11 @@ class Presenter
      *          'articleC_id' => int
      *      ],
      *      'articleCategoryNames' => [
-     *          (int)id => (string)name, ...
+     *          [
+     *              'id' => int,
+     *              'name' => string
+     *          ],
+     *          [], ...
      *      ],
      *      'csrfToken' => string
      * ]
@@ -72,16 +76,11 @@ class Presenter
      */
     private function formatForArticleCategoryNames(array $objects): array
     {
-        $ans = [];
 
         foreach ($objects as &$object) {
-            $data = $object->toArray();
-            $id = $data['id'];
-            $name = $data['name'];
-
-            $ans[$id] = $name;
+            $object = $object->toArray();
         }
 
-        return $ans;
+        return $objects;
     }
 }

@@ -20,7 +20,7 @@ class Validator
         $trouble_id = ($trouble_id !== NULL) ? (int) $trouble_id : NULL;
 
 
-        if (! ($trouble_id !== NULL && $trouble_id > 0)) {
+        if (! ($trouble_id === NULL || $trouble_id > 0)) {
             throw new ValidationFailException('予想外の「お困りごと」が指定されています。');
         }
 
