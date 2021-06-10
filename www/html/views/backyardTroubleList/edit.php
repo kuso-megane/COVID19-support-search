@@ -21,6 +21,7 @@ use myapp\config\ViewsConfig;
             </select>
         </p>
 
+        <input type="hidden" name="csrfToken" value="<?php echo $csrfToken; ?>">
         <br>
         <button id="submit-button" class="buttons">投稿</button>
     </form>
