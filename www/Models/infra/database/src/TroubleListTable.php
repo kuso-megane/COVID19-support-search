@@ -45,7 +45,8 @@ class TroubleListTable
      * @return NULL|array [
      *      'id' => int,
      *      'name' => string,
-     *      'meta_word' => string
+     *      'meta_word' => string,
+     *      'ArticleC_id' => int
      * ]
      * 
      * If no record is found, return NULL
