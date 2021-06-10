@@ -22,8 +22,7 @@ class Presenter
      *          'articleC_id' => int
      *      ],
      *      'articleCategoryNames' => [
-     *          'id' => int,
-     *          'name' => string
+     *          (int)id => (string)name, ...
      *      ],
      *      'csrfToken' => string
      * ]
