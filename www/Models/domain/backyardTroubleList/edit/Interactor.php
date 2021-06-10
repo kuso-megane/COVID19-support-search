@@ -4,22 +4,21 @@ namespace domain\backyardTroubleList\edit;
 
 use domain\backyardTroubleList\edit\Validator\Validator;
 use domain\Exception\ValidationFailException;
-use myapp\config\AppConfig;
 use domain\components\csrfValidate\Interactor as CsrfValidator;
-use domain\backyardTroubleList\edit\RepositoryPort\OldTroublesRepositoryPort;
+use domain\backyardTroubleList\edit\RepositoryPort\OldTroubleRepositoryPort;
 use domain\backyardTroubleList\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 
 class Interactor
 {
-    private $oldTroublesRepository;
+    private $oldTroubleRepository;
     private $articleCategoryNamesRepository;
 
     public function __construct(
-        OldTroublesRepositoryPort $oldTroublesRepository,
+        OldTroubleRepositoryPort $oldTroubleRepository,
         ArticleCategoryNamesRepositoryPort $articleCategoryNamesRepository
     )
     {
-        $this->oldTroublesRepository = $oldTroublesRepository;
+        $this->oldTroubleRepository = $oldTroubleRepository;
         $this->articleCategoryNamesRepository = $articleCategoryNamesRepository;
     }
 
@@ -42,21 +41,20 @@ class Interactor
         session_start();
         $csrfToken = (new CsrfValidator)->generateTokenAndSetSession();
 
-        
 
         if ($trouble_id !== NULL) {
-            $oldTroubles = $this->oldTroublesRepository->getOldTroubles($trouble_id);
+            $oldTrouble = $this->oldTroubleRepository->getOldTrouble($trouble_id);
 
-            if ($oldTroubles === NULL) {
+            if ($oldTrouble === NULL) {
                 return (new Presenter)->reportNotFound('お探しの「お困りごと」は見つかりませんでした。');
             }
         }
         else {
-            $oldTroubles = [];
+            $oldTrouble = NULL;
         }
 
         $aritcleCategoryNames = $this->articleCategoryNamesRepository->getArticleCategoryNames();
 
-        return (new Presenter)->present($oldTroubles, $aritcleCategoryNames, $csrfToken);
+        return (new Presenter)->present($oldTrouble, $aritcleCategoryNames, $csrfToken);
     }
 }

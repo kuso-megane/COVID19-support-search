@@ -2,21 +2,21 @@
 
 namespace domain\backyardTroubleList\edit;
 
+use domain\backyardTroubleList\edit\Data\OldTrouble;
 use myapp\config\AppConfig;
 
-use function PHPUnit\Framework\isEmpty;
 
 class Presenter
 {
 
     /**
-     * @param OldTrouble[] $oldTroubles -- if this is creation of new trouble, this is empty array
+     * @param OldTrouble|NULL $oldTrouble -- if this is creation of new trouble, this is empty array
      * @param ArticleCategoryName[] $articleCategoryNames
      * @param string $csrfToken
      * 
      * @return array
      * [
-     *      'oldTroubles' => [
+     *      'oldTrouble' => [
      *          'id' => int,
      *          'name' => string,
      *          'articleC_id' => int
@@ -28,12 +28,12 @@ class Presenter
      *      'csrfToken' => string
      * ]
      */
-    public function present(array $oldTroubles, array $articleCategoryNames, string $csrfToken): array
+    public function present(?OldTrouble $oldTrouble, array $articleCategoryNames, string $csrfToken): array
     {
-        $oldTroubles = (isEmpty($oldTroubles)) ? [] : $this->format($oldTroubles);
+        $oldTrouble = ($oldTrouble === NULL) ? [] : $oldTrouble->toArray();
         $articleCategoryNames = $this->formatForArticleCategoryNames($articleCategoryNames);
 
-        return compact('oldTroubles', 'articleCategoryNames', 'csrfToken');
+        return compact('oldTrouble', 'articleCategoryNames', 'csrfToken');
     }
 
 
@@ -62,17 +62,6 @@ class Presenter
         return AppConfig::INVALID_PARAMS;
     }
 
-
-
-
-    private function format(array $objects): array
-    {
-        foreach ($objects as &$object) {
-            $object = $object->toArray();
-        }
-
-        return $objects;
-    }
 
 
     /**

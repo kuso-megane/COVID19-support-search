@@ -7,6 +7,7 @@ use myapp\config\AppConfig;
 use myapp\myFrameWork\SuperGlobalVars;
 use myapp\Controllers\helper\Helper;
 use domain\backyardTroubleList\index\Interactor as IndexInteractor;
+use domain\backyardTroubleList\edit\Interactor as EditInteractor;
 
 class BackyardTroubleListController extends BaseController
 {
@@ -28,7 +29,7 @@ class BackyardTroubleListController extends BaseController
 
     public function edit(array $vars)
     {
-        /*
+        
         $builder = new \DI\ContainerBuilder();
         $builder->addDefinitions('/var/www/Models/diconfig.php');
         $container = $builder->build();
@@ -44,11 +45,9 @@ class BackyardTroubleListController extends BaseController
             (new Helper)->redirectToAdminLoginPage($uri);
         }
         else {
-            $this->render($vm, 'backyardArticle', 'edit');
+            $this->render($vm, self::DIR, 'edit');
         }
-        */
-
-        $this->render([], self::DIR, 'edit');
+        
     }
 
 
@@ -68,7 +67,7 @@ class BackyardTroubleListController extends BaseController
             return FALSE;
         }
         else {
-            $this->render($vm, 'backyardArticle', 'post');
+            $this->render($vm, self::DIR, 'post');
         }     
     }
 }
