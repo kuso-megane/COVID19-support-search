@@ -29,10 +29,7 @@ class Interactor
         $tmpImgFileName = $input['tmpImgFileName'];
         $ext = $input['ext'];
 
-        #test
-        if (chmod($tmpImgFileName, 0755) === FALSE) {
-            echo ('ファイル権限を変更できません。');
-        }
+
 
         $now = date("YmdHis");
         $newThumbnailFileName = $now . '_thumbnail.' . $ext;
