@@ -31,7 +31,17 @@ class Interactor
 
         $now = date("YmdHis");
         $newThumbnailFileName = $now . '_thumbnail.' . $ext;
-        $isUploadSucceeded = move_uploaded_file($tmpImgFileName, AppConfig::UPLOAD_IMG_PATH . $newThumbnailFileName);
+        $isUploadSucceeded = TRUE;
+
+        
+        #test
+        if (chmod($tmpImgFileName, 0755) === FALSE) {
+            echo ('ファイル権限を変更できません。');
+        }
+        
+        
+
+        move_uploaded_file($tmpImgFileName, AppConfig::UPLOAD_IMG_PATH . $newThumbnailFileName);
 
         return (new Presenter)->present($isUploadSucceeded, $newThumbnailFileName);
     }
