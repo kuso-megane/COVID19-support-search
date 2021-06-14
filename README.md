@@ -20,6 +20,8 @@
 1. サービスのdirにて、```docker-compose up -d```
 1. asset/scss/ にて　```./sass.sh```
 1. www/ にて ```composer install```
+1. (本番環境のみ)ec2-user所有の画像ファイルdirへの画像アップロードを```www-data```(apacheのuser)が行うため、ec2のdocker for linuxでは以下の権限変更が必要。(というか、docker for mac, windowsでなぜ権限変更なしに動くのか謎)
+- ec2のhostから```chmod o+x /path/to/www/html/asset/img```を実行。
 
 
 ## frontend
