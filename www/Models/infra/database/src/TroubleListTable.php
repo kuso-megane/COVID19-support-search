@@ -59,4 +59,47 @@ class TroubleListTable
             [':id' => $trouble_id]
         )[0];
     }
+
+
+    /**
+     * @param string $name
+     * @param string $meta_word
+     * @param int $articleC_id
+     * 
+     * if something goes wrong, this throws PDOExeption
+     */
+    public function create(string $name, $meta_word, int $articleC_id)
+    {
+        $columns = '0, :name, :meta_word, :ArticleC_id';
+        $boundColumns = [
+            ':name' => $name,
+            ':meta_word' => $meta_word,
+            ':ArticleC_id' => $articleC_id 
+        ];
+
+        $this->dbh->insert(self::TABLENAME, $columns, $boundColumns);
+    }
+
+
+    /**
+     * @param int $id
+     * @param string $name
+     * @param string $meta_word
+     * @param int $articleC_id
+     * 
+     * if something goes wrong, this throws PDOExeption
+     */
+    public function update(int $id, string $name, $meta_word, int $articleC_id)
+    {
+        $columns = 'name = :name, meta_word = :meta_word, ArticleC_id = :ArticleC_id';
+        $boundValues = [
+            ':id' => $id,
+            ':name' => $name,
+            ':meta_word' => $meta_word,
+            ':ArticleC_id' => $articleC_id 
+        ];
+
+        $this->dbh->update(self::TABLENAME, $columns, 'id = :id', $boundValues);
+    }
+
 }
