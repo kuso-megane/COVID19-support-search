@@ -45,7 +45,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) u
         $r->addGroup('/troubleList', function (FastRoute\RouteCollector $r) {
             $r->addRoute('GET', '/[index[/]]', 'backyardTroubleListIndex');
             $r->addRoute('GET', '/edit[/[{trouble_id:\d+}]]', 'backyardTroubleListEdit');
-            $r->addRoute('GET', '/post[/[{trouble_id:\d+}]]', 'backyardTroubleListPost');
+            $r->addRoute('POST', '/post[/[{trouble_id:\d+}]]', 'backyardTroubleListPost');
         });
 
     });
