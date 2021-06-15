@@ -21,14 +21,15 @@ class TroubleListRepository implements TroubleListRepositoryPort
      */
     public function getTrouble(): array
     {
-        $records = $this->table->findAll(FALSE);
+        $records = $this->table->findAll(TRUE);
 
         foreach ($records as &$record) {
             $id = $record['id'];
             $name = $record['name'];
+            $meta_word = $record['meta_word'];
             $articleC_id = $record['ArticleC_id'];
 
-            $record = new Trouble($id, $name, $articleC_id);
+            $record = new Trouble($id, $name, $meta_word, $articleC_id);
         }
 
         return $records;

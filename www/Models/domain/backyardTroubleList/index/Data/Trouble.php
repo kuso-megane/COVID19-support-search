@@ -6,9 +6,9 @@ class Trouble
 {
     private $attr;
 
-    public function __construct(int $id, string $name, int $articleC_id)
+    public function __construct(int $id, string $name, string $meta_word, int $articleC_id)
     {
-        $this->attr = compact('id', 'name', 'articleC_id');
+        $this->attr = compact('id', 'name', 'meta_word', 'articleC_id');
     }
 
 

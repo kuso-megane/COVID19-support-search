@@ -17,6 +17,7 @@ use myapp\config\ViewsConfig;
             <tr>
                 <td>編集ページ</td>
                 <td>内容</td>
+                <td>meta_word</td>
                 <td>おすすめコラムのカテゴリ</td>
             </tr>
         </thead>
@@ -25,6 +26,7 @@ use myapp\config\ViewsConfig;
                 <tr>
                     <td><a href="/backyard/troubleList/edit/<?php echo $trouble['id'] ?>">編集</a></td>
                     <td><?php echo htmlspecialchars($trouble['name'], ENT_QUOTES); ?></td>
+                    <td><?php echo htmlspecialchars($trouble['meta_word'], ENT_QUOTES); ?></td>
                     <td><?php echo htmlspecialchars($articleCategoryNames[$trouble['articleC_id']]); ?></td>
                 </tr>
             <?php endforeach; ?>

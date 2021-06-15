@@ -15,6 +15,7 @@ class Presenter
      *          [
      *              'id' => int,
      *              'name' => string,
+     *              'meta_word' => string,
      *              'articleC_id' => int
      *          ],
      *          []  
