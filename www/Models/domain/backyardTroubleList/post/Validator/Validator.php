@@ -30,6 +30,12 @@ class Validator
             throw new ValidationFailException('「お困りごと」の内容の文字数が不正です。');
         }
 
+        $meta_word = $post['meta_word'];
+        $len_meta_word = mb_strlen($meta_word, 'UTF-8');
+        if (! ($len_meta_word > 0 && $len_meta_word <= 50)) {
+            throw new ValidationFailException('meta_wordの文字数が不正です。');
+        }
+
         $articleC_id = $post['articleC_id'];
         if (! ($articleC_id > 0)) {
             throw new ValidationFailException('想定外のコラムカテゴリが指定されています。');
@@ -38,7 +44,7 @@ class Validator
         $csrfToken = $post['csrfToken'];
 
         try {
-            return new InputData($id, $name, $articleC_id, $csrfToken);
+            return new InputData($id, $name, $meta_word, $articleC_id, $csrfToken);
         }
         catch (TypeError $e) {
             throw new ValidationFailException('想定外のパラメータが渡されています。');

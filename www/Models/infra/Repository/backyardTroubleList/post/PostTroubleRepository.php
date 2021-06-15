@@ -19,15 +19,15 @@ class PostTroubleRepository implements PostTroubleRepositoryPort
     /**
      * @inheritDoc
      */
-    public function postTrouble(?int $id, string $name, int $articleC_id): bool
+    public function postTrouble(?int $id, string $name, string $meta_word, int $articleC_id): bool
     {
 
         try {
             if ($id === NULL) {
-                $this->table->create($name, $articleC_id);
+                $this->table->create($name, $meta_word, $articleC_id);
             }
             else {
-                $this->table->update($id, $name, $articleC_id);
+                $this->table->update($id, $name, $meta_word, $articleC_id);
             }
         }
         catch(PDOException $e) {

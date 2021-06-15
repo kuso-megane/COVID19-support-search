@@ -37,6 +37,7 @@ class Interactor
 
         $id = $input['id'];
         $name = $input['name'];
+        $meta_word = $input['meta_word'];
         $articleC_id = $input['articleC_id'];
         $csrfToken = $input['csrfToken'];
 
@@ -46,7 +47,7 @@ class Interactor
             return (new Presenter)->reportInvalidAccess('不正なフォームからの送信です。');
         }
 
-        $isPostSucceeded = $this->postTroubleRepository->postTrouble($id, $name, $articleC_id);
+        $isPostSucceeded = $this->postTroubleRepository->postTrouble($id, $name, $meta_word, $articleC_id);
         if ($isPostSucceeded === FALSE) {
             return (new Presenter)->present(FALSE, '作成・更新に失敗しました。');
         }
