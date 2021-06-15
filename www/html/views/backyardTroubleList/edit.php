@@ -23,10 +23,13 @@ use myapp\config\ViewsConfig;
                         <?php echo htmlspecialchars($articleCategory['name'], ENT_QUOTES); ?>
                     </option>
                 <?php endforeach; ?>
-            </select>
-            
+            </select> 
         </p>
 
+        <p>meta_word:
+            <input type="text" name="meta_word" id="new-meta_ord" value="<?php echo htmlspecialchars($oldTrouble['meta_word'], ENT_QUOTES); ?>">
+        </p>
+        
         <input type="hidden" name="csrfToken" value="<?php echo $csrfToken; ?>">
         <br>
         <div id="submit-button" class="buttons">投稿</div>

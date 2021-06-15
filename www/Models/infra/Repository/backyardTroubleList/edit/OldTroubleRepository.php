@@ -30,6 +30,7 @@ class OldTroubleRepository implements OldTroubleRepositoryPort
         return new OldTrouble(
             $record['id'],
             $record['name'],
+            $record['meta_word'],
             $record['ArticleC_id']
         );
     }
