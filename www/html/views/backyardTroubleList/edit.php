@@ -12,7 +12,7 @@ use myapp\config\ViewsConfig;
 <body>
     <h2>troubleList 編集</h2>
     
-    <form name="troubleListForm" action="/backyard/troubleList/post/<?php echo $trouble_id; ?>" method="post">
+    <form name="troubleListForm" action="/backyard/troubleList/post/<?php echo $oldTrouble['id']; ?>" method="post">
         <p>検索ボックスの「お困りごと」(50字以内):</p>
         <input type="text" name="name" id="new-name" value="<?php echo htmlspecialchars($oldTrouble['name'], ENT_QUOTES); ?>" size="50">
 

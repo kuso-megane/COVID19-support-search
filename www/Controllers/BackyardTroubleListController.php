@@ -8,6 +8,7 @@ use myapp\myFrameWork\SuperGlobalVars;
 use myapp\Controllers\helper\Helper;
 use domain\backyardTroubleList\index\Interactor as IndexInteractor;
 use domain\backyardTroubleList\edit\Interactor as EditInteractor;
+use domain\backyardTroubleList\post\Interactor as PostInteractor;
 
 class BackyardTroubleListController extends BaseController
 {

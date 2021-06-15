@@ -29,7 +29,7 @@ class Interactor
     public function interact(array $vars)
     {
         try {
-            $input = (new Validator)->validate($vars);
+            $input = (new Validator)->validate($vars)->toArray();
         }
         catch (ValidationFailException $e) {
             return (new Presenter)->reportValidationFailure($e->getMessage());
