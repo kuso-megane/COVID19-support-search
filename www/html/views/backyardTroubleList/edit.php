@@ -26,6 +26,8 @@ use myapp\config\ViewsConfig;
             </select> 
         </p>
 
+        <p>注意1 meta_wordを変えると、検索で紐づく支援団体が変わります。必ず、支援団体データベースと照らし合わせながら変更してください。</p>
+        <p>注意2 ここでmeta_wordを変えても、支援団体のmeta_wordsは自動で変わりません。ここで、meta_wordを変える場合は、紐づく支援団体のmeta_wordsを手動で変える必要があります。</p>
         <p>meta_word:
             <input type="text" name="meta_word" id="new-meta_ord" value="<?php echo htmlspecialchars($oldTrouble['meta_word'], ENT_QUOTES); ?>">
         </p>
@@ -33,7 +35,7 @@ use myapp\config\ViewsConfig;
         <input type="hidden" name="csrfToken" value="<?php echo $csrfToken; ?>">
         <br>
         <div id="submit-button" class="buttons">投稿</div>
-        <div id="reset-button" class="buttons">一括リセット</div>
+        <div id="reset-button" class="buttons">元の状態にリセット</div>
     </form>
 
     <!--formのsubmit-->
