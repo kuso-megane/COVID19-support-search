@@ -69,7 +69,7 @@ main {
 }
 
 /*タブレット*/
-@media screen and (min-width: 481px) and (max-width: 800px){
+@media screen and (min-width: 481px) and (max-width: 759px){
     .main--double{
         width: 80vw;
     }
@@ -86,7 +86,7 @@ main {
 
 
 
-@media screen and (min-width: 801px) and (max-width: 1024px){
+@media screen and (min-width: 760px) and (max-width: 1024px){
     .main--single, .main--double {
         width: 90vw;
     }
