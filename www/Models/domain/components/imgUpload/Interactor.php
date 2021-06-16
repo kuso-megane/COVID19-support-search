@@ -29,9 +29,12 @@ class Interactor
         $tmpImgFileName = $input['tmpImgFileName'];
         $ext = $input['ext'];
 
+
+
         $now = date("YmdHis");
         $newThumbnailFileName = $now . '_thumbnail.' . $ext;
-        $isUploadSucceeded = move_uploaded_file($tmpImgFileName, AppConfig::UPLOAD_IMG_PATH . $newThumbnailFileName);
+        $isUploadSucceeded = move_uploaded_file($tmpImgFileName, AppConfig::UPLOAD_IMG_PATH . $newThumbnailFileName);;
+
 
         return (new Presenter)->present($isUploadSucceeded, $newThumbnailFileName);
     }
