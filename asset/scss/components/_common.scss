@@ -68,8 +68,25 @@ main {
 
 }
 
-/*タブレット*/
-@media screen and (min-width: 481px) and (max-width: 1024px){
+/*小さいタブレット*/
+@media screen and (min-width: 481px) and (max-width: 759px){
+    .main--double{
+        width: 80vw;
+    }
+
+    .main--double--left {
+        width: 100%;
+    }
+    .main--double--right {
+        width: 100%;
+        margin-top: 2rem;
+    }
+    
+}
+
+
+/*大きいタブレット*/
+@media screen and (min-width: 760px) and (max-width: 1024px){
     .main--single, .main--double {
         width: 90vw;
     }
