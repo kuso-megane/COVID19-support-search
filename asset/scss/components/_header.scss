@@ -32,8 +32,26 @@
     }
 }
 
-/*タブレット*/
-@media screen and (min-width: 481px) and (max-width: 1024px){
+/*小さいタブレット*/
+@media screen and (min-width: 481px) and (max-width: 759px){
+    $headerMargin: 10vw;
+    #title{
+        &--left {
+            margin-left: $headerMargin;
+        }
+
+        &--right {
+            margin-right: $headerMargin;
+        }
+    } 
+    #link-to-top {
+        margin-left: $headerMargin;
+    }
+    
+}
+
+/*大きいタブレット*/
+@media screen and (min-width: 760px) and (max-width: 1024px){
     $headerMargin: 5vw;
     #title{
         &--left {
