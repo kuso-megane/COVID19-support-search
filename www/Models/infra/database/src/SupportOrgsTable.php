@@ -81,4 +81,44 @@ class SupportOrgsTable
 
         return $records;
     }
+
+
+    /**
+     * 
+     * return rows which owner meets given word partially 
+     * 
+     * @param string $owner_word
+     * @param int $maxNum
+     * 
+     * @return array
+     * [
+     *      [
+     *          'id' => int,
+     *          'area_id' => int,
+     *          'support_content' => string,
+     *          'owner' => string,
+     *          'access' => string,
+     *          'is_foreign_ok' => 0|1,
+     *          'is_public' => 0|1,
+     *          'meta_words' => string,
+     *          'appendix' => string
+     *      ],
+     *      []
+     * ]
+     */
+    public function findByOwnerWord(string $owner_word, int $maxNum): array
+    {
+        $columns = '*';
+        $condition = 'owner LIKE :owner_word';
+        $option = [
+            'limitNum' => ':limitNum'
+        ];
+        $boundValues = [
+            ':owner_word' => "%{$owner_word}%", ':limitNum' => $maxNum
+        ];
+        
+        $rows = $this->dbh->select($columns, self::TABLENAME, $condition, $option, $boundValues);
+
+        return $rows;
+    }
 }
