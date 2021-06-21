@@ -8,9 +8,10 @@ interface SearchedSupportsRepositoryPort
 {
     /**
      * @param string $owner_word
+     * @param int $maxNum  of supports per page
      * 
      * @return SearchedSupport[]
      * 
      */
-    public function searchSupports(string $owner_word): array;
+    public function searchSupports(string $owner_word, int $maxNum): array;
 }

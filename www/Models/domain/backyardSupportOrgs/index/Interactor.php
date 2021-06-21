@@ -6,6 +6,7 @@ use domain\backyardSupportOrgs\index\Validator\Validator;
 use domain\Exception\ValidationFailException;
 use domain\backyardSupportOrgs\index\RepositoryPort\AreaListRepositoryPort;
 use domain\backyardSupportOrgs\index\RepositoryPort\SearchedSupportsRepositoryPort;
+use myapp\config\AppConfig;
 use phpDocumentor\Reflection\Types\Null_;
 
 class Interactor
@@ -40,7 +41,7 @@ class Interactor
         $areaList = $this->areaListRepository->getAreaList();
 
         if ($owner_word !== NULL) {
-            $searchedSupports = $this->searchedSupportsRepository->searchSupports($owner_word);
+            $searchedSupports = $this->searchedSupportsRepository->searchSupports($owner_word, AppConfig::BY_SUPPORT_ORGS_MAXNUM_PER_PAGE);
         }
         else {
             $searchedSupports = NULL

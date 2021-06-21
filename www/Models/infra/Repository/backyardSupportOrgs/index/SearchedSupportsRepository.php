@@ -18,9 +18,9 @@ class SearchedSupportsRepository implements SearchedSupportsRepositoryPort
     /**
      * @inheritDoc
      */
-    public function searchSupports(string $owner_word): array
+    public function searchSupports(string $owner_word, $maxNum): array
     {
-        $records = $this->table->findByOwnerWord($owner_word);
+        $records = $this->table->findByOwnerWord($owner_word, $maxNum);
 
         foreach ($records as &$record) {
             $record = new SearchedSupport(
