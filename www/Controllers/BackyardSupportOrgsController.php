@@ -23,7 +23,7 @@ class BackyardSupportOrgsController extends BaseController
             return FALSE;
         }
         else {
-            $this->render([], self::DIR, 'index');
+            $this->render($vm, self::DIR, 'index');
         } 
     }
 }
