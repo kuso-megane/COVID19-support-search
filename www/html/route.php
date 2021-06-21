@@ -48,6 +48,12 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) u
             $r->addRoute('POST', '/post[/[{trouble_id:\d+}]]', 'backyardTroubleListPost');
         });
 
+        $r->addGroup('/supportOrgs', function (FastRoute\RouteCollector $r) {
+            $r->addRoute('GET', '/[index[/]]', 'backyardSupportOrgsIndex');
+            $r->addRoute('GET', '/edit[/[{support_id:\d+}]]', 'backyardSupportOrgsEdit');
+            $r->addRoute('POST', '/post[/[{support_id:\d+}]]', 'backyardSupportOrgsPost');
+        });
+
     });
 
     $r->addGroup('/adminLogin', function(FastRoute\RouteCollector $r) {

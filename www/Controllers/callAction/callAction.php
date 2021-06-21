@@ -8,6 +8,7 @@ use myapp\Controllers\SearchController;
 use myapp\Controllers\BackyardArticleController as BYArticleController;
 use myapp\Controllers\BackyardArticleCategoryController as BYArticleCategoryController;
 use myapp\Controllers\BackyardController;
+use myapp\Controllers\BackyardSupportOrgsController;
 use myapp\Controllers\BackyardTroubleListController;
 use myapp\Controllers\ContactController;
 use myapp\Controllers\SubContentsController;
@@ -105,6 +106,7 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller->post($vars);
         
     }
+
     elseif($handler == 'adminLoginLoginPage') {
 
         $controller = new AdminLoginController;
@@ -117,6 +119,7 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller->authenticate();
         
     }
+
     elseif ($handler == 'backyardTroubleListIndex') {
         $controller = new BackyardTroubleListController;
         $controller->index();
@@ -128,6 +131,11 @@ function callAction (string $handler, ?array $vars = NULL)
     elseif ($handler == 'backyardTroubleListPost') {
         $controller = new BackyardTroubleListController;
         $controller->post($vars);
+    }
+    
+    elseif ($handler == 'backyardSupportOrgsIndex') {
+        $controller = new BackyardSupportOrgsController;
+        $controller->index();
     }
 
     else {
