@@ -1,5 +1,6 @@
 <?php
 
+use myapp\config\AppConfig;
 use myapp\config\ViewsConfig;
 
 ?>
@@ -13,19 +14,33 @@ use myapp\config\ViewsConfig;
     </head>
     <body>
         <h2>支援団体編集</h2>
-        <p>支援団体名で検索(20字以内)</p>
-        <input type="search" name="owner_word" id="name-search" maxlength="20" placeholder="支援団体名(部分一致)">
+        <p>支援団体名で検索(20字以内、大文字小文字区別なし)</p>
+        <form action="/backyard/supportOrgs/index" method="GET">
+            <input type="search" name="owner_word" id="name-search" maxlength="20" placeholder="支援団体名(部分一致)">
+            <input type="submit">
+        </form>
+        
+        <p><?php echo AppConfig::BY_SUPPORT_ORGS_MAXNUM_PER_PAGE; ?>件以上は表示されません。なるべく絞り込んでください。</p>
         <table>
             <thead>
-                <td>編集</td>
-                <td>運営者</td>
-                <td>支援内容</td>
-                <td>都道府県</td>
-                <td>備考</td>
+                <tr>
+                    <td>編集</td>
+                    <td>運営者</td>
+                    <td>支援内容</td>
+                    <td>都道府県</td>
+                    <td>備考</td>
+                </tr>
             </thead>
             <tbody>
-                <td></td>
-                <td></td>
+                <?php foreach ($searchedSupports as $searchedSupport): ?>
+                    <tr>
+                        <td><a href="<?php echo '/backyard/supportOrgs/edit/' . $searchedSupport['id']; ?>">編集</a></td>
+                        <td><?php echo $searchedSupport['owner']; ?></td>
+                        <td><?php echo $searchedSupport['support_content']; ?></td>
+                        <td><?php echo $areaList[$searchedSupport['area_id']]; ?></td>
+                        <td><?php echo htmlspecialchars($searchedSupport['appendix'], ENT_QUOTES); ?></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </body>
