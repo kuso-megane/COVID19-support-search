@@ -2,7 +2,7 @@
 
 namespace domain\backyardSupportOrgs\index\Data;
 
-class SearchedSupports
+class SearchedSupport
 {
     private $attr;
 
