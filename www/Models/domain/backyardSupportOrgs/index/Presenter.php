@@ -100,5 +100,7 @@ class Presenter
 
             $ans[$id] = $name;
         }
+
+        return $ans;
     }
 }

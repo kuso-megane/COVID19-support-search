@@ -44,11 +44,11 @@ class Interactor
             $searchedSupports = $this->searchedSupportsRepository->searchSupports($owner_word, AppConfig::BY_SUPPORT_ORGS_MAXNUM_PER_PAGE);
         }
         else {
-            $searchedSupports = NULL
+            $searchedSupports = NULL;
         }
 
 
-        return (new Presenter)->present($areaList, $searchedSupports);
+        return (new Presenter)->present($searchedSupports, $areaList);
 
     }
 }
