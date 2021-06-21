@@ -17,6 +17,7 @@ use myapp\config\ViewsConfig;
         <input type="search" name="name" id="name-search" maxlength="20" placeholder="支援団体名(部分一致)">
         <table>
             <thead>
+                <td>編集</td>
                 <td>運営者</td>
                 <td>支援内容</td>
                 <td>都道府県</td>

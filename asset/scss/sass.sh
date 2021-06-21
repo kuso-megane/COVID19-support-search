@@ -27,3 +27,5 @@ $command backyardTroubleList/index.scss ${targetPath}backyardTroubleList/index.c
 $command backyardTroubleList/edit.scss ${targetPath}backyardTroubleList/edit.css
 
 $command adminLogin/loginPage.scss ${targetPath}adminLogin/loginPage.css
+
+$command backyardSupportOrgs/index.scss ${targetPath}backyardSupportOrgs/index.css

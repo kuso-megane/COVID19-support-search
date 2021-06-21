@@ -12,6 +12,6 @@ class Interactor
      */
     public function interact()
     {
-
+        
     }
 }
