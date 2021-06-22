@@ -23,8 +23,13 @@ class BackyardTroubleListController extends BaseController
         $interactor = $container->get(IndexInteractor::class);
         $vm = $interactor->interact();
 
-
-        $this->render($vm, self::DIR, 'index');
+        if ($vm === AppConfig::NOT_LOGIN) {
+            $uri = SuperGlobalVars::getServer()['REQUEST_URI'];
+            (new Helper)->redirectToAdminLoginPage($uri);
+        }
+        else {
+            $this->render($vm, self::DIR, 'index');
+        }   
     }
 
 

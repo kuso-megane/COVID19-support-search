@@ -7,7 +7,7 @@ use domain\Exception\ValidationFailException;
 use domain\backyardSupportOrgs\index\RepositoryPort\AreaListRepositoryPort;
 use domain\backyardSupportOrgs\index\RepositoryPort\SearchedSupportsRepositoryPort;
 use myapp\config\AppConfig;
-use phpDocumentor\Reflection\Types\Null_;
+use domain\components\adminLoginCheck\Interactor as LoginChecker;
 
 class Interactor
 {
@@ -29,6 +29,12 @@ class Interactor
      */
     public function interact()
     {
+        $isLogin = (new LoginChecker)->interact();
+
+        if ($isLogin === FALSE) {
+            return AppConfig::NOT_LOGIN;
+        }
+
         try {
             $input = (new Validator)->validate()->toArray();
         }

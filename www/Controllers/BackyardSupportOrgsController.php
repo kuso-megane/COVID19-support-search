@@ -5,6 +5,8 @@ namespace myapp\Controllers;
 use myapp\myFrameWork\Bases\BaseController;
 use domain\backyardSupportOrgs\index\Interactor as IndexInteractor;
 use myapp\config\AppConfig;
+use myapp\Controllers\helper\Helper;
+use myapp\myFrameWork\SuperGlobalVars;
 
 class BackyardSupportOrgsController extends BaseController
 {
@@ -21,6 +23,10 @@ class BackyardSupportOrgsController extends BaseController
 
         if ($vm === AppConfig::INVALID_PARAMS) {
             return FALSE;
+        }
+        elseif ($vm === AppConfig::NOT_LOGIN) {
+            $uri = SuperGlobalVars::getServer()['REQUEST_URI'];
+            (new Helper)->redirectToAdminLoginPage($uri);
         }
         else {
             $this->render($vm, self::DIR, 'index');

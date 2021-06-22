@@ -7,6 +7,8 @@ use domain\Exception\ValidationFailException;
 use domain\components\csrfValidate\Interactor as CsrfValidator;
 use domain\backyardTroubleList\edit\RepositoryPort\OldTroubleRepositoryPort;
 use domain\backyardTroubleList\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort;
+use domain\components\adminLoginCheck\Interactor as LoginChecker;
+use myapp\config\AppConfig;
 
 class Interactor
 {
@@ -29,6 +31,13 @@ class Interactor
      */
     public function interact(array $vars)
     {
+        $isLogin = (new LoginChecker)->interact();
+
+        if ($isLogin === FALSE) {
+            return AppConfig::NOT_LOGIN;
+        }
+
+
         try {
             $input = (new Validator)->validate($vars)->toArray();
         }

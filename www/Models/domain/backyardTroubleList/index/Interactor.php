@@ -4,7 +4,8 @@ namespace domain\backyardTroubleList\index;
 
 use domain\backyardTroubleList\index\RepositoryPort\ArticleCategoryNamesRepositoryPort;
 use domain\backyardTroubleList\index\RepositoryPort\TroubleListRepositoryPort;
-use phpDocumentor\Reflection\Types\Null_;
+use domain\components\adminLoginCheck\Interactor as LoginChecker;
+use myapp\config\AppConfig;
 
 class Interactor
 {
@@ -27,6 +28,12 @@ class Interactor
      */
     public function interact()
     {
+        $isLogin = (new LoginChecker)->interact();
+
+        if ($isLogin === FALSE) {
+            return AppConfig::NOT_LOGIN;
+        }
+
         $articleCategoryNames = $this->articleCategoryNamesRepository->getArticleCategoryNames();
 
         $troubleList = $this->troubleListRepository->getTrouble();

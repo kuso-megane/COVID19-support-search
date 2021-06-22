@@ -25,7 +25,7 @@ use myapp\config\ViewsConfig;
             <thead>
                 <tr>
                     <td>編集</td>
-                    <td>運営者</td>
+                    <td>団体名</td>
                     <td>支援内容</td>
                     <td>都道府県</td>
                     <td>備考</td>
@@ -43,5 +43,7 @@ use myapp\config\ViewsConfig;
                 <?php endforeach; ?>
             </tbody>
         </table>
+
+        <p><a href="/backyard/">管理画面topページへ</a></p>
     </body>
 </html>
