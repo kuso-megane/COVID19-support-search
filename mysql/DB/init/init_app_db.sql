@@ -63,7 +63,7 @@ create table SupportOrgs(
     is_foreign_ok BOOLEAN NOT NULL,
     is_public BOOLEAN NOT NULL,
     meta_words VARCHAR(100) NOT NULL,
-    appendix VARCHAR(200) default NULL,
+    appendix VARCHAR(500) default NULL,
 
     CONSTRAINT fk_area_id_on_SupportOrgs
         FOREIGN KEY (area_id)
