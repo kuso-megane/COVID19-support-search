@@ -5,7 +5,7 @@ use myapp\config\ViewsConfig;
 
 ?>
 
-
+<!DOCTYPE html>
 <html>
     <head>  
         <title>管理者メニュー</title>
