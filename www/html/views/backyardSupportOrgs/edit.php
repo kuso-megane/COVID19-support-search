@@ -55,6 +55,7 @@ use myapp\config\ViewsConfig;
 
             <p>備考</p>
             <textarea name="appendix" id="new-appendix" cols="100" rows="10">
+                <?php echo $oldSupportOrg['appendix']; ?>
             </textarea>
         </form>
     </body>
