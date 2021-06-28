@@ -21,14 +21,14 @@
 
                     <div class="administrators">
                         <h4><i class="fas fa-user-tie"></i> H.Y</h4>
-                        <p class="administrators--part">企画、コラム執筆、データベース収集担当</p>
+                        <p class="administrators--part">企画、コラム執筆、支援団体情報収集担当</p>
                         <p class="administrators--main">
                             &emsp;都内の大学に通う大学4年生。下のO.Kとはクラスが同じだった。公務員志望。<br>&emsp;社会課題を研究する大学のゼミで、公的制度やNPOの活動が肝心の苦労している人々に知られていない・使われていないと学んだことから、そのような状況を変えるために「小さなことでも自分に何かできることはないか」と悩み、本サイトの作成を思いついた。ゼミでの経験を活かし、本サイトが提供する情報の収集やサービスの具体的な内容を考えることを担当している。
                         </p>
                     </div>
                     <div class="administrators">
                         <h4><i class="fas fa-glasses"></i> O.K</h4>
-                        <p class="administrators--part">サイト設計、サイトデザイン担当</p>
+                        <p class="administrators--part">サイト作成、デザイン担当</p>
                         <p class="administrators--main">
                             &emsp;上のH.Yと同じ大学の3年生。エンジニア志望。<br>&emsp;約1年間、企業のwebページ開発部門でのインターン経験があり、そこで学んだスキルを生かす機会がないか考えていたところ、友人たちとzoomで雑談しているなかで、同席していたH.Yにこのサービスの開発に誘われた。いまはゲーム開発に興味がある。
                         </p>
