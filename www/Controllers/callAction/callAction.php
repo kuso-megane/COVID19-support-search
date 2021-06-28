@@ -137,6 +137,10 @@ function callAction (string $handler, ?array $vars = NULL)
         $controller = new BackyardSupportOrgsController;
         $controller->index();
     }
+    elseif ($handler == 'backyardSupportOrgsEdit') {
+        $controller = new BackyardSupportOrgsController;
+        $controller->edit($vars);
+    }
 
     else {
         http_response_code(404);
