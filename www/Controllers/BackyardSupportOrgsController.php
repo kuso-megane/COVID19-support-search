@@ -7,6 +7,7 @@ use domain\backyardSupportOrgs\index\Interactor as IndexInteractor;
 use myapp\config\AppConfig;
 use myapp\Controllers\helper\Helper;
 use myapp\myFrameWork\SuperGlobalVars;
+use domain\backyardSupportOrgs\edit\Interactor as EditInteractor;
 
 class BackyardSupportOrgsController extends BaseController
 {
@@ -35,16 +36,13 @@ class BackyardSupportOrgsController extends BaseController
 
     public function edit(array $vars)
     {
-        /*
+        
         $builder = new \DI\ContainerBuilder();
         $builder->addDefinitions('/var/www/Models/diconfig.php');
         $container = $builder->build();
 
         $interactor = $container->get(EditInteractor::class);
-        $vm = $interactor->interact();
-        */
-
-        $vm = [];//仮
+        $vm = $interactor->interact($vars);
 
         if ($vm === AppConfig::INVALID_PARAMS) {
             return FALSE;
