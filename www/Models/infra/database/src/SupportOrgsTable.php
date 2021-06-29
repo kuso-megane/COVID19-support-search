@@ -121,4 +121,28 @@ class SupportOrgsTable
 
         return $rows;
     }
+
+
+    /**
+     * @param int $id
+     * 
+     * @return array|NULL
+     * [
+     *      'id' => int,
+     *      'area_id' => int,
+     *      'support_content' => string,
+     *      'owner' => string,
+     *      'access' => string,
+     *      'is_foreign_ok' => 0|1,
+     *      'is_public' => 0|1,
+     *      'meta_words' => string,
+     *      'appendix' => string
+     * ]
+     * 
+     * if no record is found, return NULL
+     */
+    public function findById(int $id): ?array
+    {
+        
+    }
 }

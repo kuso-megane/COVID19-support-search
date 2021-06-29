@@ -18,7 +18,9 @@ use domain\backyardSupportOrgs\index\RepositoryPort\SearchedSupportsRepositoryPo
 use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleIndexArticleCategoryNamesRepositoryPort;
 use domain\backyardArticle\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleEditArticleCategoryNamesRepositoryPort;
 use domain\backyardArticleCategory\index\RepositoryPort\ArticleCategoryListRepositoryPort as BYArticleCategoryIndexArticleCategoryListRepositoryPort;
-use domain\backyardSupportOrgs\index\RepositoryPort\AreaListRepositoryPort;
+use domain\backyardSupportOrgs\index\RepositoryPort\AreaListRepositoryPort as BYSupportOrgsIndexAreaListRepositoryPort;
+use domain\backyardSupportOrgs\edit\RepositoryPort\OldSupportOrgRepositoryPort;
+use domain\backyardSupportOrgs\edit\RepositoryPort\AreaListRepositoryPort as BYSupportOrgsEditAreaListRepositoryPort;
 use domain\backyardTroubleList\edit\RepositoryPort\OldTroubleRepositoryPort;
 use domain\backyardTroubleList\index\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYTroubleListIndexArticleCategoryNamesRepositoryPort;
 use domain\backyardTroubleList\index\RepositoryPort\TroubleListRepositoryPort;
@@ -36,7 +38,9 @@ use infra\Repository\backyardArticle\post\PostArticleRepository;
 use infra\Repository\backyardArticleCategory\edit\OldArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\post\PostArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\index\ArticleCategoryListRepository as BYArticleCategoryIndexArticleCategoryListRepository;
-use infra\Repository\backyardSupportOrgs\index\AreaListRepository;
+use infra\Repository\backyardSupportOrgs\index\AreaListRepository as BYSupportOrgsIndexAreaListRepository;
+use infra\Repository\backyardSupportOrgs\edit\OldSupportOrgRepository;
+use infra\Repository\backyardSupportOrgs\edit\AreaListRepository as BYSupportOrgsEditAreaListRepository;
 use infra\Repository\backyardTroubleList\edit\OldTroubleRepository;
 use infra\Repository\backyardTroubleList\index\TroubleListRepository;
 use infra\Repository\components\searchBox\TroubleNameListRepository;
@@ -58,6 +62,7 @@ return [
 
     SearchResultSearchedSupportsRepositoryPort::class => \DI\create(SearchResultSearchedSupportsRepository::class),
     BYSupportOrgsIndexSearchedSupportsRepositoryPort::class => \DI\create(BYSupportOrgsIndexSearchedSupportsRepository::class),
+    OldSupportOrgRepositoryPort::class => \DI\create(OldSupportOrgRepository::class),
 
     AllArticleInfosRepositoryPort::class => \DI\create(AllArticleInfosRepository::class),
     RecommendedArticleInfosRepositoryPort::class => \DI\create(RecommendedArticleInfosRepository::class),
@@ -76,7 +81,8 @@ return [
     BYTroubleListEditArticleCategoryNamesRepositoryPort::class => \DI\create(BYTroubleListEditArticleCategoryNamesRepository::class),
 
     SearchedAreaNameRepositoryPort::class => \DI\create(SearchedAreaNameRepository::class),
-    AreaListRepositoryPort::class => \DI\create(AreaListRepository::class),
+    BYSupportOrgsIndexAreaListRepositoryPort::class => \DI\create(BYSupportOrgsIndexAreaListRepository::class),
+    BYSupportOrgsEditAreaListRepositoryPort::class => \DI\create(BYSupportOrgsEditAreaListRepository::class),
 
     AdminLoginInfoRepositoryPort::class => \DI\create(AdminLoginInfoRepository::class)
 ];
