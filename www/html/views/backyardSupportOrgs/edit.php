@@ -25,7 +25,7 @@ use myapp\config\ViewsConfig;
             <select name="area_id" id="new-area">
                 <?php for($i = 1; $i <= count($areaList); $i ++): ?>
                     <option value="<?php echo $i ?>" <?php if($oldSupportOrg['area_id'] === $i) { echo 'selected'; } ?> >
-                        <?php echo htmlspecialchars($areaList['name'], ENT_QUOTES); ?>
+                        <?php echo htmlspecialchars($areaList[$i], ENT_QUOTES); ?>
                     </option>
                 <?php endfor; ?>
             </select>
@@ -34,8 +34,8 @@ use myapp\config\ViewsConfig;
             <textarea name="support_content" id="new-support_content" cols="100" rows="10"><?php echo $oldSupportOrg['support_content']; ?>
             </textarea>
 
-            <p>団体名</p>
-            <input type="text" id="new-owner" name="owner" value="<?php echo $oldSupportOrg['owner']; ?>">
+            <p>団体名(100字以内)</p>
+            <input type="text" id="new-owner" name="owner" value="<?php echo $oldSupportOrg['owner']; ?>" size="100" max="100" >
 
             <p>アクセス</p>
             <textarea name="access" id="new-access" cols="100" rows="10"><?php echo $oldSupportOrg['access']; ?>
@@ -54,12 +54,12 @@ use myapp\config\ViewsConfig;
             </select>
 
             <p>備考</p>
-            <textarea name="appendix" id="new-appendix" cols="100" rows="10">
-                <?php echo $oldSupportOrg['appendix']; ?>
+            <textarea name="appendix" id="new-appendix" cols="100" rows="10"><?php echo $oldSupportOrg['appendix']; ?>
             </textarea>
 
             <input type="hidden" name="csrfToken" value="<?php echo $csrfToken; ?>">
 
+            <br>
             <div id="submit-button" class="buttons">投稿</div>
             <div id="reset-button" class="buttons">元の状態にリセット</div>
         </form>
