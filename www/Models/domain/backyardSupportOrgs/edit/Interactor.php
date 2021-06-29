@@ -8,6 +8,7 @@ use domain\components\adminLoginCheck\Interactor as LoginChecker;
 use myapp\config\AppConfig;
 use domain\backyardSupportOrgs\edit\RepositoryPort\AreaListRepositoryPort;
 use domain\backyardSupportOrgs\edit\RepositoryPort\OldSupportOrgRepositoryPort;
+use domain\components\csrfValidate\Interactor as CsrfValidator;
 
 class Interactor
 {
@@ -46,6 +47,9 @@ class Interactor
 
         $id = $input['id'];
 
+        session_start();
+        $csrfToken = (new CsrfValidator)->generateTokenAndSetSession();
+
         if ($id !== NULL) {
             $oldSupportOrg = $this->oldSupportOrgRepository->getOldSupportOrg($id);
 
@@ -61,6 +65,6 @@ class Interactor
 
         
 
-        return (new Presenter)->present($areaList, $oldSupportOrg);
+        return (new Presenter)->present($areaList, $oldSupportOrg, $csrfToken);
     }
 }

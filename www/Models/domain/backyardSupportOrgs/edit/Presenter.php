@@ -11,6 +11,7 @@ class Presenter
     /**
      * @param Area[] $areaList
      * @param OldSupportOrg|NULL $oldSupportOrg
+     * @param string $csrfToken
      * 
      * @return array
      * [
@@ -26,15 +27,16 @@ class Presenter
      *          'is_foreign_ok =< 0|1,
      *          'is_public' => 0|1,
      *          'appendix' => string
-     *      ]
+     *      ],
+     *      'csrfToken' => string
      * ]
      */
-    public function present(array $areaList, ?OldSupportOrg $oldSupportOrg): array
+    public function present(array $areaList, ?OldSupportOrg $oldSupportOrg, $csrfToken): array
     {
         $areaList = $this->formatForAreaList(($areaList));
         $oldSupportOrg = ($oldSupportOrg !== NULL) ? $oldSupportOrg->toArray() : [];
 
-        return compact('areaList', 'oldSupportOrg');
+        return compact('areaList', 'oldSupportOrg', 'csrfToken');
     }
 
 

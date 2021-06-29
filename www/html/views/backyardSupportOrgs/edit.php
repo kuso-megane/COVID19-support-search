@@ -57,6 +57,48 @@ use myapp\config\ViewsConfig;
             <textarea name="appendix" id="new-appendix" cols="100" rows="10">
                 <?php echo $oldSupportOrg['appendix']; ?>
             </textarea>
+
+            <input type="hidden" name="csrfToken" value="<?php echo $csrfToken; ?>">
+
+            <div id="submit-button" class="buttons">投稿</div>
+            <div id="reset-button" class="buttons">元の状態にリセット</div>
         </form>
     </body>
+    <!--formのsubmit-->
+    <script>
+        {
+            const $submitButton = document.getElementById("submit-button");
+
+            const submit = (e) => {
+                if (window.confirm("投稿しますか?")) {
+                    document.troubleListForm.submit();
+                }
+                else {
+                    return;
+                }
+            }
+
+            $submitButton.addEventListener("click", submit);
+        }
+    </script>
+
+    <!--formのreset-->
+    <script>
+        {
+            const $resetButton = document.getElementById("reset-button");
+
+            const reset = (e) => {
+                e.preventDefault();
+
+                if (window.confirm("本当にリセットしますか?")) {
+                    document.troubleListForm.reset();
+                }
+                else {
+                    return;
+                }
+            }
+
+            $resetButton.addEventListener("click", reset);
+        }
+    </script>
 </html>
