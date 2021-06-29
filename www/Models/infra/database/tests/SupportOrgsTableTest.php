@@ -157,6 +157,16 @@ class SupportOrgsTableTest extends TestCase
     }
 
 
+    
+    public function testFindById()
+    {
+        $id = 1;
+
+        $expected = array_merge(['id' => $id], self::SAMPLE_DATAS[0]);
+        $this->assertSame($expected, $this->table->findById($id));
+    }
+
+
     public function providerForFindSearchedOnes():array
     {
         return [
@@ -169,4 +179,5 @@ class SupportOrgsTableTest extends TestCase
             'when no record is found' => [NULL, NULL]
         ];
     }
+
 }

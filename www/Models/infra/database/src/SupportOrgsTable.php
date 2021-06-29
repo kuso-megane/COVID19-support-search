@@ -143,6 +143,12 @@ class SupportOrgsTable
      */
     public function findById(int $id): ?array
     {
-        
+        $columns = '*';
+        $condition = 'id = :id';
+        $boundValues = [
+            ':id' => $id
+        ];
+
+        return $this->dbh->select($columns, self::TABLENAME, $condition, [], $boundValues)[0];
     }
 }
