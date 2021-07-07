@@ -16,7 +16,7 @@ class Validator
     {
         $id = ($vars['support_id'] !== NULL) ? (int) $vars['support_id'] : NULL;
 
-        if (! ($id > 0)) {
+        if (! ($id === NULL || $id > 0)) {
             throw new ValidationFailException('想定外のidが渡されています。');
         }
 
