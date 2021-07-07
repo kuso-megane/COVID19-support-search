@@ -13,10 +13,12 @@ class DBConfig
 
     public function __construct()
     {
+        #本番環境
         if (getenv('IS_PROD') === 'true') {
             $this->db_host = getenv('DB_HOST');
             $this->db_pass = ['root' => getenv('DB_ROOT_PASS')]; //user => the user's pass e.g. root => root
         }
+        #開発環境
         else {
             $this->db_host = 'db';
             $this->db_pass = ['root' => 'root'];
