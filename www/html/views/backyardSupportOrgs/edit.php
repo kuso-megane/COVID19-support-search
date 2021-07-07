@@ -20,7 +20,7 @@ use myapp\config\ViewsConfig;
     <body>
         <h2>支援団体編集</h2>
         
-        <form action="/backyard/supportOrgs/edit/<?php echo $oldSupportOrg['id']; ?>" method="post" name="supportOrgsForm">
+        <form action="/backyard/supportOrgs/edit/<?php echo $oldSupportOrg['id']; ?>" method="post" name="supportOrgsForm" id="supportOrgsForm">
             <p>都道府県</p>
             <select name="area_id" id="new-area" required>
                 <?php for($i = 1; $i <= count($areaList); $i ++): ?>
@@ -30,13 +30,14 @@ use myapp\config\ViewsConfig;
                 <?php endfor; ?>
             </select>
 
-            <p>支援内容(400字以内)</p>
+            <p>支援内容(400字以内) 現在の文字数: <span id="support_content-wordCount"></span>文字</p>
             <textarea name="support_content" id="new-support_content" cols="100" rows="10" maxlength="400" required><?php echo $oldSupportOrg['support_content']; ?></textarea>
 
-            <p>団体名(100字以内)</p>
+            <p>団体名(100字以内) 現在の文字数: <span id="owner-wordCount"></span>文字</p>
             <input type="text" id="new-owner" name="owner" value="<?php echo $oldSupportOrg['owner']; ?>" size="100" maxlength="100" required>
-            <p>アクセス(600字以内)</p>
-            <textarea name="access" id="new-access" cols="100" rows="10" maxlength="600"><?php echo $oldSupportOrg['access']; ?></textarea>
+
+            <p>アクセス(600字以内) 現在の文字数: <span id="access-wordCount"></span>文字</p>
+            <textarea name="access" id="new-access" cols="100" rows="10" maxlength="600" required><?php echo $oldSupportOrg['access']; ?></textarea>
 
             <p>外国籍の方を支援対象に含むか</p>
             <select name="is_foreign_ok" id="new-is_foreign_ok" required>
@@ -50,7 +51,7 @@ use myapp\config\ViewsConfig;
                 <option value="0" <?php if($oldSupportOrg['is_public'] === 0) { echo 'selected'; } ?> >民間支援</option>
             </select>
 
-            <p>備考(500字以内)</p>
+            <p>備考(500字以内) 現在の文字数: <span id="appendix-wordCount"></span>文字</p>
             <textarea name="appendix" id="new-appendix" cols="100" rows="10" maxlength="500"><?php echo $oldSupportOrg['appendix']; ?></textarea>
 
             <input type="hidden" name="csrfToken" value="<?php echo $csrfToken; ?>">
@@ -80,16 +81,47 @@ use myapp\config\ViewsConfig;
         }
     </script>
 
-    <!--formのreset-->
+    <!--formのreset, 文字数カウント-->
     <script>
         {
             const $resetButton = document.getElementById("reset-button");
+            const $supportContent = document.getElementById('new-support_content');
+            const $supportContent_wordCount = document.getElementById('support_content-wordCount');
+            const $owner = document.getElementById('new-owner');
+            const $owner_wordCount = document.getElementById('owner-wordCount');
+            const $access = document.getElementById('new-access');
+            const $access_wordCount = document.getElementById('access-wordCount');
+            const $appendix = document.getElementById('new-appendix');
+            const $appendix_wordCount = document.getElementById('appendix-wordCount');
+
+
+            const wordCount = (e) => {
+                const $supportContent_len = $supportContent.value.length;
+                $supportContent_wordCount.innerHTML = $supportContent_len;
+
+                const $owner_len = $owner.value.length;
+                $owner_wordCount.innerHTML = $owner_len;
+
+                const $access_len =$access.value.length;
+                $access_wordCount.innerHTML = $access_len;
+
+                const $appendix_len = $appendix.value.length;
+                $appendix_wordCount.innerHTML = $appendix_len;
+            }
+
+            $supportContent.addEventListener('keyup', wordCount);
+            $owner.addEventListener('keyup', wordCount);
+            $access.addEventListener('keyup', wordCount);
+            $appendix.addEventListener('keyup', wordCount);
+            document.supportOrgsForm.addEventListener('input', wordCount);
+            window.addEventListener('DOMContentLoaded', wordCount);
 
             const reset = (e) => {
                 e.preventDefault();
 
                 if (window.confirm("本当にリセットしますか?")) {
                     document.supportOrgsForm.reset();
+                    wordCount();
                 }
                 else {
                     return;
@@ -103,9 +135,9 @@ use myapp\config\ViewsConfig;
     <!--formのvalidation-->
     <script>
         {
-            $form = document.supportOrgsForm;
-            $submitButton = document.getElementById('submit-button');
-            $invalidNote = document.getElementById("general-invalid-note");
+            const $form = document.supportOrgsForm;
+            const $submitButton = document.getElementById('submit-button');
+            const $invalidNote = document.getElementById("general-invalid-note");
 
             const validate = (e) => {
                 if ($form.checkValidity()) {
