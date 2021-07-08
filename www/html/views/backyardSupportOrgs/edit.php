@@ -20,7 +20,7 @@ use myapp\config\ViewsConfig;
     <body>
         <h2>支援団体編集</h2>
         
-        <form action="/backyard/supportOrgs/edit/<?php echo $oldSupportOrg['id']; ?>" method="post" name="supportOrgsForm" id="supportOrgsForm">
+        <form action="/backyard/supportOrgs/post/<?php echo $oldSupportOrg['id']; ?>" method="post" name="supportOrgsForm" id="supportOrgsForm">
             <p>都道府県</p>
             <select name="area_id" id="new-area" required>
                 <?php for($i = 1; $i <= count($areaList); $i ++): ?>
