@@ -151,4 +151,77 @@ class SupportOrgsTable
 
         return $this->dbh->select($columns, self::TABLENAME, $condition, [], $boundValues)[0];
     }
+
+
+    /**
+     * @param int $area_id
+     * @param string $support_content
+     * @param string $owner
+     * @param string $access
+     * @param int $is_foreign_ok  1 or 0
+     * @param int $is_public  1 or 0
+     * @param string $appendix
+     * 
+     * if something went wrong, this throws PDOException
+     * 
+     * 'meta_words' column will be ''
+     */
+    public function create(
+        int $area_id, string $support_content, string $owner, string $access, int $is_foreign_ok,
+        int $is_public, string $appendix
+    )
+    {
+        $columns = ':id, :area_id, :support_content, :owner, :access, :is_foreign_ok,
+        :is_public, :meta_words, :appendix';
+        $meta_words = '';
+        $boundColumns = [
+            ':id' => 0,
+            ':area_id' => $area_id,
+            ':support_content' => $support_content,
+            ':owner' => $owner,
+            ':access' => $access,
+            ':is_foreign_ok' => $is_foreign_ok,
+            ':is_public' => $is_public,
+            ':meta_words' => $meta_words,
+            ':appendix' => $appendix
+        ];
+        
+        $this->dbh->insert(self::TABLENAME, $columns, $boundColumns);
+    }
+
+
+    /**
+     * @param int $id
+     * @param int $area_id
+     * @param string $support_content
+     * @param string $owner
+     * @param string $access
+     * @param int $is_foreign_ok  1 or 0
+     * @param int $is_public  1 or 0
+     * @param string $appendix
+     * 
+     * if something went wrong, this throws PDOException
+     */
+    public function update(
+        int $id, int $area_id, string $support_content, string $owner, string $access,
+        int $is_foreign_ok, int $is_public, string $appendix
+    )
+    {
+        $columns = 'area_id = :area_id, support_content = :support_content, owner = :owner,
+        access = :access, is_foreign_ok = :is_foreign_ok, is_public = :is_public,
+        appendix = :appendix';
+        $condition = 'id = :id';
+        $boundValues = [
+            ':id' => $id,
+            ':area_id' => $area_id,
+            ':support_content' => $support_content,
+            ':owner' => $owner,
+            ':access' => $access,
+            ':is_foreign_ok' => $is_foreign_ok,
+            ':is_public' => $is_public,
+            ':appendix' => $appendix
+        ];
+
+        $this->dbh->update(self::TABLENAME, $columns, $condition, $boundValues);
+    }
 }

@@ -167,6 +167,73 @@ class SupportOrgsTableTest extends TestCase
     }
 
 
+    public function testCreate()
+    {
+        $new_id = count(self::SAMPLE_DATAS) + 1;
+        $new_area_id = self::SAMPLE_AREA_ID;
+        $new_support_content = 'create test';
+        $new_owner = 'create test';
+        $new_access = 'create test';
+        $new_is_foreign_ok = 1;
+        $new_is_public = 1;
+        $new_meta_words = '';
+        $new_appendix = 'create test';
+
+        $this->table->create($new_area_id, $new_support_content, $new_owner, $new_access,
+        $new_is_foreign_ok, $new_is_public, $new_appendix);
+
+
+        $expected = [
+            'id' => $new_id,
+            'area_id' => $new_area_id,
+            'support_content' => $new_support_content,
+            'owner' => $new_owner,
+            'access' => $new_access,
+            'is_foreign_ok' => $new_is_foreign_ok,
+            'is_public' => $new_is_public,
+            'meta_words' => $new_meta_words,
+            'appendix' => $new_appendix
+        ];
+
+        $this->assertSame(
+            $expected, $this->dbh->select('*', self::TABLENAME, "id = $new_id")[0]
+        );
+    }
+
+
+    public function testUpdate()
+    {
+        $id = 1;
+        $new_area_id = self::SAMPLE_AREA_ID;
+        $new_support_content = 'update test';
+        $new_owner = 'update test';
+        $new_access = 'update test';
+        $new_is_foreign_ok = 1;
+        $new_is_public = 1;
+        $new_appendix = 'update test';
+
+
+        $this->table->update($id, $new_area_id, $new_support_content, $new_owner, $new_access,
+        $new_is_foreign_ok, $new_is_public, $new_appendix);
+
+        $expected = [
+            'id' => $id,
+            'area_id' => $new_area_id,
+            'support_content' => $new_support_content,
+            'owner' => $new_owner,
+            'access' => $new_access,
+            'is_foreign_ok' => $new_is_foreign_ok,
+            'is_public' => $new_is_public,
+            'meta_words' => self::SAMPLE_DATAS[0]['meta_words'],
+            'appendix' => $new_appendix
+        ];
+
+        $this->assertSame(
+            $expected, $this->dbh->select('*', self::TABLENAME, "id = $id")[0]
+        );
+    }
+
+
     public function providerForFindSearchedOnes():array
     {
         return [
