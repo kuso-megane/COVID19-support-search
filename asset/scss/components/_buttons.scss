@@ -1,0 +1,16 @@
+.buttons {
+    display: inline-block;
+    margin: 10px;
+    border: black solid 1px;
+    background-color: #eeeeee;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: outset 1px #888888;
+    font-size: 20px;
+
+    &:hover {
+        background-color: #dddddd;
+    }
+}
+

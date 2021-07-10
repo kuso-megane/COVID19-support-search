@@ -11,19 +11,19 @@ class SupportOrgsTableTest extends TestCase
     const TABLENAME = 'SupportOrgs';
 
     const SAMPLE_AREA_ID = 2;
-    const SAMPLE_META_WORD = 'meta';
+    const SAMPLE_meta_words = 'meta';
 
     const SAMPLE_DATAS = [
         ['area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample1', 'owner' => 'sample1', 'access' => 'sample1', 
-        'is_foreign_ok' => 0, 'is_public' => 0, 'meta_word' => self::SAMPLE_META_WORD, 'appendix' => 'sample1'],
+        'is_foreign_ok' => 0, 'is_public' => 0, 'meta_words' => self::SAMPLE_meta_words, 'appendix' => 'sample1'],
         ['area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample2', 'owner' => 'sample2', 'access' => 'sample2', 
-        'is_foreign_ok' => 0, 'is_public' => 1, 'meta_word' => self::SAMPLE_META_WORD, 'appendix' => 'sample2'],
+        'is_foreign_ok' => 0, 'is_public' => 1, 'meta_words' => self::SAMPLE_meta_words, 'appendix' => 'sample2'],
         ['area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample3', 'owner' => 'sample3', 'access' => 'sample3', 
-        'is_foreign_ok' => 1, 'is_public' => 0, 'meta_word' => self::SAMPLE_META_WORD, 'appendix' => 'sample3'],
+        'is_foreign_ok' => 1, 'is_public' => 0, 'meta_words' => self::SAMPLE_meta_words, 'appendix' => 'sample3'],
         ['area_id' => self::SAMPLE_AREA_ID, 'support_content' => 'sample4', 'owner' => 'sample4', 'access' => 'sample4', 
-        'is_foreign_ok' => 1, 'is_public' => 1, 'meta_word' => self::SAMPLE_META_WORD, 'appendix' => 'sample4'],
+        'is_foreign_ok' => 1, 'is_public' => 1, 'meta_words' => self::SAMPLE_meta_words, 'appendix' => 'sample4'],
         ['area_id' => AppConfig::ZENKOKU_ID, 'support_content' => 'sample5', 'owner' => 'sample5', 'access' => 'sample5', 
-        'is_foreign_ok' => 0, 'is_public' => 1, 'meta_word' => self::SAMPLE_META_WORD, 'appendix' => 'sample5']
+        'is_foreign_ok' => 0, 'is_public' => 1, 'meta_words' => self::SAMPLE_meta_words, 'appendix' => 'sample5']
     ];
 
     private $dbh;
@@ -37,7 +37,7 @@ class SupportOrgsTableTest extends TestCase
         $this->dbh->truncate($this::TABLENAME);
 
         $sth = $this->dbh->insert($this::TABLENAME,
-        '0, :area_id, :support_content, :owner, :access, :is_foreign_ok, :is_public, :meta_word, :appendix',
+        '0, :area_id, :support_content, :owner, :access, :is_foreign_ok, :is_public, :meta_words, :appendix',
         [], MyDbh::ONLY_PREPARE);
 
         foreach($this::SAMPLE_DATAS as $sampleData) {
@@ -48,7 +48,7 @@ class SupportOrgsTableTest extends TestCase
                 ':access' => $sampleData['access'],
                 ':is_foreign_ok' => $sampleData['is_foreign_ok'],
                 ':is_public' => $sampleData['is_public'],
-                ':meta_word' => $sampleData['meta_word'],
+                ':meta_words' => $sampleData['meta_words'],
                 ':appendix' => $sampleData['appendix']
             ]);
         }
@@ -66,11 +66,11 @@ class SupportOrgsTableTest extends TestCase
 
             $maxNumPerPage_mock = count($this::SAMPLE_DATAS);
 
-            $fake_meta_word = 'fake';
-            $this->assertSame([], $this->table->findSearchedOnes($total, $fake_meta_word, $this::SAMPLE_AREA_ID, TRUE, TRUE, $maxNumPerPage_mock, $page));
+            $fake_meta_words = 'fake';
+            $this->assertSame([], $this->table->findSearchedOnes($total, $fake_meta_words, $this::SAMPLE_AREA_ID, TRUE, TRUE, $maxNumPerPage_mock, $page));
 
             $fake_area_id = 100;
-            $this->assertSame([], $this->table->findSearchedOnes($total, $this::SAMPLE_META_WORD, $fake_area_id, TRUE, TRUE, $maxNumPerPage_mock, $page));
+            $this->assertSame([], $this->table->findSearchedOnes($total, $this::SAMPLE_meta_words, $fake_area_id, TRUE, TRUE, $maxNumPerPage_mock, $page));
         }
         else {
             if ($is_only_foreign_ok === FALSE && $is_public === FALSE) {
@@ -136,7 +136,7 @@ class SupportOrgsTableTest extends TestCase
             $this->assertSame(
                 $expected,
                 $this->table->findSearchedOnes(
-                    $total, $this::SAMPLE_META_WORD, $this::SAMPLE_AREA_ID, $is_only_foreign_ok, $is_public, $maxNumPerPage_mock, $page, $is_necessary_zenkoku
+                    $total, $this::SAMPLE_meta_words, $this::SAMPLE_AREA_ID, $is_only_foreign_ok, $is_public, $maxNumPerPage_mock, $page, $is_necessary_zenkoku
                 )
             );
 
@@ -144,6 +144,93 @@ class SupportOrgsTableTest extends TestCase
 
         }
 
+    }
+
+
+    public function testFindByOwnerWord()
+    {
+        $owner_word = '1';//'owner' => 'sample1' のデータのみが該当
+        $maxNum_mock = 1;
+
+        $expected = [array_merge(['id' => 1], self::SAMPLE_DATAS[0])];
+        $this->assertSame($expected, $this->table->findByOwnerWord($owner_word, $maxNum_mock));
+    }
+
+
+    
+    public function testFindById()
+    {
+        $id = 1;
+
+        $expected = array_merge(['id' => $id], self::SAMPLE_DATAS[0]);
+        $this->assertSame($expected, $this->table->findById($id));
+    }
+
+
+    public function testCreate()
+    {
+        $new_id = count(self::SAMPLE_DATAS) + 1;
+        $new_area_id = self::SAMPLE_AREA_ID;
+        $new_support_content = 'create test';
+        $new_owner = 'create test';
+        $new_access = 'create test';
+        $new_is_foreign_ok = 1;
+        $new_is_public = 1;
+        $new_meta_words = '';
+        $new_appendix = 'create test';
+
+        $this->table->create($new_area_id, $new_support_content, $new_owner, $new_access,
+        $new_is_foreign_ok, $new_is_public, $new_appendix);
+
+
+        $expected = [
+            'id' => $new_id,
+            'area_id' => $new_area_id,
+            'support_content' => $new_support_content,
+            'owner' => $new_owner,
+            'access' => $new_access,
+            'is_foreign_ok' => $new_is_foreign_ok,
+            'is_public' => $new_is_public,
+            'meta_words' => $new_meta_words,
+            'appendix' => $new_appendix
+        ];
+
+        $this->assertSame(
+            $expected, $this->dbh->select('*', self::TABLENAME, "id = $new_id")[0]
+        );
+    }
+
+
+    public function testUpdate()
+    {
+        $id = 1;
+        $new_area_id = self::SAMPLE_AREA_ID;
+        $new_support_content = 'update test';
+        $new_owner = 'update test';
+        $new_access = 'update test';
+        $new_is_foreign_ok = 1;
+        $new_is_public = 1;
+        $new_appendix = 'update test';
+
+
+        $this->table->update($id, $new_area_id, $new_support_content, $new_owner, $new_access,
+        $new_is_foreign_ok, $new_is_public, $new_appendix);
+
+        $expected = [
+            'id' => $id,
+            'area_id' => $new_area_id,
+            'support_content' => $new_support_content,
+            'owner' => $new_owner,
+            'access' => $new_access,
+            'is_foreign_ok' => $new_is_foreign_ok,
+            'is_public' => $new_is_public,
+            'meta_words' => self::SAMPLE_DATAS[0]['meta_words'],
+            'appendix' => $new_appendix
+        ];
+
+        $this->assertSame(
+            $expected, $this->dbh->select('*', self::TABLENAME, "id = $id")[0]
+        );
     }
 
 
@@ -159,4 +246,5 @@ class SupportOrgsTableTest extends TestCase
             'when no record is found' => [NULL, NULL]
         ];
     }
+
 }

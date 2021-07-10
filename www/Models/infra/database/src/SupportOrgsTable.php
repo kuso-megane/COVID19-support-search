@@ -81,4 +81,147 @@ class SupportOrgsTable
 
         return $records;
     }
+
+
+    /**
+     * 
+     * return rows which owner meets given word partially 
+     * 
+     * @param string $owner_word
+     * @param int $maxNum
+     * 
+     * @return array
+     * [
+     *      [
+     *          'id' => int,
+     *          'area_id' => int,
+     *          'support_content' => string,
+     *          'owner' => string,
+     *          'access' => string,
+     *          'is_foreign_ok' => 0|1,
+     *          'is_public' => 0|1,
+     *          'meta_words' => string,
+     *          'appendix' => string
+     *      ],
+     *      []
+     * ]
+     */
+    public function findByOwnerWord(string $owner_word, int $maxNum): array
+    {
+        $columns = '*';
+        $condition = 'owner LIKE :owner_word';
+        $option = [
+            'limitNum' => ':limitNum'
+        ];
+        $boundValues = [
+            ':owner_word' => "%{$owner_word}%", ':limitNum' => $maxNum
+        ];
+        
+        $rows = $this->dbh->select($columns, self::TABLENAME, $condition, $option, $boundValues);
+
+        return $rows;
+    }
+
+
+    /**
+     * @param int $id
+     * 
+     * @return array|NULL
+     * [
+     *      'id' => int,
+     *      'area_id' => int,
+     *      'support_content' => string,
+     *      'owner' => string,
+     *      'access' => string,
+     *      'is_foreign_ok' => 0|1,
+     *      'is_public' => 0|1,
+     *      'meta_words' => string,
+     *      'appendix' => string
+     * ]
+     * 
+     * if no record is found, return NULL
+     */
+    public function findById(int $id): ?array
+    {
+        $columns = '*';
+        $condition = 'id = :id';
+        $boundValues = [
+            ':id' => $id
+        ];
+
+        return $this->dbh->select($columns, self::TABLENAME, $condition, [], $boundValues)[0];
+    }
+
+
+    /**
+     * @param int $area_id
+     * @param string $support_content
+     * @param string $owner
+     * @param string $access
+     * @param int $is_foreign_ok  1 or 0
+     * @param int $is_public  1 or 0
+     * @param string $appendix
+     * 
+     * if something went wrong, this throws PDOException
+     * 
+     * 'meta_words' column will be ''
+     */
+    public function create(
+        int $area_id, string $support_content, string $owner, string $access, int $is_foreign_ok,
+        int $is_public, string $appendix
+    )
+    {
+        $columns = ':id, :area_id, :support_content, :owner, :access, :is_foreign_ok,
+        :is_public, :meta_words, :appendix';
+        $meta_words = '';
+        $boundColumns = [
+            ':id' => 0,
+            ':area_id' => $area_id,
+            ':support_content' => $support_content,
+            ':owner' => $owner,
+            ':access' => $access,
+            ':is_foreign_ok' => $is_foreign_ok,
+            ':is_public' => $is_public,
+            ':meta_words' => $meta_words,
+            ':appendix' => $appendix
+        ];
+        
+        $this->dbh->insert(self::TABLENAME, $columns, $boundColumns);
+    }
+
+
+    /**
+     * @param int $id
+     * @param int $area_id
+     * @param string $support_content
+     * @param string $owner
+     * @param string $access
+     * @param int $is_foreign_ok  1 or 0
+     * @param int $is_public  1 or 0
+     * @param string $appendix
+     * 
+     * if something went wrong, this throws PDOException
+     */
+    public function update(
+        int $id, int $area_id, string $support_content, string $owner, string $access,
+        int $is_foreign_ok, int $is_public, string $appendix
+    )
+    {
+        $columns = 'area_id = :area_id, support_content = :support_content, owner = :owner,
+        access = :access, is_foreign_ok = :is_foreign_ok, is_public = :is_public,
+        appendix = :appendix';
+        $condition = 'id = :id';
+        $boundValues = [
+            ':id' => $id,
+            ':area_id' => $area_id,
+            ':support_content' => $support_content,
+            ':owner' => $owner,
+            ':access' => $access,
+            ':is_foreign_ok' => $is_foreign_ok,
+            ':is_public' => $is_public,
+            ':appendix' => $appendix
+        ];
+
+        $this->dbh->update(self::TABLENAME, $columns, $condition, $boundValues);
+    }
 }

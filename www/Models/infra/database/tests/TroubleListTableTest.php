@@ -99,6 +99,44 @@ class TroubleListTableTest extends TestCase
     }
 
 
+    public function testCreate()
+    {
+        $newId = count(self::SAMPLE_DATAS) + 1;
+        $newName = 'newName';
+        $newMeta = 'newMeta';
+        $articleC_id = self::SAMPLE_ARTICLE_C_ID;
+
+        $this->table->create($newName, $newMeta, $articleC_id);
+
+        $expected = [
+            'id' => $newId,
+            'name' => $newName,
+            'meta_word' => $newMeta,
+            'ArticleC_id' => $articleC_id
+        ];
+        $this->assertSame($expected, $this->dbh->select('*', self::TABLENAME, "id = $newId")[0]);
+    }
+
+
+    public function testUpdate()
+    {
+        $id = 1;
+        $newName = 'newName';
+        $newMeta = 'newMeta';
+        $articleC_id = self::SAMPLE_ARTICLE_C_ID;
+
+        $this->table->update($id, $newName, $newMeta, $articleC_id);
+
+        $expected = [
+            'id' => $id,
+            'name' => $newName,
+            'meta_word' => $newMeta,
+            'ArticleC_id' => $articleC_id
+        ];
+        $this->assertSame($expected, $this->dbh->select('*', self::TABLENAME, "id = $id")[0]);
+    }
+
+
     public function providerForFindAll():array
     {
     

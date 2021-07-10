@@ -1,0 +1,11 @@
+@use '../components/buttons';
+
+.invalid-note {
+    display: none;
+    color: red;
+    text-decoration: underline double red;
+
+    &.show {
+        display: block;
+    }
+}

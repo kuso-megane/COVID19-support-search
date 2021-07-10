@@ -13,12 +13,20 @@ use domain\components\searchBox\RepositoryPort\TroubleNameListRepositoryPort;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
 use domain\search\result\RepositoryPort\SearchItemsRepositoryPort;
-use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort;
+use domain\search\result\RepositoryPort\SearchedSupportsRepositoryPort as SearchResultSearchedSupportsRepositoryPort;
+use domain\backyardSupportOrgs\index\RepositoryPort\SearchedSupportsRepositoryPort as BYSupportOrgsIndexSearchedSupportsRepositoryPort;
 use domain\backyardArticle\index\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleIndexArticleCategoryNamesRepositoryPort;
 use domain\backyardArticle\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYArticleEditArticleCategoryNamesRepositoryPort;
 use domain\backyardArticleCategory\index\RepositoryPort\ArticleCategoryListRepositoryPort as BYArticleCategoryIndexArticleCategoryListRepositoryPort;
-
-
+use domain\backyardSupportOrgs\index\RepositoryPort\AreaListRepositoryPort as BYSupportOrgsIndexAreaListRepositoryPort;
+use domain\backyardSupportOrgs\edit\RepositoryPort\OldSupportOrgRepositoryPort;
+use domain\backyardSupportOrgs\edit\RepositoryPort\AreaListRepositoryPort as BYSupportOrgsEditAreaListRepositoryPort;
+use domain\backyardSupportOrgs\post\RepositoryPort\PostSupportOrgsRepositoryPort;
+use domain\backyardTroubleList\edit\RepositoryPort\OldTroubleRepositoryPort;
+use domain\backyardTroubleList\index\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYTroubleListIndexArticleCategoryNamesRepositoryPort;
+use domain\backyardTroubleList\index\RepositoryPort\TroubleListRepositoryPort;
+use domain\backyardTroubleList\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYTroubleListEditArticleCategoryNamesRepositoryPort;
+use domain\backyardTroubleList\post\RepositoryPort\PostTroubleRepositoryPort;
 use infra\Repository\adminLogin\authenticate\AdminLoginInfoRepository;
 use infra\Repository\article\_list\AllArticleInfosRepository;
 use infra\Repository\article\_list\ArticleCategoryListRepository;
@@ -31,18 +39,33 @@ use infra\Repository\backyardArticle\post\PostArticleRepository;
 use infra\Repository\backyardArticleCategory\edit\OldArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\post\PostArticleCategoryRepository;
 use infra\Repository\backyardArticleCategory\index\ArticleCategoryListRepository as BYArticleCategoryIndexArticleCategoryListRepository;
+use infra\Repository\backyardSupportOrgs\index\AreaListRepository as BYSupportOrgsIndexAreaListRepository;
+use infra\Repository\backyardSupportOrgs\edit\OldSupportOrgRepository;
+use infra\Repository\backyardSupportOrgs\edit\AreaListRepository as BYSupportOrgsEditAreaListRepository;
+use infra\Repository\backyardTroubleList\edit\OldTroubleRepository;
+use infra\Repository\backyardTroubleList\index\TroubleListRepository;
 use infra\Repository\components\searchBox\TroubleNameListRepository;
 use infra\Repository\search\result\RecommendedArticleInfosRepository;
 use infra\Repository\search\result\SearchedAreaNameRepository;
-use infra\Repository\search\result\SearchedSupportsRepository;
+use infra\Repository\search\result\SearchedSupportsRepository as SearchResultSearchedSupportsRepository;
+use infra\Repository\backyardSupportOrgs\index\SearchedSupportsRepository as BYSupportOrgsIndexSearchedSupportsRepository;
 use infra\Repository\search\result\SearchItemsRepository;
-
+use infra\Repository\backyardTroubleList\index\ArticleCategoryNamesRepository as BYTroubleListIndexArticleCategoryNamesRepository;
+use infra\Repository\backyardTroubleList\edit\ArticleCategoryNamesRepository as BYTroubleListEditArticleCategoryNamesRepository;
+use infra\Repository\backyardTroubleList\post\PostTroubleRepository;
+use infra\Repository\backyardSupportOrgs\post\PostSupportOrgsRepository;
 
 return [
     TroubleNameListRepositoryPort::class => \DI\create(TroubleNameListRepository::class),
     SearchItemsRepositoryPort::class => \DI\create(SearchItemsRepository::class),
+    TroubleListRepositoryPort::class => \DI\create(TroubleListRepository::class),
+    OldTroubleRepositoryPort::class => \DI\create(OldTroubleRepository::class),
+    PostTroubleRepositoryPort::class => \DI\create(PostTroubleRepository::class),
 
-    SearchedSupportsRepositoryPort::class => \DI\create(SearchedSupportsRepository::class),
+    SearchResultSearchedSupportsRepositoryPort::class => \DI\create(SearchResultSearchedSupportsRepository::class),
+    BYSupportOrgsIndexSearchedSupportsRepositoryPort::class => \DI\create(BYSupportOrgsIndexSearchedSupportsRepository::class),
+    OldSupportOrgRepositoryPort::class => \DI\create(OldSupportOrgRepository::class),
+    PostSupportOrgsRepositoryPort::class => \DI\create(PostSupportOrgsRepository::class),
 
     AllArticleInfosRepositoryPort::class => \DI\create(AllArticleInfosRepository::class),
     RecommendedArticleInfosRepositoryPort::class => \DI\create(RecommendedArticleInfosRepository::class),
@@ -57,8 +80,12 @@ return [
     OldArticleCategoryRepositoryPort::class => \DI\create(OldArticleCategoryRepository::class),
     PostArticleCategoryRepositoryPort::class => \DI\create(PostArticleCategoryRepository::class),
     BYArticleCategoryIndexArticleCategoryListRepositoryPort::class => \DI\create(BYArticleCategoryIndexArticleCategoryListRepository::class),
+    BYTroubleListIndexArticleCategoryNamesRepositoryPort::class => \DI\create(BYTroubleListIndexArticleCategoryNamesRepository::class),
+    BYTroubleListEditArticleCategoryNamesRepositoryPort::class => \DI\create(BYTroubleListEditArticleCategoryNamesRepository::class),
 
     SearchedAreaNameRepositoryPort::class => \DI\create(SearchedAreaNameRepository::class),
+    BYSupportOrgsIndexAreaListRepositoryPort::class => \DI\create(BYSupportOrgsIndexAreaListRepository::class),
+    BYSupportOrgsEditAreaListRepositoryPort::class => \DI\create(BYSupportOrgsEditAreaListRepository::class),
 
     AdminLoginInfoRepositoryPort::class => \DI\create(AdminLoginInfoRepository::class)
 ];

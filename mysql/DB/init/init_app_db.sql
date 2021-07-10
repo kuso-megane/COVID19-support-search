@@ -57,13 +57,13 @@ drop table if exists SupportOrgs;
 create table SupportOrgs(
     id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     area_id TINYINT UNSIGNED,
-    support_content varchar(400) NOT NULL,
+    support_content varchar(500) NOT NULL,
     owner varchar(100) NOT NULL,
-    access varchar(600) NOT NULL,
+    access varchar(1000) NOT NULL,
     is_foreign_ok BOOLEAN NOT NULL,
     is_public BOOLEAN NOT NULL,
     meta_words VARCHAR(100) NOT NULL,
-    appendix VARCHAR(500) default NULL,
+    appendix VARCHAR(1000) default NULL,
 
     CONSTRAINT fk_area_id_on_SupportOrgs
         FOREIGN KEY (area_id)
