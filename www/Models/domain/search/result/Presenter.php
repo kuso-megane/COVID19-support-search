@@ -21,6 +21,7 @@ class Presenter
      * @param RecommendedArticleInfo[] $recommendedArticleInfos
      * @param array $searchBoxData
      * @param array $query
+     * @param string $searchedTroubleName
      * 
      * @return array [
      *      'publicCurrentPage' => int,
@@ -42,12 +43,14 @@ class Presenter
      *      ],
      *      'privateSupports' => [ the same as publicSupports ],
      *      'is_public_page' => bool,
-     *      'query' => string,
      *      'recommendedArticleInfos' => [
      *          'id' => int,
      *          'title' => string,
      *          'thumbnailName' => string
-     *      ]
+     *      ],
+     *      'query' => string,
+     *      'searchedAreaName' => string,
+     *      'searchedTroubleName' => string
      * ]
      *  +$searchedBoxData
      * 
@@ -57,7 +60,7 @@ class Presenter
         int $publicCurrentPage, int $privateCurrentPage, int $publicSupportsTotal, int $privateSupportsTotal,
         int $publicPageTotal, int $privatePageTotal, array $publicSupports, array $privateSupports,
         bool $is_public_page, array $recommendedArticleInfos, array $searchBoxData, string $query,
-        string $searchedAreaName
+        string $searchedAreaName, string $searchedTroubleName
     ): array
     {
 
@@ -73,7 +76,8 @@ class Presenter
             'is_public_page' => $is_public_page,
             'recommendedArticleInfos' => $this->format($recommendedArticleInfos),
             'query' => $query,
-            'searchedAreaName' => $searchedAreaName
+            'searchedAreaName' => $searchedAreaName,
+            'searchedTroubleName' => $searchedTroubleName
         ];
 
         return $vm += $searchBoxData;

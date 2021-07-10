@@ -27,6 +27,7 @@ use domain\backyardTroubleList\index\RepositoryPort\ArticleCategoryNamesReposito
 use domain\backyardTroubleList\index\RepositoryPort\TroubleListRepositoryPort;
 use domain\backyardTroubleList\edit\RepositoryPort\ArticleCategoryNamesRepositoryPort as BYTroubleListEditArticleCategoryNamesRepositoryPort;
 use domain\backyardTroubleList\post\RepositoryPort\PostTroubleRepositoryPort;
+use domain\search\result\RepositoryPort\SearchedTroubleNameRepositoryPort;
 use infra\Repository\adminLogin\authenticate\AdminLoginInfoRepository;
 use infra\Repository\article\_list\AllArticleInfosRepository;
 use infra\Repository\article\_list\ArticleCategoryListRepository;
@@ -54,6 +55,7 @@ use infra\Repository\backyardTroubleList\index\ArticleCategoryNamesRepository as
 use infra\Repository\backyardTroubleList\edit\ArticleCategoryNamesRepository as BYTroubleListEditArticleCategoryNamesRepository;
 use infra\Repository\backyardTroubleList\post\PostTroubleRepository;
 use infra\Repository\backyardSupportOrgs\post\PostSupportOrgsRepository;
+use infra\Repository\search\result\SearchedTroubleNameRepository;
 
 return [
     TroubleNameListRepositoryPort::class => \DI\create(TroubleNameListRepository::class),
@@ -61,6 +63,7 @@ return [
     TroubleListRepositoryPort::class => \DI\create(TroubleListRepository::class),
     OldTroubleRepositoryPort::class => \DI\create(OldTroubleRepository::class),
     PostTroubleRepositoryPort::class => \DI\create(PostTroubleRepository::class),
+    SearchedTroubleNameRepositoryPort::class => \DI\create(SearchedTroubleNameRepository::class),
 
     SearchResultSearchedSupportsRepositoryPort::class => \DI\create(SearchResultSearchedSupportsRepository::class),
     BYSupportOrgsIndexSearchedSupportsRepositoryPort::class => \DI\create(BYSupportOrgsIndexSearchedSupportsRepository::class),
