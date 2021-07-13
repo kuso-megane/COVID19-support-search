@@ -9,6 +9,7 @@ use domain\search\result\Validator\Validator;
 use domain\components\searchBox\Interactor as SearchBoxInteractor;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
+use domain\search\result\RepositoryPort\SearchedTroubleNameRepositoryPort;
 use myapp\config\AppConfig;
 use myapp\myFrameWork\SuperGlobalVars;
 
@@ -18,18 +19,21 @@ class Interactor
     private $searchItemsRepository;
     private $recommendedArticleInfosRepository;
     private $searchedAreaNameRepository;
+    private $searchedTroubleNameRepository;
 
     public function __construct(
         SearchedSupportsRepositoryPort $searchedSupportOrgsRepository,
         SearchItemsRepositoryPort $searchItemsReporitory,
         RecommendedArticleInfosRepositoryPort $recommendedArticleInfosRepository,
-        SearchedAreaNameRepositoryPort $searchedAreaNameRepository
+        SearchedAreaNameRepositoryPort $searchedAreaNameRepository,
+        SearchedTroubleNameRepositoryPort $searchedTroubleNameRepository
     )
     {
         $this->searchedSupportOrgsRepository = $searchedSupportOrgsRepository;
         $this->searchItemsRepository = $searchItemsReporitory;
         $this->recommendedArticleInfosRepository = $recommendedArticleInfosRepository;
         $this->searchedAreaNameRepository = $searchedAreaNameRepository;
+        $this->searchedTroubleNameRepository = $searchedTroubleNameRepository;
     }
 
     /**
@@ -54,6 +58,7 @@ class Interactor
         $pri_p = $input['pri_p'];
 
         $searchedAreaName = $this->searchedAreaNameRepository->getSearchedAreaName($area_id);
+        $searchedTroubleName = $this->searchedTroubleNameRepository->getSearchedTroubleName($trouble_id);
 
         $searchItems = $this->searchItemsRepository->getSearchItems($trouble_id)->toArray();
         $meta_word = $searchItems['meta_word'];
@@ -110,7 +115,7 @@ class Interactor
         return (new Presenter)->present(
             $pub_p, $pri_p, $publicSupportsTotal, $privateSupportsTotal, $publicPageTotal,
             $privatePageTotal, $publicSupports, $privateSupports, $is_public_page, $recommendedArticleInfos,
-            $searchBoxData, $query, $searchedAreaName
+            $searchBoxData, $query, $searchedAreaName, $searchedTroubleName
         );
 
     }

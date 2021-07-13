@@ -8,8 +8,8 @@ use myapp\config\ViewsConfig;
 <!DOCTYPE html>
 <html>
     <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# website: http://ogp.me/ns/ website#">
-        <title><?php echo "生活にお困りの方向け・民間支援情報まとめ|" . AppConfig::TITLE; ?></title>
-        <meta name="description" content="コロナ禍で生活にお困りの方向けに、全国各地300以上の支援情報をまとめました。ワンクリックで欲しい支援を探すことができます。">
+        <title><?php echo "個人向け｜新型コロナ民間支援情報まとめ" . AppConfig::TITLE; ?></title>
+        <meta name="description" content="コロナ禍で生活にお困りの個人向けに、全国各地300以上の支援情報をまとめました。ワンクリックで欲しい支援を検索することができます。">
 
         <!--ogp-->
         <meta property="og:url" content="<?php echo URIConfig::URI; ?>" />
