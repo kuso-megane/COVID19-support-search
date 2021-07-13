@@ -6,7 +6,9 @@ use myapp\config\ViewsConfig;
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php echo "{$searchedAreaName}の検索結果 -" . AppConfig::TITLE; ?></title>
+        <title><?php echo "${searchedAreaName}の検索結果 -" . AppConfig::TITLE; ?></title>
+        <meta name="description"
+        content="<?php echo "${searchedAreaName}において、${searchedTroubleName}という方をサポートする支援団体・制度の情報をまとめました！1人で抱え込まず、利用・相談してみてください。"; ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo ViewsConfig::STYLE_SHEET_URL . 'search/result.css'; ?>" >
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
 　　</head>
