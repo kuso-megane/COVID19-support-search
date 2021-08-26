@@ -47,8 +47,9 @@
 
         <div class="search-items">
             <p><span class="bold">都道府県:</span></p>  
-            <div>     
+            <div>  
                 <select id="areaSelect" name="area_id">
+                <!--optionはinitArea.jsで作成-->
                 </select>
             </div>
         </div>
