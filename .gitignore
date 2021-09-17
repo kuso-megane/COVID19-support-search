@@ -13,8 +13,12 @@
 #sample data
 /mysql/DB/sample
 
-#cssファイル
+#コンパイル後のasset
 /www/html/asset/stylesheet/
+/www/html/asset/js/
+
+#module
+/node_modules/
 
 #管理者ID, パスワードの設定
 /www/initAdminLoginInfo/
