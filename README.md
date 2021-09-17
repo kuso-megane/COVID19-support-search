@@ -18,7 +18,8 @@
 1. php, composerのinstall
 1. dart/sassのinstall (動作確認済みはversion1.32.7)
 1. サービスのdirにて、```docker-compose up -d```
-1. Node.jsをinstall npm 5.2以上が必要
+1. Node.jsをinstall
+1. ```npm -v```で5.12以上のversionになっていることを確認(babel関連のinstallのため)
 1. サービスのdirにて、```npm install```を実行
 1. サービスのdirにて、```./compile.sh```を実行
 1. www/ にて ```composer install```
