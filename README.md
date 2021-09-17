@@ -16,9 +16,11 @@
 1. gitでコードをpull
 1. docker, docker-composeのinstall
 1. php, composerのinstall
-1. dart/sassのinstall
+1. dart/sassのinstall (動作確認済みはversion1.32.7)
 1. サービスのdirにて、```docker-compose up -d```
-1. asset/scss/ にて　```./sass.sh```
+1. Node.jsをinstall npm 5.2以上が必要
+1. サービスのdirにて、```npm install```を実行
+1. サービスのdirにて、```./compile.sh```を実行
 1. www/ にて ```composer install```
 1. (本番環境のみ)ec2-user所有の画像ファイルdirへの画像アップロードを```www-data```(apacheのuser)が行うため、ec2のdocker for linuxでは以下の権限変更が必要。(というか、docker for mac, windowsでなぜ権限変更なしに動くのか謎)
 - ec2のhostから```chmod o+x /path/to/www/html/asset/img```を実行。
@@ -26,8 +28,7 @@
 
 ## frontend
 - www/html/views配下にhtml(拡張子は基本php)を記述
-- asset/scss配下にscssファイルがある。
-- asset/scssに移動し、```./sass.sh```を実行すると、scssファイルが一括コンパイルされる
+- scssやjsファイルは、サービスのdir(最上層)で```./compile.sh```を実行するとコンパイルされる。
 - 画像は、www/html/asset/img/配下に
 
 
