@@ -21,7 +21,7 @@
 1. Node.jsをinstall
 1. ```npm -v```で5.12以上のversionになっていることを確認(babel関連のinstallのため)
 1. サービスのdirにて、```npm install```を実行
-1. サービスのdirにて、```./compile.sh```を実行
+1. サービスのdirにて、```./compile.sh```を実行(実行権限がない場合は```chmod 744 ./compile.sh```を実行してから再度試行)
 1. www/ にて ```composer install```
 1. (本番環境のみ)ec2-user所有の画像ファイルdirへの画像アップロードを```www-data```(apacheのuser)が行うため、ec2のdocker for linuxでは以下の権限変更が必要。(というか、docker for mac, windowsでなぜ権限変更なしに動くのか謎)
     - ec2のhostから```chmod o+x /path/to/www/html/asset/img```を実行。
