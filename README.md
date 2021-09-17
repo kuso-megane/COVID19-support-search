@@ -31,6 +31,7 @@
 - www/html/views配下にhtml(拡張子は基本php)を記述
 - scssやjsファイルは、サービスのdir(最上層)で```./compile.sh```を実行するとコンパイルされる。
 - 画像は、www/html/asset/img/配下に
+- 部分的にReactを採用、おもにviews/html/components/配下
 
 
 ## コードの構造
