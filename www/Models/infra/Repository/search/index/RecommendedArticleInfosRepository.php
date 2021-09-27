@@ -19,9 +19,9 @@ class RecommendedArticleInfosRepository implements RecommendedArticleInfosReposi
     /**
      * @inheritDoc
      */
-    public function getRecommendedArticleInfos(int $maxNum): array
+    public function getRecommendedArticleInfos(int $c_id, int $maxNum): array
     {
-        $articleInfos = $this->table->
+        $articleInfos = $this->table->findInfosByC_id($c_id, $maxNum);
 
         foreach ($articleInfos as &$articleInfo) {
             $articleInfo = new RecommendedArticleInfo(

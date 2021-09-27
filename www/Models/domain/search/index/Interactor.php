@@ -37,7 +37,7 @@ class Interactor
         }
 
         $articles = $this->recommendedArticleInfosRepository
-                    ->getRecommendedArticleInfos(AppConfig::MAXNUM_RECOMMENDED_ARTICLES);
+                    ->getRecommendedArticleInfos(AppConfig::GENERAL_C_ID, AppConfig::MAXNUM_RECOMMENDED_ARTICLES);
         
         
 

@@ -8,7 +8,7 @@ class RecommendedArticleInfo
 
     public function __construct(int $id, string $title, string $thumbnailName)
     {
-        $this->attr = compact($id, $title, $thumbnailName);
+        $this->attr = compact('id', 'title', 'thumbnailName');
     }
 
 

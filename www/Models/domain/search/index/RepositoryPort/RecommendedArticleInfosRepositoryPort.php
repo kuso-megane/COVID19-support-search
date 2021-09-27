@@ -11,5 +11,5 @@ interface RecommendedArticleInfosRepositoryPort
      * 
      * @return RecommendedArticleInfo[]
      */
-    public function getRecommendedArticleInfos(int $maxNum): array;
+    public function getRecommendedArticleInfos(int $c_id, int $maxNum): array;
 }

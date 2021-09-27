@@ -21,7 +21,7 @@ class Presenter
      */
     public function present(array $searchBoxData, array $articles):array
     {
-        return array_merge($articles, $searchBoxData);
+        return array_merge(['articles' => $this->format($articles)], $searchBoxData);
     }
 
 
@@ -35,5 +35,17 @@ class Presenter
         http_response_code(400);
         echo $message;
         return AppConfig::INVALID_PARAMS;
+    }
+
+
+    private function format(array $datas): array
+    {
+        foreach ($datas as &$data) {
+            if ($data !== NULL) {
+                $data = $data->toArray();
+            }
+        }
+
+        return $datas;
     }
 }
