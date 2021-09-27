@@ -4,9 +4,12 @@
     /**
      * @var array $_items
      * [
-     *      'id' => int,
-     *      'thumbnailName' => string,
-     *      'title' => string
+     *      [
+     *          'id' => int,
+     *          'thumbnailName' => string,
+     *          'title' => string
+     *      ],
+     *      []
      * ]
      */
 ?>
