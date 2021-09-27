@@ -238,5 +238,9 @@ $topFontSize: 0.75rem;
         list-style-type: disc;
         margin-top: 1rem;
     }
+
+    .article-box--list--item {
+        width: 100% !important;
+    }
 }
 
