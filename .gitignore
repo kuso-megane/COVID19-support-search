@@ -17,6 +17,9 @@
 /www/html/asset/stylesheet/
 /www/html/asset/js/
 
+#画像
+/www/html/asset/img/
+
 #module
 /node_modules/
 
