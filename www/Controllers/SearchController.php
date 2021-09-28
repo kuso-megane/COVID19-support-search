@@ -14,7 +14,11 @@ class SearchController extends BaseController
     public function index()
     {
 
-        $interactor = new IndexInteractor;
+        $builder = new \DI\ContainerBuilder();
+        $builder->addDefinitions('/var/www/Models/diconfig.php');
+        $container = $builder->build();
+
+        $interactor = $container->get(IndexInteractor::class);
         $vm = $interactor->interact();
 
         if ($vm === AppConfig::INVALID_PARAMS) {

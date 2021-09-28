@@ -8,6 +8,8 @@
 
 @use '../components/page_switch';
 
+@use '../components/article-box--list';
+
 
 // index
 
@@ -235,6 +237,10 @@ $topFontSize: 0.75rem;
     li {
         list-style-type: disc;
         margin-top: 1rem;
+    }
+
+    .article-box--list--item {
+        width: 100% !important;
     }
 }
 
