@@ -7,7 +7,7 @@ class AppConfig
     const TITLE = 'サポファイ';
 
     const MAXNUM_PER_PAGE = 10; // 検索結果1ページあたりの支援表示数 
-    const MAXNUM_RECOMMENDED_ARTICLES = 4; // 検索結果1ページあたりのおすすめコラムの数
+    const MAXNUM_RECOMMENDED_ARTICLES = 6; // 検索結果1ページあたりのおすすめコラムの数
     const BY_SUPPORT_ORGS_MAXNUM_PER_PAGE = 10; // BYSupportOrgs/index の1ページあたりの支援表示数
     
 
