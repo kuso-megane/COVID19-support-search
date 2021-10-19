@@ -20,8 +20,8 @@
 1. サービスのdirにて、```docker-compose up -d```
 1. Node.jsをinstall
 1. ```npm -v```で5.12以上のversionになっていることを確認(babel関連のinstallのため)
-1. サービスのdirにて、```npm install```を実行
-1. サービスのdirにて、```./compile.sh```を実行(実行権限がない場合は```chmod 744 ./compile.sh```を実行してから再度試行)
+1. サービスの最上位dirにて、```npm install```を実行
+1. サービスの最上位dirにて、```./compile.sh```を実行(実行権限がない場合は```chmod 744 ./compile.sh```を実行してから再度試行)
 1. www/ にて ```composer install```、本番環境は```composer install --no-dev```
 1. (本番環境のみ)ec2-user所有の画像ファイルdirへの画像アップロードを```www-data```(apacheのuser)が行うため、ec2のdocker for linuxでは以下の権限変更が必要。(というか、docker for mac, windowsでなぜ権限変更なしに動くのか謎)
     - ec2のhostから```chmod o+x /path/to/www/html/asset/img```を実行。
@@ -33,7 +33,7 @@
 - 画像は、www/html/asset/img/配下に
 
 
-## コードの構造
+## backend
 - MVC
 - ```views/html/router/route.php```がurlを処理、該当するcontrollerの関数を呼び出す。
 
@@ -41,6 +41,11 @@
 - domain層がビジネスロジック
 - domainのmainが```Interactor```, viewに渡す変数を定めているのが```Presenter```
 - infra層がDBと連絡する。
+
+### infra
+- database層がDBとアクセスしている。実体は、phpの```PDO```というAPIを使用
+- test層がdatabase層のテストをしている。```PHPUnit```というライブラリを使用
+- appコンテナ内で、www/配下で```./test.sh```を実行すると、テストがはしる。
 
 ### controller
 - Modelから必要なデータを取得
