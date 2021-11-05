@@ -51,6 +51,7 @@
 - Modelから必要なデータを取得
 - MyFrameWork/Bases/BaseControllerという親クラスがある。ここで```render()```関数を実装
 - ```render()```関数が```Model/domain```の```Presenter```の返り値```['xxx' => $yyy]```から```$xxx = $yyy```として抽出、viewに渡す。
+- どのviewを呼び出すかを決定。e.g. 英語版か日本語版かなど
 
 ### views
 - controllerから呼び出されるhtml(phpファイル)および、css, js, imgなど
