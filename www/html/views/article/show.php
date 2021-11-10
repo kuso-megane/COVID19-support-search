@@ -59,7 +59,7 @@ use myapp\config\URIConfig;
                 $articleContent['content'] = str_replace("\\", "\\\\", $articleContent['content']);
                 echo str_replace("`", "\`", $articleContent['content']); 
             ?>`;
-            const dirty = marked(md);
+            const dirty = marked.parse(md);
             const clean = DOMPurify.sanitize(dirty);
             document.getElementById("article--content").innerHTML = clean;
         </script>
