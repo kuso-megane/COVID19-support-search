@@ -91,7 +91,7 @@ use myapp\config\ViewsConfig;
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="td-column">アクセス</td>
+                                                    <td class="td-column">access</td>
                                                     <td class="td-content"><?php echo $support['access']; ?></td>
                                                 </tr>
                                                 <tr>
