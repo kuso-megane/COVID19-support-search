@@ -11,7 +11,7 @@ use domain\search\result\Interactor as SearchResultInteractor;
 class SearchController extends BaseController
 {
 
-    public function index()
+    public function index(array $vars)
     {
 
         $builder = new \DI\ContainerBuilder();
@@ -19,13 +19,19 @@ class SearchController extends BaseController
         $container = $builder->build();
 
         $interactor = $container->get(IndexInteractor::class);
-        $vm = $interactor->interact();
+        $vm = $interactor->interact($vars);
 
         if ($vm === AppConfig::INVALID_PARAMS) {
             return FALSE;
         }
         else {
-            $this->render($vm, 'search', 'index');
+
+            if ($vm['lang'] === 'jp') {
+                $this->render($vm, 'search', 'index');
+            }
+            elseif ($vm['lang'] === 'en') {
+                $this->render($vm, 'search', 'index_en');
+            }
         }
     }
 

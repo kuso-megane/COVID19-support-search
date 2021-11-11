@@ -10,7 +10,7 @@ require '../Controllers/callAction/callAction.php';
 
 $base = '/';
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) use ($base) {
-    $r->addRoute('GET', $base.'[index[/]]', 'index'); //index
+    $r->addRoute('GET', $base.'[index/[{lang:[a-z]+}]]', 'index'); //index
 
     $r->addRoute('GET', $base.'searchResult/{is_public_page:[0-1]}/{pub_p:\d+}/{pri_p:\d+}', 'searchResult');
     

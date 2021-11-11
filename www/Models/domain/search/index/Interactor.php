@@ -6,6 +6,7 @@ use domain\components\searchBox\Interactor as SearchBoxInteractor;
 use domain\Exception\ValidationFailException;
 use myapp\config\AppConfig;
 use domain\search\index\RepositoryPort\RecommendedArticleInfosRepositoryPort;
+use domain\search\index\Validator\Validator;
 
 class Interactor
 {
@@ -20,11 +21,19 @@ class Interactor
     }
 
     /**
+     * 
+     * @param array $vars
+     * 
      * @return array
      * please refer to Presenter
      */
-    public function interact()
+    public function interact(array $vars)
     {
+
+        $input = (new Validator)->validate($vars)->toArray();
+
+        $lang = $input['lang'];
+
         $builder = new \DI\ContainerBuilder();
         $builder->addDefinitions('/var/www/Models/diconfig.php');
         $container = $builder->build();
@@ -41,7 +50,7 @@ class Interactor
         
         
 
-        return (new Presenter)->present($searchBoxData, $articles);
+        return (new Presenter)->present($searchBoxData, $articles, $lang);
         
     }
 }

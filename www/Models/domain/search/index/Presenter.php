@@ -9,19 +9,21 @@ class Presenter
     /**
      * @param array $searchBoxData
      * @param array $articles
+     * @param string $lang
      * 
      * @return array
      * [
      *      'articles' => [
      *          ['id' => int, 'thumbnailName' => string, 'title' => string],
      *          []
-     *      ]
+     *      ],
+     *      'lang' => string
      * ]
      * + $searchBoxData
      */
-    public function present(array $searchBoxData, array $articles):array
+    public function present(array $searchBoxData, array $articles, string $lang):array
     {
-        return array_merge(['articles' => $this->format($articles)], $searchBoxData);
+        return array_merge(['articles' => $this->format($articles)], compact('lang'), $searchBoxData);
     }
 
 
