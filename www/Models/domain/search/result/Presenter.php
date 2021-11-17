@@ -60,7 +60,7 @@ class Presenter
         int $publicCurrentPage, int $privateCurrentPage, int $publicSupportsTotal, int $privateSupportsTotal,
         int $publicPageTotal, int $privatePageTotal, array $publicSupports, array $privateSupports,
         bool $is_public_page, array $recommendedArticleInfos, array $searchBoxData, string $query,
-        string $searchedAreaName, string $searchedTroubleName
+        string $searchedAreaName, string $searchedTroubleName, string $lang
     ): array
     {
 
@@ -77,7 +77,8 @@ class Presenter
             'recommendedArticleInfos' => $this->format($recommendedArticleInfos),
             'query' => $query,
             'searchedAreaName' => $searchedAreaName,
-            'searchedTroubleName' => $searchedTroubleName
+            'searchedTroubleName' => $searchedTroubleName,
+            'lang' => $lang
         ];
 
         return $vm += $searchBoxData;

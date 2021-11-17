@@ -50,7 +50,13 @@ class SearchController extends BaseController
             return False;
         }
         else {
-            $this->render($vm, 'search', 'result');
+            
+            if ($vm['lang'] === 'jp') {
+                $this->render($vm, 'search', 'result');
+            }
+            elseif ($vm['lang'] === 'en') {
+                $this->render($vm, 'search', 'result_en');
+            }
         }
     }
 }

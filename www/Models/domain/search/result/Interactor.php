@@ -56,6 +56,7 @@ class Interactor
         $is_public_page = $input['is_public_page']; //　最初に表示するタブが公的か民間か
         $pub_p = $input['pub_p'];
         $pri_p = $input['pri_p'];
+        $lang = $input['lang'];
 
         $searchedAreaName = $this->searchedAreaNameRepository->getSearchedAreaName($area_id);
         $searchedTroubleName = $this->searchedTroubleNameRepository->getSearchedTroubleName($trouble_id);
@@ -115,7 +116,7 @@ class Interactor
         return (new Presenter)->present(
             $pub_p, $pri_p, $publicSupportsTotal, $privateSupportsTotal, $publicPageTotal,
             $privatePageTotal, $publicSupports, $privateSupports, $is_public_page, $recommendedArticleInfos,
-            $searchBoxData, $query, $searchedAreaName, $searchedTroubleName
+            $searchBoxData, $query, $searchedAreaName, $searchedTroubleName, $lang
         );
 
     }

@@ -60,8 +60,17 @@ class Validator
             throw new ValidationFailException('想定外の「is_public」が指定されています。');
         }
 
+        $lang = $vars['lang'];
+        if ($lang !== NULL) {
+            $lang = (string) $lang;
+        }
+        else {
+            $lang = 'jp';
+        }
+
+
         try {
-            return new InputData($trouble_id, $region_id, $area_id, $is_only_foreign_ok, $is_public_page, $pub_p, $pri_p);
+            return new InputData($trouble_id, $region_id, $area_id, $is_only_foreign_ok, $is_public_page, $pub_p, $pri_p, $lang);
         }
         catch (TypeError $e){
             throw new ValidationFailException('不正なurlです。');

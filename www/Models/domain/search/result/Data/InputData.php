@@ -11,10 +11,11 @@ class InputData
     private $is_public_page;
     private $pub_p;
     private $pri_p;
+    private $lang;
 
 
     public function __construct(int $trouble_id, int $region_id, int $area_id, bool $is_only_foreign_ok,
-    bool $is_public_page, int $pub_p, int $pri_p)
+    bool $is_public_page, int $pub_p, int $pri_p, string $lang)
     {
         $this->trouble_id = $trouble_id;
         $this->region_id = $region_id;
@@ -23,6 +24,7 @@ class InputData
         $this->is_public_page = $is_public_page;
         $this->pub_p = $pub_p;
         $this->pri_p = $pri_p;
+        $this->lang = $lang;
    }
 
 
@@ -35,7 +37,8 @@ class InputData
             'is_only_foreign_ok' => $this->is_only_foreign_ok,
             'is_public_page' => $this->is_public_page,
             'pub_p' => $this->pub_p,
-            'pri_p' => $this->pri_p
+            'pri_p' => $this->pri_p,
+            'lang' => $this->lang
         ];
     }
 }
