@@ -15,7 +15,7 @@
 
         <div id="title--right">
             <p id="title--right--menu" class="block-start0 block-end0">
-                <i class="fas fa-bars"></i> メニュー
+                <i class="fas fa-bars"></i> menu
             </p>  
         </div>
     </div>
@@ -25,24 +25,24 @@
         <li>
             <a href="/index#search-box">
                 <i class="fas fa-search"></i>
-                支援と相談先を検索
+                search for supports and consultation counters
             </a>
         </li>
         <li>
             <a href="/article/list">
                 <i class="fas fa-book-open"></i>
-                お役立ち情報（コラム）
+                tips
             </a>
         </li>
-        <li><a href="/subContents/guideline">免責事項</a></li>
-        <li><a href="/subContents/adminInfo">運営者</a></li>
-        <li><a href="/contact/contactPage">お問い合わせ</a></li>
+        <li><a href="/subContents/guideline">Disclaimer</a></li>
+        <li><a href="/subContents/adminInfo">About us</a></li>
+        <li><a href="/contact/contactPage">Inquiry</a></li>
     </div>
 
     <div id="link-to-top--container">
         <a id="link-to-top" href="/">
             <i class="fas fa-home"></i>
-            トップページへ
+            toppage
         </a>
     </div>
     

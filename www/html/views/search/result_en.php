@@ -51,7 +51,7 @@ use myapp\config\ViewsConfig;
                                 <?php else: ?>
                                     
                                     <p class="total">
-                                        <?php echo $publicSupportsTotal; ?>cases are founded。&emsp;<?php echo "{$publicCurrentPage}/{$publicPageTotal}ページ"; ?>
+                                        <?php echo $publicSupportsTotal; ?>cases are founded. &emsp;<?php echo "{$publicCurrentPage}/{$publicPageTotal}ページ"; ?>
                                     </p>
                                     <div class="center">
                                         <div class="page-switch">
@@ -85,7 +85,7 @@ use myapp\config\ViewsConfig;
                                             <h3 class="owner"><?php echo $support['owner']; ?></h3>
                                             <table>
                                                 <tr>
-                                                    <td class="td-column">支援内容</td>
+                                                    <td class="td-column">support</td>
                                                     <td class="td-content">
                                                         <?php echo $support['support_content']; ?>   
                                                     </td>
@@ -95,7 +95,7 @@ use myapp\config\ViewsConfig;
                                                     <td class="td-content"><?php echo $support['access']; ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="td-column">備考</td>
+                                                    <td class="td-column">tips</td>
                                                     <td class="td-content"><?php echo $support['appendix']; ?></td>
                                                 </tr>
                                             </table>
@@ -123,12 +123,12 @@ use myapp\config\ViewsConfig;
                             <div id="private-tab-content" class="tab-content <?php if($is_public_page === FALSE) {echo 'show';} ?>">       
                                 <?php if(empty($privateSupports) === TRUE): ?>
 
-                                    <p class="no-result">検索結果がありませんでした。<br>公的支援をご覧になるか、検索条件を変えてみてください。</p>
+                                    <p class="no-result">There are no search results<br>Please check public supports or change the conditions of searchs</p>
 
                                 <?php else: ?>
                                     
                                     <p class="total">
-                                        <?php echo $privateSupportsTotal; ?>件見つかりました。&emsp;<?php echo "{$privateCurrentPage}/{$privatePageTotal}ページ"; ?>
+                                        <?php echo $privateSupportsTotal; ?>cases are founded. &emsp;<?php echo "{$privateCurrentPage}/{$privatePageTotal}ページ"; ?>
                                     </p>
                                     <div class="center">
                                         <div class="page-switch">
@@ -162,17 +162,17 @@ use myapp\config\ViewsConfig;
                                             <h3 class="owner"><?php echo $support['owner']; ?></h3>
                                             <table>
                                                 <tr>
-                                                    <td class="td-column">支援内容</td>
+                                                    <td class="td-column">support</td>
                                                     <td class="td-content">
                                                         <?php echo $support['support_content']; ?>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="td-column">アクセス</td>
+                                                    <td class="td-column">access</td>
                                                     <td class="td-content"><?php echo $support['access']; ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="td-column">備考</td>
+                                                    <td class="td-column">tips</td>
                                                     <td class="td-content"><?php echo $support['appendix']; ?></td>
                                                 </tr>
                                             </table>
@@ -204,18 +204,18 @@ use myapp\config\ViewsConfig;
 
             <div class="center">
                 <div id="recommend-articles--box" class="main--single">
-                    <p class="subTitle bold left block-start0">&lt;おすすめコラム(お役立ち情報)&gt;</p>
+                    <p class="subTitle bold left block-start0">&lt;Recommended columns&gt;</p>
                     <?php
                         $_items = $recommendedArticleInfos;
                         require ViewsConfig::COMPONENTS_PATH. 'articleBoxList.php';
                         unset($_items);
                     ?>
-                    <p id="link-to-articleList" class="right"><a href="/article/list">&gt;&gt;もっと見る</a></p>
+                    <p id="link-to-articleList" class="right"><a href="/article/list">&gt;&gt;research more</a></p>
                 </div>
             </div>
             <a id="followingLink-to-searchbox" href="#searchbox-anchor" class="center inline-block hidden">
                 <i class="fas fa-search"></i>
-                条件を変えて検索
+                research by different conditions 
             </a>
  
         </main>
