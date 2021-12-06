@@ -31,7 +31,7 @@ use myapp\config\ViewsConfig;
                         <p class="subTitle bold block-start0">
                             &lt;
                             <?php echo $searchedAreaName; ?>
-                            の検索結果
+                            results
                             &gt;
                         </p>
                         <div id="tab-area">
@@ -151,10 +151,10 @@ use myapp\config\ViewsConfig;
                                                 &lt;
                                                 <?php 
                                                     if ($support['area_id'] !== AppConfig::ZENKOKU_ID) {
-                                                        echo $searchedAreaName . 'を中心に活動';
+                                                        echo $searchedAreaName . 'is the center of activities';
                                                     }
                                                     else {
-                                                        echo '全国の方が対象';
+                                                        echo 'people all over the country can use this service';
                                                     }
                                                 ?>
                                                 &gt;
