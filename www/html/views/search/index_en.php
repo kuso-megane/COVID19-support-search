@@ -27,7 +27,7 @@ use myapp\config\ViewsConfig;
         <meta name="google-site-verification" content="QUhvKEg1Tym9PdmUbMMUQPB82zF6iKbccQ-EN_Pcg4A" />
     </head>
     <body>
-        <?php require ViewsConfig::COMPONENTS_PATH . 'header.php'; ?>
+        <?php require ViewsConfig::COMPONENTS_PATH . 'header_en.php'; ?>
 
         <main>
             <div id="introduce--container" class="center" >
@@ -100,7 +100,7 @@ use myapp\config\ViewsConfig;
                     <div id="search-box-anchor"></div>
 
                     <div class="main--double--left">
-                        <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox.php'; ?>
+                        <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox_en.php'; ?>
                     </div>
 
                     <div id="howto" class="main--double--right">

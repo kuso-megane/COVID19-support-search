@@ -13,7 +13,7 @@ use myapp\config\ViewsConfig;
         <?php require ViewsConfig::COMPONENTS_PATH. 'commonHead.php'; ?>
 　　</head>
     <body>
-        <?php require ViewsConfig::COMPONENTS_PATH . 'header.php'; ?>
+        <?php require ViewsConfig::COMPONENTS_PATH . 'header_en.php'; ?>
         <main>
             <div class="center">
                 <div class="main--double">
@@ -21,7 +21,7 @@ use myapp\config\ViewsConfig;
                     <div id="searchbox-anchor"></div>
 
                     <div class="main--double--left">
-                        <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox.php'; ?>
+                        <?php require ViewsConfig::COMPONENTS_PATH . 'searchbox_en.php'; ?>
                     </div>
 
                     <div id="search-result-anchor"></div>
