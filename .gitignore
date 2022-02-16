@@ -17,6 +17,10 @@
 /www/html/asset/stylesheet/
 /www/html/asset/js/
 
+#sassのキャッシュ
+/asset/scss/.sass-cache
+
+
 #画像(本番に画像を直接uploadするので、localと差分があると面倒臭い)
 /www/html/asset/img/
 
