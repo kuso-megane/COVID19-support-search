@@ -78,8 +78,30 @@ use Prophecy\Doubler\NameGenerator;
             </p>
                     
             <div>
-                本文(画像を埋め込む場合、画像ファイルがすでに手動でアップロードされている必要があります。):
+                本文:
                 <div id="content-reset-button" class=" buttons">本文を元に戻す</div>
+                <div id="insertingImg">
+                    <p>本文中への画像挿入(説明と画像ファイルを指定した後、「変換」ボタンを押し、表示されたテキストを本文にコピペ):&emsp;</p>
+                    <div id="insertingImg-beforeConversion">
+                        <p>
+                            画像の簡単な説明(病院の外観、など。SEO対策):&emsp;
+                            <input id="insertingImg-altName-input" type="text" name="insertingImgAltName">
+                        </p>
+                        <p>
+                            画像ファイル:&emsp;
+                            <input id="insertingImg-Uploader" type="file" name="insertingImg" accept="image/*">
+                        </p>
+                        <button id="insertingImg-conversionButton">変換</button>
+                    </div>
+                    <div id="insertingImg-afterConversion">
+                        <p>
+                            <input id="insertingImgConvertedText-input" type="text" readonly>
+                            <button id="insertingImgConvertedText-copyButton">コピー</button>
+                            <button id="insertingImgConvertedText-initButton">他の画像を使う</button>
+                        </p>
+                    </div>
+                </div>
+                
                 <textarea id="editor" name="content" cols="20" rows="8">
                     <?php echo ($oldArticleContent['content'] !== NULL) ? htmlspecialchars($oldArticleContent['content'], ENT_QUOTES) : ''; ?>
                 </textarea>
@@ -117,8 +139,49 @@ use Prophecy\Doubler\NameGenerator;
             var simplemde = new SimpleMDE({
                 element: document.getElementById("editor"),
                 forceSync: true,
+                hideIcons: ["image"],
                 spellChecker: false
             });
+        </script>
+
+        <!--コラム本文に挿入する画像を表現するtextを作成-->
+        <script>
+
+            /**
+             * @param {File} $imgFile
+             * 
+             * @return {String} dataUrl
+             * 
+             */
+            function imgFileToDataUrl ($imgFile) {
+                const $reader = new FileReader();
+
+                $reader.onload = function ()  {
+                    
+                    return $reader.result;
+                }();
+            
+
+                $reader.readAsDataURL($imgFile);   
+            }
+
+
+            const convertImgToMd = async (e) => {
+                e.preventDefault();
+                const $insertingImgAltText = document.getElementById("insertingImg-altName-input").value;
+                const $insertingImgDataUrl = imgFileToDataUrl(document.getElementById("insertingImg-Uploader").files[0])
+                const $insertingImgConvertedText = '!' + '[' + $insertingImgAltText + ']' + '(' + $insertingImgDataUrl + ')';
+
+                //debug
+                console.log(document.getElementById("insertingImg-Uploader").files[0]);
+                console.log(imgFileToDataUrl(document.getElementById("insertingImg-Uploader").files[0]));
+                console.log($insertingImgDataUrl);
+
+                return $insertingImgConvertedText;
+            }
+            
+            document.getElementById("insertingImg-conversionButton").addEventListener("click", convertImgToMd);
+            
         </script>
 
         <!--formのリセット-->
