@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM --platform=linux/x86_64 php:7.4-apache
 
 
 ENV APACHE_RUN_USER=www-data
