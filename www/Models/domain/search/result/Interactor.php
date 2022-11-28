@@ -10,6 +10,7 @@ use domain\components\searchBox\Interactor as SearchBoxInteractor;
 use domain\search\result\RepositoryPort\RecommendedArticleInfosRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedAreaNameRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedTroubleNameRepositoryPort;
+use domain\search\result\RepositoryPort\SearchLogRepositoryPort;
 use myapp\config\AppConfig;
 use myapp\myFrameWork\SuperGlobalVars;
 
@@ -20,13 +21,15 @@ class Interactor
     private $recommendedArticleInfosRepository;
     private $searchedAreaNameRepository;
     private $searchedTroubleNameRepository;
+    private $searchLogRepository;
 
     public function __construct(
         SearchedSupportsRepositoryPort $searchedSupportOrgsRepository,
         SearchItemsRepositoryPort $searchItemsReporitory,
         RecommendedArticleInfosRepositoryPort $recommendedArticleInfosRepository,
         SearchedAreaNameRepositoryPort $searchedAreaNameRepository,
-        SearchedTroubleNameRepositoryPort $searchedTroubleNameRepository
+        SearchedTroubleNameRepositoryPort $searchedTroubleNameRepository,
+        SearchLogRepositoryPort $searchLogRepository
     )
     {
         $this->searchedSupportOrgsRepository = $searchedSupportOrgsRepository;
@@ -34,6 +37,7 @@ class Interactor
         $this->recommendedArticleInfosRepository = $recommendedArticleInfosRepository;
         $this->searchedAreaNameRepository = $searchedAreaNameRepository;
         $this->searchedTroubleNameRepository = $searchedTroubleNameRepository;
+        $this->searchLogRepository = $searchLogRepository;
     }
 
     /**
@@ -43,6 +47,12 @@ class Interactor
      */
     public function interact(array $vars)
     {
+
+        $builder = new \DI\ContainerBuilder();
+        $builder->addDefinitions('/var/www/Models/diconfig.php');
+        $container = $builder->build();
+
+
         try {
             $input = (new Validator)->validate($vars)->toArray();
         }
@@ -91,9 +101,6 @@ class Interactor
             $recommendedArticleInfos = array_merge($recommendedArticleInfos, $generalArticleInfos);
         }
 
-        $builder = new \DI\ContainerBuilder();
-        $builder->addDefinitions('/var/www/Models/diconfig.php');
-        $container = $builder->build();
 
         try {
             $searchBoxData = $container->get(SearchBoxInteractor::class)->interact();
@@ -111,6 +118,14 @@ class Interactor
         if (false !== $pos = strpos($uri, '?')) {
             $query = substr($uri, $pos);
         }
+
+
+        $isUpdateSearchLogSuceeded =  $this->searchLogRepository->updateSearchLog($trouble_id, $area_id, $is_only_foreign_ok);
+        //debug
+        if (!$isUpdateSearchLogSuceeded) {
+            var_dump('ログ更新に失敗しました');
+        }
+        
 
         return (new Presenter)->present(
             $pub_p, $pri_p, $publicSupportsTotal, $privateSupportsTotal, $publicPageTotal,
