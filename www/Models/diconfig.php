@@ -29,6 +29,7 @@ use domain\backyardTroubleList\edit\RepositoryPort\ArticleCategoryNamesRepositor
 use domain\backyardTroubleList\post\RepositoryPort\PostTroubleRepositoryPort;
 use domain\search\result\RepositoryPort\SearchedTroubleNameRepositoryPort;
 use domain\search\index\RepositoryPort\RecommendedArticleInfosRepositoryPort as SearchIndexRecommendedArticleInfosRepositoryPort;
+use domain\search\result\RepositoryPort\SearchLogRepositoryPort;
 
 
 use infra\Repository\adminLogin\authenticate\AdminLoginInfoRepository;
@@ -60,6 +61,7 @@ use infra\Repository\backyardTroubleList\post\PostTroubleRepository;
 use infra\Repository\backyardSupportOrgs\post\PostSupportOrgsRepository;
 use infra\Repository\search\result\SearchedTroubleNameRepository;
 use infra\Repository\search\index\RecommendedArticleInfosRepository as SearchIndexRecommendedArticleInfosRepository;
+use infra\Repository\search\result\searchLogRepository;
 
 return [
     TroubleNameListRepositoryPort::class => \DI\create(TroubleNameListRepository::class),
@@ -95,5 +97,7 @@ return [
     BYSupportOrgsIndexAreaListRepositoryPort::class => \DI\create(BYSupportOrgsIndexAreaListRepository::class),
     BYSupportOrgsEditAreaListRepositoryPort::class => \DI\create(BYSupportOrgsEditAreaListRepository::class),
 
-    AdminLoginInfoRepositoryPort::class => \DI\create(AdminLoginInfoRepository::class)
+    AdminLoginInfoRepositoryPort::class => \DI\create(AdminLoginInfoRepository::class),
+
+    SearchLogRepositoryPort::class => \DI\create(SearchLogRepositoryPort::class)
 ];
