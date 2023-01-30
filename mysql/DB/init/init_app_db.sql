@@ -70,3 +70,21 @@ create table SupportOrgs(
         REFERENCES AreaList(id)
         ON DELETE RESTRICT ON UPDATE CASCADE
 );
+
+drop TABLE if EXISTS SearchLog;
+CREATE TABLE SearchLog(
+    id SMALLINT UNSIGNED primary KEY AUTO_INCREMENT,
+    area_id TINYINT UNSIGNED NOT NULL,
+    trouble_id TINYINT UNSIGNED NOT NULL,
+    is_foreign_ok BOOLEAN NOT NULL,
+
+    CONSTRAINT fk_area_id_on_SearchLog
+        FOREIGN KEY (area_id)
+        REFERENCES AreaList(id)
+        ON DELETE RESTRICT ON UPDATE CASCADE,
+
+    CONSTRAINT fk_trouble_id_on_SearchLog
+        FOREIGN KEY (trouble_id)
+        REFERENCES TroubleList(id)
+        ON DELETE RESTRICT ON UPDATE CASCADE
+);
