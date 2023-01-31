@@ -76,7 +76,7 @@ CREATE TABLE SearchLog(
     id SMALLINT UNSIGNED primary KEY AUTO_INCREMENT,
     area_id TINYINT UNSIGNED NOT NULL,
     trouble_id TINYINT UNSIGNED NOT NULL,
-    is_foreign_ok BOOLEAN NOT NULL,
+    is_only_foreign_ok BOOLEAN NOT NULL,
 
     CONSTRAINT fk_area_id_on_SearchLog
         FOREIGN KEY (area_id)
