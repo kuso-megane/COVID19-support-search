@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 class SupportOrgsTableTest extends TestCase
 {
     const TABLENAME = 'SupportOrgs';
+    const PARENTTABLE = 'AreaList';
 
     const SAMPLE_AREA_ID = 2;
     const SAMPLE_meta_words = 'meta';
@@ -26,6 +27,12 @@ class SupportOrgsTableTest extends TestCase
         'is_foreign_ok' => 0, 'is_public' => 1, 'meta_words' => self::SAMPLE_meta_words, 'appendix' => 'sample5']
     ];
 
+    #AreaListテーブルのnameカラムの文字数制限が5なので、サンプルデータの名前を5文字以下にした
+    const SAMPLE_DATA_PARENTTABLE = [
+        [':id' => self::SAMPLE_AREA_ID, ':name' => 'aa'],
+        [':id' => AppConfig::ZENKOKU_ID, ':name' => '全国']
+    ];
+
     private $dbh;
     private $table;
 
@@ -35,6 +42,10 @@ class SupportOrgsTableTest extends TestCase
         $this->table = new SupportOrgsTable(TRUE);
 
         $this->dbh->truncate($this::TABLENAME);
+        $this->dbh->truncate(self::PARENTTABLE);
+
+        $this->dbh->insert(self::PARENTTABLE, ':id, :name', self::SAMPLE_DATA_PARENTTABLE[0]);
+        $this->dbh->insert(self::PARENTTABLE, ':id, :name', self::SAMPLE_DATA_PARENTTABLE[1]);
 
         $sth = $this->dbh->insert($this::TABLENAME,
         '0, :area_id, :support_content, :owner, :access, :is_foreign_ok, :is_public, :meta_words, :appendix',
