@@ -11,9 +11,7 @@ class TroubleListTableTest extends TestCase
     const PARENT_TABLE1 = 'ArticleCategory';
 
     const SAMPLE_ARTICLE_C_ID = 1;
-    const PARENT1_SAMPLE_DATAS = [
-        ['id' => self::SAMPLE_ARTICLE_C_ID, 'name' => 'sampleC1']
-    ];
+    const PARENT1_SAMPLE_DATAS = [':id' => self::SAMPLE_ARTICLE_C_ID, ':name' => 'sampleC1'];
 
     const SAMPLE_DATAS = [
         ['name' => 'sampleTrouble1', 'meta_word' => 'meta1', 'ArticleC_id' => self::SAMPLE_ARTICLE_C_ID],
@@ -29,6 +27,9 @@ class TroubleListTableTest extends TestCase
         $this->table = new TroubleListTable(TRUE);
 
         $this->dbh->truncate($this::TABLENAME);
+        $this->dbh->truncate(self::PARENT_TABLE1);
+
+        $this->dbh->insert(self::PARENT_TABLE1, ':id, :name', self::PARENT1_SAMPLE_DATAS);
 
         $sth = $this->dbh->insert($this::TABLENAME, '0, :name, :meta_word, :ArticleC_id', [], MyDbh::ONLY_PREPARE);
         foreach ($this::SAMPLE_DATAS as $sampleData) {
