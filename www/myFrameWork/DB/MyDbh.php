@@ -130,7 +130,7 @@ class MyDbh extends PDO
     /**
      * This returns the records you want.
      * 
-     * @param string $columns the columns you want (e.g.) 'id, num'
+     * @param string $columns the columns you want (e.g.) 'id, num' or '*'(This means all columns in MySQL syntax.)
      * @param string $tableName
      * @param string $condition 'id = :id AND num > :num' or 'id = 3, num > 3'
      * @param array $options
