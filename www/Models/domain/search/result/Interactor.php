@@ -121,10 +121,6 @@ class Interactor
 
 
         $isUpdateSearchLogSuceeded =  $this->searchLogRepository->updateSearchLog($trouble_id, $area_id, $is_only_foreign_ok);
-        //debug
-        if (!$isUpdateSearchLogSuceeded) {
-            var_dump('ログ更新に失敗しました');
-        }
         
 
         return (new Presenter)->present(
