@@ -61,7 +61,7 @@ use infra\Repository\backyardTroubleList\post\PostTroubleRepository;
 use infra\Repository\backyardSupportOrgs\post\PostSupportOrgsRepository;
 use infra\Repository\search\result\SearchedTroubleNameRepository;
 use infra\Repository\search\index\RecommendedArticleInfosRepository as SearchIndexRecommendedArticleInfosRepository;
-use infra\Repository\search\result\searchLogRepository;
+use infra\Repository\search\result\SearchLogRepository;
 
 return [
     TroubleNameListRepositoryPort::class => \DI\create(TroubleNameListRepository::class),
@@ -99,5 +99,5 @@ return [
 
     AdminLoginInfoRepositoryPort::class => \DI\create(AdminLoginInfoRepository::class),
 
-    SearchLogRepositoryPort::class => \DI\create(SearchLogRepositoryPort::class)
+    SearchLogRepositoryPort::class => \DI\create(SearchLogRepository::class)
 ];
