@@ -24,11 +24,11 @@ class SearchLogTable
      * 
      * if something goes wrong, this throws PDOExeption
      */
-    public function create(int $trouble_id, int $area_id, bool $is_only_foreign_ok)
+    public function create(int $area_id, int $trouble_id, bool $is_only_foreign_ok)
     {
-        $columns = 'trouble_id = :trouble_id, area_id = :area_id, is_only_foreign_ok = :is_only_foreign_ok';
-        $boundValues = [':trouble_id' => $trouble_id, ':area_id' => $area_id, ':is_foreign_ok' => $is_only_foreign_ok];
+        $columns = '0, :area_id, :trouble_id, :is_only_foreign_ok';
+        $boundValues = [':area_id' => $area_id, ':trouble_id' => $trouble_id, ':is_only_foreign_ok' => (int)$is_only_foreign_ok];
 
-        $this->dbh->insert($this::TABLENAME, $columns, $boundValues);
+        $this->dbh->insert(self::TABLENAME, $columns, $boundValues);
     }
 }
