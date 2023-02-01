@@ -77,6 +77,7 @@ CREATE TABLE SearchLog(
     area_id TINYINT UNSIGNED NOT NULL,
     trouble_id TINYINT UNSIGNED NOT NULL,
     is_only_foreign_ok BOOLEAN NOT NULL,
+    searched_time DATETIME DEFAULT now(),
 
     CONSTRAINT fk_area_id_on_SearchLog
         FOREIGN KEY (area_id)

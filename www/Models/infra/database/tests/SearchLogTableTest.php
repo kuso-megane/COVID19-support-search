@@ -68,6 +68,6 @@ class SearchLogTableTest extends TestCase
         $expected = [
             'id' => $newId, 'area_id' => $newArea_id, 'trouble_id' => $newTrouble_id, 'is_only_foreign_ok' => $newIs_only_foreign_ok
         ];
-        $this->assertSame($expected, $this->dbh->select('*', self::TABLENAME, "id = {$newId}")[0]);
+        $this->assertSame($expected, $this->dbh->select('id, area_id, trouble_id, is_only_foreign_ok', self::TABLENAME, "id = {$newId}")[0]);
     }
 }

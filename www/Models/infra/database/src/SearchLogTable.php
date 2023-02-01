@@ -26,7 +26,7 @@ class SearchLogTable
      */
     public function create(int $area_id, int $trouble_id, bool $is_only_foreign_ok)
     {
-        $columns = '0, :area_id, :trouble_id, :is_only_foreign_ok';
+        $columns = '0, :area_id, :trouble_id, :is_only_foreign_ok, default';
         $boundValues = [':area_id' => $area_id, ':trouble_id' => $trouble_id, ':is_only_foreign_ok' => (int)$is_only_foreign_ok];
 
         $this->dbh->insert(self::TABLENAME, $columns, $boundValues);
