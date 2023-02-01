@@ -4,12 +4,11 @@
 - dockerコンテナを構築し、apache2 + php + mysqlで作成。
 - 勉強のため、phpのFWは使用してません
 
-## deploy環境
+## 本番環境
 - aws ECS + EC2 + RDS
 - ECRからappコンテナのイメージを保存
-- ECS管理下のEC2インスタンスに、git経由でコードを反映
-- ECS管理下のEC2インスタンス内の、appコンテナの環境変数で、RDSの接続関連の情報を設定
-- appコンテナの環境変数```IS_PROD```を```true```に設定。これに基づき、```www/config/DBConfig```がRDSの接続関連の情報を環境変数から取得。
+- ec2コンテナ内のappコンテナとRDSが通信。
+- ECS管理下のEC2インスタンス内の、appコンテナの環境変数で、RDSの接続関連の情報を設定。具体的には、appコンテナの環境変数```IS_PROD```を```true```に設定。これに基づき、```www/config/DBConfig```がRDSの接続関連の情報を環境変数から取得。
 
 
 ## deploy手順
