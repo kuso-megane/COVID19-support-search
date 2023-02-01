@@ -12,6 +12,13 @@
 - appコンテナの環境変数```IS_PROD```を```true```に設定。これに基づき、```www/config/DBConfig```がRDSの接続関連の情報を環境変数から取得。
 
 
+## deploy手順
+- localのターミナルのhome dirで```ssh -i .aws/aws-myKeyPair.pem ec2-user@ec2-35-72-127-232.ap-northeast-1.compute.amazonaws.com```を叩き、ec2コンテナに接続
+- ```cd service```
+- git経由で変更をec2コンテナの本番環境にpull
+
+
+
 ## 環境構築
 1. gitでコードをpull
 1. docker, docker-composeのinstall
@@ -26,6 +33,11 @@
 1. (本番環境のみ)ec2-user所有の画像ファイルdirへの画像アップロードを```www-data```(apacheのuser)が行うため、ec2のdocker for linuxでは以下の権限変更が必要。(というか、docker for mac, windowsでなぜ権限変更なしに動くのか謎)
     - ec2のhostから```chmod o+x /path/to/www/html/asset/img```を実行。
 
+
+
+## dbのtest手順
+- appコンテナに接続
+- ```.test.shを起動```
 
 ## frontend
 - www/html/views配下にhtml(拡張子は基本php)を記述
